@@ -5,7 +5,7 @@ subtitle: Test1 for me
 cover-img: /assets/img/pobrane.png
 thumbnail-img: /assets/img/1200px-Jupyter_logo.png
 share-img: /assets/img/pobrane.png
-tags: [jupyter, test]
+tags: [jupyter, kod]
 ---
 
 

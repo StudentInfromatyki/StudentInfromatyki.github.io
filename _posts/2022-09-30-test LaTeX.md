@@ -5,7 +5,7 @@ subtitle: Test for me
 cover-img: /assets/img/LaTeX_logo.svg.png
 thumbnail-img: /assets/img/LaTeX_cover.png
 share-img: /assets/img/LaTeX_logo.svg.png
-tags: [lalala, test]
+tags: [latex, wzory]
 ---
 
 ## Tryb inline - wersja z $
