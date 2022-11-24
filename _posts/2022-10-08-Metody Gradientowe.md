@@ -35,7 +35,7 @@ Kryterium zbieżności metody Gaussa-Seidla jest takie samo jak dla metody Jacob
 **4. Implementacja metody Jacobiego, Gaussa-Seidla oraz SOR i gradientów spężonych**
 W tym punkcie dokonamy implementacji metody Jacobiego, Gaussa-Seidla, oraz SOR i gradientów sprężonych, a nastepnie rozwiążemy przy ich pomocy zadany układ równań. Sprawdzimy poprawność obliczeń odręcznych. 
 
-**Implemetacja metody Jacobiego**
+**4.1. Implemetacja metody Jacobiego**
 
 ~~~
 function[xx,kk] = f_jacobi(A,b, k_max, tol)
@@ -66,7 +66,7 @@ endfunction
 ~~~
 
 
-**Implementacja metody Gaussa-Seidla**
+**4.2. Implementacja metody Gaussa-Seidla**
 ~~~
 function[x, Ar] = f_gauss(A,b)
 
@@ -95,7 +95,7 @@ endfor
 endfunction
 ~~~
 
-**Implementacja metody SOR**
+**4.3. Implementacja metody SOR**
 ~~~
 function[x,info,iter,resid] = sor(A,b,omega=1,tol=1e-10,maxit=1000,x0)
 
@@ -118,7 +118,7 @@ end
 end
 ~~~
 
-**Implemetacja metodą gradientów sprężonych**
+**4.4. Implemetacja metodą gradientów sprężonych**
 Jeśli właściwie dobierzemy sprzężone wektory $\mathcal{p_k}$, możemy nie potrzebować ich wszystkich do dobrej aproksymacji rozwiązania $\mathcal{x_*}$ Możemy więc spojrzeć na CG jak na metodę iteracyjną. Co więcej, pozwoli nam to rozwiązać układy równań, gdzie n jest tak duże, że bezpośrednia metoda zabrałaby zbyt dużo czasu. 
 
 Oznaczmy punkt startowy przez $\mathcal{x_0}$. Bez starty ogólności możemy założyć, że $\mathcal{x_0}=0$ (w przeciwnym przypadku, rozważymy układ $\mathcal{Az}=b-Ax_0$. Zauważmy, że rozwiązanie $\mathcal{x_*}$ minimalizuje formę kwadratową: $\mathcal{f(x)}=\frac{1}{2} * x^T * Ax - b^T * x$.
@@ -129,3 +129,58 @@ Niech $\mathcal{r_k}$ oznacza rezyduum w k-tym kroku: $\mathcal{r_k}=b-Ax_k$.
 
 Zauważmy, że $\mathcal{r_k}$ jest przeciwny do gradientu f w $\mathcal{x}=x_k$, więc metoda gradientu prostego nakazywałaby ruch w kierunku $\mathcal{r_k}$. Tutaj jednak założyliśmy wzajemną sprężoność kierunków $\mathcal{p_k}$, więc wybieramy kierunek najbliższy do $\mathcal{r_k}$ pod warunkiem sprężoności. Co wyraża się wzorem: 
 $\mathcal{p_{k+1}}=r_k - \frac{p_k^T * Ar_k}{p_k^T * Ap_k} * p_k$
+
+
+~~~
+function[x] = conjgrad(A,b,x0)
+
+r = b - A*x0;
+w = -r;
+z = A*w;
+a = (r'*w)/(w'*z);
+x = x0 + a*w;
+
+for i = 1:size(A,1);
+    r = r - a*z;
+    if(norm(r) < 1e-10)
+        break;
+    end
+    B = (r'*z)/(w'*z);
+    w = -r + B*w;
+    z = A*w;
+    a = (r'*w)/(w'*z);
+    x = x + a*w;
+    end
+end
+~~~
+
+**5. Porównanie wyników czterech powyższyh metod**
+Algorytmy przetestowano o rozmiarze N=100. Jeśli zależność czasu obliczeń t od rozmiaru macierzy N jest funckją potęgową typu $\mathcal{t(N)}=aN^B$, to po zlogarytmowaniu tego równania stronami mamy $\mathcal{log t(N)}=B log(N)+log(a)$.
+
+| Metoda iteracyjna| Wykładnik B | 
+| :------ |:--- |
+| Jacobiego | 3.58 |
+| Gaussa-Seidla | 3.17 |
+| SOR | 3.38 |
+| Gradientów spręzonych | 3.04 |
+
+Z tej racji najmniej czasu na wykonanie algorytmu potrzebno dla metody gradientów sprężonych, potem dla metody GaussaSeidla, na trzecim miejscu znajduje się metoda SOR, a najdłuższą metodą z tych czterech jest metoda Jacobiego.
+
+
+**5.1. Porównanie dokładności**
+Na mój pogląd najdokładniejszą metodą jest metoda Gaussa – Seidla. Dlatego, że metoda Gaussa – Seidla jest metodą relaksacyjną, w której
+poszukiwanie rozwiązania rozpoczyna się od dowolnie wybranego rozwiązania próbnego $\mathcal{x^0}$, po czym w kolejnych krokach, zwanych iteracjami, za pomocą prostego algorytmu zmienia się kolejno jego
+składowe, tak by coraz lepiej odpowiadały rzeczywistemu rozwiązaniu.
+Metoda Gaussa – Seidla bazuje na metodzie Jacobiego, w której krok
+iteracyjny zmieniono w ten sposób, by każda modyfikacja rozwiązania
+próbnego korzystała ze wszystkich aktualnie dostępnych przybliżonych
+składowych rozwiązania. Pozwala to zaoszczędzić połowę pamięci operacyjnej i w większości zastosowań praktycznych zmniejsza około
+dwukrotnie liczbę obliczeń niezbędnych do osiągnięcia zadanej dokładności rozwiązania. 
+
+**5.2. Dokonanie abalizy wyników**
+Każda metoda polega na odnajdywaniu przybliżenia rozwiązania z zadaną
+dokładnością. Oczywiste jest to, że implementacja zawsze jest dokładniejsza od wyznaczenia przybliżenia na kartce. Wynika to z tego powodu, iż na kartce obliczamy ręcznie i jest łatwiej dokonać błędu. W implementacji możemy wyznaczyć z którą chcemy dokładnością i wyniki będą poprawne i można będzie sprawdzić czy dobrze mamy obliczono na kartce, pacząc na implementację i to jest wielka zaleta implementacji.
+
+Także dane nam cztery metody różnią się, dlatego że każda metoda jest
+obliczana inaczej i niektóre metody są efektywniejsze od innych. Jedną z
+najprostszych metod iteracyjnych jest metoda iteracji prostej. Polega ona na przejściu od danego układu równań liniowych do równoważnego układu: $\mathcal{x}=Bx+c$
