@@ -31,3 +31,36 @@ dla $\mathcal{i}=1,2,...,n$ oraz iteracji $\mathcal{k}=0,1,...$.
 Zapis ten dobrze pokazuje rożnicę pomiędzy tą metodą iteracyjną a metoda Jacobiego. Widac, że metoda Gaussa-Seidla, wyznaczając w jednym kroku iteracyjnym klejne elementy wektora $\mathcal{x^k}$, korzysta zarówno z wartości wektora $\mathcal{x^{k+1}}$ jak i z wyznaczonych juz elementów wektora $\mathcal{x^k}$. W tej metodzie Jaobiego natomiast nowe przybliżenia składowych rozwiązania wykorzystywane są dopiero w kolejnej iteracji, dzięki czemu mozna je obliczać jednocześnie. 
 
 Kryterium zbieżności metody Gaussa-Seidla jest takie samo jak dla metody Jacobiego, co pokazuje poniższe twierdzenie: Jeśli macierz A jest dominująca przekątniowo, to metoda Gaussa-Seidla jest zbieżna dla dowolnego wektora początkowego.
+
+**4. Implementacja metody Jacobiego, Gaussa-Seidla oraz SOR i gradientów spężonych**
+W tym punkcie dokonamy implementacji metody Jacobiego, Gaussa-Seidla, oraz SOR i gradientów sprężonych, a nastepnie rozwiążemy przy ich pomocy zadany układ równań. Sprawdzimy poprawność obliczeń odręcznych. 
+
+**Implemetacja metody Jacobiego**
+
+~~~
+function[xx,kk] = f_jacobi(A,b, k_max, tol)
+
+n = length(b);
+C = zeros(n,l);
+D = zeros(n,n);
+
+for ii = 1:n
+    C(ii) = b(ii)/A(ii,ii);
+    for jj = 1:n
+    if(ii~=jj)
+        D(ii,jj) = -A(ii,jj)/A(ii,ii);
+    endif
+    endfor
+endfor
+
+xx=C;
+    for kk = 1:k_max
+    xx = C + D*xx;
+    bk = A*xx;
+    blad = abs(bk-b);
+    suma = sum(blad);
+    if(suma<tol) break;
+    endif
+    endfor
+
+~~~
