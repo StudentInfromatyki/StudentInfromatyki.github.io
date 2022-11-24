@@ -24,7 +24,7 @@ W tej metodzie macierz A przedstawia się w postaci $\mathcal{A}=L+D+U$, gdzie D
 
 Zatem dla wzoru $\mathcal{Q}=D+L$. Dlatego proces iteracyjny można zapisać w postaci 
 $\mathcal{\[ 
-{x_i^k+1} = { \frac{1}{a_ij} * (b_i - \sum_{j=1}^{i-1}) }  
+{x_{i}^{k+1}} = { \frac{1}{a_ij} * ( b_i - \sum_{j=1}^{i-1}*a_ij*a_{j}^{k+1} ) }  
 \]}$ 
 
 
