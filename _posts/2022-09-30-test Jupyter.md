@@ -45,7 +45,7 @@ Drugim sposobem jest to skonfigurowanie w kodzie repozytorium, tzn. dodanie kawa
 Jest także opcja dodawania notatników, kodów oraz innych informacji w sposób, który będzie zaprezentowany poniżej. Jest to sposób, któy polega na dodawaniu informacji umieszczonych w znacznikach ~. Także można dodawać różnymi sposobami, tzn. żeby kod był numerowany oraz nienumerowany, a także, żeby było widocznie w jakim języku programowania jest napisany kod.
 
 
-Here's a code chunk:
+O to fragment kodu:
 
 ~~~
 var foo = function(x) {
@@ -54,7 +54,7 @@ var foo = function(x) {
 foo(3)
 ~~~
 
-And here is the same code with syntax highlighting:
+A oto ten sam kod z podświetlaniem składni:
 
 ```javascript
 var foo = function(x) {
@@ -63,7 +63,7 @@ var foo = function(x) {
 foo(3)
 ```
 
-And here is the same code yet again but with line numbers:
+A oto ten sam kod jeszcze raz, ale z numerami linii:
 
 {% highlight javascript linenos %}
 var foo = function(x) {
@@ -72,21 +72,21 @@ var foo = function(x) {
 foo(3)
 {% endhighlight %}
 
-## Boxes
-You can add notification, warning and error boxes like this:
+## Pudła
+Możesz dodać pola powiadomień, ostrzeżeń i błędów w następujący sposób:
 
-### Notification
+### Powiadomienie
 
 {: .box-note}
-**Note:** This is a notification box.
+**Notatka:** To jest pole powiadomień.
 
-### Warning
+### Ostrzeżenia
 
 {: .box-warning}
-**Warning:** This is a warning box.
+**Ostrzeżenia:** To jest pole ostrzeżeń.
 
-### Error
+### Błąd
 
 {: .box-error}
-**Error:** This is an error box.
+**Błąd:** To jest pole błędu.
 
