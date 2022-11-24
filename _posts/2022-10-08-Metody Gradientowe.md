@@ -23,7 +23,9 @@ Metoda Gaussa-Seidla – iteracyjna metoda numerycznego rozwiązywania układów
 W tej metodzie macierz A przedstawia się w postaci $\mathcal{A}=L+D+U$, gdzie D - macierz diagonalna, L - macierz trójkątna, zaś U - macierz trójkątna górna [1,7,8]. Wtedy układ równań $\mathcal{Ax}=b$ można przedstawić w postaci: $\mathcal{(D+L)x}=-Ux+b$.  
 
 Zatem dla wzoru $\mathcal{Q}=D+L$. Dlatego proces iteracyjny można zapisać w postaci 
-$\mathcal{\[ {x_i^k+1} = {\frac{1}{n^s} (b_i - \sum_{j=1}^i-1*a_ij*a_j^k+1 - \sum_{j=j+1}^n * a_ij*x_j^k)} \]}$ 
+$\mathcal{\[ 
+{x_i^k+1} = \frac{1}{a_ij}
+\]}$ 
 
 
 1. Przyjąć punkt startowy $\mathcal{x_0}$, $\mathcal{C^2}$.długość kroku e, współczynnik redukcji kroku 𝒂 < 𝟏, limit liczby redukcji kroku k (np. 𝒌 = 𝟓) i dokładność wyznaczenia ekstremum (zerowania się gradientu) ε (np. $\mathcal{ε}={10^-3}$).
