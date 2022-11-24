@@ -1,18 +1,16 @@
 ---
 layout: post
-title: Metody gradientowe
+title: Iteracje metodą Jacobiego oraz Gaussa-Seidla
 subtitle: Metody numeryczne
 cover-img: /assets/img/geometry.jpg
 thumbnail-img: /assets/img/menuin.jpg
 share-img: /assets/img/geometry.jpg
-tags: [metody gradientowe]
+tags: [metody numeryczne, Jacobiego, Gaussa-Seidla, iteracje]
 ---
 
 1. Wstęp
 
-W ćwiczeniu zapoznamy się z dwiema metodami gradientowymi poszukiwania ekstremum bezwarunkowego: metodą gradientu prostego i metodą najszybszego spadku.
-
-Metody gradientowe polegają na wyznaczaniu kolejnego kierunku poszukiwań na podstawie znajomości gradientu funkcji celu w punkcie wyznaczonym w poprzednim kroku. Funkcja celu musi być więc znaną w postaci analitycznej, ograniczoną od dołu funkcją wypukłą klasy $\mathcal{C^2}$.
+Zaletą metod iteracyjnych jest możliwość wyznaczenia przybliżenia rozwiązania z zadaną dokładnością, niekiedy kosztem istotnie mniejszym od kosztu metod skończonych. Dla niektórych zadań metody iteracyjne są więc efektywniejsze. Jedną z najprostszych metod iteracyjnych jest metoda iteracji prostej. Polega ona na przejściu od danego układu równań liniowych do równoważnego (tzn. mającego te same rozwiązania) układu: $\mathcal{x}=Bx+C$.
 
 2. Metoda gradientu prostego
 Metoda gradientu prostego polega na wykonywaniu kroków o założonej długości w kierunku
