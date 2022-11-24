@@ -18,7 +18,9 @@ Metoda Jacobiego jest metodą iteracyjną i pozwala nam obliczyć układ n równ
 
 **2.1 Rozwiązanie analityczne:**
 
-$\mathcal{f(x)}={\left\{ \begin{array}{lr} x+1 & dla \ x\in(-\infty;0) \\ x-1 & dla \ x\in\langle0;+\infty) \end{array}\right}$
+$\mathcal{
+f(x)=\left\{ \begin{array}{lr} x+1 & dla \ x\in(-\infty;0) \\ x-1 & dla \ x\in\langle0;+\infty) \end{array}\right
+}$
 
 1. Przyjąć punkt startowy $\mathcal{x_0}$, $\mathcal{C^2}$.długość kroku e, współczynnik redukcji kroku 𝒂 < 𝟏, limit liczby redukcji kroku k (np. 𝒌 = 𝟓) i dokładność wyznaczenia ekstremum (zerowania się gradientu) ε (np. $\mathcal{ε}={10^-3}$).
 2. Obliczyć w punkcie $\mathcal{x_i}$ wartość funkcji celu $\mathcal{f(x_i)}$ i jej gradientu $\mathcal{g(x_i)}$.
