@@ -121,4 +121,11 @@ end
 **Implemetacja metodą gradientów sprężonych**
 Jeśli właściwie dobierzemy sprzężone wektory $\mathcal{p_k}$, możemy nie potrzebować ich wszystkich do dobrej aproksymacji rozwiązania $\mathcal{x_*}$ Możemy więc spojrzeć na CG jak na metodę iteracyjną. Co więcej, pozwoli nam to rozwiązać układy równań, gdzie n jest tak duże, że bezpośrednia metoda zabrałaby zbyt dużo czasu. 
 
-Oznaczmy punkt startowy przez $\mathcal{x_0}$. Bez starty ogólności możemy założyć, że $\mathcal{x_0}=0$ (w przeciwnym przypadku, rozważymy układ $\mathcal{Az}=b-Ax_0$. Zauważmy, że rozwiązanie $\mathcal{x_*}$ minimalizuje formę kwadratową: $\mathcal{f(x)}=\frac{1}{2} * x^T * Ax - b^T * x$
+Oznaczmy punkt startowy przez $\mathcal{x_0}$. Bez starty ogólności możemy założyć, że $\mathcal{x_0}=0$ (w przeciwnym przypadku, rozważymy układ $\mathcal{Az}=b-Ax_0$. Zauważmy, że rozwiązanie $\mathcal{x_*}$ minimalizuje formę kwadratową: $\mathcal{f(x)}=\frac{1}{2} * x^T * Ax - b^T * x$.
+
+Co sugeruje, by jako pierwszy wektor bazowy $\mathcal{p_1}$ wybrać gradient f w $\mathcal{x}=x_0$, który wynosi $\mathcal{Ax_0}-b$, a ponieważ wybraliśmy $\mathcal{x}=x_0$, otrzymujemy -b. Pozostałe wektory w bazie będą sprężone do gradientu (stąd nazwa metoda gradientu sprężonego).
+
+Niech $\mathcal{r_k}$ oznacza rezyduum w k-tym kroku: $\mathcal{r_k}=b-Ax_k$.
+
+Zauważmy, że $\mathcal{r_k}$ jest przeciwny do gradientu f w $\mathcal{x}=x_k$, więc metoda gradientu prostego nakazywałaby ruch w kierunku $\mathcal{r_k}$. Tutaj jednak założyliśmy wzajemną sprężoność kierunków $\mathcal{p_k}$, więc wybieramy kierunek najbliższy do $\mathcal{r_k}$ pod warunkiem sprężoności. Co wyraża się wzorem: 
+$\mathcal{p_{k+1}}=r_k - \frac{p_k^T * Ar_k}{p_k^T * Ap_k} * p_k$
