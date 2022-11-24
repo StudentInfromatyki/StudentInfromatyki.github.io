@@ -94,3 +94,31 @@ for ii = n:-1:1
 endfor
 endfunction
 ~~~
+
+**Implementacja metody SOR**
+~~~
+function[x,info,iter,resid] = sor(A,b,omega=1,tol=1e-10,maxit=1000,x0)
+
+if(nargin < 6)
+    x0 = zeros(size(b));
+end
+
+resid = zeros(maxit,1);
+iter = 1;
+x = x0;
+resid(iter) = norm(b - A*x);
+M = tril(A,-1) + spdiag(diag(A)/omega);
+Z = spdiag((1/omega - 1)*diag(A)) - triu(A,1);
+
+while((resid(iter) > tol*resid(1)) && (info = (iter < maxit)))
+    x = M \ (Z*x + b);
+    iter = iter + 1;
+    resid(iter) = norm(b - A*x);
+end
+end
+~~~
+
+**Implemetacja metodą gradientów sprężonych**
+Jeśli właściwie dobierzemy sprzężone wektory $\mathcal{p_k}$, możemy nie potrzebować ich wszystkich do dobrej aproksymacji rozwiązania $\mathcal{x_*}$ Możemy więc spojrzeć na CG jak na metodę iteracyjną. Co więcej, pozwoli nam to rozwiązać układy równań, gdzie n jest tak duże, że bezpośrednia metoda zabrałaby zbyt dużo czasu. 
+
+Oznaczmy punkt startowy przez $\mathcal{x_0}$. Bez starty ogólności możemy założyć, że $\mathcal{x_0}=0$ (w przeciwnym przypadku, rozważymy układ $\mathcal{Az}=b-Ax_0$. Zauważmy, że rozwiązanie $\mathcal{x_*}$ minimalizuje formę kwadratową: $\mathcal{f(x)}=\frac{1}{2} * x^T * Ax - b^T * x$
