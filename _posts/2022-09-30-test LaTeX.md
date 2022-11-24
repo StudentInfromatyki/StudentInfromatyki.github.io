@@ -1,7 +1,7 @@
 ---
 layout: post
-title: Test LaTeX 
-subtitle: Test for me
+title: LaTeX 
+subtitle: Dodanie LaTeXa
 cover-img: /assets/img/LaTeX_logo.svg.png
 thumbnail-img: /assets/img/LaTeX_cover.png
 share-img: /assets/img/LaTeX_logo.svg.png

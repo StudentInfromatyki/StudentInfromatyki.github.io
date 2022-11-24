@@ -1,7 +1,7 @@
 ---
 layout: post
-title: Dodanie Jupyter 
-subtitle: Dodanie Jupyter
+title: Jupyter 
+subtitle: Dodanie Jupytera
 cover-img: /assets/img/pobrane.png
 thumbnail-img: /assets/img/1200px-Jupyter_logo.png
 share-img: /assets/img/pobrane.png
