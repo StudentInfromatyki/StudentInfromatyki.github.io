@@ -62,5 +62,35 @@ xx=C;
     if(suma<tol) break;
     endif
     endfor
+endfunction
+~~~
 
+
+**Implementacja metody Gaussa-Seidla**
+~~~
+function[x, Ar] = f_gauss(A,b)
+
+[n,m] = size(A);
+
+if(n~=m), error('Macierz A musi byc kwadratowa');
+endif
+
+Ar = [A,b];
+x = zeros(n,1);
+for kk = 1:(n-1)
+    for jj = (kk+1):(n+1)
+        for ii = (kk+1):n
+        Ar(ii,jj) = Ar(ii,jj)-(Ar(ii,kk)*Ar(kk,jj)/Ar(kk,kk));
+        endfor
+    endfor
+endor
+
+for ii = n:-1:1
+    suma = 0;
+    for jj = (ii+1):n
+        suma = suma + Ar(ii,jj)*x(jj);
+    endfor
+    x(ii) = (1/Ar(ii,ii))*(Ar(ii,n+1)-suma);
+endfor
+endfunction
 ~~~
