@@ -8,20 +8,22 @@ share-img: /assets/img/geometry.jpg
 tags: [metody numeryczne, Jacobiego, Gaussa-Seidla, iteracje]
 ---
 
-1. Wstęp
+**1. Wstęp**
 
-Zaletą metod iteracyjnych jest możliwość wyznaczenia przybliżenia rozwiązania z zadaną dokładnością, niekiedy kosztem istotnie mniejszym od kosztu metod skończonych. Dla niektórych zadań metody iteracyjne są więc efektywniejsze. Jedną z najprostszych metod iteracyjnych jest metoda iteracji prostej. Polega ona na przejściu od danego układu równań liniowych do równoważnego (tzn. mającego te same rozwiązania) układu: $\mathcal{x}=Bx+C$.
+Zaletą metod iteracyjnych jest możliwość wyznaczenia przybliżenia rozwiązania z zadaną dokładnością, niekiedy kosztem istotnie mniejszym od kosztu metod skończonych. Dla niektórych zadań metody iteracyjne są więc efektywniejsze. Jedną z najprostszych metod iteracyjnych jest metoda iteracji prostej. Polega ona na przejściu od danego układu równań liniowych do równoważnego (tzn. mającego te same rozwiązania) układu: $\mathcal{x}=Bx+c$.
 
-2. Metoda gradientu prostego
-Metoda gradientu prostego polega na wykonywaniu kroków o założonej długości w kierunku
-przeciwnym do gradientu funkcji celu w punkcie startowym danej iteracji. Jeżeli wartość funkcji celu w
-nowo wyznaczonym punkcie jest większa niż w punkcie początkowym, to znaczy, że właśnie wykonany
-krok był zbyt długi. W takim wypadku należy nowy punkt odrzucić i wykonać krok ponownie, tym razem
-ze zmniejszoną długością.
+**2. Metoda Jacobiego**
+Metoda Jacobiego jest metodą iteracyjną i pozwala nam obliczyć układ n równań z n niewiadomymi $\mathcal{Ax}=b$.
 
-![Photo](https://upload.wikimedia.org/wikipedia/commons/7/79/Gradient_descent.png)
 
-**Algorytm metody gradientu prostego:**
+**2.1 Rozwiązanie analityczne:**
+
+$\mathcal{
+\[
+f(x)=\left\{ \begin{array}{lr} x+1 & dla \ x\in(-\infty;0) \\ x-1 & dla \ x\in\langle0;+\infty) \end{array}\right.
+\]
+}$
+
 1. Przyjąć punkt startowy $\mathcal{x_0}$, $\mathcal{C^2}$.długość kroku e, współczynnik redukcji kroku 𝒂 < 𝟏, limit liczby redukcji kroku k (np. 𝒌 = 𝟓) i dokładność wyznaczenia ekstremum (zerowania się gradientu) ε (np. $\mathcal{ε}={10^-3}$).
 2. Obliczyć w punkcie $\mathcal{x_i}$ wartość funkcji celu $\mathcal{f(x_i)}$ i jej gradientu $\mathcal{g(x_i)}$.
 3. Wyznaczyć kierunek poszukiwań przeciwny do kierunku gradientu $\mathcal{d}={-g(x_i)}$.
