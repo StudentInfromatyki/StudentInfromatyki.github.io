@@ -28,7 +28,7 @@ social-network-links:
   email: "someone@example.com"
   rss: true  
   facebook: anonymous
-  github: "https://github.com/StudentInfromatyki"
+  github: "StudentInfromatyki"
 
 rss-description: This website is a virtual proof that I'm awesome
 
