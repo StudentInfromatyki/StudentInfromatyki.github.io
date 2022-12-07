@@ -8,7 +8,7 @@ share-img: /assets/img/LaTeX_logo.svg.png
 tags: [latex, wzory]
 ---
 
-## Tryb inline - wersja z $
+## Tryb inline - wersja z $ $
 Słynne równanie Albert Einsteina, to $\mathcal{E}=mc^2$
 
 Odkryte zostało w 1905.
