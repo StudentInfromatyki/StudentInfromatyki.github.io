@@ -9,6 +9,11 @@ tags: [latex, wzory]
 ---
 
 ## Tryb inline - wersja z $ $
+
+## Ramki
+Słynne równanie Albert Einsteina, to $E=mc^2$.
+
+
 Słynne równanie Albert Einsteina, to $\mathcal{E}=mc^2$
 
 Odkryte zostało w 1905.

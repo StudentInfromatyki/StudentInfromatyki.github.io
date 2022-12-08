@@ -72,7 +72,7 @@ var foo = function(x) {
 foo(3)
 {% endhighlight %}
 
-## Pudła
+## Ramki
 Możesz dodać pola powiadomień, ostrzeżeń i błędów w następujący sposób:
 
 ### Powiadomienie

@@ -177,7 +177,7 @@ próbnego korzystała ze wszystkich aktualnie dostępnych przybliżonych
 składowych rozwiązania. Pozwala to zaoszczędzić połowę pamięci operacyjnej i w większości zastosowań praktycznych zmniejsza około
 dwukrotnie liczbę obliczeń niezbędnych do osiągnięcia zadanej dokładności rozwiązania. 
 
-**5.2. Dokonanie abalizy wyników**
+**5.2. Dokonanie analizy wyników**
 Każda metoda polega na odnajdywaniu przybliżenia rozwiązania z zadaną
 dokładnością. Oczywiste jest to, że implementacja zawsze jest dokładniejsza od wyznaczenia przybliżenia na kartce. Wynika to z tego powodu, iż na kartce obliczamy ręcznie i jest łatwiej dokonać błędu. W implementacji możemy wyznaczyć z którą chcemy dokładnością i wyniki będą poprawne i można będzie sprawdzić czy dobrze mamy obliczono na kartce, pacząc na implementację i to jest wielka zaleta implementacji.
 
