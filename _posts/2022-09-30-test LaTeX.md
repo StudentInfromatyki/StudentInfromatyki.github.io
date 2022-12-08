@@ -16,9 +16,7 @@ $E=mc^2$.
 {% endhighlight %}
 
 ### Wykonanie
-{: .box-note} To jest pole powiadomień. Słynne równanie Albert Einsteina, to $\mathcal{E}=mc^2$
-
-Odkryte zostało w 1905.
+Słynne równanie Albert Einsteina, to $\mathcal{E}=mc^2$. Odkryte zostało w 1905.
 
 ## Indeksy górne i dolne
 Indeks dolny definiowany jest za pomocą kreski podkreslenia _.
