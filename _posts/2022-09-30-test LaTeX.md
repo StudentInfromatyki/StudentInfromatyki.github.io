@@ -19,6 +19,14 @@ $E=mc^2$.
 Słynne równanie Albert Einsteina, to $\mathcal{E}=mc^2$. Odkryte zostało w 1905.
 
 ## Indeksy górne i dolne
+
+### Kod źródłowy
+{% highlight javascript linenos %}
+\[ \int_0^1 x^2 + y^2 \ dx \]
+\[ \int\limits_0^1 x^2 + y^2 \ dx \]
+{% endhighlight %}
+
+### Wykonanie
 Indeks dolny definiowany jest za pomocą kreski podkreslenia _.
 
 Indeks górny definiowany jest za pomocą daszka ^.
