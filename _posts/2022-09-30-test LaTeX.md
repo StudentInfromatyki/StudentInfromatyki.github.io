@@ -10,7 +10,7 @@ tags: [latex, wzory]
 
 ## Tryb inline - wersja z $ $
 
-## Kod źródłowy
+### Kod źródłowy
 {% highlight javascript linenos %}
 $E=mc^2$.
 {% endhighlight %}
