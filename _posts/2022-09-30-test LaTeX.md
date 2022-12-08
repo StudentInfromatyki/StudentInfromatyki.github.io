@@ -10,13 +10,13 @@ tags: [latex, wzory]
 
 ## Tryb inline - wersja z $ $
 
-## Ramki
+## Kod źródłowy
 {% highlight javascript linenos %}
 $E=mc^2$.
 {% endhighlight %}
 
-
-Słynne równanie Albert Einsteina, to $\mathcal{E}=mc^2$
+### Wykonanie
+{: .box-note} To jest pole powiadomień. Słynne równanie Albert Einsteina, to $\mathcal{E}=mc^2$
 
 Odkryte zostało w 1905.
 
