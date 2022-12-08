@@ -11,7 +11,9 @@ tags: [latex, wzory]
 ## Tryb inline - wersja z $ $
 
 ## Ramki
-Słynne równanie Albert Einsteina, to $E=mc^2$.
+{% highlight javascript linenos %}
+$E=mc^2$.
+{% endhighlight %}
 
 
 Słynne równanie Albert Einsteina, to $\mathcal{E}=mc^2$
