@@ -33,12 +33,13 @@ Celem pracy jest przetestowanie możliwości zastosowania platform typu Gitlab, 
 
 
 **3. Opis platform**
+
 GitHub – hostingowy serwis internetowy przeznaczony do projektów programistycznych wykorzystujących system kontroli wersji Git. 
+
 GitLab – hostingowy serwis internetowy przeznaczony dla projektów programistycznych oparty o system kontroli wersji Git oraz otwartoźródłowe oprogramowanie.
+
 Bitbucket – hostingowy serwis internetowy przeznaczony dla projektów programistycznych wykorzystujących system kontroli wersji Git oraz Mercurial. 
 
 <div style="float:right">
-<img src="\assets\img\bitbucket_1.png" width="150" height="112" /><img src="\assets\img\github_pages.webp" width="150" height="112" />
+<img src="\assets\img\bitbucket_1.png" width="250" height="180" /><img src="\assets\img\github_pages.webp" width="250" height="180" />
 </div>
-
-Bitbucket – hostingowy serwis internetowy przeznaczony dla projektów programistycznych wykorzystujących system kontroli wersji Git oraz Mercurial. 
