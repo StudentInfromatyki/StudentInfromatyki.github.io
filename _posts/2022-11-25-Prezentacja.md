@@ -43,3 +43,54 @@ Bitbucket – hostingowy serwis internetowy przeznaczony dla projektów programi
 <div style="float:right">
 <img src="\assets\img\bitbucket_1.png" width="250" height="180" /><img src="\assets\img\github_pages.webp" width="250" height="180" />
 </div>
+
+
+**4. Generator statycznych stron Jekyll** 
+
+Jekyll – generator statycznych stron napisany w języku Ruby. Opiera się na pobieraniu zawartości statycznych plików stworzonych w formacie Markdown lub Textfile i wygenerowaniu ich na podstawie wcześniej zdefiniowanych szablonów, elementów i tagów Liquid w gotową, statyczną stronę, którą można opublikować dzięki dowolnemu serwerowi WWW. 
+
+<p align="center">
+  <img src="\assets\img\Prezentacja\hostowanie.png" width="400" alt="markdown">
+</p>
+
+**5. LaTeX**
+
+LaTeX – oprogramowanie do zautomatyzowanego składu tekstu, a także związany z nim język znaczników, służący do formatowania dokumentów tekstowych i tekstowo-graficznych. 
+
+<p align="center">
+  <img src="\assets\img\Prezentacja\latex.png" width="400" alt="markdown">
+</p>
+
+**6. Jupyter**
+
+JupyterLab to najnowsze internetowe interaktywne środowisko programistyczne dla notatników, kodu i danych. 
+CoCalc to internetowa platforma do przetwarzania w chmurze i zarządzania kursami dla matematyki obliczeniowej.
+
+<p align="center">
+  <img src="\assets\img\Prezentacja\jupyter.png" width="400" alt="markdown">
+</p>
+
+**7. Hostowanie w ramach własnej domeny**
+
+nazwa.pl – polski rejestrator domen i firma hostingowa.
+
+<p align="center">
+  <img src="\assets\img\Prezentacja\hostowanie_w_ramach_wlasnej_domeny.png" width="400" alt="markdown">
+</p>
+
+**8. Disqus**
+
+Disqus – amerykańska usługa hostingowa komentarzy blogowych. 
+
+<div style="float:right">
+<img src="\assets\img\discussion.png" width="250" height="180" /><img src="\assets\img\Prezentacja\komentarze.png" width="250" height="180" />
+</div>
+
+
+**9. Sklonowanie uslugi do konkurencyjnej platformy**
+
+Sklonowanie do konkurencyjnej platformy odbywa się dlatego, żeby sprawdzić czy wszystkie funkcjonalności, które działają w ramach platformy Github będą działać również na innych platformach. Spróbuję sklonować repozytorium na dwie następujące platformy: Gitlab oraz Bitbucket. 
+
+<div style="float:right">
+<img src="\assets\img\skolonowanie_gitlab.png" width="250" height="180" /><img src="\assets\img\skolonowanie_bitbucket.png" width="250" height="180" />
+</div>
