@@ -9,12 +9,6 @@ share-img: /assets/img/prezentacja.png
 tags: [prezentacja, GitHub, GitLab, Bitbucket]
 ---
 
-
-
-
-
-
-
 **1. Streszczenie**
 
 Celem pracy jest przetestowanie możliwości zastosowania platform typu Gitlab, Github do hostowania blogów z wykorzystaniem statycznych generatorów stron (Jekyll). Należy zwrócić uwagę na możliwość realizacji funkcjonalności typu: możliwość komentarzy użytkowników, renderowanie kodu LaTeX, integracja z Jupyterem, hostowanie w ramach własnej domeny, czy też możliwość sklonowania usługi do konkurencyjnej platformy. W części praktycznej należy stworzyć repozytorium zawierające prosty szablon strony implementujący wybrane funkcjonalności. 
@@ -34,7 +28,15 @@ Celem pracy jest przetestowanie możliwości zastosowania platform typu Gitlab, 
 8. Prezentacja projektu 
 
 <p align="center">
-  <img src="\assets\img\mem.jpg" width="550" alt="discussion">
+  <img src="\assets\img\mem.jpg" width="500" alt="discussion">
 </p>
 
 
+**3. Opis platform**
+GitHub – hostingowy serwis internetowy przeznaczony do projektów programistycznych wykorzystujących system kontroli wersji Git. 
+GitLab – hostingowy serwis internetowy przeznaczony dla projektów programistycznych oparty o system kontroli wersji Git oraz otwartoźródłowe oprogramowanie.
+Bitbucket – hostingowy serwis internetowy przeznaczony dla projektów programistycznych wykorzystujących system kontroli wersji Git oraz Mercurial. 
+
+<div style="float:right">
+<p><img src="\assets\img\bitbucket_1.png" width="150" height="112" /><img src="\assets\img\github_pages.webp" width="128" height="96" /></p>
+</div>
