@@ -52,7 +52,7 @@ Bitbucket – hostingowy serwis internetowy przeznaczony dla projektów programi
 Jekyll – generator statycznych stron napisany w języku Ruby. Opiera się na pobieraniu zawartości statycznych plików stworzonych w formacie Markdown lub Textfile i wygenerowaniu ich na podstawie wcześniej zdefiniowanych szablonów, elementów i tagów Liquid w gotową, statyczną stronę, którą można opublikować dzięki dowolnemu serwerowi WWW. 
 
 <p align="center">
-  <img src="\assets\img\Prezentacja\hostowanie.png" width="550" alt="markdown">
+  <img src="\assets\img\Prezentacja\hostowanie.png" width="570" alt="markdown">
 </p>
 
 Czy każda z platform używa Jekyll? Strony GitHub są obsługiwane przez Jekyll w tle, więc są świetnym sposobem na bezpłatne hostowanie witryny opartej na Jekyll. Strony GitLab również używają Jekyll, tylko nieco trudniejsze w konfiguracji. W Bitbucket można to zrobić, uruchamiając polecenie jekyll create.
@@ -62,7 +62,7 @@ Czy każda z platform używa Jekyll? Strony GitHub są obsługiwane przez Jekyll
 LaTeX – oprogramowanie do zautomatyzowanego składu tekstu, a także związany z nim język znaczników, służący do formatowania dokumentów tekstowych i tekstowo-graficznych. 
 
 <p align="center">
-  <img src="\assets\img\Prezentacja\latex.png" width="550" alt="markdown">
+  <img src="\assets\img\Prezentacja\latex.png" width="580" alt="markdown">
 </p>
 
 Tworzenie tekstu w LaTeX-u opiera się na zasadzie WYSIWYM (What You See Is What You Mean – to, co widzisz, jest tym, o czym myślisz).
