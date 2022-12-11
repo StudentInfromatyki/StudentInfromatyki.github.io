@@ -65,6 +65,10 @@ LaTeX – oprogramowanie do zautomatyzowanego składu tekstu, a także związany
   <img src="\assets\img\Prezentacja\latex.png" width="550" alt="markdown">
 </p>
 
+Tworzenie tekstu w LaTeX-u opiera się na zasadzie WYSIWYM (What You See Is What You Mean – to, co widzisz, jest tym, o czym myślisz).
+
+LaTeX zajmuje się również odpowiednim rozmieszczeniem i sformatowaniem wzorów matematycznych, rysunków i diagramów, zwalniając użytkownika ze żmudnej pracy związanej z integracją tych elementów z właściwym tekstem.
+
 **6. Jupyter**
 
 JupyterLab to najnowsze internetowe interaktywne środowisko programistyczne dla notatników, kodu i danych. 
