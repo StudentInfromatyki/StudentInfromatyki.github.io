@@ -94,5 +94,5 @@ Disqus – amerykańska usługa hostingowa komentarzy blogowych.
 Sklonowanie do konkurencyjnej platformy odbywa się dlatego, żeby sprawdzić czy wszystkie funkcjonalności, które działają w ramach platformy Github będą działać również na innych platformach. Spróbuję sklonować repozytorium na dwie następujące platformy: Gitlab oraz Bitbucket. 
 
 <p align="center">
-  <img src="\assets\img\Prezentacja\skolonowanie_gitlab.png" width="550" alt="markdown">
+  <img src="\assets\img\skolonowanie_gitlab.png" width="550" alt="markdown">
 </p>
