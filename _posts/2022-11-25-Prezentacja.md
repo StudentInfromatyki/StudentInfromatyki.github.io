@@ -28,7 +28,7 @@ Celem pracy jest przetestowanie możliwości zastosowania platform typu Gitlab, 
 8. Prezentacja projektu 
 
 <p align="center">
-  <img src="\assets\img\mem.jpg" width="510" alt="discussion">
+  <img src="\assets\img\mem.jpg" width="490" alt="discussion">
 </p>
 
 
