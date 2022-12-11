@@ -74,15 +74,15 @@ LaTeX zajmuje się również odpowiednim rozmieszczeniem i sformatowaniem wzoró
 JupyterLab to najnowsze internetowe interaktywne środowisko programistyczne dla notatników, kodu i danych. 
 CoCalc to internetowa platforma do przetwarzania w chmurze i zarządzania kursami dla matematyki obliczeniowej.
 
-Notatnik Jupyter to oryginalna aplikacja internetowa do tworzenia i udostępniania dokumentów obliczeniowych. Oferuje proste, usprawnione, zorientowane na dokumenty doświadczenie.
-
 <p align="center">
   <img src="\assets\img\Prezentacja\jupyter.png" width="550" alt="markdown">
 </p>
 
-Do czego służy Jupyter?
-
-Pozwala na tworzenie interaktywnych arkuszy mogących zawierać kod wykonywalny, opisy, tabele, wykresy i wiele innych danych, które służyć mogą nam między innymi do prezentacji wyników pracy.
+Zalety integracji z Jupyterem:
+1. Jest całkowicie darmowy.
+2. Możliwość na bieżąco prezentowanie swoich działań. 
+3. GitHub automatycznie wyrenderuje notes
+4. Możliwość wyświetlania w przeglądarce.
 
 **7. Hostowanie w ramach własnej domeny**
 
