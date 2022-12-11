@@ -28,7 +28,7 @@ Celem pracy jest przetestowanie możliwości zastosowania platform typu Gitlab, 
 8. Prezentacja projektu 
 
 <p align="center">
-  <img src="\assets\img\mem.jpg" width="500" alt="discussion">
+  <img src="\assets\img\mem.jpg" width="490" alt="discussion">
 </p>
 
 
@@ -41,7 +41,7 @@ GitLab – hostingowy serwis internetowy przeznaczony dla projektów programisty
 Bitbucket – hostingowy serwis internetowy przeznaczony dla projektów programistycznych wykorzystujących system kontroli wersji Git oraz Mercurial. 
 
 <p align="center">
-  <img src="\assets\img\Prezentacja\opis_platform.jpg" width="500" alt="discussion">
+  <img src="\assets\img\Prezentacja\opis_platform.jpg" width="530" alt="discussion">
 </p>
 
 
