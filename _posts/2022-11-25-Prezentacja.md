@@ -116,3 +116,7 @@ Sklonowanie do konkurencyjnej platformy odbywa się dlatego, żeby sprawdzić cz
 <p align="center">
   <img src="\assets\img\skolonowanie_gitlab.png" width="550" alt="markdown">
 </p>
+
+<p align="center">
+  <img src="\assets\img\Prezentacja\klonowanie.svg" width="300" alt="markdown">
+</p>
