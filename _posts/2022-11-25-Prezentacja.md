@@ -40,9 +40,11 @@ GitLab – hostingowy serwis internetowy przeznaczony dla projektów programisty
 
 Bitbucket – hostingowy serwis internetowy przeznaczony dla projektów programistycznych wykorzystujących system kontroli wersji Git oraz Mercurial. 
 
-<div style="float:right">
-<img src="\assets\img\bitbucket_1.png" width="250" height="180" /><img src="\assets\img\github_pages.webp" width="250" height="180" />
-</div>
+<p align="center">
+  <img src="\assets\img\opis_platform.jpg" width="500" alt="discussion">
+</p>
+
+
 
 
 **4. Generator statycznych stron Jekyll** 
