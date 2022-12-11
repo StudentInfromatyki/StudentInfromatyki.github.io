@@ -86,7 +86,7 @@ Zalety integracji z Jupyterem:
 
 **7. Hostowanie w ramach własnej domeny**
 <p align="center">
-  <img src="\assets\img\Prezentacja\nazwapl.webp" width="300" alt="markdown">
+  <img src="\assets\img\Prezentacja\nazwapl.webp" width="400" alt="markdown">
 </p>
 
 nazwa.pl – polski rejestrator domen i firma hostingowa.
