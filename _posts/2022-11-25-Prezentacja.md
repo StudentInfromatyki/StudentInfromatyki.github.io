@@ -41,7 +41,7 @@ GitLab – hostingowy serwis internetowy przeznaczony dla projektów programisty
 Bitbucket – hostingowy serwis internetowy przeznaczony dla projektów programistycznych wykorzystujących system kontroli wersji Git oraz Mercurial. 
 
 <p align="center">
-  <img src="\assets\img\Prezentacja\opis_platform.jpg" width="530" alt="discussion">
+  <img src="\assets\img\Prezentacja\opis_platform.jpg" width="550" alt="discussion">
 </p>
 
 
@@ -52,7 +52,7 @@ Bitbucket – hostingowy serwis internetowy przeznaczony dla projektów programi
 Jekyll – generator statycznych stron napisany w języku Ruby. Opiera się na pobieraniu zawartości statycznych plików stworzonych w formacie Markdown lub Textfile i wygenerowaniu ich na podstawie wcześniej zdefiniowanych szablonów, elementów i tagów Liquid w gotową, statyczną stronę, którą można opublikować dzięki dowolnemu serwerowi WWW. 
 
 <p align="center">
-  <img src="\assets\img\Prezentacja\hostowanie.png" width="400" alt="markdown">
+  <img src="\assets\img\Prezentacja\hostowanie.png" width="550" alt="markdown">
 </p>
 
 **5. LaTeX**
@@ -60,7 +60,7 @@ Jekyll – generator statycznych stron napisany w języku Ruby. Opiera się na
 LaTeX – oprogramowanie do zautomatyzowanego składu tekstu, a także związany z nim język znaczników, służący do formatowania dokumentów tekstowych i tekstowo-graficznych. 
 
 <p align="center">
-  <img src="\assets\img\Prezentacja\latex.png" width="400" alt="markdown">
+  <img src="\assets\img\Prezentacja\latex.png" width="550" alt="markdown">
 </p>
 
 **6. Jupyter**
@@ -69,7 +69,7 @@ JupyterLab to najnowsze internetowe interaktywne środowisko programistyczne dla
 CoCalc to internetowa platforma do przetwarzania w chmurze i zarządzania kursami dla matematyki obliczeniowej.
 
 <p align="center">
-  <img src="\assets\img\Prezentacja\jupyter.png" width="400" alt="markdown">
+  <img src="\assets\img\Prezentacja\jupyter.png" width="550" alt="markdown">
 </p>
 
 **7. Hostowanie w ramach własnej domeny**
@@ -77,7 +77,7 @@ CoCalc to internetowa platforma do przetwarzania w chmurze i zarządzania kurs
 nazwa.pl – polski rejestrator domen i firma hostingowa.
 
 <p align="center">
-  <img src="\assets\img\Prezentacja\hostowanie_w_ramach_wlasnej_domeny.png" width="400" alt="markdown">
+  <img src="\assets\img\Prezentacja\hostowanie_w_ramach_wlasnej_domeny.png" width="550" alt="markdown">
 </p>
 
 **8. Disqus**
