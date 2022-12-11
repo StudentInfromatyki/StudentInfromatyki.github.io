@@ -101,6 +101,10 @@ nazwa.pl – polski rejestrator domen i firma hostingowa.
 Disqus – amerykańska usługa hostingowa komentarzy blogowych. 
 
 <p align="center">
+  <img src="\assets\img\Prezentacja\disqus-admin.png" width="550" alt="markdown">
+</p>
+
+<p align="center">
   <img src="\assets\img\Prezentacja\komentarze.png" width="550" alt="markdown">
 </p>
 
