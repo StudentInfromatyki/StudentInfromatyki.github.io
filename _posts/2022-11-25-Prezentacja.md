@@ -92,7 +92,7 @@ Zalety integracji z Jupyterem:
 nazwa.pl – polski rejestrator domen i firma hostingowa.
 
 <p align="center">
-  <img src="\assets\img\Prezentacja\hostowanie_w_ramach_wlasnej_domeny.png" width="550" alt="markdown">
+  <img src="\assets\img\Prezentacja\hostowanie_w_ramach_wlasnej_domeny.png" width="600" alt="markdown">
 </p>
 
 
