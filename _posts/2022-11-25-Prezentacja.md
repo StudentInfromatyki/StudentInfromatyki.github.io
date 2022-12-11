@@ -84,15 +84,15 @@ nazwa.pl – polski rejestrator domen i firma hostingowa.
 
 Disqus – amerykańska usługa hostingowa komentarzy blogowych. 
 
-<div style="float:right">
-<img src="\assets\img\discussion.png" width="250" height="180" /><img src="\assets\img\Prezentacja\komentarze.png" width="250" height="180" />
-</div>
+<p align="center">
+  <img src="\assets\img\Prezentacja\komentarze.png" width="550" alt="markdown">
+</p>
 
 
 **9. Sklonowanie uslugi do konkurencyjnej platformy**
 
 Sklonowanie do konkurencyjnej platformy odbywa się dlatego, żeby sprawdzić czy wszystkie funkcjonalności, które działają w ramach platformy Github będą działać również na innych platformach. Spróbuję sklonować repozytorium na dwie następujące platformy: Gitlab oraz Bitbucket. 
 
-<div style="float:right">
-<img src="\assets\img\skolonowanie_gitlab.png" width="250" height="180" /><img src="\assets\img\skolonowanie_bitbucket.png" width="250" height="180" />
-</div>
+<p align="center">
+  <img src="\assets\img\Prezentacja\skolonowanie_gitlab.png" width="550" alt="markdown">
+</p>
