@@ -67,7 +67,7 @@ LaTeX – oprogramowanie do zautomatyzowanego składu tekstu, a także związany
 
 Tworzenie tekstu w LaTeX-u opiera się na zasadzie WYSIWYM (What You See Is What You Mean – to, co widzisz, jest tym, o czym myślisz).
 
-LaTeX zajmuje się również odpowiednim rozmieszczeniem i sformatowaniem wzorów matematycznych, rysunków i diagramów, zwalniając użytkownika ze żmudnej pracy związanej z integracją tych elementów z właściwym tekstem.
+LaTeX zajmuje się również odpowiednim rozmieszczeniem i sformatowaniem wzorów matematycznych, rysunków i diagramów.
 
 **6. Jupyter**
 
@@ -77,6 +77,10 @@ CoCalc to internetowa platforma do przetwarzania w chmurze i zarządzania kurs
 <p align="center">
   <img src="\assets\img\Prezentacja\jupyter.png" width="550" alt="markdown">
 </p>
+
+Do czego służy Jupyter?
+
+Pozwala na tworzenie interaktywnych arkuszy mogących zawierać kod wykonywalny, opisy, tabele, wykresy i wiele innych danych, które służyć mogą nam między innymi do prezentacji wyników pracy.
 
 **7. Hostowanie w ramach własnej domeny**
 
