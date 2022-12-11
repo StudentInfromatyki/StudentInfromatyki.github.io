@@ -55,8 +55,6 @@ Jekyll – generator statycznych stron napisany w języku Ruby. Opiera się na
   <img src="\assets\img\Prezentacja\hostowanie.png" width="550" alt="markdown">
 </p>
 
-Jekyll jest obecnie jedną z funkcjonalności usługi GitHub Pages utrzymywanej przez firmę GitHub.
-
 Czy każda z platform używa Jekyll? Strony GitHub są obsługiwane przez Jekyll w tle, więc są świetnym sposobem na bezpłatne hostowanie witryny opartej na Jekyll. Strony GitLab również używają Jekyll, tylko nieco trudniejsze w konfiguracji. W Bitbucket można to zrobić, uruchamiając polecenie jekyll create.
 
 **5. LaTeX**
