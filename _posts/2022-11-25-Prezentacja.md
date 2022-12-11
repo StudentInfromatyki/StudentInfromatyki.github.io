@@ -118,5 +118,5 @@ Sklonowanie do konkurencyjnej platformy odbywa się dlatego, żeby sprawdzić cz
 </p>
 
 <p align="center">
-  <img src="\assets\img\Prezentacja\klonowanie.svg" width="300" alt="markdown">
+  <img src="\assets\img\Prezentacja\klonowanie.svg" width="400" alt="markdown">
 </p>
