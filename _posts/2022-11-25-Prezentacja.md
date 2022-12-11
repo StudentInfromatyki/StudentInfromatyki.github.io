@@ -14,7 +14,7 @@ tags: [prezentacja, GitHub, GitLab, Bitbucket]
 Celem pracy jest przetestowanie możliwości zastosowania platform typu Gitlab, Github do hostowania blogów z wykorzystaniem statycznych generatorów stron (Jekyll). Należy zwrócić uwagę na możliwość realizacji funkcjonalności typu: możliwość komentarzy użytkowników, renderowanie kodu LaTeX, integracja z Jupyterem, hostowanie w ramach własnej domeny, czy też możliwość sklonowania usługi do konkurencyjnej platformy. W części praktycznej należy stworzyć repozytorium zawierające prosty szablon strony implementujący wybrane funkcjonalności. 
 
 <p align="center">
-  <img src="\assets\img\prezentacja.png" width="550" alt="discussion">
+  <img src="\assets\img\prezentacja.png" width="560" alt="discussion">
 </p>
 
 **2. Jak wyglądały moje postępy pracy?**
@@ -28,7 +28,7 @@ Celem pracy jest przetestowanie możliwości zastosowania platform typu Gitlab, 
 8. Prezentacja projektu 
 
 <p align="center">
-  <img src="\assets\img\mem.jpg" width="490" alt="discussion">
+  <img src="\assets\img\mem.jpg" width="510" alt="discussion">
 </p>
 
 
