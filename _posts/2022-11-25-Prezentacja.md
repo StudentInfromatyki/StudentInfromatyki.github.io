@@ -17,6 +17,8 @@ Celem pracy jest przetestowanie możliwości zastosowania platform typu Gitlab, 
   <img src="\assets\img\prezentacja.png" width="580" alt="discussion">
 </p>
 
+***
+
 **2. Jak wyglądały moje postępy pracy?**
 1. Utworzyłem konta na każdej z platform (Github, Gitlab, Bitbucket)
 2. Zacząłem tworzyć część teoretyczną dokumentacji
