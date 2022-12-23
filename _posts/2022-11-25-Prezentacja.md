@@ -84,8 +84,6 @@ Hostowanie + Jekyll + Komentarze + LaTeX + Jupyter + Domena + Sklonowanie
 
 + Markdown lub Textfile
 
-+ Szybkość i bezpieczeństwo
-
 + Automatycznie zintegrowany z GitHub Pages
 
 <p align="center">
