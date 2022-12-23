@@ -66,7 +66,7 @@ Hostowanie + Jekyll + Komentarze + LaTeX + Jupyter + Domena + Sklonowanie
 + Języki programowania (HTML + CSS + JS + Ruby + Markdown )
 
 <p align="center">
-  <img src="\assets\img\Prezentacja\polaczone.png" width="600" alt="prezentacja">
+  <img src="\assets\img\Prezentacja\polaczone.png" width="650" alt="prezentacja">
 </p>
 
 
@@ -80,7 +80,7 @@ Hostowanie + Jekyll + Komentarze + LaTeX + Jupyter + Domena + Sklonowanie
 + Szybkość i bezpieczeństwo
 
 <p align="center">
-  <img src="\assets\img\Prezentacja\hostowanie.png" width="570" alt="prezentacja">
+  <img src="\assets\img\Prezentacja\hostowanie.png" width="650" alt="prezentacja">
 </p>
 
 
@@ -105,14 +105,14 @@ Hostowanie + Jekyll + Komentarze + LaTeX + Jupyter + Domena + Sklonowanie
 **7. Dodawanie komentarzy**   
 
 <p align="center">
-  <img src="\assets\img\Prezentacja\disqus-admin.png" width="550" alt="prezentacja">
+  <img src="\assets\img\Prezentacja\disqus-admin.png" width="530" alt="prezentacja">
 </p>
 
 + Disqus
 + Github Discussions
 
 <p align="center">
-  <img src="\assets\img\Prezentacja\komentarze.png" width="550" alt="prezentacja">
+  <img src="\assets\img\Prezentacja\komentarze.png" width="530" alt="prezentacja">
 </p>
 
 
@@ -128,7 +128,7 @@ Hostowanie + Jekyll + Komentarze + LaTeX + Jupyter + Domena + Sklonowanie
 
 
 <p align="center">
-  <img src="\assets\img\Prezentacja\jupyter.png" width="550" alt="prezentacja">
+  <img src="\assets\img\Prezentacja\jupyter.png" width="620" alt="prezentacja">
 </p>
 
 
