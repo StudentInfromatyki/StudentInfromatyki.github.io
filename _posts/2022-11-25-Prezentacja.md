@@ -3,7 +3,7 @@ layout: post
 title: Praca dyplomowa inżynierska
 subtitle: Porównanie możliwości platform GitHub, GitLab, Bitbucket jako serwisów hostujących 
 author: Oleh Danchivskyi
-cover-img: /assets/img/prezentacja.png
+cover-img: /assets/img/str_tytul.png
 thumbnail-img: /assets/img/prezentacja.png
 share-img: /assets/img/prezentacja.png
 tags: [prezentacja, GitHub, GitLab, Bitbucket]
@@ -166,4 +166,19 @@ nazwa.pl – polski rejestrator domen + firma hostingowa
 
 <p align="center">
   <img src="\assets\img\Prezentacja\klonowanie.svg" width="400" alt="prezentacja">
+</p>
+
+
+**11. Podsumowanie**
+
++ GitHub, GitLab, Bitbucket - najlepsze rozwiania
+
++ Brak błędów po sklonowaniu
+
++ Samodzielne opanowanie platform 
+
++ Nauczenie się "innej strony"
+
+<p align="center">
+  <img src="\assets\img\Prezentacja\ostatni.png" width="600" alt="prezentacja">
 </p>
