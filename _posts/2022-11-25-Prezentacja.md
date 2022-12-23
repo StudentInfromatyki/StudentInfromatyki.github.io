@@ -58,12 +58,12 @@ Hostowanie + Jekyll + Komentarze + LaTeX + Jupyter + Domena + Sklonowanie
 
 **4. Użyte narzędzia, oprogramowanie, języki programowania** 
 
-- Repozytorium (Visual Studio Code + Git)
-- Oprogramowanie: Jekyll, Jupyter, LaTeX
-- Komentarze (GitHub Discussions + Disqus)
-- CoCalc
-- Hostowanie (nazwa.pl)
-- Języki programowania (HTML + CSS + JS + Ruby + Markdown )
++ Repozytorium (Visual Studio Code + Git)
++ Oprogramowanie: Jekyll, Jupyter, LaTeX
++ Komentarze (GitHub Discussions + Disqus)
++ CoCalc
++ Hostowanie (nazwa.pl)
++ Języki programowania (HTML + CSS + JS + Ruby + Markdown )
 
 <p align="center">
   <img src="\assets\img\Prezentacja\polaczone.png" width="600" alt="prezentacja">
@@ -73,11 +73,11 @@ Hostowanie + Jekyll + Komentarze + LaTeX + Jupyter + Domena + Sklonowanie
 
 **5. Generator statycznych stron Jekyll** 
 
-Ruby
++ Ruby
 
-Markdown lub Textfile
++ Markdown lub Textfile
 
-Szybkość i bezpieczeństwo
++ Szybkość i bezpieczeństwo
 
 <p align="center">
   <img src="\assets\img\Prezentacja\hostowanie.png" width="570" alt="prezentacja">
@@ -87,15 +87,15 @@ Szybkość i bezpieczeństwo
 
 **5. LaTeX**
 
-WYSIWYM (What You See Is What You Mean)
++ WYSIWYM (What You See Is What You Mean)
 
-Tworzenie dokumentacji technicznej i naukowej
++ Tworzenie dokumentacji technicznej i naukowej
 
-Darmowe oprogramowanie 
++ Darmowe oprogramowanie 
 
-Nie jest edytorem tekstu
++ Nie jest edytorem tekstu
 
-Rozmieszczenie i sformatowanie wzorów matematycznych, rysunków i diagramów
++ Rozmieszczenie i sformatowanie wzorów matematycznych, rysunków i diagramów
 
 <p align="center">
   <img src="\assets\img\Prezentacja\latex.png" width="580" alt="prezentacja">
