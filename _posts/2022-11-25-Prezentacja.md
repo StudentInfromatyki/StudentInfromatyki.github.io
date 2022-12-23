@@ -67,20 +67,39 @@ Github + Bitbucket + Gitlab
 
 
 
+**5. Generator statycznych stron Jekyll** 
+
+Ruby
+***
+Markdown lub Textfile
+***
+Szybkość i bezpieczeństwo
+
+<p align="center">
+  <img src="\assets\img\Prezentacja\hostowanie.png" width="570" alt="prezentacja">
+</p>
 
 
 
 **5. LaTeX**
 
-LaTeX – oprogramowanie do zautomatyzowanego składu tekstu, a także związany z nim język znaczników, służący do formatowania dokumentów tekstowych i tekstowo-graficznych. 
+WYSIWYM (What You See Is What You Mean)
+Tworzenie dokumentacji technicznej i naukowej
+Darmowe oprogramowanie 
+Nie jest edytorem tekstu
+Rozmieszczenie i sformatowanie wzorów matematycznych, rysunków i diagramó
 
 <p align="center">
   <img src="\assets\img\Prezentacja\latex.png" width="580" alt="markdown">
 </p>
 
-Tworzenie tekstu w LaTeX-u opiera się na zasadzie WYSIWYM (What You See Is What You Mean – to, co widzisz, jest tym, o czym myślisz).
 
-LaTeX zajmuje się również odpowiednim rozmieszczeniem i sformatowaniem wzorów matematycznych, rysunków i diagramów.
+
+
+
+
+
+
 
 **6. Jupyter**
 
