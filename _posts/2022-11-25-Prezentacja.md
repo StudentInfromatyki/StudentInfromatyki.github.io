@@ -37,34 +37,38 @@ Hostowanie + Jekyll + Komentarze + LaTeX + Jupyter + Domena + Sklonowanie
 8. Prezentacja projektu 
 
 <p align="center">
-  <img src="\assets\img\mem.jpg" width="550" alt="prezentacj">
+  <img src="\assets\img\Prezentacja\mem.jpg" width="550" alt="prezentacja">
 </p>
 
 
-**3. Opis platform**
+**3. Użyte platformy**
 
-GitHub – hostingowy serwis internetowy przeznaczony do projektów programistycznych wykorzystujących system kontroli wersji Git. 
-
-GitLab – hostingowy serwis internetowy przeznaczony dla projektów programistycznych oparty o system kontroli wersji Git oraz otwartoźródłowe oprogramowanie.
-
-Bitbucket – hostingowy serwis internetowy przeznaczony dla projektów programistycznych wykorzystujących system kontroli wersji Git oraz Mercurial. 
+Github + Bitbucket + Gitlab
 
 <p align="center">
-  <img src="\assets\img\Prezentacja\opis_platform.jpg" width="550" alt="discussion">
+  <img src="\assets\img\Prezentacja\opis_platform.jpg" width="550" alt="prezentacja">
 </p>
 
 
 
 
-**4. Generator statycznych stron Jekyll** 
+**4. Użyte narzędzia, oprogramowanie, języki programowania** 
 
-Jekyll – generator statycznych stron napisany w języku Ruby. Opiera się na pobieraniu zawartości statycznych plików stworzonych w formacie Markdown lub Textfile i wygenerowaniu ich na podstawie wcześniej zdefiniowanych szablonów, elementów i tagów Liquid w gotową, statyczną stronę, którą można opublikować dzięki dowolnemu serwerowi WWW. 
+1. Repozytorium (Visual Studio Code + Git)
+2. Oprogramowanie: Jekyll, Jupyter, LaTeX
+3. Komentarze (GitHub Discussions + Disqus)
+4. CoCalc
+5. Hostowanie (nazwa.pl)
+6. Języki programowania (HTML + CSS + JS + Ruby + Markdown )
 
 <p align="center">
-  <img src="\assets\img\Prezentacja\hostowanie.png" width="570" alt="markdown">
+  <img src="\assets\img\Prezentacja\polaczone.png" width="570" alt="markdown">
 </p>
 
-Czy każda z platform używa Jekyll? Strony GitHub są obsługiwane przez Jekyll w tle, więc są świetnym sposobem na bezpłatne hostowanie witryny opartej na Jekyll. Strony GitLab również używają Jekyll, tylko nieco trudniejsze w konfiguracji. W Bitbucket można to zrobić, uruchamiając polecenie jekyll create.
+
+
+
+
 
 **5. LaTeX**
 
