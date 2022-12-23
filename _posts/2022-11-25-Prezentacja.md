@@ -15,9 +15,11 @@ tags: [prezentacja, GitHub, GitLab, Bitbucket]
 ---
 ---
 
-**1. Streszczenie**
+**1. Cel - Wprowadzenie**
 
-Celem pracy jest przetestowanie możliwości zastosowania platform typu Gitlab, Github do hostowania blogów z wykorzystaniem statycznych generatorów stron (Jekyll). Należy zwrócić uwagę na możliwość realizacji funkcjonalności typu: możliwość komentarzy użytkowników, renderowanie kodu LaTeX, integracja z Jupyterem, hostowanie w ramach własnej domeny, czy też możliwość sklonowania usługi do konkurencyjnej platformy. W części praktycznej należy stworzyć repozytorium zawierające prosty szablon strony implementujący wybrane funkcjonalności. 
+Przetestowanie: GitLab, GitHub, Bitbucket
+
+Hostowanie -> Jekyll -> Komentarze -> LaTeX -> Jupyter -> Domena -> Sklonowanie
 
 <p align="center">
   <img src="\assets\img\prezentacja.png" width="580" alt="discussion">
