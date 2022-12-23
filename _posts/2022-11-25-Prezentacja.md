@@ -4,7 +4,7 @@ title: Praca dyplomowa inżynierska
 subtitle: Porównanie możliwości platform GitHub, GitLab, Bitbucket jako serwisów hostujących 
 author: Oleh Danchivskyi
 cover-img: /assets/img/str_tytul.png
-thumbnail-img: /assets/img/prezentacja.png
+thumbnail-img: /assets/img/presentation.png
 share-img: /assets/img/str_tytul.png
 tags: [prezentacja, GitHub, GitLab, Bitbucket]
 ---
