@@ -85,7 +85,7 @@ Hostowanie + Jekyll + Komentarze + LaTeX + Jupyter + Domena + Sklonowanie
 
 
 
-**5. LaTeX**
+**6. LaTeX**
 
 + WYSIWYM (What You See Is What You Mean)
 
@@ -102,37 +102,32 @@ Hostowanie + Jekyll + Komentarze + LaTeX + Jupyter + Domena + Sklonowanie
 </p>
 
 
+**7. Jupyter**
 
++ Całkowicie darmowy
++ Wyświetlanie w przeglądarce
++ CoCalc + Chmura SaaS
++ Matematyka obliczeniowa
++ Kody źródłowe, dane
++ Jupyter Notebook
++ Są renderowane, ale są statyczne
 
-
-
-
-
-
-**6. Jupyter**
-
-JupyterLab to najnowsze internetowe interaktywne środowisko programistyczne dla notatników, kodu i danych. 
-CoCalc to internetowa platforma do przetwarzania w chmurze i zarządzania kursami dla matematyki obliczeniowej.
 
 <p align="center">
-  <img src="\assets\img\Prezentacja\jupyter.png" width="550" alt="markdown">
+  <img src="\assets\img\Prezentacja\jupyter.png" width="550" alt="prezentacja">
 </p>
 
-Zalety integracji z Jupyterem:
-1. Jest całkowicie darmowy.
-2. Możliwość na bieżąco prezentowanie swoich działań. 
-3. GitHub automatycznie wyrenderuje notes
-4. Możliwość wyświetlania w przeglądarce.
 
-**7. Hostowanie w ramach własnej domeny**
+
+**8. Hostowanie w ramach własnej domeny**
 <p align="center">
   <img src="\assets\img\Prezentacja\nazwapl.webp" width="600" alt="markdown">
 </p>
 
-nazwa.pl – polski rejestrator domen i firma hostingowa.
+nazwa.pl – polski rejestrator domen + firma hostingowa
 
 <p align="center">
-  <img src="\assets\img\Prezentacja\hostowanie_w_ramach_wlasnej_domeny.png" width="600" alt="markdown">
+  <img src="\assets\img\Prezentacja\hostowanie_w_ramach_wlasnej_domeny.png" width="600" alt="prezentacja">
 </p>
 
 
