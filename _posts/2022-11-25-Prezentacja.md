@@ -59,14 +59,19 @@ Hostowanie + Jekyll + Komentarze + LaTeX + Jupyter + Domena + Sklonowanie
 **4. Użyte narzędzia, oprogramowanie, języki programowania** 
 
 + Repozytorium (Visual Studio Code + Git)
+
 + Oprogramowanie: Jekyll, Jupyter, LaTeX
+
 + Komentarze (GitHub Discussions + Disqus)
+
 + CoCalc
+
 + Hostowanie (nazwa.pl)
+
 + Języki programowania (HTML + CSS + JS + Ruby + Markdown )
 
 <p align="center">
-  <img src="\assets\img\Prezentacja\polaczone.png" width="650" alt="prezentacja">
+  <img src="\assets\img\Prezentacja\polaczone.png" width="550" alt="prezentacja">
 </p>
 
 
