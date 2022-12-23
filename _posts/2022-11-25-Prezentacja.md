@@ -19,10 +19,12 @@ tags: [prezentacja, GitHub, GitLab, Bitbucket]
 
 Przetestowanie: GitLab, GitHub, Bitbucket
 
-Hostowanie -> Jekyll -> Komentarze -> LaTeX -> Jupyter -> Domena -> Sklonowanie
+Hostowanie + Jekyll + Komentarze + LaTeX + Jupyter + Domena + Sklonowanie
+
+
 
 <p align="center">
-  <img src="\assets\img\prezentacja.png" width="580" alt="discussion">
+  <img src="\assets\img\prezentacja.png" width="650" alt="discussion">
 </p>
 
 
