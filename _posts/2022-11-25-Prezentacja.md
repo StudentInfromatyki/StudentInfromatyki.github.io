@@ -71,11 +71,7 @@ Github + Bitbucket + Gitlab
 
 Ruby
 
----
-
 Markdown lub Textfile
-
-***
 
 Szybkość i bezpieczeństwo
 
