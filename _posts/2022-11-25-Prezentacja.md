@@ -78,11 +78,15 @@ Hostowanie + Jekyll + Komentarze + LaTeX + Jupyter + Domena + Sklonowanie
 
 **5. Generator statycznych stron Jekyll** 
 
++ CMS 
+
 + Ruby
 
 + Markdown lub Textfile
 
 + Szybkość i bezpieczeństwo
+
++ Automatycznie zintegrowany z GitHub Pages
 
 <p align="center">
   <img src="\assets\img\Prezentacja\hostowanie.png" width="650" alt="prezentacja">
