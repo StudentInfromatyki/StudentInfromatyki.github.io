@@ -37,7 +37,7 @@ Hostowanie -> Jekyll -> Komentarze -> LaTeX -> Jupyter -> Domena -> Sklonowanie
 8. Prezentacja projektu 
 
 <p align="center">
-  <img src="\assets\img\mem.jpg" width="490" alt="discussion">
+  <img src="\assets\img\mem.jpg" width="550" alt="discussion">
 </p>
 
 
