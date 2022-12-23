@@ -70,9 +70,13 @@ Github + Bitbucket + Gitlab
 **5. Generator statycznych stron Jekyll** 
 
 Ruby
-***
+
+---
+
 Markdown lub Textfile
+
 ***
+
 Szybkość i bezpieczeństwo
 
 <p align="center">
@@ -84,10 +88,22 @@ Szybkość i bezpieczeństwo
 **5. LaTeX**
 
 WYSIWYM (What You See Is What You Mean)
+
+---
+
 Tworzenie dokumentacji technicznej i naukowej
+
+---
+
 Darmowe oprogramowanie 
+
+---
+
 Nie jest edytorem tekstu
-Rozmieszczenie i sformatowanie wzorów matematycznych, rysunków i diagramó
+
+---
+
+Rozmieszczenie i sformatowanie wzorów matematycznych, rysunków i diagramów
 
 <p align="center">
   <img src="\assets\img\Prezentacja\latex.png" width="580" alt="markdown">
