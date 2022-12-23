@@ -27,14 +27,14 @@ Hostowanie + Jekyll + Komentarze + LaTeX + Jupyter + Domena + Sklonowanie
 
 
 **2. Jak wyglądały moje postępy pracy?**
-1. Utworzenie konta (GitHub, GitLab, Bitbucket)
-2. Część teoretyczną dokumentacji
-3. Szablon strony na GitHub
-4. Dodawanie nowych funkcjonalności
-5. Sklonowanie na GitLab oraz Bitbucket
-6. Część praktyczna dokumentacji 
-7. Poprawki 
-8. Prezentacja projektu 
++ Utworzenie konta (GitHub, GitLab, Bitbucket)
++ Część teoretyczną dokumentacji
++ Szablon strony na GitHub
++ Dodawanie nowych funkcjonalności
++ Sklonowanie na GitLab oraz Bitbucket
++ Część praktyczna dokumentacji 
++ Poprawki 
++ Prezentacja projektu 
 
 <p align="center">
   <img src="\assets\img\Prezentacja\mem.jpg" width="500" alt="prezentacja">
@@ -43,15 +43,11 @@ Hostowanie + Jekyll + Komentarze + LaTeX + Jupyter + Domena + Sklonowanie
 
 **3. Użyte platformy**
 
-Github 
++ Github 
 
-+ 
++ Bitbucket 
 
-Bitbucket 
-
-+ 
-
-Gitlab
++ Gitlab
 
 <p align="center">
   <img src="\assets\img\Prezentacja\opis_platform.jpg" width="700" alt="prezentacja">
