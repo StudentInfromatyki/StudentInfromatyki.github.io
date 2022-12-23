@@ -21,25 +21,23 @@ Przetestowanie: GitLab, GitHub, Bitbucket
 
 Hostowanie + Jekyll + Komentarze + LaTeX + Jupyter + Domena + Sklonowanie
 
-
-
 <p align="center">
-  <img src="\assets\img\prezentacja.png" width="650" alt="discussion">
+  <img src="\assets\img\prezentacja.png" width="650" alt="prezentacja">
 </p>
 
 
 **2. Jak wyglądały moje postępy pracy?**
-1. Utworzyłem konta na każdej z platform (Github, Gitlab, Bitbucket)
-2. Zacząłem tworzyć część teoretyczną dokumentacji
-3. Zacząłem tworzyć prosty szablon strony na Github
-4. Dodawałem za każdym razem nowe funkcjonalności
-5. Powstał blog na platformie Github Pages, którą teraz można było sklonować na pozostałe platformy
-6. Tworzenie części praktycznej dokumentacji 
-7. Ewentualne poprawki 
+1. Utworzenie konta (GitHub, GitLab, Bitbucket)
+2. Część teoretyczną dokumentacji
+3. Szablon strony na GitHub
+4. Dodawanie nowych funkcjonalności
+5. Sklonowanie na GitLab oraz Bitbucket
+6. Część praktyczna dokumentacji 
+7. Poprawki 
 8. Prezentacja projektu 
 
 <p align="center">
-  <img src="\assets\img\mem.jpg" width="550" alt="discussion">
+  <img src="\assets\img\mem.jpg" width="550" alt="prezentacj">
 </p>
 
 
