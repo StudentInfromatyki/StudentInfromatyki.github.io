@@ -43,7 +43,15 @@ Hostowanie + Jekyll + Komentarze + LaTeX + Jupyter + Domena + Sklonowanie
 
 **3. Użyte platformy**
 
-Github + Bitbucket + Gitlab
+Github 
+
++ 
+
+Bitbucket 
+
++ 
+
+Gitlab
 
 <p align="center">
   <img src="\assets\img\Prezentacja\opis_platform.jpg" width="700" alt="prezentacja">
