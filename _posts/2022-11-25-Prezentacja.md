@@ -5,7 +5,7 @@ subtitle: Porównanie możliwości platform GitHub, GitLab, Bitbucket jako serwi
 author: Oleh Danchivskyi
 cover-img: /assets/img/str_tytul.png
 thumbnail-img: /assets/img/prezentacja.png
-share-img: /assets/img/prezentacja.png
+share-img: /assets/img/str_tytul.png
 tags: [prezentacja, GitHub, GitLab, Bitbucket]
 ---
 
