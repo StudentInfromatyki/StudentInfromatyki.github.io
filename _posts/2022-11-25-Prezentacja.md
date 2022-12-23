@@ -37,7 +37,7 @@ Hostowanie + Jekyll + Komentarze + LaTeX + Jupyter + Domena + Sklonowanie
 8. Prezentacja projektu 
 
 <p align="center">
-  <img src="\assets\img\Prezentacja\mem.jpg" width="550" alt="prezentacja">
+  <img src="\assets\img\Prezentacja\mem.jpg" width="500" alt="prezentacja">
 </p>
 
 
@@ -46,7 +46,7 @@ Hostowanie + Jekyll + Komentarze + LaTeX + Jupyter + Domena + Sklonowanie
 Github + Bitbucket + Gitlab
 
 <p align="center">
-  <img src="\assets\img\Prezentacja\opis_platform.jpg" width="550" alt="prezentacja">
+  <img src="\assets\img\Prezentacja\opis_platform.jpg" width="700" alt="prezentacja">
 </p>
 
 
@@ -62,7 +62,7 @@ Github + Bitbucket + Gitlab
 6. Języki programowania (HTML + CSS + JS + Ruby + Markdown )
 
 <p align="center">
-  <img src="\assets\img\Prezentacja\polaczone.png" width="570" alt="markdown">
+  <img src="\assets\img\Prezentacja\polaczone.png" width="600" alt="prezentacja">
 </p>
 
 
