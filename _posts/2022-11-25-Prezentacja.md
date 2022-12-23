@@ -102,7 +102,21 @@ Hostowanie + Jekyll + Komentarze + LaTeX + Jupyter + Domena + Sklonowanie
 </p>
 
 
-**7. Jupyter**
+**7. Dodawanie komentarzy**   
+
+<p align="center">
+  <img src="\assets\img\Prezentacja\disqus-admin.png" width="550" alt="prezentacja">
+</p>
+
++ Disqus
++ Github Discussions
+
+<p align="center">
+  <img src="\assets\img\Prezentacja\komentarze.png" width="550" alt="prezentacja">
+</p>
+
+
+**8. Jupyter**
 
 + Całkowicie darmowy
 + Wyświetlanie w przeglądarce
@@ -119,9 +133,9 @@ Hostowanie + Jekyll + Komentarze + LaTeX + Jupyter + Domena + Sklonowanie
 
 
 
-**8. Hostowanie w ramach własnej domeny**
+**9. Hostowanie w ramach własnej domeny**
 <p align="center">
-  <img src="\assets\img\Prezentacja\nazwapl.webp" width="600" alt="markdown">
+  <img src="\assets\img\Prezentacja\nazwapl.webp" width="600" alt="prezentacja">
 </p>
 
 nazwa.pl – polski rejestrator domen + firma hostingowa
@@ -131,27 +145,18 @@ nazwa.pl – polski rejestrator domen + firma hostingowa
 </p>
 
 
-**8. Disqus**
 
-Disqus – amerykańska usługa hostingowa komentarzy blogowych. 
+
+**10. Sklonowanie uslugi do konkurencyjnej platformy**
+
++ GitLab
+
++ Bitbucket
 
 <p align="center">
-  <img src="\assets\img\Prezentacja\disqus-admin.png" width="550" alt="markdown">
+  <img src="\assets\img\skolonowanie_gitlab.png" width="500" alt="prezentacja">
 </p>
 
 <p align="center">
-  <img src="\assets\img\Prezentacja\komentarze.png" width="550" alt="markdown">
-</p>
-
-
-**9. Sklonowanie uslugi do konkurencyjnej platformy**
-
-Sklonowanie do konkurencyjnej platformy odbywa się dlatego, żeby sprawdzić czy wszystkie funkcjonalności, które działają w ramach platformy Github będą działać również na innych platformach. Spróbuję sklonować repozytorium na dwie następujące platformy: Gitlab oraz Bitbucket. 
-
-<p align="center">
-  <img src="\assets\img\skolonowanie_gitlab.png" width="500" alt="markdown">
-</p>
-
-<p align="center">
-  <img src="\assets\img\Prezentacja\klonowanie.svg" width="400" alt="markdown">
+  <img src="\assets\img\Prezentacja\klonowanie.svg" width="400" alt="prezentacja">
 </p>
