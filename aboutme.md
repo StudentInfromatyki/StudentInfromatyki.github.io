@@ -7,6 +7,7 @@ subtitle: Dlaczego chcesz poznać mnie?
 Mam na imię Oleh Danchivskyi. Posiadam następujące cechy:
 
 - Jestem studentem na Politechnice Rzeszowskiej im. Ignacego Łukasiewicza
+- Jestem miłośniekiem cyberbezpieczeństwa
 - Lubię się uczyć nowych rzeczy XD
 
 Czego jeszcze potrzebujesz?
