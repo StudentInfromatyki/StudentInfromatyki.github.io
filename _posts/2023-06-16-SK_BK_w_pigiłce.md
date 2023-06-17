@@ -9,13 +9,13 @@ share-img: /assets/img/Sieci/Logo.png
 tags: [Sieci, Bezpieczeńswto, Komputery]
 ---
 
-- [Architektura sieciowa](#Architektura-sieciowa)
-- [Model TCP/IP](#Model-TCP/IP)
-- [model ISO/OSI](#Model-ISO/OSI)
-- [Technologie sieciowe](#Technologie-sieciowe)
-- [Technologia Ethernet](#Technologia-Ethernet)
-- [Technologia WI-FI](#Technologia-WI-FI)
-- [IPS](#IPS)
+- [1. Architektura sieciowa](#1. Architektura sieciowa)
+- [1.1. Model TCP/IP](#Model-TCP/IP)
+- [1.2. model ISO/OSI](#Model-ISO/OSI)
+- [2. Technologie sieciowe](#Technologie-sieciowe)
+- [2.1. Technologia Ethernet](#Technologia-Ethernet)
+- [2.2. Technologia WI-FI](#Technologia-WI-FI)
+- [2.3. IPS](#IPS)
 
 
 
@@ -110,7 +110,7 @@ Ethernet to cały zbiór rozwiązań sieciowych, które implementowane są zaró
 <p align="center">
 Rys. 2.1.1. Technologia Ethernet
 <br>
-  <img src="\assets\img\Sieci\4.jpg" width="650" alt="TCP/IP">
+  <img src="\assets\img\Sieci\4.jpg" width="650" alt="Ethernet">
   <br>
   Źródło: https://pasja-informatyki.pl/pliki/ieee-warstwa-lacza-danych.jpg
 </p>
@@ -133,9 +133,42 @@ Technologia IPS (Intrusion Prevention System) to narzędzie bezpieczeństwa siec
 <p align="center">
 Rys. 2.3.1. IPS
 <br>
-  <img src="\assets\img\Sieci\5.png" width="650" alt="TCP/IP">
+  <img src="\assets\img\Sieci\5.png" width="650" alt="IPS">
 </p>
 
 IPS monitoruje ruch sieciowy i analizuje go, szukając zachowań, które mogą wskazywać na atak lub inne niebezpieczne działanie. Gdy IPS wykryje takie zachowanie, natychmiast podejmuje akcje mające na celu zablokowanie lub zminimalizowanie szkód wynikających z ataku. IPS może na przykład zablokować ruch sieciowy pochodzący z niezaufanego źródła, lub zablokować atakującego, który próbuje przeprowadzić atak typu Denial of Service (DoS). Systemy IPS mogą także wykrywać różne rodzaje ataków, takie jak próby przejęcia sesji, ataki typu SQL injection, próby złamania hasła, próby ataków na usługi sieciowe i wiele innych.
 
 IPS stosuje różne techniki, aby zidentyfikować niebezpieczne zachowania, takie jak sygnatury ataków, heurystyka, czy analiza zachowań. Sygnatury ataków to zbiory charakterystycznych cech ruchu sieciowego, które wskazują na określony typ ataku. Heurystyka to analiza ruchu sieciowego w celu wykrycia zachowań, które mogą wskazywać na atak, ale nie pasują do sygnatur ataków. Analiza zachowań to technika, która analizuje zachowanie użytkowników, urządzeń i aplikacji w sieci, aby wykryć podejrzane aktywności.
+
+
+# 3. Metody GET i POST
+
++ GET 
+GET służy do żądania od serwera danej strony WWW. Jego nagłówek wygląda mniej więcej tak:  GET /tomijerry.html HTTP/1.1
+
+W żądaniu GET znajdują się jeszcze takie informacje jak: nazwa hosta (np. wp.pl), nazwa przeglądarki, z jakiej zostało wysłane żądanie, akceptowane przez przeglądarkę typy plików, preferowany język strony czy kodowanie znaków. W odpowiedzi serwera, znajdują się informacje, takie jak: czas serwera, nazwa aplikacji serwera (np. APACHE) czy czas wygaśnięcia dokumentu.
+
+Jeśli z jakiś przyczyn serwer WWW nie może odesłać zasobu, odsyła komunikat błędu, np. 404, który informuje, że żądany zasób nie został znaleziony, lub 403 informujący o zabronionym dostępie do zasobów. Wybrane kody komunikatów i błędów widoczne są w poniższych tabelach.
+
++ POST
+Kolejny typ wiadomości to wiadomość POST, która służy do przesyłania danych na serwer. Kiedy storna internetowa zawiera np. formularz wysyłający dane na serwer, np. formularz rejestracji, to dane które w nim umieścimy wysyłane są właśnie za pomocą wiadomości POST.
+
+<p align="center">
+Rys. 3.1. Przesyłanie formularza do serwera
+<br>
+  <img src="\assets\img\Sieci\6.jpg" width="650" alt="Formularz">
+  <br>
+  Źródło: https://pasja-informatyki.pl/pliki/metoda-post.jpg
+</p>
+
+Protokół HTTP mimo, że bardzo popularny, chyba najczęściej stosowany ze wszystkich protokołów warstwy aplikacji, nie jest bezpieczny. Metoda POST przesyła dane do serwera jawnym tekstem. Kiedy uda się przechwycić transmisję pomiędzy klientem, a serwerem, można odczytać informacje jakie chcemy przesłać na serwer.
+
+<p align="center">
+Rys. 3.2. Otrzymanie danych logowania
+<br>
+  <img src="\assets\img\Sieci\7.jpg" width="650" alt="Dane">
+  <br>
+  Źródło: https://pasja-informatyki.pl/pliki/tekst-jawny.jpg
+</p>
+
+Jest to bardzo niebezpieczne, dlatego obecnie większość stron WWW, na których istnieje możliwość przesłania na serwer jakieś informacji, czyli np. na tych stronach gdzie konieczne jest logowanie, stosowany jest już protokół HTTPS szyfrujący komunikację pomiędzy klientem a serwerem, działa on na porcie 443.
