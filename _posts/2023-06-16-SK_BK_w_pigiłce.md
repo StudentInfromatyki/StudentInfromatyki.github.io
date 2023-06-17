@@ -9,20 +9,20 @@ share-img: /assets/img/Sieci/Logo.png
 tags: [Sieci, Bezpieczeńswto, Komputery]
 ---
 
-- [Architektura sieciowa](#Architektura-sieciowa)
+- [Architektura sieciowa](#1. Architektura-sieciowa)
 - [Rozdział 2](#rozdział-2)
 - [Rozdział 3](#rozdział-3)
 
 
 
-### Architektura sieciowa
+# 1. Architektura sieciowa
 
 Architektura sieciowa to sposób organizacji i połączenia urządzeń sieciowych, który umożliwia wymianę danych i zasobów pomiędzy nimi. Składa się z różnych elementów, które mają określone role i funkcje, a ich współpraca umożliwia poprawne działanie sieci. Oto kilka podstawowych elementów architektury sieciowej:
 
 <p align="center">
   <img src="\assets\img\Sieci\1.png" width="650" alt="architektura">
   <br>
-  Architektura sieci komputerowej
+  Rys.1 Architektura sieci komputerowej
 </p>
 
 + Komputery: to podstawowe urządzenia, które wykorzystują sieć do przesyłania i odbierania danych.
@@ -36,3 +36,23 @@ Architektura sieciowa to sposób organizacji i połączenia urządzeń sieciowyc
 
 
 Architektura sieciowa może być różna w zależności od potrzeb i rozmiaru sieci. W dużych sieciach, takich jak sieci korporacyjne, może być kilka warstw pośredniczących pomiędzy urządzeniami końcowymi a serwerami, takie jak warstwy dostępu, dystrybucji i rdzenia. W mniejszych sieciach, takich jak sieci domowe, architektura może być bardziej prosta i składać się tylko z kilku elementów, takich jak komputery, router, switch i kabel.
+
+
+## Model TCP/IP
+
+Model TCP/IP to model warstwowy, który opisuje sposób, w jaki urządzenia sieciowe komunikują się ze sobą w sieciach opartych o protokół TCP/IP. Model ten składa się z 4 warstw, każda z nich odpowiada za określone zadania i protokoły. Oto opis każdej z nich:
+
+<p align="center">
+Rys. 1.1.1. Model TCP/IP
+<br>
+  <img src="\assets\img\Sieci\2.JPG" width="650" alt="TCP/IP">
+  <br>
+  Źródło: https://pasja-informatyki.pl/pliki/model-tcp-ip.jpg
+</p>
+
++ Warstwa aplikacji: to warstwa, która umożliwia aplikacjom korzystanie z sieci (np. WWW, poczta elektroniczna, wymiana plików, połączenia terminalowe czy komunikatory). Zawiera protokoły, takie jak HTTP, SMTP, FTP, DNS, SSH, które pozwalają na przesyłanie danych między aplikacjami. Protokoły te są zwykle napisane w języku wysokiego poziomu, co umożliwia programistom łatwe korzystanie z nich.
++ Warstwa transportowa: to warstwa, która zapewnia poprawne przesyłanie danych między aplikacjami. Zawiera protokoły, takie jak TCP i UDP, które umożliwiają kontrolę przepływu danych, kontrolę błędów i segmentację danych na mniejsze pakiety.
++ Warstwa sieciowa: to warstwa, która odpowiada za kierowanie ruchem między różnymi sieciami. Zawiera protokoły, takie jak IP, ICMP, ARP, które pozwalają na przesyłanie danych między różnymi sieciami oraz na znajdowanie adresów urządzeń w sieci.
++ Warstwa dostępu do sieci: to warstwa, która umożliwia urządzeniom komunikację z fizycznymi urządzeniami sieciowymi, takimi jak karty sieciowe, switch'e i routery. Zawiera protokoły, takie jak Ethernet, Token Ring, FDDI, które określają sposób transmisji danych między urządzeniami.
+
+Wiadomość jest wysyłana od najwyżej do najniższej warstwy, a w każdej z nich do wiadomości dodawane są kolejne nagłówki zapewniające prawidłowe dostarczanie danych – proces ten nazywany jest enkapsulacją. Dane zwrotne powracają od najniższej do najwyżej warstwy do punktu docelowego.
