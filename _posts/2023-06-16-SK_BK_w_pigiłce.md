@@ -9,3 +9,10 @@ share-img: /assets/img/Sieci/Logo.png
 tags: [Sieci, Bezpieczeńswto, Komputery]
 ---
 
+**Architektura sieciowa**
+
+Architektura sieciowa to sposób organizacji i połączenia urządzeń sieciowych, który umożliwia wymianę danych i zasobów pomiędzy nimi. Składa się z różnych elementów, które mają określone role i funkcje, a ich współpraca umożliwia poprawne działanie sieci. Oto kilka podstawowych elementów architektury sieciowej:
+
+<p align="center">
+  <img src="\assets\img\Sieci\1.png" width="650" alt="architektura">
+</p>
