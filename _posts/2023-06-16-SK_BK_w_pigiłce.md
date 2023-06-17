@@ -436,3 +436,78 @@ Rys. 5.9.2. Drzewo katalogów LDAP
 <br>
   <img src="\assets\img\Sieci\21.png" width="650" alt="LDAP-1">
 </p>
+
+# 6. Protokoły zarządzania siecią
+
+Protokoły zarządzania siecią to standardy i procedury, które umożliwiają administratorom sieci kontrolowanie i monitorowanie sieci oraz zarządzanie jej elementami. Protokoły te pozwalają na zdalne zarządzanie urządzeniami sieciowymi, jak również na zbieranie informacji o wydajności sieci oraz na monitorowanie jej stanu.
+
+Protokoły zarządzania siecią są kluczowe dla prawidłowego funkcjonowania sieci komputerowych. Dzięki nim administratorzy są w stanie zarządzać urządzeniami sieciowymi, takimi jak routery, przełączniki, serwery i urządzenia końcowe. Protokoły te pozwalają na konfigurację urządzeń, zarządzanie nimi, monitorowanie ich pracy, a także na diagnozowanie problemów i wykrywanie awarii.
+
+## 6.1. SNMP 
+
+SNMP (Simple Network Management Protocol) to protokół zarządzania siecią, który jest stosowany do zdalnego monitorowania i zarządzania urządzeniami sieciowymi, takimi jak routery, przełączniki, serwery, drukarki, itp. Protokół SNMP pozwala administratorom na uzyskiwanie informacji o stanie urządzeń sieciowych, takich jak ilość przesłanych danych, zużycie pamięci, obciążenie procesora, itp. Protokół ten umożliwia również zmianę konfiguracji urządzeń, np. poprzez zmianę ustawień routera.
+
+SNMP działa w oparciu o architekturę klient-serwer. Urządzenia sieciowe, zwane agentami, zbierają informacje o swoim stanie i przekazują je do serwera SNMP, nazywanego menedżerem. Menedżer SNMP może następnie analizować te informacje i podejmować decyzje w odniesieniu do zarządzanych urządzeń. Protokół SNMP wykorzystuje zestaw standardowych komunikatów i procedur do przekazywania informacji pomiędzy agentami i menedżerem.
+
+Protokół SNMP jest szeroko stosowany w sieciach komputerowych, zwłaszcza w środowiskach korporacyjnych i w sieciach usługowych, gdzie istnieje potrzeba zdalnego monitorowania i zarządzania dużej liczby urządzeń. Wersja SNMPv3 zapewnia bezpieczne uwierzytelnianie i szyfrowanie, co umożliwia bezpieczne zarządzanie siecią.
+
+<p align="center">
+Rys. 6.1.1. Działanie protokołu SNMP
+<br>
+  <img src="\assets\img\Sieci\21.png" width="650" alt="SNMP">
+</p>
+
+Agenci rezydują na każdym urządzeniu sieciowym (routerze, punkcie dostępowym, stacji roboczej czy nawet drukarce obsługującej SNMP) i tworzą bazę danych zwaną MIB (ang. Management Information Base). W bazie przechowywane są obiekty opisujące właściwości danego urządzenia. Na żądanie zarządcy, obiekty te są udostępniane, ujawniając informacje takie, jak np. temperatura procesora, ilość wolnego miejsca na dysku, bieżące obciążenie interfejsu sieciowego czy liczba aktualnie zalogowanych użytkowników.
+
+## 6.2. SSH
+
+SSH (Secure Shell) to protokół komunikacyjny służący do bezpiecznego zdalnego logowania się i wykonywania poleceń na zdalnych komputerach. Protokół SSH umożliwia zdalne logowanie poprzez szyfrowanie danych przesyłanych pomiędzy klientem a serwerem, co znacznie zwiększa bezpieczeństwo przesyłanych informacji.
+
+SSH jest stosowany do zdalnej administracji serwerów, przesyłania plików i wykonywania poleceń. Protokół SSH wykorzystuje asymetryczne szyfrowanie kluczem publicznym i prywatnym do uwierzytelniania użytkownika i serwera. Szyfrowanie danych SSH zapewnia również poufność i integralność przesyłanych danych.
+
+Protokół SSH jest zastępcą protokołu Telnet, który był wcześniej wykorzystywany do zdalnej administracji systemów. SSH zapewnia większe bezpieczeństwo, ponieważ wszystkie dane przesyłane są szyfrowane, a proces uwierzytelniania jest bardziej bezpieczny niż w przypadku protokołu Telnet. W dzisiejszych czasach SSH jest standardem w większości systemów operacyjnych i jest szeroko stosowany do zdalnego zarządzania serwerami.
+
+<p align="center">
+Rys. 6.2.1. Działanie protokołu SSH
+<br>
+  <img src="\assets\img\Sieci\23.png" width="650" alt="SSH">
+</p>
+
+możliwość szyfrowania danych za pomocą nieco słabszego algorytmu DSA. Podczas instalacji serwera SSH tworzona jest para kluczy – klucz publiczny i prywatny serwera – służą one do szyfrowania i deszyfrowania komunikacji. Podczas pierwszego połączenia z serwerem, klient, zapisuje publiczny klucz serwera na swoim dysku, w pliku known_hosts.
+
+<p align="center">
+Rys. 6.2.2. Działanie protokołu SSH
+<br>
+  <img src="\assets\img\Sieci\24.png" width="650" alt="SSH-1">
+</p>
+
+Następnie tworzy tak zwany klucz sesji, który będzie stosowany do szyfrowania całej komunikacji. Klucz sesji zostaje zaszyfrowany kluczem publicznym otrzymanym wcześniej od serwera i jest do niego odsyłany. Od tego momentu cała komunikacja szyfrowana jest kluczem sesji.
+
+<p align="center">
+Rys. 6.2.3. Działanie protokołu SSH
+<br>
+  <img src="\assets\img\Sieci\25.png" width="650" alt="SSH-2">
+</p>
+
+
+## 6.3. RADIUS
+
+RADIUS (Remote Authentication Dial-In User Service) to protokół autoryzacji i uwierzytelniania użytkowników zdalnego dostępu, takich jak użytkownicy dial-up, użytkownicy sieci bezprzewodowych i VPN. Protokół RADIUS działa w oparciu o architekturę klient-serwer i umożliwia centralne zarządzanie uwierzytelnianiem użytkowników.
+
+<p align="center">
+Rys. 6.2.3. Działanie protokołu RADIUS
+<br>
+  <img src="\assets\img\Sieci\26.png" width="650" alt="RADIUS">
+</p>
+
+Klient RADIUS jest zainstalowany na serwerze zdalnego dostępu, takim jak serwer VPN lub punkt dostępowy do sieci bezprzewodowej. Gdy użytkownik próbuje uzyskać dostęp do sieci, klient RADIUS przekierowuje żądanie uwierzytelnienia do serwera RADIUS. Serwer RADIUS przetwarza żądanie uwierzytelnienia i odpowiada na nie, przekazując informacje o poziomie uprawnień użytkownika do klienta RADIUS.
+
+Protokół RADIUS umożliwia również śledzenie logowania użytkowników i zarządzanie ich uprawnieniami w zależności od ich roli w sieci. Użytkownicy mogą mieć różny poziom dostępu do zasobów sieciowych, a protokół RADIUS umożliwia administratorom zarządzanie tymi uprawnieniami.
+
+RADIUS jest szeroko stosowany w sieciach korporacyjnych i usługowych, gdzie istnieje potrzeba zdalnego uwierzytelnienia użytkowników i zarządzania ich dostępem do zasobów sieciowych. Protokół ten jest niezbędny w przypadku infrastruktury VPN, gdzie użytkownicy zdalni muszą zostać uwierzytelnieni, aby uzyskać dostęp do sieci korporacyjnej.
+
+<p align="center">
+Rys. 6.2.3. Stosowanie RADIUS
+<br>
+  <img src="\assets\img\Sieci\27.png" width="650" alt="RADIUS-1">
+</p>
