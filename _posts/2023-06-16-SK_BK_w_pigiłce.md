@@ -1571,16 +1571,17 @@ Metabase jest narzędziem, które jest stosunkowo łatwe w użyciu i nie wymaga 
 
 ### Jak skonfigurować?
 
-| Jak skonfugurować |
-|------------|
-| Instalacja Javy:
+~~~
+Instalacja Javy:
 apt update
 apt install default-jdk
-java -version |
-| Instalacja Postgresa:
-apt install postgresql 
-mcedit /etc/postgresql/13/main/postgresql.conf | 
-| W nim ustawiamy:
+java -version
+
+Instalacja Postgresa:
+apt install postgresql
+
+mcedit /etc/postgresql/13/main/postgresql.conf
+W nim ustawiamy:
 datestyle = 'European, German'
 #intervalstyle = 'postgres'
 timezone = 'Poland'
@@ -1592,12 +1593,14 @@ createuser -d -P -e -W dbuser
 createdb -e -E UTF-8 -O dbuser testdb
 createuser -d -P -e -W metuser
 createdb -e -E UTF-8 -O metuser metdb
-psql -h localhost -U dbuser -W testdb |
-| Instalacja testowej bazy danych:
+psql -h localhost -U dbuser -W testdb
+
+Instalacja testowej bazy danych:
 wget ...
 scp ./northwind.sql stud@192.168.1.X:
-psql -h localhost -U dbuser -W testdb<./northwind.sql |
-| Instalacja Metabase:
+psql -h localhost -U dbuser -W testdb<./northwind.sql
+
+Instalacja Metabase:
 mkdir /opt/metabase
 wget "http://pei.prz.edu.pl/sint/duze_pliki/metabase.jar" /opt/metabase/metabase.jar
 cd /opt/metabase
@@ -1610,8 +1613,9 @@ chown root:adm /var/log/metabase.log
 touch /etc/default/metabase
 chmod 640 /etc/default/metabase
 touch /etc/systemd/system/metabase.service
-mcedit /etc/systemd/system/metabase.service | 
-| Do pliku wkleić zawartość i zapisać:
+mcedit /etc/systemd/system/metabase.service
+
+Do pliku wkleić zawartość i zapisać:
 [Unit]
 Description=Metabase server
 After=syslog.target
@@ -1631,10 +1635,12 @@ TimeoutStopSec=120
 Restart=always
 
 [Install]
-WantedBy=multi-user.target |
-| Środowsko metabase:
-mcedit /etc/default/metabase | 
-| Umieszczemy w nim:
+WantedBy=multi-user.target
+
+Środowsko metabase:
+mcedit /etc/default/metabase
+
+Umieszczemy w nim:
 MB_PASSWORD_COMPLEXITY=normal
 MB_PASSWORD_LENGTH=5
 MB_JETTY_HOST=0.0.0.0
@@ -1651,20 +1657,23 @@ MB_EMOJI_IN_LOGS=true
 systemctl daemon-reload
 systemctl start metabase
 systemctl status metabase
-systemctl enable metabase.service | 
-| Konfiguracja nginx - alternatywa:
+systemctl enable metabase.service
+
+Konfiguracja nginx - alternatywa:
 apt remove apache2
 apt install nginx
 systemctl status nginx
-mcedit /etc/nginx/sites-available/default |
-| Umieszczamy w pliku:
+mcedit /etc/nginx/sites-available/default
+
+Umieszczamy w pliku:
 # sample nginx.conf
   location / {
     proxy_pass http://127.0.0.1:3000;
   }
 
-systemctl restart nginx |
-| Konfiguracja Apache - alternatywa:
+systemctl restart nginx
+
+Konfiguracja Apache - alternatywa:
 a2enmod proxy
 a2enmod proxy_http
 a2enmod proxy_balancer
@@ -1674,4 +1683,5 @@ Dodajemy dyrektywę location:
   ProxyPass "http://127.0.0.1:3000/"
 </Location>
 
-systemctl restart apache2 |
+systemctl restart apache2
+~~~
