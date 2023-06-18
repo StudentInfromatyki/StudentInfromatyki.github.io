@@ -1396,16 +1396,282 @@ Reguła zabezpieczeń HIPAA skupia się w szczególności na ochronie informacji
 
 Reguła zabezpieczeń HIPAA skupia się na ochronie poufności, integralności i dostępności informacji EPHI zgodnie z definicją w regule zabezpieczeń.
 
-Reguły i szczegóły implementacji HIPAA:
 
-| Sekcje i reguły bezpieczeństwa HIPAA | Specyfikacja implementacji | Implementacja w interfejsie aixpert | Komendy i wartości zwracane |
-|------------|------------|------------|------------|
-| 164.308 (a) (1) (ii) (D) 
-  164.308 (a) (5) (ii) (C)
-  164.312 (b) |  Implementuje procedury regularnego sprawdzania rekordów aktywności systemu informacyjnego, takich jak dzienniki kontroli, raporty dostępu i raporty incydentów bezpieczeństwa.| Określa, czy w systemie jest włączona kontrola. | #audit query
-Wartość zwracana: Jeśli operacja powiedzie się, ta komenda kończy działanie z wartością 0. Jeśli operacja nie powiedzie się, komenda kończy działanie z wartością 1 | 
-| 164.312 (a) (2) (iV) | Szyfrowanie i deszyfrowanie (A): Implementuje mechanizm do szyfrowania i deszyfrowania informacji EPHI. | Określa, czy w systemie jest włączony szyfrowany system plików (EFS). | # efskeymgr -V >/dev/null 2>&1
-Wartość zwracana: jeśli system EFS jest już włączony, ta komenda kończy działanie z wartością 0. Jeśli system EFS nie jest włączony, ta komenda kończy działanie z wartością 1. | 
+## 18.4. GDRP
+
+GDPR to rozporządzenie ogólne o ochronie danych osobowych, które weszło w życie w Europie 25 maja 2018 roku. Oto kilka standardów bezpieczeństwa GDPR:
++ Zasada minimalizacji danych - gromadzenie danych osobowych powinno być ograniczone do minimum potrzebnego do realizacji celów, dla których dane te są przetwarzane.
++ Pseudonimizacja - dane osobowe powinny być przetwarzane w sposób, który uniemożliwi ich identyfikację bez użycia dodatkowych informacji.
++ Ciągłość przetwarzania danych - dane osobowe powinny być przetwarzane w sposób, który zapewnia ich ciągłość, dostępność i integralność.
++ Zasada poufności - dane osobowe powinny być przetwarzane w sposób, który zapewnia ich poufność i ochronę przed nieuprawnionym dostępem.
++ Zasada przejrzystości - osoby, których dane dotyczą, powinny być poinformowane o przetwarzaniu ich danych i mieć możliwość wyrażenia lub nie wyrażenia na to zgody.
++ Zasada odpowiedzialności - podmioty przetwarzające dane osobowe powinny być odpowiedzialne za przestrzeganie zasad bezpieczeństwa danych osobowych.
++ Zasada prawo do zapomnienia - osoby, których dane dotyczą, powinny mieć prawo do usunięcia swoich danych osobowych, jeśli nie są one już potrzebne do celów, dla których zostały zebrane.
++ Zasada ochrony danych od dzieciństwa - dane osobowe dzieci powinny być przetwarzane w sposób szczególnie chroniący ich prywatność i bezpieczeństwo.
++ Zasada meldowania naruszeń ochrony danych osobowych - podmioty przetwarzające dane osobowe powinny zgłaszać wszystkie naruszenia ochrony danych osobowych odpowiednim organom.
++ Zasada przetwarzania danych osobowych tylko w celach, dla których zostały zebrane - dane osobowe powinny być przetwarzane tylko w celach, dla których zostały zebrane i nie powinny być przetwarzane dalej w sposób niezgodny z tymi celami.
 
 
+## 18.5. OWASP
 
+OWASP to organizacja non-profit, której celem jest poprawa bezpieczeństwa aplikacji internetowych. W ramach swojej działalności OWASP tworzy listy najczęstszych zagrożeń dla aplikacji internetowych oraz proponuje najlepsze praktyki dla tworzenia bezpiecznego oprogramowania. Jedną z najważniejszych inicjatyw OWASP jest lista OWASP Top 10, która zawiera dziesięć najczęstszych zagrożeń dla aplikacji internetowych. Poniżej przedstawiam standardowe zagrożenia uwzględnione na liście OWASP Top 10:
++ Iniekcje (Injection) - obejmują ataki, które polegają na wprowadzeniu niebezpiecznego kodu do aplikacji poprzez nieodpowiednie walidowanie lub brak sanityzacji danych.
++ Złamanie uwierzytelnienia i autoryzacji (Broken Authentication and Session Management) - obejmuje ataki na proces uwierzytelniania i autoryzacji użytkowników, takie jak haseł słabe lub wyciekające dane uwierzytelniające.
++ Wrażliwe dane (Sensitive Data Exposure) - obejmuje ataki, w których wrażliwe dane, takie jak hasła czy dane karty kredytowej, są przechowywane lub przesyłane w sposób niebezpieczny.
++ Nieprawidłowa konfiguracja serwera (XML External Entities (XXE)) - obejmuje ataki, w których nieprawidłowa konfiguracja serwera umożliwia atakującemu odczytanie wrażliwych informacji.
++ Złamanie funkcji kontroli dostępu (Broken Access Control) - obejmuje ataki, w których atakujący uzyskuje dostęp do zasobów, do których nie powinien mieć dostępu.
++ Złośliwe oprogramowanie (Security Misconfiguration) - obejmuje ataki, w których oprogramowanie jest źle skonfigurowane lub posiada niewłaściwe ustawienia, co umożliwia atakującemu dostęp do systemu.
++ Niepoprawna walidacja danych wejściowych (Cross-Site Scripting (XSS)) - obejmuje ataki, w których atakujący wprowadza kod JavaScript do aplikacji, który wykorzystuje błędy w walidacji danych wejściowych.
++ Niepoprawna konfiguracja zabezpieczeń (Insecure Deserialization) - obejmuje ataki, w których atakujący wprowadza specjalnie spreparowane dane, które wykorzystują błędy w procesie deserializacji.
++ Użycie komponentów z podatnościami (Using Components with Known Vulnerabilities) - obejmuje ataki, w których aplikacje wykorzystują komponenty, które posiadają znane podatności.
++ Niedostateczne rejestrowanie i monitorowanie (Insufficient Logging and Monitoring) - obejmuje ataki, w których brak odpowiednie
+
+## 18.6. NIST Cybersecurity Framework
+
+NIST Cybersecurity Framework to ramy opracowane przez National Institute of Standards and Technology (NIST) w celu zapewnienia ochrony infrastruktury krytycznej oraz innych organizacji przed zagrożeniami związanymi z bezpieczeństwem cybernetycznym. Framework składa się z pięciu podstawowych kategorii: Identyfikacja, Ochrona, Wykrycie, Reagowanie i Przywracanie.
+
++ Identyfikacja: w tej kategorii chodzi o określenie podatności i zagrożeń dla systemów i sieci, w tym ocenę ryzyka i zarządzanie tożsamością.
++ Ochrona: ta kategoria dotyczy działań mających na celu ochronę przed atakami, w tym wykrycie nieautoryzowanego dostępu, zarządzanie hasłami i szyfrowanie.
++ Wykrycie: w tej kategorii chodzi o monitorowanie systemów i sieci w celu szybkiego wykrycia incydentów i ataków oraz analizę logów i innych danych, które mogą pomóc w wykryciu zagrożeń.
++ Reagowanie: ta kategoria dotyczy szybkiej reakcji na incydenty i ataki, w tym reagowania na incydenty, przeprowadzania śledztw i przywracania systemów do stanu sprzed ataku.
++ Przywracanie: ta kategoria dotyczy działań mających na celu przywrócenie systemów i sieci do normalnego stanu po incydentach, w tym procesu weryfikacji i testowania systemów.
+
+Framework NIST Cybersecurity jest elastyczny i może być dostosowany do potrzeb różnych organizacji. Poza tym, framework zawiera różne narzędzia, takie jak przykładowe polityki i procedury, które organizacje mogą wykorzystać do wdrożenia zasad bezpieczeństwa cybernetycznego. Framework NIST Cybersecurity może być również stosowany przez rządy i inne instytucje, które chcą zapewnić bezpieczeństwo swoich sieci i systemów informatycznych.
+
+<p align="center">
+Rys. 18.6.1. NIST Cyber Security Framework
+<br>
+  <img src="\assets\img\Sieci\58.png" width="650" alt="NIST">
+</p>
+
+# 19. Analiza podatności
+
+Analiza podatności to proces oceny systemów informatycznych w celu zidentyfikowania potencjalnych słabości, które mogą być wykorzystane przez atakujących do przeprowadzenia ataku na system. Jest to ważna część procesu zapewniania bezpieczeństwa systemów informatycznych.
+
+Podczas analizy podatności specjaliści od bezpieczeństwa informacyjnego stosują różne narzędzia i techniki, takie jak skanery podatności, narzędzia do testowania penetracyjnego, analizę kodu źródłowego, inspekcję w poszukiwaniu niezabezpieczonych konfiguracji, a także przeglądanie dokumentacji technicznej i innych informacji o systemie.
+
+Celem analizy podatności jest zidentyfikowanie słabości w systemie, takich jak luki w zabezpieczeniach, niezaktualizowane oprogramowanie lub konfiguracje, które nie są odpowiednio zabezpieczone. Następnie specjaliści od bezpieczeństwa informacyjnego mogą opracować strategie i środki zaradcze, aby zminimalizować ryzyko wykorzystania tych podatności przez atakujących.
+
+Analiza podatności jest istotna nie tylko dla systemów informatycznych, ale również dla innych rodzajów systemów, takich jak infrastruktura krytyczna, systemy kontrolne przemysłowe, urządzenia medyczne, itp. Wszystkie te systemy są podatne na ataki, które mogą prowadzić do zagrożenia dla zdrowia i życia ludzi oraz dla bezpieczeństwa narodowego. Dlatego ważne jest, aby regularnie przeprowadzać analizę podatności i dostosowywać środki bezpieczeństwa w celu minimalizowania ryzyka ataków.
+
+Przeprowadzenie analizy podatności to złożony proces, który wymaga zaangażowania odpowiednich narzędzi i technik, a także doświadczenia w dziedzinie bezpieczeństwa informacyjnego. Poniżej przedstawiam krok po kroku, jak przeprowadzić analizę podatności:
++ Przygotowanie planu i celów analizy: W pierwszej kolejności należy zdefiniować cele i zakres analizy, aby określić, które systemy i aplikacje będą poddane testom, a także jakie rodzaje ataków i scenariuszy należy przetestować. Przygotowanie planu pomaga w skutecznym przeprowadzeniu analizy podatności i zapewnieniu, że wszystkie ważne elementy zostaną przeanalizowane.
++ Skanowanie podatności: Skanowanie podatności to proces automatycznego przeszukiwania systemów i aplikacji w celu wykrycia potencjalnych podatności. Skanowanie może być przeprowadzone za pomocą specjalistycznego oprogramowania, takiego jak Nessus, OpenVAS, QualysGuard i wiele innych. Skanowanie podatności pozwala na szybkie wykrycie potencjalnych zagrożeń, ale nie jest w stanie zidentyfikować wszystkich podatności.
++ Testowanie penetracyjne: Testowanie penetracyjne to proces manualnego przeprowadzania ataków na systemy i aplikacje, aby zidentyfikować słabości, które nie zostały wykryte podczas skanowania podatności. Testowanie penetracyjne może obejmować różne techniki, takie jak testowanie haseł, ataki typu SQL injection, ataki typu cross-site scripting (XSS) i wiele innych. Testowanie penetracyjne może być przeprowadzone ręcznie lub za pomocą specjalistycznego oprogramowania, takiego jak Metasploit, Core Impact lub Burp Suite.
++ Analiza kodu źródłowego: Analiza kodu źródłowego to proces oceny kodu aplikacji, aby zidentyfikować potencjalne luki w zabezpieczeniach. Analiza kodu źródłowego może pomóc w wykryciu podatności, które nie zostały wykryte podczas skanowania podatności lub testowania penetracyjnego. Do analizy kodu źródłowego można wykorzystać specjalistyczne narzędzia, takie jak Checkmarx, Fortify i wiele innych.
++ Inspekcja w poszukiwaniu niezabezpieczonych konfiguracji: Inspekcja w poszukiwaniu niezabezpieczonych konfiguracji to proces oceny ustawień i konfiguracji systemów i aplikacji, aby zidentyfikować potencjalne słabości. Inspekcja może obejmować takie rzeczy jak nieprawidłowo skonfigurowane serwery DNS, nieaktualne oprogramowanie, słabe hasła i wiele innych. Inspekcja może być przeprowadzana ręcznie lub za pomocą
+
+
+# 20. Systemy operacyjne
+
+System operacyjny (ang. Operating System, OS) to podstawowe oprogramowanie, które zarządza działaniem komputera lub urządzenia elektronicznego. OS zapewnia interakcję między użytkownikiem lub aplikacją a sprzętem, a także zarządza zasobami systemu, takimi jak procesory, pamięć, dyski twarde i inne urządzenia wejścia/wyjścia.
+
+Systemy operacyjne są kluczowe dla działania komputerów i innych urządzeń elektronicznych. Bez systemu operacyjnego urządzenie elektroniczne byłoby niemożliwe do uruchomienia lub działania.
+
+Rodzaje systemów operacyjnych:
++ Systemy operacyjne desktopowe: przeznaczone dla komputerów osobistych i oferujące interfejs użytkownika w postaci pulpitu. Do systemów operacyjnych desktopowych należą np. Windows, macOS, Linux, Chrome OS.
++ Systemy operacyjne serwerowe: zaprojektowane do obsługi aplikacji i usług sieciowych, takich jak serwery WWW, bazy danych itp. Systemy operacyjne serwerowe zapewniają wydajność, niezawodność i skalowalność. Do systemów operacyjnych serwerowych należą np. Windows Server, Linux, Unix.
++ Systemy operacyjne mobilne: przeznaczone dla urządzeń przenośnych, takich jak smartfony i tablety. Systemy operacyjne mobilne oferują interfejs użytkownika oparty na dotyku i są zoptymalizowane pod kątem energooszczędności. Do systemów operacyjnych mobilnych należą np. Android, iOS, Windows Mobile.
++ Systemy operacyjne wbudowane: zaprojektowane do urządzeń elektronicznych, takich jak routery, telewizory, kasy fiskalne, automaty do gier itp. Systemy operacyjne wbudowane są zazwyczaj zoptymalizowane pod kątem małej mocy obliczeniowej i ograniczonej pamięci. Do systemów operacyjnych wbudowanych należą np. FreeRTOS, ThreadX, VxWorks.
+
+Systemy operacyjne są zazwyczaj zoptymalizowane pod kątem określonych zastosowań, co oznacza, że wybór systemu operacyjnego powinien być dostosowany do potrzeb użytkownika. Każdy system operacyjny ma swoje wady i zalety, a wybór odpowiedniego systemu zależy od indywidualnych potrzeb i wymagań użytkownika.
+
+
+## 20.1. Windows
+
+System operacyjny Windows to rodzina systemów operacyjnych opracowanych przez firmę Microsoft. Jest to jeden z najpopularniejszych systemów operacyjnych na świecie, który działa na większości komputerów osobistych i wielu innych urządzeniach, takich jak tablety, smartfony, konsolki do gier i wiele innych.
+
+System operacyjny Windows to rodzina systemów operacyjnych opracowanych przez firmę Microsoft. Jest to jeden z najpopularniejszych systemów operacyjnych na świecie, który działa na większości komputerów osobistych i wielu innych urządzeniach, takich jak tablety, smartfony, konsolki do gier i wiele innych.
+
+Windows działa na podstawie jądra systemu operacyjnego, które zapewnia podstawowe usługi dla programów, które działają w systemie. Jądro Windows zapewnia między innymi obsługę sprzętu, obsługę pamięci, zarządzanie procesami, zarządzanie plikami i katalogami oraz obsługę sieci.
+
+Interfejs użytkownika w Windowsie opiera się na tzw. "oknach", czyli osobnych obszarach ekranu, w których wyświetlane są programy i pliki. Użytkownik może korzystać z myszy lub klawiatury, aby poruszać się między oknami, wybierać opcje z menu i wprowadzać dane.
+
+System operacyjny Windows działa na poziomie sprzętu i programowym, a jego działanie można podzielić na kilka kluczowych obszarów:
++ Zarządzanie sprzętem: Windows działa na poziomie sprzętowym poprzez jądro systemu operacyjnego, które odpowiada za obsługę urządzeń, takich jak procesory, pamięć RAM, dyski twarde, karty graficzne, klawiatury, myszy i wiele innych. Jądro systemu operacyjnego zapewnia interfejs między sprzętem a oprogramowaniem, umożliwiając aplikacjom korzystanie z różnych urządzeń.
++ Zarządzanie procesami: Windows zarządza procesami na poziomie programowym, czyli aplikacji, które działają na komputerze. Procesy to programy, które są uruchomione na komputerze i wykonywane przez procesor. Windows zarządza procesami poprzez menedżer zadań, który umożliwia użytkownikom monitorowanie i kontrolowanie procesów.
++ Zarządzanie pamięcią: Windows zarządza pamięcią na poziomie programowym, co oznacza, że system operacyjny kontroluje, która aplikacja może korzystać z pamięci i jak wiele pamięci może wykorzystać. Windows wykorzystuje algorytmy do zarządzania pamięcią, które umożliwiają przydzielanie i zwalnianie pamięci w zależności od potrzeb aplikacji.
++ Zarządzanie plikami i katalogami: Windows zarządza plikami i katalogami na poziomie programowym poprzez eksplorator plików, który umożliwia użytkownikom przeglądanie plików i katalogów na komputerze oraz wykonywanie operacji na plikach, takich jak kopiowanie, przenoszenie i usuwanie.
++ Interfejs użytkownika: Windows udostępnia interfejs użytkownika, który umożliwia użytkownikom interakcję z systemem operacyjnym. Interfejs użytkownika Windows składa się z wielu elementów, takich jak pasek zadań, menu startowe, ikony, okna i wiele innych. Windows obsługuje różne tryby interakcji z użytkownikiem, takie jak tryb tekstowy i graficzny, co umożliwia korzystanie z systemu na różnych urządzeniach.
+
+Podsumowując, Windows działa na poziomie sprzętowym i programowym, umożliwiając aplikacjom korzystanie z różnych urządzeń i dostarczając interfejs użytkownika, który umożliwia interakcję z systemem. System operacyjny Windows jest ciągle rozwijany i ulepszany przez Microsoft, co umożliwia użytkownikom korzystanie z nowych funkcji i usprawnień.
+
+
+## 20.2. Linux
+
+System operacyjny Linux to rodzaj oprogramowania open-source, który został stworzony w 1991 roku przez Linusa Torvaldsa. Linux jest jednym z najpopularniejszych systemów operacyjnych, a jego popularność wynika z wielu czynników, w tym z faktu, że jest bezpłatny i dostępny na różne platformy sprzętowe.
+
+Linux składa się z kilku podsystemów, które zapewniają różne funkcjonalności. Oto kilka z tych podsystemów i funkcjonalności:
++ Jądro systemu: To podstawowy komponent systemu, który odpowiada za zarządzanie zasobami sprzętowymi, takimi jak procesory, pamięć, dyski twarde, karty sieciowe i inne. Jądro Linux jest modułowe, co oznacza, że można łatwo dodawać lub usuwać moduły, aby dostosować system do potrzeb użytkownika.
++ System plików: Linux wykorzystuje system plików do przechowywania i organizowania danych na dysku twardym. Linux obsługuje wiele różnych systemów plików, takich jak Ext4, Btrfs, XFS, FAT i NTFS. Systemy plików umożliwiają użytkownikom organizowanie i przetwarzanie danych w sposób efektywny i bezpieczny.
++ Środowisko graficzne: Linux oferuje kilka różnych środowisk graficznych, takich jak GNOME, KDE, XFCE i wiele innych. Środowiska graficzne umożliwiają użytkownikom interakcję z systemem za pomocą ikon, okien, menu i innych graficznych elementów interfejsu użytkownika.
++ Narzędzia wiersza poleceń: Linux oferuje wiele narzędzi wiersza poleceń, które umożliwiają użytkownikom wykonywanie różnych operacji, takich jak przeglądanie plików, kopiowanie, usuwanie, instalowanie oprogramowania i wiele innych. Narzędzia wiersza poleceń są szczególnie przydatne dla programistów i administratorów systemów, którzy często muszą pracować z tekstem i skryptami.
++ Programy użytkowe: Linux oferuje wiele programów użytkowych, takich jak przeglądarki internetowe, edytory tekstowe, odtwarzacze multimedialne, klienty poczty elektronicznej, narzędzia do edycji obrazów i wiele innych. Programy użytkowe umożliwiają użytkownikom wykorzystanie różnych funkcjonalności systemu i służą do wykonywania codziennych zadań.
+
+Linux ma wiele zalet, takich jak bezpłatność, otwartość kodu źródłowego, stabilność, bezpieczeństwo i dużą elastyczność. System ten jest szczególnie popularny wśród programistów, administratorów systemów oraz w środowiskach naukowych i badawczych, gdzie wykorzystuje się wiele narzędzi open-source i potrzebna jest duża kontrola nad systemem. Linux jest również powszechnie stosowany w serwerach internetowych, usługach chmurowych i innych systemach, które wymagają dużych zasobów sprzętowych i elastyczności.
+
+Linux jest również bardzo elastyczny i dostosowany do różnych potrzeb użytkowników. Użytkownicy mogą dostosować system do swoich potrzeb poprzez wybór odpowiedniego systemu plików, środowiska graficznego, narzędzi wiersza poleceń i innych komponentów systemu.
+
+Jednym z najważniejszych aspektów Linuxa jest jego model dystrybucji. Linux jest dostępny w postaci tzw. dystrybucji, czyli zestawu oprogramowania, który obejmuje jądro systemu, system plików, narzędzia wiersza poleceń, programy użytkowe i wiele innych komponentów. Istnieje wiele różnych dystrybucji Linuxa, takich jak Ubuntu, Fedora, Debian, Arch Linux i wiele innych. Każda dystrybucja Linuxa ma swoje własne cechy i cechy charakterystyczne, co umożliwia użytkownikom wybór najlepszego rozwiązania dla swoich potrzeb.
+
+Ogólnie rzecz biorąc, Linux jest systemem operacyjnym o otwartym kodzie źródłowym, który oferuje użytkownikom wiele funkcjonalności, elastyczność i kontrolę nad systemem. Linux jest szczególnie popularny wśród programistów, administratorów systemów, naukowców i badaczy, a także wśród użytkowników, którzy szukają stabilnego i bezpiecznego systemu, który może być dostosowany do ich potrzeb.
+
+
+## 20.3. MacOS
+
+System operacyjny MacOS to system operacyjny firmy Apple, który jest używany w komputerach Macintosh (Mac) i notebookach MacBook. MacOS został pierwotnie wydany w 1984 roku jako pierwszy system operacyjny z interfejsem graficznym użytkownika (GUI) i był rozwijany na przestrzeni lat, wraz z wprowadzeniem nowych wersji i aktualizacji.
+
+Jednym z najważniejszych elementów MacOS jest interfejs użytkownika, który jest znacznie różni się od interfejsów innych systemów operacyjnych. System MacOS używa nakładki graficznej o nazwie Aqua, która oferuje wiele efektów graficznych, przejść i animacji. Interfejs Aqua jest zintegrowany z pulpitem i umożliwia łatwe zarządzanie plikami i folderami.
+
+MacOS jest oparty na jądrze systemu Unix, co oznacza, że jest wysoce skalowalny, stabilny i bezpieczny. System MacOS ma wiele wbudowanych narzędzi do zarządzania plikami, przeglądania internetu, pracy z dokumentami i innymi czynnościami, które zwykle wymagają instalacji oprogramowania w innych systemach operacyjnych.
+
+W MacOS istnieją również wbudowane narzędzia do tworzenia i edycji multimediów, takie jak iMovie do edycji wideo i GarageBand do edycji dźwięku. Wszystkie te narzędzia są łatwe w użyciu i oferują wysoką jakość wytwarzanych treści.
+
+System MacOS jest również znany z bezpieczeństwa i prywatności. W porównaniu z innymi systemami operacyjnymi, MacOS ma mniej problemów z wirusami i innymi zagrożeniami bezpieczeństwa. Istnieje również wiele wbudowanych narzędzi, takich jak zapora sieciowa i szyfrowanie plików, które pomagają użytkownikom chronić swoje dane.
+
+Podsumowując, MacOS to zaawansowany system operacyjny, który oferuje użytkownikom wiele funkcjonalności i narzędzi, które ułatwiają codzienną pracę i korzystanie z multimediów. System MacOS jest również znany z bezpieczeństwa i stabilności, co czyni go popularnym wyborem wśród profesjonalistów, kreatywnych i wymagających użytkowników.
+
+
+# 21. Usługi sieciowe
+
+Usługi sieciowe to aplikacje, które są uruchamiane na serwerach i udostępniają zasoby lub funkcjonalność dla klientów, którzy łączą się z tymi serwerami za pośrednictwem sieci komputerowej. Usługi sieciowe pozwalają użytkownikom na wykonywanie różnych zadań, takich jak udostępnianie plików, drukowanie, udostępnianie połączenia internetowego, przesyłanie poczty elektronicznej, a także wykonanie zaawansowanych operacji, takich jak analiza danych czy obliczenia naukowe.
+
+Usługi sieciowe są zwykle dostępne przez sieć lokalną lub przez Internet. Serwery udostępniające usługi sieciowe są zwykle konfigurowane w taki sposób, aby kontrolować dostęp do zasobów sieciowych i udostępniać je tylko uprawnionym użytkownikom lub klientom. Aby korzystać z usług sieciowych, klient musi zwykle zainstalować odpowiednie oprogramowanie klienta, które pozwoli mu na połączenie się z serwerem i uzyskanie dostępu do usług.
+
+Przykładami popularnych usług sieciowych są:
++ Serwer plików, który pozwala użytkownikom na udostępnianie i pobieranie plików w sieci lokalnej lub przez Internet.
++ Serwer drukowania, który umożliwia użytkownikom drukowanie dokumentów z różnych komputerów w sieci.
++ Serwer poczty elektronicznej, który umożliwia użytkownikom przesyłanie i odbieranie wiadomości e-mail.
++ Serwer bazy danych, który umożliwia dostęp do przechowywanych danych i informacji.
++ Serwer WWW, który umożliwia udostępnianie stron internetowych i aplikacji internetowych.
+
+Usługi sieciowe są kluczowe dla wielu organizacji i firm, ponieważ pozwalają na udostępnianie i koordynowanie pracy wielu użytkowników na różnych komputerach. Dzięki usługom sieciowym pracownicy mogą łatwiej udostępniać i korzystać z zasobów i informacji w firmie, co prowadzi do większej efektywności i wydajności pracy.
+
+## 21.1. Metabase
+
+Metabase to darmowe oprogramowanie typu open-source do tworzenia interaktywnych i łatwych w użyciu raportów biznesowych i analiz danych. Jest to narzędzie, które umożliwia użytkownikom łatwe połączenie i analizowanie danych z różnych źródeł, takich jak bazy danych, pliki CSV czy API.
+
+Metabase umożliwia tworzenie wizualizacji danych za pomocą wbudowanych narzędzi, takich jak wykresy, tabele i mapy. Narzędzie to oferuje prosty interfejs graficzny, który umożliwia łatwe tworzenie pytań do bazy danych oraz tworzenie interaktywnych raportów i paneli. Dzięki temu użytkownicy mogą szybko i łatwo przeglądać, analizować i prezentować swoje dane.
+
+Metabase jest zintegrowane z wieloma popularnymi bazami danych, takimi jak MySQL, PostgreSQL, Microsoft SQL Server czy Oracle, co umożliwia łatwe połączenie i analizowanie danych z różnych źródeł. Narzędzie to oferuje również wiele wbudowanych funkcji i opcji, takich jak zapytania SQL, grupowanie danych, filtrowanie i sortowanie, dzięki czemu użytkownicy mogą dostosować i zoptymalizować swoje raporty i analizy.
+
+Metabase jest narzędziem, które jest stosunkowo łatwe w użyciu i nie wymaga dużej wiedzy technicznej. Jest to idealne rozwiązanie dla małych i średnich przedsiębiorstw, które potrzebują prostego narzędzia do analizowania i prezentowania swoich danych biznesowych. Ponadto, ze względu na swój otwarty kod źródłowy, Metabase oferuje wiele opcji dostosowywania i rozszerzania, co czyni go idealnym narzędziem dla programistów i osób zainteresowanych rozwojem oprogramowania.
+
+### Jak działa Metabase?
+
+Metabase działa jako warstwa pośrednicząca pomiędzy użytkownikami a bazą danych. Narzędzie to umożliwia użytkownikom łatwe połączenie i analizowanie danych z różnych źródeł, takich jak bazy danych, pliki CSV czy API.
+
+Po zainstalowaniu i skonfigurowaniu Metabase, użytkownicy mogą łączyć się z różnymi źródłami danych i tworzyć pytania SQL za pomocą wbudowanego interfejsu graficznego lub edytora zapytań SQL. Metabase pozwala na łączenie się z wieloma popularnymi bazami danych, takimi jak MySQL, PostgreSQL, Microsoft SQL Server czy Oracle, a także z plikami CSV, Excel i API.
+
+Głównym zadaniem Metabase jest analiza i prezentacja danych w sposób łatwy do zrozumienia i interaktywny. Narzędzie to oferuje wiele wbudowanych funkcji i opcji, takich jak zapytania SQL, grupowanie danych, filtrowanie i sortowanie, a także wiele różnych wizualizacji danych, takich jak wykresy, tabele i mapy.
+
+Metabase wykorzystuje wiele różnych technologii, takich jak Clojure, Java, JavaScript, React i D3.js. Narzędzie to działa na serwerze, ale interfejs jest dostępny przez przeglądarkę internetową, co umożliwia użytkownikom dostęp do Metabase z dowolnego miejsca i urządzenia.
+
+Metabase jest narzędziem, które jest stosunkowo łatwe w użyciu i nie wymaga dużej wiedzy technicznej. Narzędzie to oferuje również wiele opcji dostosowywania i rozszerzania, co czyni je idealnym narzędziem dla programistów i osób zainteresowanych rozwojem oprogramowania.
+
+### Jak skonfigurować?
+
+| Jak skonfugurować |
+|------------|
+| Instalacja Javy:
+apt update
+apt install default-jdk
+java -version |
+| Instalacja Postgresa:
+apt install postgresql 
+mcedit /etc/postgresql/13/main/postgresql.conf | 
+| W nim ustawiamy:
+datestyle = 'European, German'
+#intervalstyle = 'postgres'
+timezone = 'Poland'
+
+systemctl start postgresql
+systemctl start postgresql
+su - postgres
+createuser -d -P -e -W dbuser
+createdb -e -E UTF-8 -O dbuser testdb
+createuser -d -P -e -W metuser
+createdb -e -E UTF-8 -O metuser metdb
+psql -h localhost -U dbuser -W testdb |
+| Instalacja testowej bazy danych:
+wget ...
+scp ./northwind.sql stud@192.168.1.X:
+psql -h localhost -U dbuser -W testdb<./northwind.sql |
+| Instalacja Metabase:
+mkdir /opt/metabase
+wget "http://pei.prz.edu.pl/sint/duze_pliki/metabase.jar" /opt/metabase/metabase.jar
+cd /opt/metabase
+java -jar metabase.jar
+groupadd -r metabase
+useradd -r -s /bin/false -g metabase metabase
+chown -R metabase:metabase /opt/metabase
+touch /var/log/metabase.log
+chown root:adm /var/log/metabase.log
+touch /etc/default/metabase
+chmod 640 /etc/default/metabase
+touch /etc/systemd/system/metabase.service
+mcedit /etc/systemd/system/metabase.service | 
+| Do pliku wkleić zawartość i zapisać:
+[Unit]
+Description=Metabase server
+After=syslog.target
+After=network.target
+   
+[Service]
+WorkingDirectory=/opt/metabase
+ExecStart=/usr/bin/java -jar /opt/metabase/metabase.jar
+EnvironmentFile=/etc/default/metabase
+User=metabase
+Type=simple
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=metabase
+SuccessExitStatus=143
+TimeoutStopSec=120
+Restart=always
+
+[Install]
+WantedBy=multi-user.target |
+| Środowsko metabase:
+mcedit /etc/default/metabase | 
+| Umieszczemy w nim:
+MB_PASSWORD_COMPLEXITY=normal
+MB_PASSWORD_LENGTH=5
+MB_JETTY_HOST=0.0.0.0
+MB_JETTY_PORT=3000
+MB_DB_TYPE=postgres
+MB_DB_DBNAME=metdb
+MB_DB_PORT=5432
+MB_DB_USER=metuser
+MB_DB_PASS=osource
+MB_DB_HOST=localhost
+MB_EMOJI_IN_LOGS=true
+
+
+systemctl daemon-reload
+systemctl start metabase
+systemctl status metabase
+systemctl enable metabase.service | 
+| Konfiguracja nginx - alternatywa:
+apt remove apache2
+apt install nginx
+systemctl status nginx
+mcedit /etc/nginx/sites-available/default |
+| Umieszczamy w pliku:
+# sample nginx.conf
+  location / {
+    proxy_pass http://127.0.0.1:3000;
+  }
+
+systemctl restart nginx |
+| Konfiguracja Apache - alternatywa:
+a2enmod proxy
+a2enmod proxy_http
+a2enmod proxy_balancer
+a2enmod lbmethod_byrequests
+Dodajemy dyrektywę location:
+<Location "/">
+  ProxyPass "http://127.0.0.1:3000/"
+</Location>
+
+systemctl restart apache2 |
