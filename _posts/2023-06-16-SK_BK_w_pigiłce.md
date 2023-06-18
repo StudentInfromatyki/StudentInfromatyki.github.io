@@ -1685,3 +1685,479 @@ Dodajemy dyrektywę location:
 
 systemctl restart apache2
 ~~~
+
+
+## 21.2. Perl
+
+Perl jest językiem programowania, który umożliwia programistom tworzenie usług sieciowych. Usługi sieciowe napisane w Perl mogą być uruchamiane na serwerach WWW i umożliwiają klientom dostęp do różnych funkcji i danych za pośrednictwem sieci.
+
+Przykładowe usługi sieciowe napisane w Perl to systemy CMS (Content Management System) lub blogowe, narzędzia do analizy danych lub generowania raportów, a także narzędzia do automatyzacji procesów biznesowych.
+
+Przy tworzeniu usługi sieciowej w Perl ważne jest zapewnienie bezpieczeństwa, niezawodności oraz wydajności. W tym celu programiści muszą stosować dobre praktyki programistyczne i dbać o odpowiednie zarządzanie pamięcią, obsługę błędów oraz optymalizację kodu.
+
+Wiele narzędzi dostępnych w Perl ułatwia tworzenie usług sieciowych, takich jak moduły Net::Server, CGI::Application, Catalyst czy Dancer. Te narzędzia umożliwiają programistom szybkie tworzenie usług sieciowych, a także zapewniają narzędzia do testowania, debugowania i monitorowania aplikacji.
+
+Usługi sieciowe napisane w Perl zazwyczaj korzystają z protokołów sieciowych takich jak HTTP, FTP, SMTP czy POP3. Programiści mogą wykorzystać biblioteki dostępne w Perl, takie jak LWP (Library for WWW in Perl), Net::FTP czy Net::SMTP, aby obsługiwać te protokoły.
+W sumie, Perl jest jednym z popularnych języków programowania wykorzystywanych do tworzenia usług sieciowych. Z jego bogatej oferty modułów i narzędzi, programiści mogą szybko i łatwo tworzyć różnego rodzaju aplikacje sieciowe i usługi.
+
+## 21.3. Hadoop
+
+Hadoop to darmowy, otwartoźródłowy system do przetwarzania danych rozproszonych. Jest on zaprojektowany do obsługi ogromnych zbiorów danych, które mogą być przechowywane i przetwarzane na wielu maszynach w klastrze. Hadoop jest wykorzystywany w wielu dziedzinach, w tym w analizie danych, eksploracji danych i uczeniu maszynowym.
+
+Hadoop składa się z dwóch głównych komponentów: Hadoop Distributed File System (HDFS) i MapReduce.
+
+HDFS jest systemem plików zaprojektowanym do przechowywania dużych zbiorów danych. Dane są dzielone na mniejsze części i replikowane na różnych węzłach klastra w celu zapewnienia niezawodności i skalowalności. HDFS udostępnia narzędzia do zarządzania plikami, takie jak dodawanie, usuwanie, przenoszenie i zmienianie nazwy plików.
+
+<p align="center">
+Rys. 21.3.1. Hadoop
+<br>
+  <img src="\assets\img\Sieci\59.png" width="650" alt="Hadoop">
+</p>
+
+MapReduce to model programowania do przetwarzania danych rozproszonych. Programy MapReduce są pisane w języku Java lub innym języku programowania, który może być skompilowany do kodu bytecode Javy. Program MapReduce składa się z dwóch funkcji: map i reduce. Funkcja map pobiera dane z HDFS i przetwarza je w sposób niezależny od innych części danych. Wynik funkcji map jest następnie przekazywany do funkcji reduce, która przetwarza dane wejściowe i zwraca wynik.
+
+Hadoop obsługuje wiele narzędzi i bibliotek, które ułatwiają programistom pracę z dużymi zbiorami danych. Na przykład, Hadoop Streaming umożliwia programowanie w językach innych niż Java, takich jak Python czy Ruby. Hadoop Hive umożliwia zapytania SQL na danych przechowywanych w HDFS. Hadoop Pig jest językiem skryptowym do przetwarzania danych, który jest łatwy w użyciu dla osób, które nie są programistami.
+
+Hadoop oferuje również narzędzia do monitorowania i zarządzania klastrami, takie jak Hadoop YARN i Apache Ambari. Te narzędzia umożliwiają administratorom systemów zarządzanie zasobami klastra i zapewnienie niezawodności i skalowalności.
+
+Podsumowując, Hadoop to system do przetwarzania danych rozproszonych, który składa się z HDFS do przechowywania danych i MapReduce do przetwarzania danych. Hadoop oferuje wiele narzędzi i bibliotek do pracy z dużymi zbiorami danych oraz narzędzia do zarządzania klastrami. Jest to popularne narzędzie w dziedzinie analizy danych i uczenia maszynowego, ze względu na swoją zdolność do obsługi ogromnych zbiorów danych i łatwej skalowalności.
+
+## 21.4. Kafka
+
+Apache Kafka to open-source'owy system przetwarzania strumieniowego, który umożliwia przetwarzanie i przesyłanie dużych ilości danych w czasie rzeczywistym. Kafka jest wykorzystywana w wielu dziedzinach, w tym w analizie danych, przetwarzaniu w czasie rzeczywistym, przetwarzaniu logów i systemach monitorujących.
+
+Kafka opiera się na architekturze publikuj-subskrybuj, w której nadawca publikuje wiadomości na temacie, a odbiorcy subskrybują dany temat w celu odbierania wiadomości. Kafka składa się z trzech głównych komponentów: producentów, brokerów i konsumentów.
+
+Producent jest odpowiedzialny za wysyłanie wiadomości do Kafki. Kafkowy producent może publikować wiadomości w wielu tematach, a każda wiadomość jest automatycznie przypisana do partycji tematu. Producent może być skonfigurowany w celu zapewnienia spójności danych i niezawodności, takiej jak potwierdzenia zapisu danych.
+
+Broker to serwer Kafka, który przechowuje partycje tematów i umożliwia konsumentom subskrypcję wiadomości z tematu. Każdy broker jest skonfigurowany jako członek klastra Kafka, co umożliwia łatwe skalowanie i równoważenie obciążenia.
+
+Konsument odbiera wiadomości z tematu. Kafkowy konsument może subskrybować jeden lub wiele tematów i przetwarzać dane w czasie rzeczywistym. Konsument może być skonfigurowany w celu przetwarzania danych z określonych partycji, aby umożliwić równoległe przetwarzanie danych.
+Kafka oferuje wiele zalet, takich jak wysoka wydajność i skalowalność, niezawodność i spójność danych oraz łatwość obsługi. Kafka umożliwia również łatwe integrowanie z innymi narzędziami, takimi jak Hadoop, Spark i Flink. Ponadto Kafka oferuje wiele narzędzi i bibliotek, takich jak Kafka Connect i Kafka Streams, które ułatwiają pracę z danymi strumieniowymi.
+
+Podsumowując, Apache Kafka to system przetwarzania strumieniowego, który umożliwia przetwarzanie i przesyłanie dużych ilości danych w czasie rzeczywistym. Kafka opiera się na architekturze publikuj-subskrybuj i składa się z trzech głównych komponentów: producentów, brokerów i konsumentów. Kafka oferuje wiele zalet, takich jak wysoka wydajność i skalowalność, niezawodność i spójność danych oraz łatwość obsługi.
+
+<p align="center">
+Rys. 21.4.1. Kafka
+<br>
+  <img src="\assets\img\Sieci\60.png" width="650" alt="Kafka">
+</p>
+
+
+## 21.5.1. ActiveMQ
+
+Apache ActiveMQ to oprogramowanie do przesyłania wiadomości oparte na standardzie JMS (Java Message Service). Jest to oprogramowanie open-source napisane w języku Java, które umożliwia tworzenie i zarządzanie kolejkami wiadomości.
+
+Główną ideą ActiveMQ jest przesyłanie wiadomości pomiędzy różnymi aplikacjami lub systemami, które są w stanie obsługiwać JMS. Dzięki temu, aplikacje mogą działać oddzielnie, a jednocześnie wymieniać między sobą dane, bez konieczności bezpośredniego połączenia.
+
+ActiveMQ składa się z kilku głównych komponentów, takich jak broker, producenci, konsumenci i klienci. Broker to serwer, który obsługuje połączenia między producentami a konsumentami. Producent jest odpowiedzialny za wysyłanie wiadomości, a konsument za ich odbieranie. Klienci to aplikacje, które korzystają z usług ActiveMQ.
+
+ActiveMQ obsługuje różne rodzaje wiadomości, takie jak jednokierunkowe (np. powiadomienia), dwukierunkowe (np. żądania i odpowiedzi) i wiele innych. Wiadomości są przechowywane w kolejkach, które umożliwiają ich dostarczenie w kolejności, w jakiej zostały odebrane.
+
+ActiveMQ oferuje również wiele funkcjonalności, takich jak klastrowanie, replikacja i partycjonowanie, co pozwala na zwiększenie wydajności i niezawodności systemu. Dodatkowo, ActiveMQ umożliwia integrację z różnymi systemami i aplikacjami, co czyni go jednym z popularniejszych rozwiązań do przesyłania wiadomości.
+
+<p align="center">
+Rys. 21.5.1. ActiveMQ
+<br>
+  <img src="\assets\img\Sieci\61.png" width="650" alt="ActiveMQ">
+</p>
+
+
+## 21.6. Camel 
+
+Apache Camel to open-source'owy framework dla platformy Java, który umożliwia integrację systemów opartych na różnych technologiach. Jego głównym zadaniem jest ułatwienie komunikacji pomiędzy różnymi aplikacjami, usługami oraz systemami poprzez przetwarzanie i przekazywanie danych w formacie wiadomości.
+
+<p align="center">
+Rys. 21.6.1. Camel 
+<br>
+  <img src="\assets\img\Sieci\62.png" width="650" alt="Camel">
+</p>
+
+Apache Camel posiada wiele wbudowanych komponentów, które umożliwiają integrację z różnymi protokołami, bazami danych, systemami plików, narzędziami ETL (Extract, Transform, Load) i wieloma innymi. Oprócz wbudowanych komponentów, Camel umożliwia także tworzenie własnych rozszerzeń i integracji.
+
+Camel korzysta z różnych wzorców integracyjnych, takich jak: routery, transformery, filtrowanie, agregacja, oczekiwanie na odpowiedź, obsługa błędów, transakcje i wiele innych. Użytkownicy Camel mogą definiować szablony (tzw. route) integracji, które pozwalają na łatwe definiowanie, konfigurację i zarządzanie procesami przetwarzania wiadomości.
+
+W Camel ważną koncepcją jest tzw. Exchange - obiekt reprezentujący przetwarzanie wiadomości w systemie. Exchange składa się z nagłówka, ciała oraz informacji dotyczących transakcji i kontekstu przetwarzania. Dzięki temu Camel pozwala na prostą i efektywną manipulację danymi.
+
+<p align="center">
+Rys. 21.6.3. Camel 
+<br>
+  <img src="\assets\img\Sieci\63.png" width="650" alt="Camel-1">
+</p>
+
+Jednym z najważniejszych cech Camel jest jego elastyczność. Framework jest niezależny od konkretnej platformy, dzięki czemu pozwala na integrację różnych systemów i aplikacji bez konieczności zmiany istniejącej infrastruktury. Oprócz tego Camel oferuje wiele narzędzi umożliwiających monitorowanie, debugowanie oraz zarządzanie procesami integracyjnymi.
+
+
+## 21.7. Apache Kylin
+
+Apache Kylin to otwarty framework analityczny zaprojektowany do pracy z dużymi zbiorami danych. Jest to rozwiązanie do przetwarzania hurtowni danych w czasie rzeczywistym i umożliwia generowanie raportów z ogromnych zestawów danych w bardzo krótkim czasie.
+
+Kylin pozwala na integrację z różnymi źródłami danych, w tym z systemami relacyjnymi, NoSQL, Hadoop i innych. Framework wykorzystuje technologię OLAP (Online Analytical Processing) oraz Cubing, czyli proces tworzenia kostek OLAP, które są wykorzystywane do generowania raportów i analizy danych.
+
+Kylin składa się z kilku modułów, które umożliwiają integrację, przetwarzanie i analizę danych. Główne moduły to:
++ Moduł budowania kostek (Cube Build): Moduł ten umożliwia tworzenie kostek OLAP z danych źródłowych. Kylin obsługuje wiele formatów danych, w tym Apache Hadoop HDFS, Apache HBase, Apache Parquet i inne. Kostki mogą być budowane z różnych źródeł danych, a następnie agregowane i przetwarzane w czasie rzeczywistym, aby zapewnić szybką i efektywną analizę danych.
++ Moduł zapytań (Query): Moduł ten umożliwia generowanie raportów i analizowanie danych z wykorzystaniem języka SQL. Kylin oferuje wiele funkcjonalności takich jak filtrowanie, grupowanie, sortowanie, agregacja, a także obsługuje wiele funkcji analitycznych. Dodatkowo, Kylin oferuje interfejs REST API, który umożliwia integrację z innymi aplikacjami.
++ Moduł administracyjny (Admin): Moduł ten pozwala na zarządzanie i konfigurację Kylin. Oferuje wiele narzędzi, takich jak interfejs webowy, wiersz poleceń, czy narzędzia do monitorowania i debugowania.
+
+Kylin został zaprojektowany z myślą o skalowalności, wydajności i elastyczności. Framework działa w środowisku Hadoop, co pozwala na wykorzystanie mocy obliczeniowej wielu maszyn. Kylin oferuje także wiele narzędzi do monitorowania i zarządzania systemem, dzięki czemu jest łatwy w użyciu i administracji.
+
+<p align="center">
+Rys. 21.7.1. Apache Kylin
+<br>
+  <img src="\assets\img\Sieci\64.png" width="650" alt="Apache Kylin">
+</p>
+
+
+## 21.8. OpenVPN
+OpenVPN to otwarte oprogramowanie służące do tworzenia prywatnych sieci wirtualnych (Virtual Private Networks - VPN) poprzez protokół SSL/TLS. OpenVPN jest używany do łączenia urządzeń z siecią VPN w celu bezpiecznego przesyłania danych między nimi.
+
+Podstawowym celem OpenVPN jest umożliwienie bezpiecznego połączenia dwóch lub więcej urządzeń znajdujących się w różnych sieciach, tak aby były one widoczne dla siebie tak, jakby były połączone w jedną sieć lokalną. OpenVPN wykorzystuje silne algorytmy szyfrowania i autoryzacji, takie jak AES, Blowfish, RSA i SHA, aby zapewnić bezpieczeństwo i poufność danych przesyłanych w sieci VPN.
+
+OpenVPN działa w oparciu o architekturę klient-serwer. Serwer OpenVPN obsługuje wiele klientów, a każdy klient połączony jest z serwerem za pomocą tunelu VPN. OpenVPN może działać na wielu systemach operacyjnych, w tym na Windows, Linux, macOS, iOS i Android.
+
+Konfiguracja OpenVPN jest bardzo elastyczna, co pozwala na dostosowanie ustawień sieci VPN do indywidualnych potrzeb użytkownika. OpenVPN oferuje wiele opcji konfiguracyjnych, takich jak konfiguracja protokołu, konfiguracja algorytmów szyfrowania i autoryzacji, oraz konfiguracja adresów IP i tuneli VPN.
+
+OpenVPN zapewnia także wiele funkcjonalności, takich jak obsługa wielu połączeń VPN, równoważenie obciążenia, rozszerzalność i skalowalność. Dzięki temu OpenVPN może być stosowany zarówno w małych, jak i dużych sieciach VPN.
+
+W celu ułatwienia korzystania z OpenVPN, dostępne są różne narzędzia graficzne i interfejsy użytkownika, takie jak OpenVPN GUI, OpenVPN Connect i inne. Ponadto, OpenVPN jest łatwy w instalacji i konfiguracji, dzięki czemu może być używany przez użytkowników z różnym poziomem zaawansowania technicznego.
+
+<p align="center">
+Rys. 21.8.1. OpenVPN
+<br>
+  <img src="\assets\img\Sieci\65.png" width="650" alt="OpenVPN">
+</p>
+
+
+## 21.9. Tomcat
+
+Tomcat to serwer aplikacji napisany w języku Java, który umożliwia uruchamianie aplikacji webowych opartych na technologii Java Servlet i JavaServer Pages (JSP). Jest to oprogramowanie typu open-source, rozwijane przez Apache Software Foundation. Tomcat może być uruchamiany na różnych systemach operacyjnych, takich jak Windows, Linux i macOS.
+
+Tomcat działa jako kontener servletów, który zarządza i obsługuje żądania HTTP wysyłane do aplikacji webowej. Żądania HTTP są przesyłane do Tomcat za pośrednictwem serwera internetowego (np. Apache HTTP Server) lub bezpośrednio do Tomcat. Tomcat przetwarza te żądania, uruchamia odpowiednie servlety i wyświetla odpowiedź na stronie internetowej.
+
+Aplikacje webowe w Tomcacie są zwykle pakowane w pliki WAR (Web Application Archive), które zawierają pliki klas servletów, pliki JSP, biblioteki i inne zasoby. Po zainstalowaniu pliku WAR na serwerze Tomcat, aplikacja jest gotowa do uruchomienia.
+
+Tomcat składa się z kilku modułów, które są odpowiedzialne za różne funkcje, takie jak przetwarzanie żądań HTTP, obsługę sesji, logowanie i bezpieczeństwo. Tomcat umożliwia również konfigurację wielu parametrów, takich jak porty nasłuchu, rozmiar puli wątków, poziom logowania i wiele innych.
+
+Tomcat jest często wykorzystywany jako serwer aplikacji dla aplikacji webowych napisanych w języku Java. Dzięki swojej prostocie i elastyczności, Tomcat jest popularnym wyborem dla wielu projektów.
+
+
+## 21.10. BigBlueButton
+
+BigBlueButton to oprogramowanie typu open-source, służące do organizowania internetowych spotkań i konferencji online. Głównym celem BigBlueButton jest umożliwienie użytkownikom prowadzenia interaktywnych sesji edukacyjnych, prezentacji i warsztatów w czasie rzeczywistym.
+
+BigBlueButton składa się z kilku modułów, które są odpowiedzialne za różne funkcje. Na przykład moduł prezentacji umożliwia prowadzącemu wyświetlanie slajdów, materiałów edukacyjnych i wideo. Moduł czatu pozwala na prowadzenie interakcji między uczestnikami spotkania, podczas gdy moduł kamery internetowej umożliwia uczestnikom udział w spotkaniu wideo. BigBlueButton umożliwia również udostępnianie plików i ekranu, a także zapisywanie nagrania całego spotkania.
+
+BigBlueButton jest oparty na technologii WebRTC, co oznacza, że użytkownicy mogą korzystać z oprogramowania bez konieczności instalowania dodatkowych programów czy wtyczek. Dzięki temu BigBlueButton jest łatwy w użyciu i dostępny dla użytkowników z różnych platform i urządzeń.
+
+BigBlueButton umożliwia także integrację z innymi systemami i narzędziami, takimi jak Moodle, Canvas, WordPress czy Slack. Istnieje również wiele wtyczek i rozszerzeń dostępnych dla BigBlueButton, które umożliwiają dostosowanie oprogramowania do indywidualnych potrzeb użytkowników.
+
+Ze względu na swoją prostotę i elastyczność, BigBlueButton stał się popularnym narzędziem dla edukacji na odległość, szkoleń online i innych spotkań wirtualnych.
+
+
+## 21.11. WebRTC
+
+WebRTC (Web Real-Time Communication) to otwarty standard webowy, który umożliwia komunikację w czasie rzeczywistym między przeglądarkami internetowymi, bez konieczności instalowania dodatkowych wtyczek lub programów. WebRTC jest dostępny dla użytkowników różnych platform i urządzeń, w tym na komputerach, tabletach i smartfonach.
+
+WebRTC pozwala na przesyłanie strumieni audio i wideo oraz przesyłanie danych w czasie rzeczywistym między przeglądarkami. Standard ten opiera się na technologii peer-to-peer (P2P), co oznacza, że dane są przesyłane bezpośrednio między urządzeniami użytkowników, bez pośrednictwa serwerów. Dzięki temu WebRTC umożliwia szybką i efektywną komunikację.
+
+WebRTC wykorzystuje wiele technologii, w tym kodeki audio i wideo, protokoły transportowe, protokoły szyfrowania i zarządzanie sesją. WebRTC jest również zintegrowany z innymi standardami webowymi, takimi jak HTML5 i JavaScript, co umożliwia deweloperom tworzenie zaawansowanych aplikacji internetowych z interaktywnymi funkcjami komunikacyjnymi.
+
+WebRTC jest często wykorzystywany w aplikacjach takich jak wideo-konferencje, czaty wideo, gry wieloosobowe oraz aplikacje do zdalnej pomocy technicznej. Standard ten jest również wykorzystywany w innych zastosowaniach, takich jak streamowanie muzyki i filmów oraz wideo na żywo na platformach społecznościowych.
+
+<p align="center">
+Rys. 21.11.1. Działanie WebRTC
+<br>
+  <img src="\assets\img\Sieci\66.png" width="650" alt="WebRTC">
+</p>
+
+
+# 22. Kryptografia
+
+Kryptografia to nauka zajmująca się bezpiecznym przesyłaniem informacji, a także chronieniem danych przed nieuprawnionym dostępem i modyfikacją. Jest to kluczowy element dzisiejszych systemów informatycznych i sieci komputerowych.
+
+Istnieją różne metody kryptografii, ale można je podzielić na dwie główne kategorie: symetryczne i asymetryczne.
+
+W *kryptografii symetrycznej* używa się jednego klucza, który jest używany zarówno do szyfrowania, jak i deszyfrowania danych. Jest to prostszy i szybszy sposób szyfrowania danych, ale wymaga bezpiecznego sposobu przekazywania klucza do odbiorcy.
+
+<p align="center">
+Rys. 22.1. Kryptografia
+<br>
+  <img src="\assets\img\Sieci\67.png" width="650" alt="Kryptografia">
+</p>
+
+Przykładem algorytmu kryptograficznego wykorzystującego kryptografię symetryczną jest AES (Advanced Encryption Standard), który jest powszechnie stosowany w zabezpieczaniu danych w systemach informatycznych.
+
+Istnieją trzy podstawowe etapy procesu szyfrowania i deszyfrowania danych w kryptografii symetrycznej:
++ Generowanie klucza - klucz symetryczny musi być wygenerowany przed rozpoczęciem procesu szyfrowania i deszyfrowania danych. Ten sam klucz musi być znany zarówno przez nadawcę, jak i odbiorcę.
++ Szyfrowanie - dane są szyfrowane za pomocą klucza symetrycznego. Algorytm szyfrowania przekształca oryginalną wiadomość w zaszyfrowaną wersję, która jest niemożliwa do odczytania bez posiadania klucza.
++ Deszyfrowanie - odbiorca używa tego samego klucza symetrycznego, aby odszyfrować zaszyfrowaną wiadomość na oryginalną wersję.
+
+Kryptografia symetryczna jest stosunkowo prosta i szybka w użyciu, ale wymaga bezpiecznego sposobu przekazywania klucza między nadawcą a odbiorcą. Bezpieczeństwo algorytmu zależy w dużej mierze od bezpieczeństwa klucza. Jeśli klucz zostanie przechwycony przez nieuprawnioną osobę, będzie ona w stanie odczytać zaszyfrowane dane. Dlatego klucz symetryczny powinien być przechowywany w bezpiecznym miejscu i przesyłany w sposób bezpieczny.
+
+W kryptografii asymetrycznej używa się dwóch kluczy: publicznego i prywatnego. Klucz publiczny jest dostępny dla każdego, a klucz prywatny jest tajny i znany tylko właścicielowi. Dane są szyfrowane kluczem publicznym i mogą być odszyfrowane tylko za pomocą klucza prywatnego. Jest to bardziej bezpieczny sposób szyfrowania danych, ale jest też wolniejszy i bardziej złożony.
+
+Klucz publiczny udostępniany jest każdej osobie która chce zaszyfrować wiadomość. Deszyfrowanie wiadomości możliwe jest wyłącznie z wykorzystaniem klucza prywatnego, który powinien być pilnie strzeżony.
+
+Obliczenie klucza prywatnego na podstawie klucza publicznego powinno być matematycznie trudne. W przeciwnym razie opublikowany klucz publiczny pozwalałby na łatwe uzyskanie klucza prywatnego, a co za tym idzie deszyfrowanie wiadomości.
+
+<p align="center">
+Rys. 22.2. Kryptografia
+<br>
+  <img src="\assets\img\Sieci\68.png" width="650" alt="Kryptografia-1">
+</p>
+
+Inne metody kryptografii to m.in. haszowanie, które pozwala na szybkie i łatwe sprawdzanie, czy dana wiadomość została zmodyfikowana, ale nie pozwala na jej odszyfrowanie. 
+
+<p align="center">
+Rys. 22.3. Jak działa algorytm haszujący
+<br>
+  <img src="\assets\img\Sieci\69.png" width="650" alt="Kryptografia-2">
+</p>
+
+Kryptografia haszowania, nazywana również kryptografią jednokierunkową, to proces przetwarzania danych w taki sposób, że trudno jest odwrócić proces i odzyskać oryginalne dane. W tym procesie, z oryginalnego tekstu (nazywanego tekstem jawnym) generowany jest skrót wiadomości (hash), który jest reprezentowany przez ciąg znaków o stałej długości. Skrót ten jest zwykle znacznie krótszy niż oryginalna wiadomość.
+
+Skrót wiadomości jest generowany przez algorytm haszowania, który przetwarza dane wejściowe i generuje wartość wyjściową o stałej długości. Algorytmy haszowania są projektowane w taki sposób, aby generować różne skróty dla różnych wiadomości, ale także aby był to proces jednokierunkowy, czyli niemożliwy do odwrócenia.
+
+Jednym z najbardziej popularnych algorytmów haszowania jest SHA (Secure Hash Algorithm), który jest stosowany w wielu zastosowaniach, takich jak weryfikacja integralności plików, uwierzytelnianie haseł, identyfikacja oprogramowania antywirusowego i wiele innych.
+
+Skrót wiadomości może być używany do weryfikacji integralności wiadomości. W celu sprawdzenia, czy wiadomość nie została zmodyfikowana w trakcie transmisji, nadawca może obliczyć skrót wiadomości przed jej wysłaniem i porównać go z skrótem wiadomości, który jest obliczany przez odbiorcę po jej otrzymaniu. Jeśli skróty się nie zgadzają, wiadomość została zmodyfikowana w trakcie transmisji.
+
+Jednym z ograniczeń kryptografii haszowania jest to, że skrót wiadomości nie może być odszyfrowany na oryginalną wiadomość. Z tego powodu kryptografia haszowania jest stosowana głównie do weryfikacji integralności wiadomości, a nie do bezpiecznego przesyłania poufnych informacji.
+
+Istnieją także protokoły kryptograficzne, takie jak SSL/TLS, które pozwalają na bezpieczną komunikację między serwerami i klientami w sieciach komputerowych.
+
+Kryptografia jest stosowana w wielu dziedzinach, takich jak finanse, medycyna, bezpieczeństwo państwowe, handel elektroniczny i wiele innych. Bez kryptografii wiele dzisiejszych systemów informatycznych byłoby narażonych na ataki hakerów i włamywaczy.
+
+
+# 23. Metodologie i frameworki
+
+Metodologie i frameworki to narzędzia, które pomagają w zarządzaniu projektami informatycznymi oraz w wdrażaniu i utrzymywaniu systemów informatycznych. Są to zbiory najlepszych praktyk, procesów, procedur i narzędzi, które mają na celu usprawnienie procesów projektowych, zmniejszenie ryzyka oraz zwiększenie efektywności i jakości projektów.
+
+Wszystkie te narzędzia mają na celu usprawnienie procesów projektowych oraz zwiększenie efektywności i jakości projektów. Wybór odpowiedniej metodyki lub frameworka zależy od charakteru projektu, branży oraz wymagań biznesowych.
+
+
+## 23.1. Cykl życia rozwoju zabezpieczeń SDL (Security Development Lifecycle SDL)
+
+Cykl życia rozwoju zabezpieczeń (Security Development Lifecycle - SDL) to proces projektowania i wdrażania oprogramowania, który uwzględnia aspekty bezpieczeństwa już na etapie tworzenia aplikacji. Zapewnia to zwiększenie odporności aplikacji na ataki i minimalizację ryzyka wystąpienia luk w zabezpieczeniach.
+
+<p align="center">
+Rys. 23.1.1. Cykl życia rozwoju zabezpieczeń SDL
+<br>
+  <img src="\assets\img\Sieci\70.png" width="650" alt="SDL">
+</p>
+
+Cykl życia rozwoju zabezpieczeń SDL składa się z kilku etapów:
++ Planowanie - w tym etapie definiowane są cele i wymagania dotyczące bezpieczeństwa, a także przeprowadzane są analizy zagrożeń oraz identyfikowane są obszary wymagające szczególnej ochrony.
++ Projektowanie - na tym etapie projektowane są mechanizmy zabezpieczeń, w tym procesy uwierzytelniania, autoryzacji i szyfrowania.
++ Implementacja - w tym etapie tworzony jest kod programu, który uwzględnia wcześniej zdefiniowane wymagania bezpieczeństwa.
++ Testowanie - na tym etapie przeprowadzane są różnego rodzaju testy, które mają na celu wykrycie błędów w implementacji zabezpieczeń.
++ Wdrożenie - po przeprowadzeniu testów aplikacja jest gotowa do wdrożenia.
++ Monitorowanie - po wdrożeniu aplikacji przeprowadzane są regularne audyty bezpieczeństwa, które mają na celu wykrycie ewentualnych luk w zabezpieczeniach.
+
+W ramach cyklu życia rozwoju zabezpieczeń SDL stosuje się różne narzędzia i metody, takie jak:
++ kody źródłowe kontrolne, które pozwalają na wykrycie błędów w kodzie przed jego wdrożeniem;
++ testy penetracyjne, które polegają na próbie zdobycia nieautoryzowanego dostępu do systemu;
++ testy bezpieczeństwa aplikacji, które pozwalają na sprawdzenie zgodności z wymaganiami bezpieczeństwa.
+
+Cykl życia rozwoju zabezpieczeń SDL stanowi ważny element w budowaniu bezpiecznych aplikacji i systemów informatycznych. Pozwala na minimalizację ryzyka wystąpienia luk w zabezpieczeniach i zwiększenie odporności na ataki.
+
+
+## 23.2. OWASP Top Ten
+
+OWASP Top Ten to lista dziesięciu najważniejszych zagrożeń bezpieczeństwa aplikacji internetowych, opracowana przez organizację Open Web Application Security Project (OWASP). Lista ta stanowi podstawowy punkt odniesienia dla firm i organizacji, które zajmują się wdrażaniem aplikacji internetowych i chcą zabezpieczyć swoje systemy przed atakami.
+
+<p align="center">
+Rys. 23.2.1 OWASP Top Ten 
+<br>
+  <img src="\assets\img\Sieci\71.png" width="650" alt="OWASP">
+</p>
+
+
+Poniżej przedstawione są poszczególne zagrożenia uwzględnione na liście OWASP Top Ten:
++ Wstrzyknięcia SQL (SQL Injection) – ataki polegające na wprowadzeniu nieodpowiednich danych do formularzy internetowych lub zapytań SQL, co pozwala na przejęcie kontroli nad aplikacją i uzyskanie dostępu do wrażliwych informacji.
++ Niepoprawna autoryzacja i uwierzytelnianie (Broken Authentication and Session Management) – zagrożenie polegające na słabej ochronie systemów autoryzacji i uwierzytelniania, co pozwala na przejęcie kontroli nad kontami użytkowników.
++ Cross-Site Scripting (XSS) – ataki polegające na wprowadzeniu kodu JavaScript do aplikacji internetowej, co pozwala na przechwycenie danych użytkownika lub przejęcie kontroli nad aplikacją.
++ Narażenie na niebezpieczeństwo poufności (Sensitive Data Exposure) – zagrożenie polegające na niedostatecznej ochronie wrażliwych danych użytkowników, takich jak hasła, numery kart kredytowych czy informacje personalne.
++ Niepoprawne ustawienia bezpieczeństwa (Security Misconfiguration) – zagrożenie polegające na błędnej konfiguracji aplikacji internetowej, co pozwala na łatwe ataki hackerów.
++ Używanie komponentów z podatnościami (Using Components with Known Vulnerabilities) – zagrożenie polegające na używaniu komponentów, które są znane z podatności na ataki hackerów.
++ Nieprawidłowe przetwarzanie danych wejściowych (Insufficient Input Validation) – zagrożenie polegające na niewłaściwym przetwarzaniu danych wejściowych, co pozwala na wprowadzenie do systemu niebezpiecznych danych.
++ Nieuprawnione operacje na kontach (Broken Access Control) – zagrożenie polegające na braku kontroli dostępu do danych użytkowników i możliwości wykonania nieuprawnionych operacji na ich kontach.
++ Brak monitorowania i reagowania na ataki (Insufficient Logging and Monitoring) – zagrożenie polegające na niedostatecznym monitorowaniu systemu, co pozwala na łatwe ataki hackerów.
++ Nieodpowiednia ochrona przed atakami z wykorzystaniem sieci (Insecure Network Architecture) – nieprawidłowa konfiguracja zabezpieczeń aplikacji oznacza błędne ustawienia aplikacji, które pozwalają na łatwiejsze jej zhakowanie lub umożliwiają atakującemu na dostęp do poufnych informacji. Przykładami nieprawidłowej konfiguracji mogą być np. pozostawienie domyślnych haseł, niedostateczna weryfikacja uprawnień użytkowników, brak szyfrowania transmisji danych czy niewłaściwe skonfigurowanie pamięci podręcznej. 
+
+
+## 23.3. Ramy bezpieczeństwa cybernetycznego NIST
+
+NIST (National Institute of Standards and Technology) to agencja rządu USA, która zajmuje się m.in. standardami technologicznymi i kwestiami związanymi z bezpieczeństwem. NIST udostępnia wiele ram bezpieczeństwa cybernetycznego, które mogą pomóc organizacjom w zabezpieczeniu swoich systemów informatycznych.
+
+<p align="center">
+Rys. 23.3.1. Ramy bezpieczeństwa cybernetycznego NIST
+<br>
+  <img src="\assets\img\Sieci\72.png" width="650" alt="NIST">
+</p>
+
+Najważniejsze ramy bezpieczeństwa cybernetycznego NIST to:
++ Cybersecurity Framework (CSF) - jest to ramowy dokument opracowany przez NIST, który pomaga organizacjom w tworzeniu i wdrażaniu programów bezpieczeństwa cybernetycznego. Składa się z pięciu elementów: identyfikacji, ochrony, wykrywania, reagowania i naprawy.
++ NIST SP 800-53 - jest to standard bezpieczeństwa informacji, który zawiera listę kontroli bezpieczeństwa, które powinny być wdrożone w systemach informatycznych. Standard ten określa wymagania dla systemów federalnych w Stanach Zjednoczonych.
++ NIST SP 800-171 - to standard bezpieczeństwa informacji, który określa wymagania dla firm prywatnych, które dostarczają produkty lub usługi dla rządu USA. Wymagania te dotyczą m.in. zarządzania dostępem, szyfrowania, weryfikacji tożsamości i monitorowania systemów informatycznych.
++ NIST Cybersecurity Framework for Improving Critical Infrastructure Cybersecurity (Cybersecurity Framework 2.0) - jest to uaktualniona wersja Cybersecurity Framework, która została wydana w 2018 roku. Zawiera ona nowe zalecenia, które mają pomóc organizacjom w lepszym zabezpieczaniu swoich systemów informatycznych.
++ Privacy Framework - to ramowy dokument NIST, który pomaga organizacjom w zarządzaniu ryzykiem związanym z prywatnością danych. Framework ten składa się z trzech elementów: zarządzania, ochrony i przetwarzania danych osobowych.
+
+Wszystkie te ramy bezpieczeństwa cybernetycznego NIST mają na celu pomóc organizacjom w zabezpieczeniu swoich systemów informatycznych i zapobieganiu cyberataków.
+
+
+## 23.4. Kontrole CIS
+
+Implementation Groups (IGs) są zalecanymi wytycznymi w zakresie ustalania priorytetów wdrażania krytycznych kontroli bezpieczeństwa CIS (CIS Controls). Aby pomóc przedsiębiorstwom każdej wielkości, IGs dzielą się na trzy grupy. Opierają się one na profilu ryzyka i zasobach, którymi przedsiębiorstwo dysponuje w celu wdrożenia CIS Controls.
+
+Każdy IG identyfikuje zestaw zabezpieczeń, które musi wdrożyć. W CIS Controls v8 dostępne są łącznie 153 zabezpieczenia.
+
+<p align="center">
+Rys. 23.4.1. Kontrole CIS
+<br>
+  <img src="\assets\img\Sieci\73.png" width="650" alt="CIS">
+</p>
+
+CIS Controls v8 definiuje grupę wdrożeniową 1 (IG1) jako niezbędną higienę cybernetyczną i reprezentuje wyłaniający się minimalny standard bezpieczeństwa informacji dla wszystkich przedsiębiorstw. IG1 jest wstępem do CIS Controls składa się z podstawowego zestawu 56 Zabezpieczeń cyberobrony. Zabezpieczenia zawarte w IG1 są tym, co każde przedsiębiorstwo powinno stosować w celu obrony przed najczęstszymi atakami.
+
+W większości przypadków przedsiębiorstwa IG1 są zazwyczaj małymi lub średnimi przedsiębiorstwami z ograniczoną wiedzą w zakresie IT i bezpieczeństwa cybernetycznego, które można poświęcić na ochronę zasobów IT i personelu. Wspólną troską tych przedsiębiorstw jest utrzymanie działalności operacyjnej, ponieważ mają one ograniczoną tolerancję na przestoje.
+
+Wrażliwość danych, które starają się chronić, jest niska i dotyczy głównie informacji pracowniczych i finansowych. Zabezpieczenia wybrane dla IG1 powinny być możliwe do wdrożenia przy ograniczonej wiedzy na temat cyberbezpieczeństwa i mieć na celu udaremnienie ogólnych, nieukierunkowanych ataków. Te zabezpieczenia będą również zwykle zaprojektowane do pracy w połączeniu z gotowym sprzętem i oprogramowaniem dla małych lub domowych biur.
+
+<p align="center">
+Rys. 23.4.2. Kontrole CIS
+<br>
+  <img src="\assets\img\Sieci\74.png" width="650" alt="CIS-1">
+</p>
+
+IG2 składa się z 74 dodatkowych Zabezpieczeń i opiera się na 56 Zabezpieczeniach określonych w IG1.
+
+74 Zabezpieczenia wybrane dla IG2 mogą pomóc zespołom ds. bezpieczeństwa radzić sobie ze zwiększoną złożonością operacyjną. Prawidłowa instalacja i konfiguracja niektórych Zabezpieczeń będzie zależeć od technologii klasy korporacyjnej i specjalistycznej wiedzy specjalistycznej.
+
+Przedsiębiorstwo IG2 zatrudnia osoby odpowiedzialne za zarządzanie i ochronę infrastruktury IT. Przedsiębiorstwa te zazwyczaj obsługują wiele działów o różnych profilach ryzyka w zależności od funkcji stanowiska i misji. Jednostki małych przedsiębiorstw mogą mieć obciążenia związane z przestrzeganiem przepisów. Przedsiębiorstwa IG2 często przechowują i przetwarzają poufne informacje o klientach lub przedsiębiorstwach i są w stanie wytrzymać krótkie przerwy w świadczeniu usług. Głównym problemem jest utrata zaufania publicznego w przypadku naruszenia.
+
+<p align="center">
+Rys. 23.4.3. Kontrole CIS
+<br>
+  <img src="\assets\img\Sieci\75.png" width="650" alt="CIS-2">
+</p>
+
+IG3 składa się z dodatkowych 23 Zabezpieczeń. Opiera się na zabezpieczeniach określonych w IG1 (56) i IG2 (74), w sumie 153 zabezpieczeniach w CIS Controls v8.
+
+Przedsiębiorstwo IG3 zwykle zatrudnia ekspertów ds. bezpieczeństwa, którzy specjalizują się w różnych aspektach cyberbezpieczeństwa (np. zarządzanie ryzykiem, testy penetracyjne, bezpieczeństwo aplikacji). Aktywa i dane IG3 zawierają poufne informacje lub funkcje, które podlegają nadzorowi regulacyjnemu i zgodności. Przedsiębiorstwo IG3 musi zająć się dostępnością usług oraz poufnością i integralnością wrażliwych danych. Udane ataki mogą spowodować znaczne szkody dla dobra publicznego.
+
+Zabezpieczenia wybrane dla IG3 muszą ograniczać ukierunkowane ataki wyrafinowanego przeciwnika i zmniejszać wpływ ataków typu zero-day.
+
+
+# 24. Architektura bezpieczeństwa
+
+Architektura bezpieczeństwa to strategiczne podejście do projektowania, implementacji i zarządzania zabezpieczeniami informacji w organizacji. Obejmuje ona procesy, narzędzia, protokoły i praktyki, które mają na celu ochronę zasobów informacyjnych przed zagrożeniami związanymi z cyberbezpieczeństwem.
+
+Architektura bezpieczeństwa pomaga organizacjom w zapewnieniu skutecznego zarządzania ryzykiem związanym z cyberbezpieczeństwem oraz w zapewnieniu integralności, poufności i dostępności informacji w organizacji.
+
+
+## 24.1. Obrona w głębi (Defense in Depth)
+
+Obrona w głębi (ang. Defense in Depth) to podejście do bezpieczeństwa informatycznego, które polega na tworzeniu wielu warstw zabezpieczeń, aby zminimalizować ryzyko naruszenia bezpieczeństwa w przypadku, gdy jedna z warstw zostanie naruszona lub usunięta.
+
+Obrona w głębi polega na tym, aby tworzyć kilka niezależnych warstw zabezpieczeń, które chronią system przed różnego rodzaju zagrożeniami, takimi jak ataki hakerskie, wirusy czy ataki fizyczne. Każda warstwa powinna mieć unikalne funkcje i cechy, które są przeznaczone do obrony przed określonymi rodzajami zagrożeń.
+
+<p align="center">
+Rys. 24.1.1. Defense in Depth
+<br>
+  <img src="\assets\img\Sieci\76.png" width="650" alt="DiD">
+</p>
+
+Przykłady warstw zabezpieczeń w ramach obrony w głębi to:
++ Zabezpieczenia fizyczne - systemy alarmowe, kamery monitoringu, kontrola dostępu do pomieszczeń itp.
++ Zabezpieczenia sieciowe - zaporę ogniową, antywirusy, filtry treści, systemy wykrywania i zapobiegania włamaniom (IDS/IPS) itp.
++ Zabezpieczenia aplikacji - autoryzacja użytkowników, szyfrowanie danych, testy penetracyjne, weryfikacja kodu źródłowego itp.
++ Zabezpieczenia danych - kopie zapasowe, szyfrowanie danych, systemy kontroli dostępu itp.
++ Zabezpieczenia użytkowników - szkolenia z zakresu bezpieczeństwa, polityki bezpieczeństwa, autoryzacja użytkowników, hasła itp.
+
+W przypadku, gdy jedna z warstw zostanie naruszona, pozostałe warstwy zabezpieczeń powinny działać w celu zminimalizowania szkód i zapewnienia ciągłości działania systemu. Obrona w głębi jest szczególnie ważna w przypadku systemów o wysokim poziomie krytyczności, takich jak systemy bankowe, medyczne czy wojskowe, ale może być stosowana w każdym rodzaju systemu informatycznego.
+
+## 24.2. Architektura zerowego zaufania (Zero Trust Architecture)
+
+Architektura zerowego zaufania (Zero Trust Architecture) to podejście do bezpieczeństwa sieciowego, w którym każde połączenie i żądanie jest traktowane jako potencjalne zagrożenie. W tym modelu nie ma założenia, że urządzenia i użytkownicy są już bezpieczni, zamiast tego wymaga się od nich ciągłej autentykacji i weryfikacji uprawnień w czasie rzeczywistym.
+
+<p align="center">
+Rys. 24.2.1. Zero Trust Architecture
+<br>
+  <img src="\assets\img\Sieci\77.png" width="650" alt="ZTA">
+</p>
+
+W architekturze zerowego zaufania stosuje się kilka podstawowych zasad, takich jak:
++ Identyfikacja i autoryzacja użytkowników i urządzeń na każdym etapie sieci, nie tylko przy dostępie do systemów zewnętrznych.
++ Kontrola dostępu na poziomie aplikacji i danych, a nie tylko sieci, w celu zapobiegania ruchowi niepożądanego ruchu sieciowego.
++ Wdrożenie zaawansowanych technologii zabezpieczeń, takich jak sieci prywatne wirtualne (VPN), uwierzytelnianie wieloskładnikowe (MFA), izolacja aplikacji (sandboxing) i analiza ruchu sieciowego w czasie rzeczywistym.
++ Utrzymywanie i aktualizowanie systemów zabezpieczeń w celu zapewnienia ciągłej ochrony przed nowymi zagrożeniami.
+
+Architektura zerowego zaufania jest szczególnie przydatna w przypadku firm i organizacji, które korzystają z chmury publicznej lub mają rozproszone środowisko IT. Zapewnia ona większą kontrolę nad ruchem sieciowym i lepszą ochronę przed atakami hakerskimi.
+
+
+## 24.3. Architektura bezpieczeństwa w chmurze (Cloud Security Architecture)
+
+Architektura bezpieczeństwa w chmurze (Cloud Security Architecture) to sposób projektowania i implementacji rozwiązań bezpieczeństwa dla systemów i usług chmurowych. Obejmuje ona zarówno prywatne chmury, jak i chmury publiczne.
+
+Celem architektury bezpieczeństwa w chmurze jest zapewnienie ochrony danych, aplikacji i infrastruktury w chmurze poprzez zastosowanie odpowiednich mechanizmów bezpieczeństwa, takich jak autentykacja, autoryzacja, szyfrowanie, zarządzanie kluczami, zarządzanie tożsamością i dostępem, wirtualne sieci prywatne (VPN), zapory sieciowe, monitorowanie zdarzeń i audytowanie.
+
+Architektura bezpieczeństwa w chmurze składa się z kilku warstw, w tym warstwy infrastruktury, platformy, aplikacji i danych. Każda warstwa wymaga odpowiednich mechanizmów bezpieczeństwa i kontroli dostępu.
+
+<p align="center">
+Rys. 24.3.1. Cloud Security Architecture
+<br>
+  <img src="\assets\img\Sieci\78.png" width="650" alt="CSA">
+</p>
+
+Ważnym elementem architektury bezpieczeństwa w chmurze jest również monitorowanie i zarządzanie bezpieczeństwem. W tym celu stosuje się różne narzędzia i usługi, takie jak systemy monitorowania zdarzeń (SIEM), usługi zarządzania zabezpieczeniami (MSS), narzędzia analizy zagrożeń i oprogramowanie zarządzania politykami bezpieczeństwa.
+
+Dobrze zaprojektowana architektura bezpieczeństwa w chmurze powinna uwzględniać wymagania regulacyjne i zgodność z przepisami dotyczącymi prywatności i bezpieczeństwa danych, takimi jak RODO czy PCI-DSS.
+
+
+## 24.4. Zarządzanie tożsamością i dostępem IAM (Identity and Access Management IAM)
+
+Zarządzanie tożsamością i dostępem (IAM) to procesy, narzędzia i technologie związane z zarządzaniem cyfrowymi tożsamościami użytkowników, ich uprawnieniami i dostępem do zasobów informatycznych w organizacji. IAM umożliwia administrację użytkownikami, atrybutami, autoryzacją i uwierzytelnieniem, dostępem do systemów, aplikacji i innych zasobów oraz przepływem informacji między nimi.
+
+<p align="center">
+Rys. 24.4.1. Identity and Access Management IAM
+<br>
+  <img src="\assets\img\Sieci\79.png" width="650" alt="IAM">
+</p>
+
+W skład IAM wchodzą narzędzia takie jak zarządzanie tożsamością, zarządzanie uprawnieniami, uwierzytelnianie wieloskładnikowe (MFA), jednokrotne uwierzytelnienie (SSO), zarządzanie sesjami, zarządzanie hasłami, zarządzanie certyfikatami i federacja tożsamości. IAM odgrywa kluczową rolę w zapewnieniu bezpieczeństwa w organizacji, a także w spełnieniu wymagań regulacyjnych i zgodności z przepisami, takimi jak GDPR czy HIPAA.
+
+
+## 24.5. Ochrona danych (Data Protection)
+
+Ochrona danych to kluczowy element bezpieczeństwa informacji i sieci. Chodzi tu o zapewnienie, że dane są bezpieczne, poufne i integralne w czasie ich przetwarzania, przechowywania i przesyłania. Ochrona danych obejmuje różne aspekty, w tym:
++ Szyfrowanie danych - to proces konwertowania danych na postać nieczytelną dla osób trzecich. Szyfrowanie może odbywać się na różnych poziomach, od pliku do dysku twardego lub całej sieci.
++ Kontrola dostępu - to mechanizmy zapewniające, że tylko uprawnione osoby mają dostęp do danych. Kontrola dostępu może obejmować mechanizmy uwierzytelniania, autoryzacji, weryfikacji tożsamości i zarządzania uprawnieniami.
++ Monitorowanie i audytowanie - to procesy śledzenia aktywności użytkowników w systemie, w tym dostępu do danych i operacji na nich. Monitorowanie i audytowanie umożliwiają wykrycie i reagowanie na nieautoryzowane aktywności.
++ Backup i recovery - to proces tworzenia kopii zapasowych danych i przywracania ich w przypadku awarii systemu lub incydentu związanych z bezpieczeństwem. Backup i recovery są kluczowe dla zapewnienia ciągłości biznesowej i minimalizacji ryzyka utraty danych.
++ Zarządzanie informacją - to procesy zarządzania cyklem życia informacji, w tym zbieranie, przetwarzanie, przechowywanie, usuwanie i archiwizowanie danych. Zarządzanie informacją obejmuje również polityki i procedury dotyczące bezpieczeństwa informacji.
+
+<p align="center">
+Rys. 24.5.1. Data Protection
+<br>
+  <img src="\assets\img\Sieci\80.png" width="650" alt="DP">
+</p>
+
+Wszystkie te elementy muszą działać wspólnie, aby zapewnić ochronę danych na każdym etapie ich przetwarzania i przesyłania. Bezpieczeństwo danych jest kluczowe dla zapewnienia prywatności, integralności i dostępności informacji, co jest podstawą każdej organizacji.
+
+
+## 24.6. Planowanie reagowania na incydenty (Incident Responce Planning)
+
+Planowanie reagowania na incydenty (Incident Response Planning) to proces planowania i organizacji działań w przypadku wystąpienia incydentu w bezpieczeństwie informacji. Celem planowania reagowania na incydenty jest szybka reakcja na wykryte zagrożenie oraz minimalizacja skutków incydentu.
+
+Plan reagowania na incydenty powinien zawierać szczegółowe procedury, które określają kto jest odpowiedzialny za podjęcie działań w przypadku wystąpienia incydentu, jakie narzędzia należy wykorzystać, jakie informacje należy zbierać i jakie działania podjąć w celu wyeliminowania zagrożenia. Plan powinien być dokumentowany, przechowywany w bezpiecznym miejscu i regularnie aktualizowany, aby uwzględniać nowe rodzaje zagrożeń i zmiany w infrastrukturze IT.
+
+W ramach planowania reagowania na incydenty należy przeprowadzać regularne ćwiczenia i testy, aby upewnić się, że plan działa poprawnie i umożliwia szybką reakcję na incydenty. Należy także zapewnić szkolenia pracowników, aby zwiększyć ich świadomość w zakresie bezpieczeństwa informacji oraz przygotować ich do działań w przypadku wystąpienia incydentu.
+
+<p align="center">
+Rys. 24.6.1. Incident Responce Planning 
+<br>
+  <img src="\assets\img\Sieci\81.png" width="650" alt="IRP">
+</p>
+
+Planowanie reagowania na incydenty jest kluczowe dla zapewnienia bezpieczeństwa informacji w organizacji i minimalizacji skutków incydentów. Dzięki odpowiedniej organizacji i szybkiej reakcji można zminimalizować straty finansowe, utratę wizerunku firmy oraz zagrożenie dla danych klientów i pracowników.
