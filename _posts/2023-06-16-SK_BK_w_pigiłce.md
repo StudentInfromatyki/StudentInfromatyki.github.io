@@ -2161,3 +2161,433 @@ Rys. 24.6.1. Incident Responce Planning
 </p>
 
 Planowanie reagowania na incydenty jest kluczowe dla zapewnienia bezpieczeństwa informacji w organizacji i minimalizacji skutków incydentów. Dzięki odpowiedniej organizacji i szybkiej reakcji można zminimalizować straty finansowe, utratę wizerunku firmy oraz zagrożenie dla danych klientów i pracowników.
+
+
+# 25. Narzędzia i technologie bezpieczeństwa
+
+Narzędzia i technologie bezpieczeństwa to zbiór oprogramowania, narzędzi i metodologii, które pomagają zapewnić bezpieczeństwo systemów informatycznych, sieci oraz danych. Istnieje wiele różnych narzędzi i technologii, które służą różnym celom w zakresie bezpieczeństwa, od narzędzi do monitorowania ruchu sieciowego, poprzez programy antywirusowe, po systemy zarządzania tożsamością.
+
+## 25.1. SIEM
+
+SIEM (Security Information and Event Management) to narzędzie i technologia bezpieczeństwa, które pozwala na zbieranie, przetwarzanie, analizowanie i raportowanie informacji dotyczących zdarzeń związanych z bezpieczeństwem w sieciach komputerowych oraz systemach informatycznych.
+
+<p align="center">
+Rys. 25.1.1. SIEM
+<br>
+  <img src="\assets\img\Sieci\82.png" width="650" alt="SIEM">
+</p>
+
+Narzędzia SIEM pozwalają na monitorowanie różnego rodzaju zdarzeń związanych z bezpieczeństwem, takich jak próby nieudanych logowań, ataki typu phishing, próby włamania, a także nieprawidłowe lub nieautoryzowane działania na serwerach i systemach. Dane z różnych źródeł, takich jak dzienniki systemowe, narzędzia antywirusowe, systemy detekcji intruzów, są agregowane i przetwarzane w celu wykrycia podejrzanych zdarzeń.
+
+Systemy SIEM zwykle wykorzystują algorytmy uczenia maszynowego i technologie sztucznej inteligencji, aby identyfikować anomalie i potencjalne zagrożenia, a także generować alerty i raporty dla administratorów systemów i zespołów bezpieczeństwa.
+
+<p align="center">
+Rys. 25.1.2. Solving security management challenges
+<br>
+  <img src="\assets\img\Sieci\83.png" width="650" alt="SIEM-1">
+</p>
+
+Przykłady narzędzi SIEM to Splunk, ArcSight, QRadar, czy Elastic Stack. SIEM jest kluczowym elementem w dzisiejszych środowiskach sieciowych i systemach informatycznych, ponieważ pozwala na skuteczne wykrywanie i reagowanie na zagrożenia dla bezpieczeństwa w czasie rzeczywistym.
+
+
+## 25.2. IDS/IPS
+
+IDS (Intrusion Detection System) oraz IPS (Intrusion Prevention System) to narzędzia stosowane w celu wykrywania i zapobiegania nieautoryzowanemu dostępowi do sieci komputerowej lub systemu informatycznego.
+
+<p align="center">
+Rys. 25.2.1. Działanie IDS/IPS
+<br>
+  <img src="\assets\img\Sieci\84.png" width="650" alt="IDS/IPS">
+</p>
+
+IDS działa w trybie pasywnym, monitorując ruch sieciowy i analizując go pod kątem zachowań, które mogą wskazywać na próbę ataku lub naruszenia zasad bezpieczeństwa. IDS może wykryć wiele różnych typów ataków, w tym próby skanowania sieci, ataki DDoS, ataki na protokoły sieciowe, próby uwierzytelnienia, a także infekcje złośliwym oprogramowaniem.
+
+IPS działa w trybie aktywnym, w którym dokonuje analizy ruchu sieciowego i podejmuje decyzje o blokowaniu niebezpiecznych działań. IPS wykorzystuje różne techniki, aby zidentyfikować i zablokować niebezpieczne ruchy, w tym filtrację pakietów, wykrywanie anomalii ruchu sieciowego, a także wykrywanie znanych sygnatur ataków.
+
+IDS/IPS są często stosowane wraz z innymi narzędziami bezpieczeństwa, takimi jak firewalle, systemy kontroli dostępu i rozwiązania antywirusowe, aby zapewnić kompleksową ochronę przed atakami na sieci i systemy informatyczne.
+
+
+## 25.3. WAF
+
+Web Application Firewall (WAF) to narzędzie i technologia bezpieczeństwa, które zapewnia ochronę aplikacji internetowych przed różnymi atakami, takimi jak ataki SQL injection, ataki XSS (Cross-Site Scripting) i inne. WAF działa na poziomie aplikacji i działa jako filtr, blokując żądania, które nie spełniają określonych reguł bezpieczeństwa.
+
+WAF może działać w różnych trybach, takich jak tryb zapobiegania atakom, tryb wykrywania ataków i tryb korekty. W trybie zapobiegania atakom WAF blokuje wszystkie nieautoryzowane żądania i zapytania. W trybie wykrywania ataków WAF pozwala na przepuszczenie żądań, ale rejestruje wszelkie podejrzane aktywności, takie jak próby ataków. W trybie korekty WAF koryguje lub zmienia niebezpieczne elementy w żądaniach przed przekazaniem ich do serwera aplikacji.
+
+<p align="center">
+Rys. 25.3.1. Działanie WAF
+<br>
+  <img src="\assets\img\Sieci\85.png" width="650" alt="WAF">
+</p>
+
+WAF może być implementowany jako sprzętowy lub programowy, a także może działać jako usługa w chmurze. WAF może działać w połączeniu z innymi narzędziami i technologiami bezpieczeństwa, takimi jak SIEM (Security Information and Event Management) czy IDS/IPS (Intrusion Detection System / Intrusion Prevention System).
+
+
+## 25.4. Skanery luk w zabezpieczeniach (Vulnerability Scanners)
+
+Skanery luk w zabezpieczeniach, nazywane również skanerami podatności lub narzędziami do wykrywania podatności, to oprogramowanie wykorzystywane do automatycznego skanowania systemów, aplikacji lub sieci w celu wykrycia ich podatności na ataki.
+
+<p align="center">
+Rys. 25.4.1. Vulnerability Scanners
+<br>
+  <img src="\assets\img\Sieci\86.png" width="650" alt="Vulnerability Scanners">
+</p>
+
+Skanery luk w zabezpieczeniach analizują systemy pod kątem znanych podatności, wykorzystując bazy danych z informacjami na temat znanych podatności i metod ich wykorzystania. Następnie generują raporty, w których opisują wykryte podatności i proponują środki zaradcze.
+
+<p align="center">
+Rys. 25.4.2. Protect Against Common Security Vulnerabilities
+<br>
+  <img src="\assets\img\Sieci\87.png" width="650" alt="PACSV">
+</p>
+
+Skanery luk w zabezpieczeniach mogą działać w różnych trybach, takich jak:
++ Skanowanie sieci: Skanowanie sieci w celu wykrycia podatności na różnych urządzeniach, takich jak routery, przełączniki, serwery i inne.
++ Skanowanie hostów: Skanowanie pojedynczych hostów, takich jak serwery, w celu wykrycia podatności na poziomie aplikacji lub systemu operacyjnego.
++ Skanowanie aplikacji: Skanowanie aplikacji internetowych w celu wykrycia podatności, takich jak SQL injection, Cross-Site Scripting (XSS) lub podatności związane z uwierzytelnianiem i autoryzacją.
++ Skanowanie kodu źródłowego: Skanowanie kodu źródłowego aplikacji w celu wykrycia podatności i innych błędów programistycznych.
++ Skanery luk w zabezpieczeniach są narzędziem pomocnym w zwiększaniu bezpieczeństwa systemów i aplikacji. Jednakże, ze względu na fakt, że skanery mogą przegapić niektóre podatności lub wygenerować fałszywie pozytywne wyniki, powinny być one stosowane w połączeniu z innymi narzędziami i metodami testowania bezpieczeństwa, takimi jak testy penetracyjne czy audyty bezpieczeństwa.
+
+
+## 25.5. Narzędzia do testów penetracyjnych
+
+Narzędzia do testów penetracyjnych to specjalne oprogramowanie służące do testowania bezpieczeństwa systemów informatycznych poprzez symulowanie ataków hakerów i innych cyberprzestępców. Ich celem jest wykrycie i wykorzystanie słabości systemów w celu przetestowania ich odporności na ataki oraz wykrycia luk, które mogą prowadzić do naruszenia bezpieczeństwa i wycieku danych.
+
+<p align="center">
+Rys. 25.5.1. Działanie testów penetracyjnych
+<br>
+  <img src="\assets\img\Sieci\88.png" width="650" alt="Testy">
+</p>
+
+Przykłady popularnych narzędzi do testów penetracyjnych to:
++ Metasploit – jedno z najpopularniejszych narzędzi do testowania penetracyjnego, umożliwiające wykonywanie zaawansowanych testów i ataków na różne warstwy systemów;
++ Nmap – skaner sieciowy służący do wykrywania hostów i otwartych portów w sieci, wykorzystywany także do testów penetracyjnych;
++ Burp Suite – narzędzie do testów penetracyjnych aplikacji webowych, pozwalające na wykrywanie słabości w konfiguracji serwera, filtrowanie żądań i odpowiedzi, a także ataki na protokoły HTTP;
++ Aircrack-ng – narzędzie do testowania penetracyjnego sieci bezprzewodowych, pozwalające na złamanie haseł szyfrowanych protokołem WEP i WPA.
+
+<p align="center">
+Rys. 25.5.2. Narzędzia testów penetracyjnych 
+<br>
+  <img src="\assets\img\Sieci\89.png" width="650" alt="Testy-1">
+</p>
+
+Jest także wiele innych narzędzi dostępnych na rynku, a ich wybór zależy od potrzeb i specyfiki testowanego systemu czy aplikacji. Warto jednak pamiętać, że testy penetracyjne powinny być przeprowadzane przez doświadczonych specjalistów z odpowiednimi uprawnieniami i w ramach odpowiednich procedur, aby uniknąć naruszenia bezpieczeństwa i wycieku danych.
+
+
+## 25.6. Rozwiązania w zakresie bezpieczeństwa punktów końcowych (Endpoint Security Solutions)
+
+Rozwiązania w zakresie bezpieczeństwa punktów końcowych (Endpoint Security Solutions) to technologie i narzędzia, które służą do ochrony urządzeń końcowych, takich jak komputery, smartfony, tablety czy drukarki, przed różnego rodzaju zagrożeniami związanymi z cyberprzestępczością.
+
+<p align="center">
+Rys. 25.6.1. Endpoint Security Solutions
+<br>
+  <img src="\assets\img\Sieci\90.png" width="650" alt="ESS">
+</p>
+
+W skład takich rozwiązań wchodzą między innymi antywirusy, firewalle osobiste, programy antyspyware, oprogramowanie do ochrony przed phishingiem, narzędzia do wykrywania i blokowania szkodliwych programów oraz programy do monitorowania aktywności użytkowników.
+
+<p align="center">
+Rys. 25.6.2. Jak Endpoint Bezpieczeństwa działa
+<br>
+  <img src="\assets\img\Sieci\91.png" width="650" alt="ES">
+</p>
+
+Endpoint Security Solutions wykorzystują wiele technologii, takich jak machine learning, sztuczna inteligencja, heurystyka i behavioral analysis, aby wykrywać nowe zagrożenia oraz chronić przed atakami na bazie już istniejących exploitów.
+
+Dzięki rozwiązaniom w zakresie bezpieczeństwa punktów końcowych, organizacje mogą zabezpieczyć swoje sieci przed różnymi rodzajami zagrożeń, takimi jak wirusy, trojany, ransomware, phishing czy keylogger. W ten sposób minimalizują ryzyko ataków i kradzieży danych, a także zwiększają ogólny poziom bezpieczeństwa swoich systemów.
+
+## 25.7. Zapobieganie utracie danych DLP (Data Loss Prevention)
+
+Rozwiązania w zakresie zapobiegania utracie danych, zwane także rozwiązaniami Data Loss Prevention (DLP), to narzędzia i technologie, które pozwalają na wykrywanie, monitorowanie, kontrolowanie i blokowanie przepływu danych z wewnętrznych źródeł organizacji. Celem DLP jest ochrona poufnych informacji, takich jak dane klientów, dokumenty wewnętrzne, wrażliwe informacje finansowe i dane związane z własnością intelektualną.
+
+<p align="center">
+Rys. 25.7.1. Data Loss Prevention
+<br>
+  <img src="\assets\img\Sieci\92.png" width="650" alt="ES">
+</p>
+
+DLP jest stosowany w organizacjach, aby zapobiegać wyciekom danych, a także w celu zapewnienia zgodności z regulacjami dotyczącymi prywatności i bezpieczeństwa danych, takimi jak RODO czy HIPAA. W ramach systemów DLP stosuje się szereg narzędzi, takich jak:
++ Skanery wrażliwych danych - narzędzia te skanują systemy, sieci i urządzenia w poszukiwaniu wrażliwych danych, takich jak numery kart kredytowych, dane osobowe czy hasła.
++ Systemy monitorujące ruch sieciowy - narzędzia te analizują ruch sieciowy w poszukiwaniu nieautoryzowanych przepływów danych, takich jak próby wysyłania wrażliwych danych na zewnątrz organizacji.
++ Systemy kontroli dostępu - narzędzia te kontrolują dostęp do wrażliwych danych wewnątrz organizacji i pozwalają na określenie, kto ma dostęp do danych i w jakim celu.
++ Systemy kryptograficzne - narzędzia te pozwalają na zaszyfrowanie wrażliwych danych, co zapewnia dodatkową warstwę ochrony przed wyciekiem danych.
++ Systemy zarządzania politykami bezpieczeństwa - narzędzia te pozwalają na określenie i zarządzanie politykami bezpieczeństwa w organizacji, takimi jak polityki dotyczące korzystania z internetu czy korzystania z prywatnych urządzeń w miejscu pracy.
+
+<p align="center">
+Rys. 25.7.3. Działanie Data Loss Prevention
+<br>
+  <img src="\assets\img\Sieci\93.png" width="650" alt="ES-1">
+</p>
+
+DLP wymaga odpowiedniego wdrożenia i konfiguracji, aby działał skutecznie i nie wpłynął negatywnie na normalne działanie organizacji. Wymaga także ścisłej współpracy między działami IT, bezpieczeństwa i zarządzania organizacją.
+
+# 26. Operacje związane z cyberbezpieczeństwem
+
+Operacje związane z cyberbezpieczeństwem (Cyber Security Operations) to kompleksowe podejście do zarządzania zagrożeniami związanymi z cyberbezpieczeństwem. Celem tych operacji jest ochrona sieci i systemów przed atakami oraz szybka reakcja w przypadku naruszenia bezpieczeństwa. Operacje związane z cyberbezpieczeństwem obejmują wiele działań, w tym:
++ Monitoring i analiza zdarzeń bezpieczeństwa - monitorowanie sieci i systemów w celu wykrycia nieprawidłowości, a następnie analizowanie zgromadzonych danych w celu oceny zagrożeń.
++ Reagowanie na incydenty - szybka reakcja na wykryte incydenty, aby zminimalizować skutki i przywrócić normalne funkcjonowanie systemów.
++ Zarządzanie zdarzeniami bezpieczeństwa - dokumentowanie i śledzenie wszystkich zdarzeń bezpieczeństwa w celu zapewnienia ciągłości działań i udokumentowania działań podejmowanych w przypadku naruszeń bezpieczeństwa.
++ Analiza ryzyka - ocena ryzyka związanego z cyberbezpieczeństwem oraz opracowanie planów zarządzania ryzykiem.
++ Zarządzanie dostępem - kontrola dostępu do sieci i systemów, zarządzanie kontami użytkowników i uprawnieniami.
++ Testy penetracyjne - testowanie systemów i sieci w celu identyfikacji słabości i zapewnienia skuteczności zabezpieczeń.
++ Wdrażanie i zarządzanie zabezpieczeniami - wdrożenie i zarządzanie rozwiązaniami zabezpieczającymi, takimi jak firewall, SIEM, IDS/IPS, WAF itp.
++ Szkolenia i świadomość użytkowników - edukacja użytkowników w zakresie bezpiecznego korzystania z systemów informatycznych i identyfikacja zagrożeń związanych z cyberbezpieczeństwem.
+
+Operacje związane z cyberbezpieczeństwem są kluczowe dla zapewnienia bezpieczeństwa sieci i systemów informatycznych w organizacjach.
+
+
+# 26.1. Centrum operacyjne bezpieczeństwa SOC (Security Operations Center)
+
+Security Operations Center (SOC) to zaawansowane centrum operacyjne, które odpowiada za monitorowanie, wykrywanie, analizowanie i reagowanie na zagrożenia dla bezpieczeństwa informatycznego. SOC ma na celu chronienie organizacji przed zagrożeniami, które mogą prowadzić do naruszenia bezpieczeństwa danych, a także zapewnienie ciągłości działania usług informatycznych.
+
+<p align="center">
+Rys. 26.1.1. SOC
+<br>
+  <img src="\assets\img\Sieci\94.png" width="650" alt="SOC">
+</p>
+
+SOC zazwyczaj składa się z wysoko wykwalifikowanych specjalistów, którzy pracują w kilku różnych obszarach, takich jak monitorowanie zdarzeń (security monitoring), zarządzanie incydentami (incident management), analiza zagrożeń (threat intelligence), badanie zdarzeń (incident investigation), zarządzanie identyfikacją i dostępem (identity and access management), zarządzanie ryzykiem (risk management) oraz zapewnienie ciągłości działania usług (business continuity).
+
+SOC może korzystać z różnych narzędzi i technologii, takich jak systemy zarządzania zdarzeniami bezpieczeństwa (SIEM), systemy wykrywania i zapobiegania atakom sieciowym (IDS/IPS), skanery luk w zabezpieczeniach, narzędzia do testów penetracyjnych, systemy ochrony punktów końcowych (endpoint security solutions) i wiele innych. SOC często wykorzystuje również sztuczną inteligencję (AI) i uczenie maszynowe (machine learning), aby zwiększyć efektywność wykrywania i reagowania na zagrożenia.
+
+Koncepcja SOC jest coraz bardziej popularna w dzisiejszych czasach, ponieważ organizacje muszą być gotowe na szybkie i skuteczne reagowanie na nowe zagrożenia, które pojawiają się na co dzień. SOC zapewnia organizacjom skuteczne rozwiązanie, które pozwala na szybkie wykrywanie i reagowanie na zagrożenia, co przekłada się na zwiększenie bezpieczeństwa danych i ciągłości działania usług.
+
+
+## 26.2. Informacje o zagrożeniach (Threat Intelligence)
+
+Threat intelligence to informacje o zagrożeniach, które umożliwiają organizacjom identyfikowanie, analizowanie i reagowanie na potencjalne zagrożenia dla ich systemów informatycznych. Może to obejmować dane dotyczące źródeł zagrożeń, metod ataków, typów malware oraz sposobów wykorzystywania podatności w systemach informatycznych.
+
+<p align="center">
+Rys. 26.2.1. Threat Intelligence 
+<br>
+  <img src="\assets\img\Sieci\95.png" width="650" alt="Threat Intelligence">
+</p>
+
+Istnieją różne źródła informacji o zagrożeniach, takie jak bazy danych o podatnościach, analizy ruchu sieciowego, systemy wykrywania intruzów (IDS) oraz systemy zarządzania zdarzeniami bezpieczeństwa (SIEM). Wiele organizacji korzysta z publicznie dostępnych źródeł informacji o zagrożeniach, takich jak raporty branżowe, ostrzeżenia CERT oraz dane dotyczące zidentyfikowanych ataków.
+
+<p align="center">
+Rys. 26.2.2. Działanie Threat Intelligence
+<br>
+  <img src="\assets\img\Sieci\96.png" width="650" alt="Threat Intelligence">
+</p>
+
+Threat intelligence może być wykorzystywane do monitorowania aktywności sieciowej, identyfikowania niebezpiecznych zachowań oraz wykrywania nieznanych wcześniej zagrożeń. Dzięki temu organizacje mogą szybciej reagować na potencjalne zagrożenia, unikać strat wynikających z incydentów bezpieczeństwa oraz lepiej zabezpieczyć swoje systemy informatyczne.
+
+
+## 26.3. Polowanie na zagrożenia (Threat Hunting)
+
+Polowanie na zagrożenia (ang. Threat Hunting) to proces aktywnego przeszukiwania sieci w celu odkrywania obecności zagrożeń, które mogą unikać wykrycia przez tradycyjne metody monitorowania bezpieczeństwa. W przeciwieństwie do automatycznych systemów wykrywania zagrożeń, które opierają się na zasadzie sygnatur, czyli porównywania wzorców znanych ataków z analizowanymi danymi, Threat Hunting to proces aktywnego przeszukiwania systemów i sieci w celu odnalezienia nieoczekiwanych zachowań, anomalii lub podejrzanych aktywności, które mogą wskazywać na obecność nieznanych dotąd ataków lub zagrożeń.
+
+<p align="center">
+Rys. 26.3.1. Działanie Threat Hunting
+<br>
+  <img src="\assets\img\Sieci\97.png" width="650" alt="Threat Hunting">
+</p>
+
+Polowanie na zagrożenia obejmuje wykorzystanie różnorodnych technik i narzędzi, w tym analizę logów systemowych, analizę ruchu sieciowego, skanowanie systemów pod kątem podatności, wykorzystanie narzędzi do analizy kodu źródłowego i obrazów systemów, czy też korzystanie z wywiadu i danych o zagrożeniach (Threat Intelligence).
+
+Celem polowania na zagrożenia jest wczesne wykrycie nieznanych dotąd ataków i zagrożeń, co pozwala na szybką reakcję i minimalizację skutków ataku. Wymaga to jednak wysoko wykwalifikowanych specjalistów oraz zaawansowanych narzędzi i technik analitycznych.
+
+## 26.4. Cyfrowa kryminalistyka (Digital Forencis)
+
+Cyfrowa kryminalistyka (Digital Forensics) to proces zbierania, analizy i interpretacji danych związanych z działaniami przestępczymi dokonanymi z wykorzystaniem technologii cyfrowych. W ramach cyfrowej kryminalistyki, specjaliści z zakresu bezpieczeństwa cyfrowego poszukują dowodów w postaci plików, metadanych, rejestrów, logów, czy zapisów z komunikatorów i innych źródeł.
+
+Proces cyfrowej kryminalistyki może obejmować różne etapy, takie jak zbieranie informacji, analizę dowodów, identyfikację podejrzanych, a także pomoc w prowadzeniu śledztwa i zabezpieczeniu materiału dowodowego przed sądem.
+
+W celu skutecznego przeprowadzenia cyfrowej kryminalistyki konieczne jest wykorzystanie specjalistycznych narzędzi i technologii, takich jak oprogramowanie do odzyskiwania danych, narzędzia do analizy rejestru systemowego, czy programy służące do analizy ruchu sieciowego.
+
+<p align="center">
+Rys. 26.4.1. Digital Forencis
+<br>
+  <img src="\assets\img\Sieci\98.png" width="650" alt="Digital Forencis">
+</p>
+
+Cyfrowa kryminalistyka znajduje zastosowanie w wielu dziedzinach, takich jak śledztwa kryminalne, wykrywanie nadużyć finansowych, czy dochodzenie roszczeń w związku z naruszeniami praw autorskich. W dzisiejszych czasach, wraz z coraz większą ilością danych przetwarzanych i przechowywanych w cyfrowej formie, cyfrowa kryminalistyka staje się coraz bardziej istotna dla zapewnienia bezpieczeństwa cyfrowego.
+
+
+## 26.5. Reagowanie na incydenty (Incident Response)
+
+Reagowanie na incydenty (Incident Response) to proces, który ma na celu przywrócenie normalnego działania systemów informatycznych po ich uszkodzeniu lub ataku. Obejmuje on również działania zmierzające do zminimalizowania negatywnych skutków incydentu oraz zapobieżenia przyszłym atakom.
+
+<p align="center">
+Rys. 26.5.1. Incident Response
+<br>
+  <img src="\assets\img\Sieci\99.png" width="650" alt="Incident Response">
+</p>
+
+W przypadku incydentu związanego z bezpieczeństwem informacji, odpowiedź na incydent musi być natychmiastowa i skoordynowana. W tym celu organizacje powinny mieć przygotowany plan reagowania na incydenty (Incident Response Plan), który zawiera procedury postępowania w przypadku różnych rodzajów incydentów, takich jak atak hakerski, wyciek danych, utrata sprzętu, itp.
+
+Plan reagowania na incydenty powinien obejmować cztery główne etapy: wykrycie incydentu, analizę incydentu, eliminację incydentu i przywrócenie normalnego działania systemów informatycznych. W każdym z tych etapów stosowane są specjalistyczne narzędzia i techniki, takie jak narzędzia do zbierania i analizowania logów systemowych, skanery wirusów, narzędzia do odzyskiwania danych, itp.
+
+Oprócz działań technicznych, odpowiedź na incydent powinna uwzględniać również aspekt prawny, tak aby zminimalizować ryzyko odpowiedzialności prawnej. W związku z tym ważne jest, aby organizacje miały przygotowany plan reagowania na incydenty, który uwzględnia wszystkie aspekty reakcji na incydent i jest regularnie aktualizowany.
+
+
+## 26.6. Odzyskiwanie po awarii (Disaster Recovery)
+
+Odzyskiwanie po awarii (Disaster Recovery) to proces przywracania działania systemów informatycznych, aplikacji i danych po awarii lub innym zdarzeniu, które zakłóca normalne funkcjonowanie systemu. Celem odzyskiwania po awarii jest przywrócenie normalnej działalności biznesowej w jak najkrótszym czasie, minimalizacja utraty danych oraz zapewnienie ciągłości działania organizacji.
+
+<p align="center">
+Rys. 26.6.1. Disaster Recovery
+<br>
+  <img src="\assets\img\Sieci\100.png" width="650" alt="Disaster Recovery">
+</p>
+
+W procesie odzyskiwania po awarii wykorzystuje się różne technologie i strategie, takie jak backup i recovery, replikację danych, wirtualizację, konteneryzację, przetwarzanie w chmurze i wiele innych. Planowanie odzyskiwania po awarii powinno obejmować ocenę ryzyka, strategie odzyskiwania, harmonogramy testów i ćwiczeń, a także procedury zarządzania incydentami.
+
+Odzyskiwanie po awarii jest częścią szerszego procesu zarządzania ciągłością działania biznesu (Business Continuity Management, BCM). BCM obejmuje planowanie i zarządzanie ciągłością działania organizacji w przypadku zakłóceń działalności biznesowej spowodowanych przez czynniki zewnętrzne i wewnętrzne, takie jak awarie systemów, ataki cybernetyczne, katastrofy naturalne, choroby, strajki i inne zdarzenia losowe.
+
+
+# 27. Najlepsze praktyki w zakresie bezpieczeństwa cybernetycznego
+
+Najlepsze praktyki w zakresie bezpieczeństwa cybernetycznego to zestaw zasad i procedur, które pomagają organizacjom w minimalizowaniu ryzyka naruszeń bezpieczeństwa i ochronie przed atakami cybernetycznymi.
+
+## 27.1. Szkolenie ze świadomości bezpieczeńśtwa (Security Awareness Training)
+
+Szkolenie ze świadomości bezpieczeństwa (Security Awareness Training) to proces edukacyjny, którego celem jest zwiększenie świadomości pracowników na temat zagrożeń związanych z bezpieczeństwem informacji oraz zapewnienie im wiedzy i umiejętności potrzebnych do zapobiegania cyberatakom i ochrony danych przed utratą lub kradzieżą.
+
+<p align="center">
+Rys. 27.1.1. Security Awareness Training
+<br>
+  <img src="\assets\img\Sieci\101.png" width="650" alt="SAT">
+</p>
+
+Szkolenie ze świadomości bezpieczeństwa jest ważnym elementem strategii bezpieczeństwa cybernetycznego każdej organizacji, ponieważ większość incydentów związanych z bezpieczeństwem informacji wynika z działań użytkowników końcowych, którzy nie są świadomi zagrożeń lub nie wiedzą, jak postępować w przypadku podejrzenia ataku.
+
+Podczas szkolenia ze świadomości bezpieczeństwa pracownicy uczą się zasad bezpiecznego korzystania z systemów informatycznych, w tym sposobów tworzenia mocnych haseł, ochrony danych przed utratą lub kradzieżą, rozpoznawania ataków phishingowych i innych podstawowych zagrożeń związanych z bezpieczeństwem informacji.
+
+Szkolenie ze świadomości bezpieczeństwa powinno być regularne i dostosowane do specyfiki pracy i potrzeb pracowników w organizacji. W ramach szkolenia można wykorzystać różne narzędzia, takie jak filmy edukacyjne, quizy, scenariusze symulujące ataki lub szkolenia online.
+
+Wprowadzenie szkoleń ze świadomości bezpieczeństwa może przyczynić się do znacznego zmniejszenia ryzyka wystąpienia incydentów związanych z bezpieczeństwem informacji oraz zwiększenia efektywności i skuteczności działań związanych z ochroną danych w organizacji.
+
+
+## 27.2. Zarządzanie hasłami (Password Management)
+
+Zarządzanie hasłami to kluczowy element bezpieczeństwa cybernetycznego. Wiele naruszeń bezpieczeństwa wynika z niewłaściwego zarządzania hasłami lub korzystania z haseł słabych i łatwych do odgadnięcia. W celu zapewnienia bezpieczeństwa, należy stosować się do najlepszych praktyk w zakresie zarządzania hasłami, takich jak:
+
+<p align="center">
+Rys. 27.2.1. Password Management
+<br>
+  <img src="\assets\img\Sieci\102.png" width="650" alt="PM">
+</p>
+
++ Silne hasła - hasła powinny składać się z co najmniej 12 znaków i zawierać różne rodzaje znaków, takie jak litery (w tym duże i małe litery), cyfry i znaki specjalne.
++ Niepowtarzalne hasła - każde konto powinno mieć inne, unikalne hasło. Nigdy nie należy używać tego samego hasła do wielu kont.
++ Regularna zmiana hasła - hasła należy zmieniać co najmniej co 90 dni.
++ Nieprzechowywanie haseł w jawnie dostępnych miejscach - nigdy nie należy przechowywać haseł w postaci czystego tekstu lub w plikach tekstowych.
++ Używanie menedżerów haseł - menedżery haseł to narzędzia, które pozwalają na bezpieczne przechowywanie haseł i automatyczne wypełnianie formularzy logowania.
++ Weryfikacja tożsamości - przed ujawnieniem poufnych informacji lub zmianą ustawień konta, należy zweryfikować tożsamość użytkownika.
++ Używanie autoryzowanych aplikacji - przed instalacją nowych aplikacji, należy upewnić się, że są one autoryzowane przez organizację i nie stanowią zagrożenia dla bezpieczeństwa.
++ Szkolenia dla pracowników - pracownicy powinni być regularnie szkoleni w zakresie bezpieczeństwa haseł i najlepszych praktyk ich zarządzania.
+
+
+## 27.3. Zarządzanie poprawkami (Patch Management)
+
+Zarządzanie poprawkami (ang. Patch Management) to proces zapewnienia, że wszystkie systemy informatyczne są aktualizowane regularnie w celu poprawienia ich bezpieczeństwa i stabilności. Poprawki, czyli łatki, są to modyfikacje kodu źródłowego lub programów, które usuwają znane błędy lub luki w zabezpieczeniach.
+
+W przypadku oprogramowania, zwłaszcza systemów operacyjnych i aplikacji, łatki są niezbędne dla zapewnienia bezpieczeństwa systemów. Dzięki nim, twórcy oprogramowania mogą naprawić błędy, które mogą zostać wykorzystane przez atakujących do przejęcia kontroli nad systemem.
+
+<p align="center">
+Rys. 27.3.1. Patch  Management
+<br>
+  <img src="\assets\img\Sieci\103.png" width="650" alt="PM-1">
+</p>
+
+Proces zarządzania poprawkami powinien obejmować identyfikację dostępnych aktualizacji, ich ocenę pod kątem wpływu na systemy i aplikacje, testowanie łatek na środowisku testowym przed wdrożeniem ich na produkcji oraz wdrażanie ich na systemach produkcyjnych. Ważne jest również monitorowanie systemów i aplikacji, aby upewnić się, że wszystkie poprawki są aktualne i systemy są bezpieczne.
+
+Efektywny proces zarządzania poprawkami jest kluczowy dla zapewnienia bezpieczeństwa systemów informatycznych i minimalizowania ryzyka ataków. Wiele narzędzi dostępnych na rynku może pomóc w automatyzacji tego procesu, co ułatwia zarządzanie łatkami i umożliwia szybkie reagowanie na nowe zagrożenia.
+
+
+## 27.4. Segmentacja sieci (Network Segmentation)
+
+Segmentacja sieci (ang. network segmentation) to technika polegająca na podziale sieci na mniejsze, izolowane od siebie segmenty. Jest to ważne narzędzie w zarządzaniu bezpieczeństwem sieciowym, które pozwala na ograniczenie ryzyka ataku, rozprzestrzeniania się złośliwego oprogramowania i niepożądanego ruchu w sieci.
+
+<p align="center">
+Rys. 27.4.1. Network Segmentation
+<br>
+  <img src="\assets\img\Sieci\104.png" width="650" alt="NS">
+</p>
+
+Segmentacja sieci umożliwia ograniczenie dostępu do poszczególnych zasobów sieciowych tylko dla uprawnionych użytkowników i urządzeń. Oznacza to, że użytkownicy i urządzenia w jednym segmencie sieci nie mają dostępu do zasobów w innych segmentach, chyba że posiadają odpowiednie uprawnienia.
+
+Podział sieci na mniejsze segmenty umożliwia też łatwiejsze monitorowanie i zarządzanie ruchem sieciowym oraz wdrożenie bardziej skutecznych zasad bezpieczeństwa sieciowego, takich jak kontrola dostępu, filtrowanie ruchu, detekcja i odpowiedź na incydenty bezpieczeństwa.
+
+Segmentacja sieci jest jednym z podstawowych kroków w zapewnieniu bezpieczeństwa sieciowego i jest często stosowana wraz z innymi technikami i narzędziami bezpieczeństwa sieciowego, takimi jak zapora ogniowa, sieć prywatna wirtualna (VPN), detekcja zagrożeń itp.
+
+
+## 27.5. Kopie zapasowe i odzyskiwanie (Backup and Recovery)
+
+Kopie zapasowe i odzyskiwanie (Backup and Recovery) to proces tworzenia i przechowywania kopii danych, tak aby można było je przywrócić w przypadku awarii lub utraty danych. Jest to istotny element w ramach strategii bezpieczeństwa informacji, ponieważ zapewnia możliwość szybkiego przywrócenia systemów i danych do stanu sprzed awarii lub incydentu bezpieczeństwa.
+
+<p align="center">
+Rys. 27.5.1. Backup and Recovery
+<br>
+  <img src="\assets\img\Sieci\105.png" width="650" alt="BaR">
+</p>
+
+W przypadku awarii lub ataku, kopia zapasowa danych umożliwia przywrócenie systemów i danych do stanu sprzed zdarzenia, minimalizując tym samym straty wynikające z utraty danych lub czasu niedostępności systemów. Warto zauważyć, że kopia zapasowa powinna być regularnie tworzona, a także przechowywana w bezpiecznym miejscu, np. na zewnętrznym dysku twardym lub w chmurze.
+
+Odzyskiwanie danych to proces przywracania danych z kopii zapasowej, a jego skuteczność zależy od tego, jak dobrze została wykonana kopia zapasowa. Warto pamiętać, że proces odzyskiwania danych może być czasochłonny, dlatego należy mieć odpowiedni plan odzyskiwania danych, który uwzględni czas potrzebny na przywrócenie systemów i danych.
+
+W ramach strategii kopii zapasowych i odzyskiwania, ważne jest również testowanie i weryfikowanie procesu odzyskiwania danych, aby mieć pewność, że proces ten przebiegnie sprawnie w przypadku awarii lub incydentu bezpieczeństwa.
+
+
+# 28. Nowe technologie w cyberbezpieczeństwie
+
+Nowe technologie w cyberbezpieczeństwie są nieustannie rozwijane, aby skuteczniej przeciwdziałać rosnącej liczbie zagrożeń.
+
+## 28.1. Sztuczna inteligencja i uczenie maszynowe w cyberbezpieczeństwie
+
+Sztuczna inteligencja (AI) i uczenie maszynowe (ML) są coraz częściej wykorzystywane w cyberbezpieczeństwie, aby zapewnić szybką i skuteczną ochronę przed zagrożeniami. Technologie te mają zastosowanie w wielu obszarach cyberbezpieczeństwa, w tym w rozpoznawaniu i analizie zagrożeń, wykrywaniu anomali w zachowaniu użytkowników, rozpoznawaniu złośliwego oprogramowania oraz w modelowaniu ryzyka.
+
+<p align="center">
+Rys. 28.1.1. AI i ML w cyberbezpieczeństwie
+<br>
+  <img src="\assets\img\Sieci\106.png" width="650" alt="AI and ML">
+</p>
+
+AI i ML pozwalają na szybkie przetwarzanie dużych ilości danych, dzięki czemu mogą automatycznie wykrywać nieznane wcześniej zagrożenia, analizować zachowania użytkowników i dostarczać rekomendacje dotyczące działań obronnych. Wykorzystując te technologie, systemy bezpieczeństwa mogą przewidywać, które aplikacje i urządzenia są najbardziej narażone na ataki oraz dostarczać odpowiednie zabezpieczenia, takie jak automatyczne aktualizacje lub blokowanie niebezpiecznych aplikacji.
+
+Jednym z głównych wyzwań związanych z wykorzystaniem AI i ML w cyberbezpieczeństwie jest potrzeba stałego uczenia i dostosowywania algorytmów do zmieniających się zagrożeń. Ponadto, AI i ML mogą generować fałszywie pozytywne lub negatywne wyniki, co wymaga dokładnej analizy przez ludzi.
+
+W związku z tym, coraz więcej firm oferuje rozwiązania, które łączą AI i ML z ludzką wiedzą i doświadczeniem. W ten sposób, systemy bezpieczeństwa są w stanie zapewnić szybką i skuteczną ochronę przed zagrożeniami oraz umożliwić analizę wyników przez ekspertów.
+
+
+## 28.2. Blockchain i kryptowaluty
+
+Blockchain i kryptowaluty to dwie technologie, które wprowadziły rewolucję w dziedzinie finansów i transakcji cyfrowych. Blockchain jest to rozproszona baza danych, która działa na zasadzie sieci peer-to-peer, a każdy z węzłów przechowuje kopię danych. Jest to technologia niezwykle bezpieczna, gdyż każdy blok danych jest opatrzony niepowtarzalnym kodem, a cała sieć jest chroniona przez algorytm kryptograficzny. Właśnie z tego powodu blockchain jest stosowany do przechowywania i przesyłania informacji o wartości, takich jak kryptowaluty.
+
+<p align="center">
+Rys. 28.2.1. Jak działa Blockchain
+<br>
+  <img src="\assets\img\Sieci\107.png" width="650" alt="Blockchain">
+</p>
+
+Kryptowaluty, takie jak Bitcoin czy Ethereum, są cyfrowymi aktywami, które funkcjonują na podstawie technologii blockchain. Dzięki temu, że transakcje są zapisywane na blockchainie, a każdy blok danych jest chroniony algorytmem kryptograficznym, kryptowaluty zapewniają bezpieczeństwo transakcji oraz anonimowość użytkowników. Oczywiście, tak jak każda inna technologia, blockchain i kryptowaluty także niosą ze sobą pewne ryzyka, takie jak np. utrata kluczy prywatnych, ataki hakerskie czy złośliwe oprogramowanie. W związku z tym, wraz z rozwojem technologii, pojawiają się coraz bardziej zaawansowane narzędzia i rozwiązania, które pomagają zwiększać bezpieczeństwo i chronić użytkowników przed różnymi zagrożeniami.
+
+
+## 28.3. Bezpieczeństwo Internetu Rzeczy (IoT)
+
+Internet Rzeczy (IoT) to rozwijająca się dziedzina technologii, która pozwala na łączenie urządzeń ze sobą i z siecią internetową, aby wymieniały między sobą informacje. Urządzenia te to między innymi inteligentne urządzenia domowe, systemy kontroli przemysłowej, czy nawet maszyny medyczne.
+
+<p align="center">
+Rys. 28.3.1. Bezpieczeństwo Internetu Rzeczy (IoT)
+<br>
+  <img src="\assets\img\Sieci\108.png" width="650" alt="IoT">
+</p>
+
+
+Bezpieczeństwo Internetu Rzeczy jest jednym z najważniejszych wyzwań, jakie stawia przed nami ta technologia. Urządzenia IoT są zazwyczaj małe, mają ograniczone zasoby, a ich producenci często skupiają się na funkcjonalności, kosztem bezpieczeństwa. To sprawia, że takie urządzenia są podatne na ataki hakerskie, a zagrożenia te mogą mieć poważne konsekwencje, takie jak kradzież danych lub sterowanie urządzeniami przez niepowołane osoby.
+
+Aby zapewnić bezpieczeństwo IoT, producenci muszą projektować urządzenia z myślą o bezpieczeństwie, uwzględniając takie kwestie jak autoryzacja, uwierzytelnianie, szyfrowanie i ochrona przed atakami typu DDoS. Istotne jest również aktualizowanie oprogramowania, które pozwala na łatanie luk w zabezpieczeniach.
+
+Poza tym, ważne jest, aby użytkownicy sami również dbali o bezpieczeństwo swoich urządzeń IoT, np. poprzez stosowanie silnych haseł, ograniczenie dostępu do sieci Wi-Fi oraz korzystanie z narzędzi zabezpieczających takich jak firewall.
+
+
+## 28.4. Obliczenia kwantowe i kryptografia
+
+Obliczenia kwantowe i kryptografia to dziedziny, które są ze sobą ściśle powiązane. Obliczenia kwantowe to nowoczesna dziedzina informatyki, która zajmuje się wykorzystaniem własności kwantowych do przetwarzania informacji. Jednym z najważniejszych zastosowań obliczeń kwantowych jest kryptografia kwantowa, która umożliwia bezpieczne przesyłanie informacji w sposób odporny na ataki kwantowe.
+
+Tradycyjne algorytmy kryptograficzne, takie jak RSA czy AES, opierają się na problemach matematycznych, których rozwiązanie jest bardzo trudne do uzyskania. Jednak z powodu rosnącej mocy obliczeniowej komputerów, te algorytmy zaczynają być coraz bardziej narażone na ataki. Obliczenia kwantowe oferują nowe sposoby rozwiązania problemów kryptograficznych, które są znacznie trudniejsze do złamania przez klasyczne komputery.
+
+Kryptografia kwantowa wykorzystuje zjawisko splątania kwantowego, które pozwala na bezpieczne przesyłanie informacji. W kryptografii kwantowej, każda bitowa wartość (1 lub 0) jest zapisywana jako stan kwantowy. Zasada nieoznaczoności Heisenberga mówi, że każde pomiary w przypadku kwantów wprowadzają zakłócenia w stanie kwantowym, a zatem w przypadku próby odczytu informacji, atakujący wprowadza zmiany w transmisji, co może zostać wykryte. W ten sposób, w przypadku ataku na transmisję, od razu jest to widoczne, co daje możliwość przerwania transmisji.
+
+Obecnie technologia kryptografii kwantowej jest jeszcze na etapie rozwoju, jednak już teraz można zauważyć zwiększające się zainteresowanie tym tematem. W najbliższych latach można oczekiwać coraz większego wykorzystania obliczeń kwantowych w celu zabezpieczenia informacji.
