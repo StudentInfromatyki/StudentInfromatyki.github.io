@@ -18,6 +18,8 @@ Architektura sieciowa to sposób organizacji i połączenia urządzeń sieciowyc
   Rys.1 Architektura sieci komputerowej
 <br>
   <img src="\assets\img\Sieci\1.png" width="650" alt="architektura">
+  <br>
+  Źródło: https://ptech.pl/wp-content/uploads/jak-zbudowana-jest-siec-komputerowa.jpg
 </p>
 
 + Komputery: to podstawowe urządzenia, które wykorzystują sieć do przesyłania i odbierania danych.
@@ -40,7 +42,7 @@ Model TCP/IP to model warstwowy, który opisuje sposób, w jaki urządzenia siec
 <p align="center">
 Rys. 1.1.1. Model TCP/IP
 <br>
-  <img src="\assets\img\Sieci\2.jpg" width="650" alt="TCP/IP">
+  <img src="\assets\img\Sieci\2.jpg" width="450" alt="TCP/IP">
   <br>
   Źródło: https://pasja-informatyki.pl/pliki/model-tcp-ip.jpg
 </p>
@@ -80,6 +82,8 @@ Model ISO/OSI (Open Systems Interconnection) to model warstwowy, który opisuje 
 Rys. 1.2.1. Model ISO/OSI
 <br>
   <img src="\assets\img\Sieci\3.png" width="650" alt="ISO/OSI">
+  <br>
+  Źródło: https://techsoftcenter.com/wp-content/uploads/2018/10/osi-model-table-1024x471.png
 </p>
 
 
@@ -122,9 +126,11 @@ Najważniejsze zalety technologii Wi-Fi to brak konieczności stosowania kabli, 
 Technologia IPS (Intrusion Prevention System) to narzędzie bezpieczeństwa sieciowego, które służy do wykrywania i blokowania niebezpiecznych działań na sieci. IPS jest rozwinięciem technologii IDS (Intrusion Detection System), która służy tylko do wykrywania działań nieautoryzowanych.
 
 <p align="center">
-Rys. 2.3.1. IPS
+Rys. 2.3.1. Zasada działania IPS
 <br>
   <img src="\assets\img\Sieci\5.png" width="650" alt="IPS">
+  <br>
+  Źródło: https://assets.website-files.com/5ff66329429d880392f6cba2/623d912f786507381fb32bca_IPS%20at%20work.jpg
 </p>
 
 IPS monitoruje ruch sieciowy i analizuje go, szukając zachowań, które mogą wskazywać na atak lub inne niebezpieczne działanie. Gdy IPS wykryje takie zachowanie, natychmiast podejmuje akcje mające na celu zablokowanie lub zminimalizowanie szkód wynikających z ataku. IPS może na przykład zablokować ruch sieciowy pochodzący z niezaufanego źródła, lub zablokować atakującego, który próbuje przeprowadzić atak typu Denial of Service (DoS). Systemy IPS mogą także wykrywać różne rodzaje ataków, takie jak próby przejęcia sesji, ataki typu SQL injection, próby złamania hasła, próby ataków na usługi sieciowe i wiele innych.
@@ -189,16 +195,18 @@ TCP działa w następujący sposób:
 
 TCP jest często używany w aplikacjach, które wymagają niezawodnej i uporządkowanej transmisji danych, takich jak przeglądarki internetowe, poczta elektroniczna, transfer plików czy strumieniowanie wideo. Jednakże, ze względu na swoje mechanizmy kontroli przepływu i naprawy błędów, TCP wprowadza dodatkowe opóźnienia w transmisji danych, co może wpłynąć na szybkość przesyłania danych w niektórych zastosowaniach wymagających szybkiej transmisji, takich jak gry online czy transmisja strumieniowa w czasie rzeczywistym.
 
-Przykład działania protokołu TCP:
+### Przykład działania protokołu TCP:
 
-Krok 1: Nawiązanie połączenia:
+#### Krok 1: Nawiązanie połączenia:
 
 Kiedy dwa komputery chcą przesłać do siebie dane za pomocą protokołu TCP, muszą najpierw nawiązać połączenie za pomocą trójstronnego uścisku dłoni (ang. three-way handshake).
 
 <p align="center">
-Rys. 4.1.2. Przykład działania TCP
+Rys. 4.1.2. Nawiązanie połączenia
 <br>
   <img src="\assets\img\Sieci\9.png" width="650" alt="Przykład TCP">
+  <br>
+  Źródło: https://nordvpn.com/wp-content/uploads/blog-how-tcp-works-infographic-server-phone-pl-1200x628-1.svg
 </p>
 
 Protokół TCP/IP to zbiór protokołów, które są używane do przesyłania danych w sieciach komputerowych. Protokół TCP jest jednym z protokołów wchodzących w skład protokołu TCP/IP i odpowiada za zapewnienie niezawodnej transmisji danych między aplikacjami działającymi na różnych komputerach w sieci.
@@ -213,9 +221,11 @@ Natomiast protokół TCP/IP składa się z wielu protokołów, w tym m.in. z pro
 Protokół UDP jest prostym, bezpołączeniowym protokołem, którego największą zaletą jest niewielki narzut danych sterujących, dodawanych w procesie enkapsulacji. UDP w datagramie dodaje tylko 8 bajtów danych sterujących. Nagłówek datagramu UDP wygląda tak:
 
 <p align="center">
-Rys. 4.2.1. Ramka UDP
+Rys. 4.2.1. Nagłówek datagramu UDP
 <br>
   <img src="\assets\img\Sieci\10.png" width="650" alt="UDP">
+  <br>
+  Źródło: https://pasja-informatyki.pl/pliki/naglowek-datagramu-udp.jpg
 </p>
 
 + Port źródłowy – określa port aplikacji, z której wysłano dane.
@@ -228,9 +238,11 @@ UDP (User Datagram Protocol) to protokół warstwy transportowej w modelu OSI, k
 W przeciwieństwie do protokołu TCP, UDP nie zapewnia mechanizmów kontroli błędów i gwarancji dostarczenia danych. Zamiast tego, aplikacja musi sama zadbać o sprawdzenie poprawności otrzymanych danych oraz o retransmisję w przypadku ich utraty.
 
 <p align="center">
-Rys. 4.2.2. Działanie UDP
+Rys. 4.2.2. Jak działa UDP
 <br>
   <img src="\assets\img\Sieci\11.png" width="650" alt="Działanie UDP">
+  <br>
+  Źródło: https://nordvpn.com/wp-content/uploads/blog-how-udp-works-infographic-server-phone-pl-1200x628-1.svg
 </p>
 
 UDP jest często wykorzystywany do przesyłania informacji, które nie wymagają pełnej niezawodności, jak na przykład transmisja strumieniowa w czasie rzeczywistym (np. wideo czy dźwięku). Wysoka szybkość przesyłania danych i brak opóźnień wynikających z konieczności nawiązywania połączenia i kontroli błędów czynią UDP idealnym protokołem dla takich zastosowań.
@@ -241,9 +253,11 @@ UDP jest często wykorzystywany do przesyłania informacji, które nie wymagają
 IP (Internet Protocol) to protokół warstwy sieciowej w modelu OSI, który odpowiada za przesyłanie pakietów między różnymi sieciami komputerowymi w Internecie. IP jest protokołem bezpołączeniowym, co oznacza, że nie utrzymuje on żadnego stanu między wysyłającym a odbierającym.
 
 <p align="center">
-Rys. 4.2.2. Działanie IP
+Rys. 4.2.2. Działanie IPv4
 <br>
   <img src="\assets\img\Sieci\12.png" width="650" alt="IP">
+  <br>
+  Źródło: https://pasja-informatyki.pl/pliki/cechy-ipv4.jpg
 </p>
 
 IP dzieli dane na pakiety i przekazuje je do odbiorcy, wykorzystując do tego celu adresy IP na dane każdemu urządzeniu w sieci. Protokół IP jest niezawodny w sensie, że gwarantuje dostarczenie pakietów do celu, ale nie zapewnia gwarancji kolejności, w jakiej pakiety zostaną dostarczone.
@@ -263,14 +277,16 @@ Każde żądanie HTTP składa się z trzech części: metody, adresu URL i wersj
 Odpowiedź HTTP składa się z trzech części: statusu, nagłówków i treści. Status określa, czy żądanie zostało pomyślnie wykonane, czy też wystąpił jakiś błąd. Nagłówki zawierają dodatkowe informacje na temat odpowiedzi, takie jak typ treści, rozmiar pliku i czas wygaśnięcia. Treść zawiera właściwe dane przesyłane z serwera do przeglądarki, takie jak strona internetowa lub plik multimedialny.
 
 <p align="center">
-Rys. 5.1.1. Prośba o plik 
+Rys. 5.1.1. Wyświetlanie zawartości użytkownikowi 
 <br>
   <img src="\assets\img\Sieci\13.png" width="650" alt="HTTP">
+  <br>
+  Źródło: https://pasja-informatyki.pl/pliki/http-url-html.jpg
 </p>
 
 Oczywiście tak to wygląd w telegraficznym skrócie. W rzeczywistości proces ten jest nieco bardziej złożony. Weźmy sobie przykładowy adres internetowy:
 
-http://www.alamakota.pl/tomijerry.html
+*http://www.alamakota.pl/tomijerry.html*
 
 Po jego wpisaniu i zatwierdzeniu, najpierw przeglądarka sprawdza rodzaj protokołu, następnie nazwę domeny internetowej, a na końcu dopiero brana jest pod uwagę nazwa konkretnego pliku. Później nasza przeglądarka odwołuje się do serwera DNS, w celu zamiany nazwy mnemonicznej, czyli alamakota.pl na adres IP serwera, na którym ta strona jest przechowywana.
 
@@ -278,6 +294,8 @@ Po jego wpisaniu i zatwierdzeniu, najpierw przeglądarka sprawdza rodzaj protoko
 Rys. 5.1.2. Pytanie do serwera DNS
 <br>
   <img src="\assets\img\Sieci\14.png" width="650" alt="HTTP-1">
+  <br>
+  Źródło: https://pasja-informatyki.pl/pliki/serwer-dns.jpg
 </p>
 
 Znając już ten adres przeglądarka wysyła żądanie do serwera o udostępnienie pliku tomijerry.html znajdującego się w domenie alamakota.pl. Jeśli serwer dany zasób posiada w odpowiedzi przesyła stosowny komunikat wraz z zawartością żądanego pliku. Zawartość tego pliku, czyli kod HTML jest przez przeglądarkę interpretowany i wyświetlany jako strona WWW.
