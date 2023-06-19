@@ -458,7 +458,7 @@ Rys. 5.9.1. Działanie LDAP
 <br>
   <img src="\assets\img\Sieci\20.png" width="550" alt="LDAP">
   <br>
-  Źródło: https://blog.invgate.com/hs-fs/hubfs/03%20-%20What%20is%20LDAP%20and%20How%20Does%20it%20Work%20-%20Asset%2002.jpg?width=1001&name=03%20-%20What%20is%20LDAP%20and%20How%20Does%20it%20Work%20-%20Asset%2002.jpg
+  Źródło: https://tiny.pl/cmnv4
 </p>
 
 LDAP działa w oparciu o model klient-serwer, w którym klient LDAP żąda informacji z serwera LDAP, który przechowuje katalog informacji. Protokół ten wykorzystuje protokół TCP/IP do komunikacji między klientem a serwerem.
@@ -495,7 +495,9 @@ Protokół SNMP jest szeroko stosowany w sieciach komputerowych, zwłaszcza w ś
 <p align="center">
 Rys. 6.1.1. Działanie protokołu SNMP
 <br>
-  <img src="\assets\img\Sieci\22.png" width="650" alt="SNMP">
+  <img src="\assets\img\Sieci\22.png" width="600" alt="SNMP">
+  <br>
+  Źródło: https://itfocus.pl/wp-content/uploads/2016/08/image001.jpg
 </p>
 
 Agenci rezydują na każdym urządzeniu sieciowym (routerze, punkcie dostępowym, stacji roboczej czy nawet drukarce obsługującej SNMP) i tworzą bazę danych zwaną MIB (ang. Management Information Base). W bazie przechowywane są obiekty opisujące właściwości danego urządzenia. Na żądanie zarządcy, obiekty te są udostępniane, ujawniając informacje takie, jak np. temperatura procesora, ilość wolnego miejsca na dysku, bieżące obciążenie interfejsu sieciowego czy liczba aktualnie zalogowanych użytkowników.
@@ -509,25 +511,31 @@ SSH jest stosowany do zdalnej administracji serwerów, przesyłania plików i wy
 Protokół SSH jest zastępcą protokołu Telnet, który był wcześniej wykorzystywany do zdalnej administracji systemów. SSH zapewnia większe bezpieczeństwo, ponieważ wszystkie dane przesyłane są szyfrowane, a proces uwierzytelniania jest bardziej bezpieczny niż w przypadku protokołu Telnet. W dzisiejszych czasach SSH jest standardem w większości systemów operacyjnych i jest szeroko stosowany do zdalnego zarządzania serwerami.
 
 <p align="center">
-Rys. 6.2.1. Działanie protokołu SSH
+Rys. 6.2.1. Nawiązanie połączenia SSH
 <br>
   <img src="\assets\img\Sieci\23.png" width="650" alt="SSH">
+  <br>
+  Źródło: https://pasja-informatyki.pl/pliki/ssh.jpg
 </p>
 
 możliwość szyfrowania danych za pomocą nieco słabszego algorytmu DSA. Podczas instalacji serwera SSH tworzona jest para kluczy – klucz publiczny i prywatny serwera – służą one do szyfrowania i deszyfrowania komunikacji. Podczas pierwszego połączenia z serwerem, klient, zapisuje publiczny klucz serwera na swoim dysku, w pliku known_hosts.
 
 <p align="center">
-Rys. 6.2.2. Działanie protokołu SSH
+Rys. 6.2.2. Zapisanie publicznego klucza serwera na dysku
 <br>
   <img src="\assets\img\Sieci\24.png" width="650" alt="SSH-1">
+  <br>
+  Źródło: https://pasja-informatyki.pl/pliki/plik-known_hosts.jpg
 </p>
 
 Następnie tworzy tak zwany klucz sesji, który będzie stosowany do szyfrowania całej komunikacji. Klucz sesji zostaje zaszyfrowany kluczem publicznym otrzymanym wcześniej od serwera i jest do niego odsyłany. Od tego momentu cała komunikacja szyfrowana jest kluczem sesji.
 
 <p align="center">
-Rys. 6.2.3. Działanie protokołu SSH
+Rys. 6.2.3. Szyfrowanie komunikacji
 <br>
   <img src="\assets\img\Sieci\25.png" width="650" alt="SSH-2">
+  <br>
+  Źródło: https://pasja-informatyki.pl/pliki/klucz-sesji.jpg
 </p>
 
 
@@ -539,6 +547,8 @@ RADIUS (Remote Authentication Dial-In User Service) to protokół autoryzacji i 
 Rys. 6.2.3. Działanie protokołu RADIUS
 <br>
   <img src="\assets\img\Sieci\26.png" width="650" alt="RADIUS">
+  <br>
+  Źródło: https://draytek.pl/wp-content/uploads/2020/01/p6625-schemat.png
 </p>
 
 Klient RADIUS jest zainstalowany na serwerze zdalnego dostępu, takim jak serwer VPN lub punkt dostępowy do sieci bezprzewodowej. Gdy użytkownik próbuje uzyskać dostęp do sieci, klient RADIUS przekierowuje żądanie uwierzytelnienia do serwera RADIUS. Serwer RADIUS przetwarza żądanie uwierzytelnienia i odpowiada na nie, przekazując informacje o poziomie uprawnień użytkownika do klienta RADIUS.
@@ -548,9 +558,11 @@ Protokół RADIUS umożliwia również śledzenie logowania użytkowników i zar
 RADIUS jest szeroko stosowany w sieciach korporacyjnych i usługowych, gdzie istnieje potrzeba zdalnego uwierzytelnienia użytkowników i zarządzania ich dostępem do zasobów sieciowych. Protokół ten jest niezbędny w przypadku infrastruktury VPN, gdzie użytkownicy zdalni muszą zostać uwierzytelnieni, aby uzyskać dostęp do sieci korporacyjnej.
 
 <p align="center">
-Rys. 6.2.3. Stosowanie RADIUS
+Rys. 6.2.3. Porównanie RADIUS i TACACS
 <br>
   <img src="\assets\img\Sieci\27.png" width="650" alt="RADIUS-1">
+  <br>
+  Źródło: https://pasja-informatyki.pl/pliki/tacacs-vs-radius.png
 </p>
 
 # 7. Protokoły routingu
@@ -563,6 +575,8 @@ Istnieją dwa rodzaje protokołów routingu: protokoły statyczne i dynamiczne. 
 Rys. 7.1. Działanie protokołów routingu
 <br>
   <img src="\assets\img\Sieci\28.png" width="650" alt="Routing">
+  <br>
+  Źródło: https://pasja-informatyki.pl/pliki/rutery.jpg
 </p>
 
 
@@ -601,9 +615,11 @@ BGP umożliwia stosowanie polityk routingu, które pozwalają dostawcom usług i
 IS-IS (Intermediate System to Intermediate System) to protokół routingu, który używa się głównie w sieciach typu ISP i w dużych sieciach korporacyjnych. IS-IS działa na poziomie warstwy 2 i warstwy 3 modelu OSI, co oznacza, że obsługuje zarówno routowanie IP, jak i nierutowalnych protokołów warstwy 2, takich jak Ethernet.
 
 <p align="center">
-Rys. 7.4.1. IS-IS Routing
+Rys. 7.4.1. Intermediate System to Intermediate System
 <br>
-  <img src="\assets\img\Sieci\29.png" width="650" alt="IS-IS">
+  <img src="\assets\img\Sieci\29.png" width="500" alt="IS-IS">
+  <br>
+  Źródło: https://csproidea.pl/wp-content/uploads/2021/09/isis-blog.jpg
 </p>
 
 W protokole IS-IS każde urządzenie sieciowe, zwane systemem pośredniczącym, posiada identyfikator systemu pośredniczącego (System ID) i adres IP. W sieci IS-IS każdy system pośredniczący zna swoich bezpośrednich sąsiadów i wymienia z nimi informacje o topologii sieci, a te informacje są następnie przesyłane do pozostałych systemów pośredniczących.
@@ -700,7 +716,7 @@ VPN (Virtual Private Network) to technologia umożliwiająca tworzenie prywatnyc
 
 Ważną funkcją VPN jest szyfrowanie danych przesyłanych między urządzeniami. To oznacza, że wszystkie dane, które są przesyłane między urządzeniami, są zaszyfrowane i nie mogą być odczytane przez osoby trzecie. VPN zapewnia również uwierzytelnienie, czyli proces weryfikacji tożsamości użytkownika przed udostępnieniem dostępu do sieci prywatnej. Ważną funkcją VPN jest szyfrowanie danych przesyłanych między urządzeniami. To oznacza, że wszystkie dane, które są przesyłane między urządzeniami, są zaszyfrowane i nie mogą być odczytane przez osoby trzecie. VPN zapewnia również uwierzytelnienie, czyli proces weryfikacji tożsamości użytkownika przed udostępnieniem dostępu do sieci prywatnej.
 
-Istnieją różne rodzaje VPN, w tym:
+#### Istnieją różne rodzaje VPN, w tym:
 + VPN zdalnego dostępu - umożliwia pracownikom zdalne łączenie się z siecią firmową z dowolnego miejsca na świecie.
 + VPN site-to-site - umożliwia łączenie ze sobą różnych sieci LAN znajdujących się w różnych lokalizacjach geograficznych, tworząc jedną wirtualną sieć.
 + VPN klient-serwer - umożliwia łączenie się z serwerem VPN z poziomu aplikacji na urządzeniu, takiej jak klient VPN, który umożliwia łatwe połączenie z siecią prywatną.
@@ -711,7 +727,7 @@ Kerberos to protokół uwierzytelniania sieciowego służący do zapewnienia bez
 
 Protokół Kerberos działa na zasadzie wymiany kluczy kryptograficznych między klientem a serwerem. Dzięki temu klient może się uwierzytelnić przed serwerem i uzyskać dostęp do zasobów sieciowych.
 
-Główne zalety protokołu Kerberos to:
+#### Główne zalety protokołu Kerberos to:
 + Bezpieczeństwo: protokół Kerberos zapewnia bezpieczeństwo w sieci poprzez szyfrowanie przesyłanych danych i uwierzytelnianie klientów i serwerów.
 + Skalowalność: Kerberos może obsługiwać duże sieci z wieloma klientami i serwerami.
 + Łatwość w zarządzaniu: Kerberos umożliwia centralizowane zarządzanie uwierzytelnianiem i autoryzacją dostępu do zasobów.
@@ -743,14 +759,18 @@ Aby komputery z systemem Windows, pobierały adresy z serwera DHCP, w konfigurac
 Rys. 9.1.1. Działanie DHCP 
 <br>
   <img src="\assets\img\Sieci\30.png" width="650" alt="DHCP">
+  <br>
+  Źródło: https://pasja-informatyki.pl/pliki/protokol-dhcp.jpg
 </p>
 
 Aby komputery z systemem Windows, pobierały adresy z serwera DHCP, w konfiguracji sieci należy wybrać opcję "Uzyskaj adres IP automatycznie".
 
 <p align="center">
-Rys. 9.1.2. Ustawienia DHCP
+Rys. 9.1.2. Uzyskanie adresu IP automatycznie
 <br>
-  <img src="\assets\img\Sieci\31.png" width="650" alt="DHCP-1">
+  <img src="\assets\img\Sieci\31.png" width="500" alt="DHCP-1">
+  <br>
+  Źródło: https://pasja-informatyki.pl/pliki/uzyskaj-ip-automatycznie.jpg
 </p>
 
 ## 9.2. DNS
@@ -769,6 +789,8 @@ Klient wysyła żądanie do serwera DNS, a ten sprawdza, czy w swojej bazie posi
 Rys. 9.2.1. Pytanie do serwera
 <br>
   <img src="\assets\img\Sieci\32.png" width="650" alt="DNS">
+  <br>
+  Źródło: https://pasja-informatyki.pl/pliki/zadanie-dns-etap-2.jpg
 </p>
 
 Jeśli nie, to kontaktuje się z innymi serwerami, aby te dany rekord wyszukały w swoich bazach:
@@ -777,6 +799,8 @@ Jeśli nie, to kontaktuje się z innymi serwerami, aby te dany rekord wyszukały
 Rys. 9.2.1. Pytanie do innych serwerów
 <br>
   <img src="\assets\img\Sieci\33.png" width="650" alt="DNS-1">
+  <br>
+  Źródło: https://pasja-informatyki.pl/pliki/zadanie-dns-etap-3.jpg
 </p>
 
 
@@ -787,18 +811,22 @@ Kiedy jako użytkownicy sieci, wysyłamy dane z jednego urządzenia do drugiego 
 ARP to mechanizm pozwalający na odwzorowanie adresu logicznego, czyli IP na adres fizyczny, czyli MAC. Załóżmy, że komputer chcąc przesłać dane do innego urządzenia zna jego adres IP, ale nie zna adresu MAC. Aby ten adres poznać, komputer będący nadawcą danych, zanim te konkretne dane wyśle, tworzy rozgłoszeniową ramkę ARP, która rozsyłana jest do wszystkich urządzeń w tej samej sieci. W polu adresu źródłowego takiej ramki zapisywany jest adres komputera, który przygotował taką ramkę, a w polu adresu docelowego, rozgłoszeniowy adres MAC: FF-FF-FF-FF-FF-FF.
 
 <p align="center">
-Rys. 9.3.1. Tablica ARP
+Rys. 9.3.1. Tworzenie rozgłoszeniowej ramki ARP
 <br>
   <img src="\assets\img\Sieci\34.png" width="650" alt="ARP">
+  <br>
+  Źródło: https://pasja-informatyki.pl/pliki/rozgloszeniowa-ramka-arp.jpg
 </p>
 
 
 Każde z urządzeń, które odbierze ramkę, dekapsuluje ją do postaci pakietu i sprawdza, czy w polu docelowym adres IP jest jego adres. Jeśli w polu docelowy adres IP będzie inny adres niż jego, to zignoruje pakiet, jeśli natomiast to jego adres IP, utworzy nową ramkę, w której zapisany będzie jego adres MAC i przekaże ją do przesłania.
 
 <p align="center">
-Rys. 9.3.2. Tablica ARP
+Rys. 9.3.2. Tworzenie nowej ramki ARP
 <br>
   <img src="\assets\img\Sieci\35.png" width="650" alt="ARP-1">
+  <br>
+  Źródło: https://pasja-informatyki.pl/pliki/odpowiedz-arp.jpg
 </p>
 
 Teraz już komputer, który wysłał rozgłoszeniową ramkę wie jaki adres fizyczny ma urządzenie, z którym chce się skomunikować i taką komunikację może rozpocząć. Informacje o odwzorowaniu adresu IP na adres MAC zapisywane są w tablicy ARP każdego urządzenia, tak aby można je było wykorzystać w późniejszym czasie.
@@ -836,9 +864,9 @@ Podany jest adres ip w postaci: *192.168.1.145* oraz maska *255.255.255.128*. Na
 
 oraz wskazać adres pierwszego i ostatniego hosta w sieci.
 
-Rozwiązanie: 
+#### Rozwiązanie: 
 
-1. Obliczamy adres sieci
++ Obliczamy adres sieci
 
 Zmieniamy adres IP oraz maskę na postać binarną
 
@@ -846,6 +874,8 @@ Zmieniamy adres IP oraz maskę na postać binarną
 Rys. 10.1.1.1. Zmiana adresów
 <br>
   <img src="\assets\img\Sieci\36.png" width="650" alt="Dzielenie">
+  <br>
+  Źródło: http://kawia.wex.pl/IP1.jpg
 </p>
 
 Na otrzymanych liczbach binarnych wykonujemy operację AND (czyli mnożymy liczby w kolumnach)
@@ -854,6 +884,8 @@ Na otrzymanych liczbach binarnych wykonujemy operację AND (czyli mnożymy liczb
 Rys. 10.1.1.2. Operacja AND
 <br>
   <img src="\assets\img\Sieci\37.png" width="650" alt="Dzielenie-1">
+  <br>
+  Źródło: http://kawia.wex.pl/IP2.jpg
 </p>
 
 Otrzymaną postać binarną konwertujemy na liczbę dziesiętną
@@ -862,9 +894,11 @@ Otrzymaną postać binarną konwertujemy na liczbę dziesiętną
 Rys. 10.1.1.3. Konwertacja na liczbę dziesiętną
 <br>
   <img src="\assets\img\Sieci\38.png" width="650" alt="Dzielenie-2">
+  <br>
+  Źródło: http://kawia.wex.pl/IP3.jpg
 </p>
 
-2. Obliczamy adres rozgłoszeniowy
++ Obliczamy adres rozgłoszeniowy
 
 Na postaci binarnej maski wykonujemy operację logiczną NOT (jedynki zamieniamy na zera, a zera na jedynki)
 
@@ -872,14 +906,18 @@ Na postaci binarnej maski wykonujemy operację logiczną NOT (jedynki zamieniamy
 Rys. 10.1.1.4. Operacja NOT
 <br>
   <img src="\assets\img\Sieci\39.png" width="650" alt="Dzielenie-3">
+  <br>
+  Źródło: http://kawia.wex.pl/IP4.jpg
 </p>
 
 Zamieniamy otrzymaną liczbę binarną na postać dziesiętną
 
 <p align="center">
-Rys. 10.1.1.5. Zamiana na postac dziesiętna
+Rys. 10.1.1.5. Zamiana na postać dziesiętna
 <br>
   <img src="\assets\img\Sieci\40.png" width="650" alt="Dzielenie-4">
+  <br>
+  Źródło: http://kawia.wex.pl/IP5.jpg
 </p>
 
 Otrzymaną liczbę dziesiętną dodajemy do adresu sieci
@@ -888,9 +926,11 @@ Otrzymaną liczbę dziesiętną dodajemy do adresu sieci
 Rys. 10.1.1.6. Dodanie do adresu sieci
 <br>
   <img src="\assets\img\Sieci\41.png" width="650" alt="Dzielenie-5">
+  <br>
+  Źródło: http://kawia.wex.pl/IP6.jpg
 </p>
 
-3. Obliczamy maksymalną liczbę hostów w sieci
++ Obliczamy maksymalną liczbę hostów w sieci
 
 Obliczając maksymalną liczbę hostów w sieci korzystamy ze wzoru
 
@@ -898,6 +938,8 @@ Obliczając maksymalną liczbę hostów w sieci korzystamy ze wzoru
 Rys. 10.1.1.7. Wzór
 <br>
   <img src="\assets\img\Sieci\42.png" width="650" alt="Dzielenie-6">
+  <br>
+  Źródło: http://kawia.wex.pl/IP7.jpg
 </p>
 
 przypominam, że skrócony zapis maski to liczba jedynek w jej postaci binarnej
@@ -907,6 +949,8 @@ przypominam, że skrócony zapis maski to liczba jedynek w jej postaci binarnej
 Rys. 10.1.1.8. Co w naszym przypadku daje
 <br>
   <img src="\assets\img\Sieci\43.png" width="650" alt="Dzielenie-7">
+  <br>
+  Źródło: http://kawia.wex.pl/IP8.jpg
 </p>
 
 Na koniec wskazujemy adres pierwszego i ostatniego hosta w sieci
@@ -916,7 +960,7 @@ Jeśli adres sieci ma postać 192.168.1.128 to adres pierwszego hosta będzie mi
 Jeśli natomiast adres rozgłoszeniowy ma postać 192.168.1.255 to adres ostatniego hosta będzie miał postać *192.168.1.254*
 
 
-Podsumowując:
+#### Podsumowując:
 
 + Adres sieci: *192.168.1.128*
 + Adres rozgłoszeniowy: *192.168.1.255*
@@ -924,7 +968,7 @@ Podsumowując:
 + Pierwszy host: *192.168.1.129*
 + Ostatni host: *192.168.1.254*
 
-Podział na podsieci:
+#### Podział na podsieci:
 
 <p align="center">
 Rys. 10.1.1.9. Podział na podsieci
@@ -946,7 +990,7 @@ W celu nadawania adresów w warstwie drugiej i trzeciej stosuje się różne met
 
 VLAN (Virtual Local Area Network) to technologia, która umożliwia podział sieci fizycznej na logiczne segmenty, co pozwala na lepszą organizację sieci, zwiększenie jej wydajności i bezpieczeństwa. VLANy umożliwiają grupowanie urządzeń sieciowych na podstawie różnych kryteriów, takich jak lokalizacja geograficzna, funkcja, departament, itp.
 
-Przykładowo, w dużym przedsiębiorstwie może istnieć potrzeba podziału sieci na kilka VLANów, takich jak:
+#### Przykładowo, w dużym przedsiębiorstwie może istnieć potrzeba podziału sieci na kilka VLANów, takich jak:
 + VLAN dla działu finansowego,
 + VLAN dla działu IT,
 + VLAN dla działu produkcji,
@@ -969,11 +1013,11 @@ Segmentacja sieci wirtualnych (VLAN) jest techniką dzielenia jednej sieci fizyc
 
 ### Broadcast, multicast i unicast:
 
-Broadcast: to metoda transmisji, w której dane są przesyłane do wszystkich urządzeń w sieci. Broadcast jest używany, gdy potrzebujemy przesłać informację do wszystkich urządzeń w sieci. W przypadku sieci VLAN, broadcast będzie dotyczył tylko urządzeń w tej samej sieci VLAN.
+*Broadcast*: to metoda transmisji, w której dane są przesyłane do wszystkich urządzeń w sieci. Broadcast jest używany, gdy potrzebujemy przesłać informację do wszystkich urządzeń w sieci. W przypadku sieci VLAN, broadcast będzie dotyczył tylko urządzeń w tej samej sieci VLAN.
 
-Multicast: to metoda transmisji, w której dane są przesyłane do wybranej grupy urządzeń. Multicast jest używany, gdy potrzebujemy przesłać informację tylko do wybranej grupy urządzeń. W przypadku sieci VLAN, multicast będzie dotyczył tylko urządzeń w tej samej sieci VLAN.
+*Multicast*: to metoda transmisji, w której dane są przesyłane do wybranej grupy urządzeń. Multicast jest używany, gdy potrzebujemy przesłać informację tylko do wybranej grupy urządzeń. W przypadku sieci VLAN, multicast będzie dotyczył tylko urządzeń w tej samej sieci VLAN.
 
-Unicast: to metoda transmisji, w której dane są przesyłane tylko do jednego urządzenia w sieci. Unicast jest używany, gdy potrzebujemy przesłać informację tylko do jednego urządzenia. W przypadku sieci VLAN, unicast będzie dotyczył tylko urządzeń w tej samej sieci VLAN.
+*Unicast*: to metoda transmisji, w której dane są przesyłane tylko do jednego urządzenia w sieci. Unicast jest używany, gdy potrzebujemy przesłać informację tylko do jednego urządzenia. W przypadku sieci VLAN, unicast będzie dotyczył tylko urządzeń w tej samej sieci VLAN.
 
 ### Technologia VLAN z standardem 802.1Q:
 
@@ -988,8 +1032,9 @@ Broadcast, multicast i unicast to trzy podstawowe rodzaje przesyłania ramek Eth
 
 ## 10.3. Konfiguracja routerów i przełączników
 
-Konfiguracja routerów i przełączników to ważna część administracji sieciowej, która pozwala na zapewnienie poprawnego działania sieci i jej optymalizację. Poniżej przedstawione są podstawowe kroki konfiguracji tych urządzeń.
+Konfiguracja routerów i przełączników to ważna część administracji sieciowej, która pozwala na zapewnienie poprawnego działania sieci i jej optymalizację. 
 
+#### Poniżej przedstawione są podstawowe kroki konfiguracji tych urządzeń.
 + Logowanie do urządzenia - Konfiguracja routerów i przełączników rozpoczyna się od zalogowania do urządzenia przy użyciu przeglądarki internetowej lub programu konsolowego.
 + Konfiguracja interfejsów - Następnie należy skonfigurować interfejsy urządzenia, czyli określić, jakie porty są używane do komunikacji z innymi urządzeniami w sieci.
 + Adresacja IP - Po skonfigurowaniu interfejsów należy przydzielić adresy IP, które będą wykorzystywane do komunikacji między urządzeniami. Adresy te mogą być przydzielane ręcznie lub automatycznie przez protokół DHCP.
@@ -1001,6 +1046,8 @@ Konfiguracja routerów i przełączników to ważna część administracji sieci
 Rys. 10.3.1. Konfiguracja routerów i przełączników
 <br>
   <img src="\assets\img\Sieci\45.png" width="650" alt="Konfiguracja">
+  <br>
+  Źródło: https://www.bhpex.pl/wp-content/uploads/konfiguracja-przelacznika-topologia.png
 </p>
 
 Konfiguracja przełączników wygląda podobnie, ale ma kilka specyficznych kroków. Przede wszystkim należy skonfigurować VLANy, czyli wirtualne sieci, które umożliwiają izolowanie ruchu między różnymi segmentami sieci. Następnie należy skonfigurować porty przełącznika, określając, który port jest podłączony do jakiej sieci i który port jest używany jako uplink do routera. W przypadku bardziej zaawansowanych przełączników, istnieją również dodatkowe funkcje, takie jak Quality of Service (QoS), link aggregation i protokoły STP, które można skonfigurować dla lepszej wydajności sieci.
@@ -1009,7 +1056,9 @@ Konfiguracja routerów i przełączników jest kluczowa dla poprawnego działani
 
 ## 10.4. Sieci bezpieczne 
 
-Sieci bezpieczne to sieci komputerowe, w których zastosowano odpowiednie środki i procedury bezpieczeństwa w celu ochrony danych, urządzeń i użytkowników przed atakami i zagrożeniami z zewnątrz i wewnątrz sieci. Sieci bezpieczne opierają się na zasadach takich jak:
+Sieci bezpieczne to sieci komputerowe, w których zastosowano odpowiednie środki i procedury bezpieczeństwa w celu ochrony danych, urządzeń i użytkowników przed atakami i zagrożeniami z zewnątrz i wewnątrz sieci. 
+
+#### Sieci bezpieczne opierają się na zasadach takich jak:
 + Kontrola dostępu: sieci bezpieczne wymagają autentykacji i uwierzytelnienia użytkowników oraz zastosowania zasad kontroli dostępu do zasobów sieciowych, takich jak serwery, bazy danych i inne urządzenia.
 + Szyfrowanie: dane przesyłane przez sieć powinny być szyfrowane w celu ochrony przed przechwytywaniem i odczytywaniem przez osoby trzecie
 + Firewall: sieci bezpieczne powinny być zabezpieczone za pomocą firewalla, który kontroluje ruch sieciowy i blokuje niebezpieczne połączenia.
@@ -1023,7 +1072,9 @@ Sieci bezpieczne to sieci komputerowe, w których zastosowano odpowiednie środk
 <p align="center">
 Rys. 11.1. Sieci LAN, WAN, MAN
 <br>
-  <img src="\assets\img\Sieci\46.png" width="650" alt="Sieci">
+  <img src="\assets\img\Sieci\46.png" width="550" alt="Sieci">
+  <br>
+  Źródło: https://www.utracki.us.edu.pl/wp-content/uploads/2020/11/obraz-32-1020x1024.png
 </p>
 
 Sieć LAN (Local Area Network) to sieć lokalna, która zwykle obejmuje niewielki obszar geograficzny, tak jak budynek, biuro lub kampus. W sieci LAN komputery i inne urządzenia są połączone ze sobą przewodowo lub bezprzewodowo, umożliwiając wymianę danych między nimi. Najczęściej wykorzystywane protokoły sieciowe w sieciach LAN to Ethernet, Wi-Fi i Bluetooth. 
@@ -1031,7 +1082,9 @@ Sieć LAN (Local Area Network) to sieć lokalna, która zwykle obejmuje niewielk
 <p align="center">
 Rys. 11.2. LAN i WAN
 <br>
-  <img src="\assets\img\Sieci\47.png" width="650" alt="Sieci-1">
+  <img src="\assets\img\Sieci\47.png" width="550" alt="Sieci-1">
+  <br>
+  Źródło: https://techterms.com/img/lg/wlan_1283.png
 </p>
 
 Sieć CAN (Controller Area Network) - Ta sieć kampusowa polega na połączeniu sieci budynkowych (LAN) w większą strukturę. Z uwagi na większe niż bezpośrednie sąsiedztwo odległości pomiędzy budynkami “spina” się je z wykorzystaniem technologii bardziej odpornej na zakłócenia, np. za pomocą kabla koncentrycznego, bądź światłowodowego z wykorzystaniem transceiverów.
@@ -1042,6 +1095,8 @@ To co jest istotne na tym etapie – to wiedza by nie mylić sieci komputerowej 
 Rys. 11.3. CAN
 <br>
   <img src="\assets\img\Sieci\48.png" width="650" alt="Sieci-2">
+  <br>
+  Źródło: https://i.ibb.co/jLR8DKq/Campus-Area-Network1.jpg
 </p>
 
 Sieć MAN (Metropolitan Area Network) to sieć o średnim zasięgu geograficznym, obejmująca miasto lub region. Sieci MAN są zwykle tworzone przez dostawców usług telekomunikacyjnych lub samorządy, aby umożliwić komunikację między różnymi punktami w mieście lub regionie. Przykładem sieci MAN może być sieć miejska, która zapewnia dostęp do Internetu i usług telekomunikacyjnych w całym mieście.
@@ -1049,7 +1104,9 @@ Sieć MAN (Metropolitan Area Network) to sieć o średnim zasięgu geograficznym
 <p align="center">
 Rys. 11.4. MAN
 <br>
-  <img src="\assets\img\Sieci\49.png" width="650" alt="Sieci-3">
+  <img src="\assets\img\Sieci\49.png" width="600" alt="Sieci-3">
+  <br>
+  Źródło: https://www.utracki.us.edu.pl/wp-content/uploads/2020/11/obraz-35.png
 </p>
 
 Sieć WAN (Wide Area Network) to sieć o dużym zasięgu geograficznym, obejmująca miasta, kraje lub kontynenty. W sieci WAN urządzenia są połączone ze sobą za pośrednictwem różnych środków, takich jak linie telefoniczne, przewody światłowodowe, radiowe lub satelitarne. Sieci WAN są często wykorzystywane przez duże firmy, instytucje i organizacje, aby umożliwić komunikację między oddziałami lub pracownikami w różnych lokalizacjach.
@@ -1058,6 +1115,8 @@ Sieć WAN (Wide Area Network) to sieć o dużym zasięgu geograficznym, obejmuj�
 Rys. 11.5. WAN
 <br>
   <img src="\assets\img\Sieci\50.png" width="650" alt="Sieci-4">
+  <br>
+  Źródło: https://www.utracki.us.edu.pl/wp-content/uploads/2020/11/obraz-34.png
 </p>
 
 
@@ -1074,7 +1133,7 @@ Analiza ruchu sieciowego może być wykorzystana w celu zrozumienia zachowania s
 
 Sieci chmurowe (ang. cloud computing) to model dostarczania zasobów informatycznych, takich jak serwery, aplikacje, bazy danych, przechowywanie danych i inne usługi przez internet. W tym modelu, dostawca usług chmurowych umieszcza zasoby na serwerach zdalnych i udostępnia je klientom przez internet. Zasoby te są zwykle dostępne na żądanie i są skalowalne, co oznacza, że mogą być dostosowane do potrzeb klientów.
 
-Istnieją trzy podstawowe modele usług chmurowych:
+#### Istnieją trzy podstawowe modele usług chmurowych:
 + IaaS (Infrastructure as a Service) - dostarczanie infrastruktury, takiej jak serwery, wirtualne maszyny, sieci i pamięć masową.
 + PaaS (Platform as a Service) - dostarczanie platformy do tworzenia i wdrażania aplikacji.
 + SaaS (Software as a Service) - dostarczanie oprogramowania jako usługi, takie jak aplikacje biurowe, CRM, ERP itp.
@@ -1100,6 +1159,8 @@ Virtualizacja sieci pozwala na wykorzystanie zasobów sieciowych w bardziej efek
 Rys. 14.1. Wirtualizacja
 <br>
   <img src="\assets\img\Sieci\51.png" width="650" alt="Wirtualizacja">
+  <br>
+  Źródło: https://pasja-informatyki.pl/pliki/wirtualizacja.png
 </p>
 
 
@@ -1134,7 +1195,7 @@ Wirtualny Router działa w sposób podobny do fizycznego routera, ale wirtualiza
 
 Software-Defined Networking (SDN) to koncepcja sieci, w której zarządzanie i kontrola nad przepływem danych są oddzielone od fizycznej warstwy sieci. W SDN, decyzje o przekierowaniu ruchu sieciowego podejmowane są na centralnym kontrolerze, a nie na poszczególnych urządzeniach sieciowych.
 
-W praktyce, SDN składa się z trzech głównych elementów:
+#### W praktyce, SDN składa się z trzech głównych elementów:
 + Aplikacji sieciowych: służą do zarządzania i monitorowania ruchu sieciowego w czasie rzeczywistym, takich jak aplikacje do optymalizacji ruchu, firewall'e i balansery obciążenia.
 + Kontrolera: to centralny punkt zarządzania, który zarządza przepływem ruchu sieciowego i podejmuje decyzje o przekierowaniu ruchu sieciowego na podstawie polityk sieciowych.
 + Przełączniki: to fizyczne urządzenia sieciowe, które przekazują ruch sieciowy na podstawie decyzji podejmowanych przez kontroler. Przełączniki muszą obsługiwać protokoły SDN, takie jak OpenFlow, aby umożliwić komunikację z kontrolerem.
@@ -1144,6 +1205,8 @@ W praktyce, SDN składa się z trzech głównych elementów:
 Rys. 14.3.1. Architektura SDN
 <br>
   <img src="\assets\img\Sieci\52.png" width="650" alt="SDN">
+  <br>
+  Źródło: https://marcelguzenda.pl/wp-content/uploads/2020/10/sdn-underlay-overlay-1024x475.png
 </p>
 
 Sieć overlay (nakładowa), to właśnie tutaj realizowane są wszystkie “inteligentne” funkcje takie jak różnego rodzaju polityki czy segmentacja. Mimo że protokoły komunikacyjne w tej warstwie mogą być różne w zależności od producenta danego rozwiązania, to do enkapsulacji wykorzystywany jest zazwyczaj protokół VXLAN.
@@ -1158,7 +1221,7 @@ Bez względu na to, w przypadku sieci definiowanych programowo śmiało możemy 
 
 NGFW (Next-Generation Firewall) to rodzaj zapory sieciowej, która umożliwia bardziej zaawansowaną kontrolę i zabezpieczenie ruchu sieciowego niż tradycyjne zapory. NGFW łączy w sobie funkcje tradycyjnych zapór sieciowych z dodatkowymi funkcjami, takimi jak IPS (Intrusion Prevention System), VPN (Virtual Private Network), filtracja treści, wykrywanie anomalii i zagrożeń, a także integrację z systemami SIEM (Security Information and Event Management).
 
-NGFW oferuje wiele funkcji związanych z bezpieczeństwem sieciowym, w tym:
+#### NGFW oferuje wiele funkcji związanych z bezpieczeństwem sieciowym, w tym:
 + Blokowanie niepożądanych aplikacji - NGFW może blokować dostęp do aplikacji, które nie są zgodne z polityką bezpieczeństwa organizacji, takich jak media społecznościowe, gry, poczta elektroniczna itp.
 + Kontrola dostępu - NGFW może umożliwiać lub blokować dostęp do zasobów sieciowych, w zależności od poziomu uprawnień użytkownika i rodzaju urządzenia.
 + Wykrywanie i blokowanie zagrożeń - NGFW może wykrywać i blokować niebezpieczne zachowania, takie jak ataki malware, phishing, ransomware itp.
@@ -1183,13 +1246,13 @@ Spanning Tree Protocol (STP) to protokół sieciowy, który umożliwia uniknięc
 
 STP działa poprzez wybieranie korzenia drzewa sieciowego, który służy jako punkt centralny dla całej sieci. Wszystkie pozostałe urządzenia sieciowe wybierają najkrótszą ścieżkę do korzenia, co tworzy drzewo topologii sieciowej. STP regularnie monitoruje ruch w sieci i automatycznie wybiera nową najkrótszą ścieżkę, jeśli oryginalna ścieżka zostanie przerwana.
 
-STP ma kilka zalet:
+#### STP ma kilka zalet:
 + Zapobiega pętlom - STP wybiera jedną ścieżkę do przesyłania ruchu w topologii drzewa, co zapobiega tworzeniu pętli.
 + Zwiększa niezawodność sieci - STP automatycznie wybiera nową najkrótszą ścieżkę, jeśli oryginalna ścieżka zostanie przerwana, co zapewnia niezawodność sieci.
 + Poprawia wydajność sieci - STP wybiera najlepszą ścieżkę do przesyłania ruchu, co zwiększa wydajność sieci i zmniejsza opóźnienia.
 + Łatwość konfiguracji - STP jest łatwy do skonfigurowania i działa automatycznie, co zmniejsza potrzebę ręcznej konfiguracji urządzeń sieciowych.
 
-Wady STP to:
+#### Wady STP to:
 + Wolna konwergencja - STP może prowadzić do wolnej konwergencji sieci, co może prowadzić do opóźnień w przesyłaniu ruchu.
 + Złożoność sieci - STP może prowadzić do złożonej topologii sieciowej, co może utrudniać zarządzanie siecią.
 + Brak wykorzystania pełnego potencjału sieci - STP wybiera jedną drogę do przesyłania ruchu, co oznacza, że inne ścieżki są nieużywane i nie wykorzystują pełnego potencjału sieci.
@@ -1200,11 +1263,11 @@ Pętle mogą prowadzić do poważnych problemów, takich jak zwiększenie ruchu 
 
 ### Jakie są typowe problemy związane z działaniem Spanning Tree?
 
-Odpowiedź: Typowymi problemami związanymi z działaniem Spanning Tree są: spowolnienie sieci, utrata pakietów, problemy z konfiguracją i utrzymaniem. Nieprawidłowa konfiguracja algorytmu Spanning Tree może prowadzić do nieoptymalnej ścieżki między urządzeniami w sieci.
+Typowymi problemami związanymi z działaniem Spanning Tree są: spowolnienie sieci, utrata pakietów, problemy z konfiguracją i utrzymaniem. Nieprawidłowa konfiguracja algorytmu Spanning Tree może prowadzić do nieoptymalnej ścieżki między urządzeniami w sieci.
 
 ### Jakie narzędzia i technologie są stosowane w celu monitorowania i zarządzania Spanning Tree?
 
-Odpowiedź: Narzędzia i technologie stosowane w celu monitorowania i zarządzania Spanning Tree to między innymi: narzędzia do analizy pakietów, SNMP (Simple Network Management Protocol), CLI (Command Line Interface), GUI (Graphical User Interface), syslog, alerty i raporty.
+Narzędzia i technologie stosowane w celu monitorowania i zarządzania Spanning Tree to między innymi: narzędzia do analizy pakietów, SNMP (Simple Network Management Protocol), CLI (Command Line Interface), GUI (Graphical User Interface), syslog, alerty i raporty.
 
 ### Według jakiej zasady wybiera się drogą w Spanning Tree (tzn. jak jest kilka ruchów w VLAN to na jakiej zasadzie odrzucane są inne ruchy, oprócz najlepszego)?
 
@@ -1238,10 +1301,12 @@ Aby chronić system przed złośliwym oprogramowaniem, ważne jest stosowanie od
 <p align="center">
 Rys. 17.2.1. Typy Malware
 <br>
-  <img src="\assets\img\Sieci\53.png" width="650" alt="Malware ">
+  <img src="\assets\img\Sieci\53.png" width="600" alt="Malware ">
+  <br>
+  Źródło: https://tiny.pl/cmnz9
 </p>
 
-Najważniejsze rodzaje malware to:
+#### Najważniejsze rodzaje malware to:
 + wirusy, robaki, konie trojańskie – programy albo fragmenty kodu, które pasożytują na programach wykorzystywanych przez sprzęt i zajmują jego zasoby; wirusy dołączają się do innych programów i modyfikują je tak, żeby się powielać;
 + ransomware – oprogramowanie szantażujące; umożliwia dostęp do prywatnych dokumentów poprzez szyfrowanie plików lub blokuje ekran albo start systemu operacyjnego; aby odblokować te funkcjonalności, należy zapłacić okup – jego żądanie wyświetla się na komputerze;  
 + spyware – to kolejne oprogramowanie szpiegujące; jego działanie opiera się na zbieraniu informacji o aktywności użytkownika, np. odwiedzanych w Internecie stronach; 
@@ -1268,13 +1333,16 @@ Aby chronić swoje hasła przed atakami, ważne jest stosowanie silnych i unikal
 <p align="center">
 Rys. 17.3.1. Password Attack
 <br>
-  <img src="\assets\img\Sieci\54.png" width="650" alt="Ransomware">
+  <img src="\assets\img\Sieci\54.png" width="600" alt="Ransomware">
+  <br>
+  Źródło: https://crashtest-security.com/wp-content/uploads/2022/03/password-attack_light-1024x576.png
 </p>
-
 
 ## 17.3.1. Brute-Force ataki na hasła
 
-Ten typ ataku na hasło wykorzystuje metody prób i błędów w celu odgadnięcia informacji uwierzytelniających użytkownika. Zły aktor używa zautomatyzowanych skryptów, aby przejść przez jak najwięcej permutacji, aby poprawnie odgadnąć hasło użytkownika. Chociaż jest to stosunkowo stara metoda, która wymaga dużo cierpliwości i czasu, atak brutalnej siły jest nadal standardem w przypadku prób włamania na konto, ponieważ są one zautomatyzowane i proste. Istnieje kilka rodzajów ataków siłowych:
+Ten typ ataku na hasło wykorzystuje metody prób i błędów w celu odgadnięcia informacji uwierzytelniających użytkownika. Zły aktor używa zautomatyzowanych skryptów, aby przejść przez jak najwięcej permutacji, aby poprawnie odgadnąć hasło użytkownika. Chociaż jest to stosunkowo stara metoda, która wymaga dużo cierpliwości i czasu, atak brutalnej siły jest nadal standardem w przypadku prób włamania na konto, ponieważ są one zautomatyzowane i proste. 
+
+#### Istnieje kilka rodzajów ataków siłowych:
 + Proste ataki siłowe —  haker wykorzystuje logikę i dane o użytkowniku, aby odgadnąć najbardziej prawdopodobne hasło. Ta technika jest używana w przypadku prostych haseł, takich jak te zawierające kombinację imienia i nazwiska zwierzaka, roku i urodzenia.
 + Upychanie poświadczeń —  obejmuje to użycie wcześniej ujawnionych kombinacji logowania, które zostały złośliwie uzyskane na podatnych stronach internetowych. W takich atakach hakerzy zazwyczaj wykorzystują fakt, że podmioty mają tendencję do ponownego wykorzystywania kombinacji nazwy użytkownika i hasła w wielu usługach.
 + Hybrydowe ataki typu brute force —  osoba atakująca łączy proste odgadywanie słabych haseł ze zautomatyzowanym oprogramowaniem, które wypełnia dane uwierzytelniające w celu wykrycia złożonych haseł. W większości systemów produkcyjnych podmioty używają niewielkich odmian haseł w różnych witrynach internetowych. Atakujący polegają również na wzorcach danych użytkowników w różnych usługach, aby poprawić dokładność narzędzi do upychania danych uwierzytelniających.
@@ -1295,15 +1363,18 @@ W przypadku ataku ransomware ważne jest, aby nie płacić okupu, ponieważ nie 
 <p align="center">
 Rys. 17.4.1. Password Attack
 <br>
-  <img src="\assets\img\Sieci\55.png" width="650" alt="Password">
+  <img src="\assets\img\Sieci\55.png" width="600" alt="Password">
+  <br>
+  Źródło: https://www.unodc.org/roseap/uploads/images/2021/10/cybercrime/ransom_2.jpg
 </p>
+
 
 
 ## 17.5. Firewall 
 
 Firewall, czyli zapora sieciowa, to rodzaj programu lub urządzenia, które ma za zadanie chronić sieć komputerową przed nieautoryzowanym dostępem oraz atakami z sieci. Firewall może blokować niepożądany ruch sieciowy, pozwalać na dostęp jedynie do określonych portów oraz ograniczać dostęp do sieci wewnętrznej z zewnątrz.
 
-Istnieją dwa główne typy firewalli:
+#### Istnieją dwa główne typy firewalli:
 + Firewall programowy - działa jako program na komputerze lub urządzeniu sieciowym. Oprogramowanie firewalla analizuje każdy pakiet przesyłany przez sieć, decydując, czy należy go zablokować czy przekierować. W firewallach programowych można ustawić różne reguły blokowania lub umożliwienia dostępu, a także konfigurować szczegółowe ustawienia.
 + Firewall sprzętowy - jest to fizyczne urządzenie, które działa jako brama między siecią wewnętrzną a zewnętrzną. Firewall sprzętowy może działać jako osobne urządzenie lub być zintegrowany z routerem lub innym urządzeniem sieciowym. Firewalle sprzętowe są zazwyczaj wyposażone w zaawansowane funkcje, takie jak ochrona przed atakami DDoS, filtracja adresów URL i wykrywanie intruzów.
 
@@ -1313,7 +1384,7 @@ Przykładowo, gdy klient wysyła żądanie połączenia z serwerem, firewall two
 
 *Firewall proxy* służy jako brama z jednej sieci do drugiej dla konkretnej aplikacji. Serwery proxy mogą zapewnić dodatkową funkcjonalność, jak na przykład buforowanie treści i zabezpieczanie poprzez uniemożliwianie nawiązywania bezpośrednich połączeń z siecią zewnętrzną.
 
-Zapory sieciowe (firewalle) na różnych warstwach modelu ISO/OSI:
+#### Zapory sieciowe (firewalle) na różnych warstwach modelu ISO/OSI:
 + Warstwa 2 - firewall na warstwie 2 to tzw. firewall typu filtr MAC. Działa on na poziomie adresów MAC, blokując lub przepuszczając pakiety na podstawie ich adresów źródłowych i docelowych. Takie firewalle są stosowane przede wszystkim do zabezpieczania sieci bezprzewodowych.
 + Warstwa 3 - firewall na warstwie 3 to zapora typu filtr IP. Działa ona na poziomie adresów IP, decydując o przepuszczeniu lub zablokowaniu pakietów na podstawie adresu źródłowego i docelowego oraz numerów portów. Firewalle warstwy 3 mogą działać w trybie routera, gdzie blokują niepożądany ruch między różnymi sieciami.
 + Warstwa 4 - firewall na warstwie 4 to firewall typu filtr pakietów. Działa na poziomie numerów portów, decydując o przepuszczeniu lub zablokowaniu ruchu na podstawie portów źródłowych i docelowych. Ten typ firewalla jest najczęściej stosowany do zabezpieczenia serwerów, aplikacji oraz usług sieciowych.
@@ -1340,7 +1411,7 @@ Ataki DDoS są zwykle przeprowadzane za pomocą botnetów, które składają si�
 Cele ataków DDoS mogą obejmować serwery internetowe, strony internetowe, aplikacje internetowe, a nawet całe sieci komputerowe. Ataki DDoS mogą powodować znaczne straty finansowe i reputacyjne, ponieważ spowalniają lub uniemożliwiają normalne funkcjonowanie usług online.
 Obrona przed atakami DDoS może obejmować wykorzystanie specjalistycznych narzędzi i usług do wykrywania i blokowania ruchu złośliwego, a także projektowanie infrastruktury sieciowej z myślą o minimalizacji skutków ataku.
 
-*Różnica między DoS a DDoS:*
+#### Różnica między DoS a DDoS:
 
 Atak DoS (Denial of Service) to atak, w którym atakujący próbuje sparaliżować dostępność systemu lub usługi, przeciążając je ruchem sieciowym lub wykorzystując inne sposoby, takie jak ataki z użyciem złośliwego oprogramowania. Atak DoS może być przeprowadzony przez jednego atakującego i jest zazwyczaj ograniczony do jednego źródła.
 
@@ -1355,7 +1426,7 @@ Typowo, atak phishingowy wykorzystuje fałszywe e-maile, SMS-y lub wiadomości n
 
 Ataki phishingowe zwykle są stosowane w celu kradzieży tożsamości lub innych danych, które można wykorzystać do celów finansowych lub przestępczych. Można je zminimalizować, stosując ostrożność podczas przeglądania internetu, nieudostępnianie poufnych danych w odpowiedzi na nieznane lub podejrzane wiadomości e-mail, oraz korzystanie z narzędzi do blokowania i filtrowania wiadomości phishingowych.
 
-W atakach typu phishing hakerzy często wykorzystują wiele metod, aby nakłonić użytkownika do kliknięcia złośliwego łącza, w tym:
+#### W atakach typu phishing hakerzy często wykorzystują wiele metod, aby nakłonić użytkownika do kliknięcia złośliwego łącza, w tym:
 + Zatruwanie pamięci podręcznej DNS —  atakujący wykorzystują luki w serwerze DNS aplikacji, aby przekierować żądania użytkowników do złośliwej witryny o podobnie wyglądającej nazwie domeny.
 + Przechwytywanie adresów URL/typosquatting —  osoba atakująca tworzy autentycznie wyglądający adres URL z subtelnymi różnicami w stosunku do witryny, pod którą chce się podszyć. Następnie atak polega na tym, że użytkownicy popełniają błędy w pisaniu, więc lądują na złośliwej stronie. 
 + Tabnabbing –  osoba atakująca przepisuje nienadzorowane karty przeglądarki złośliwymi witrynami, które wyglądają jak legalne strony internetowe.
@@ -1371,9 +1442,11 @@ Bezpieczeństwo w sieciach IoT (Internet of Things) to kwestia kluczowa, poniewa
 Rys. 17.9.1. Bezpieczeństwo w sieciach IoT
 <br>
   <img src="\assets\img\Sieci\56.png" width="650" alt="IoT">
+  <br>
+  Źródło: https://automatykab2b.pl/images/7/8/9/177789-cyberbezpieczenstwo_iot.jpg
 </p>
 
-Poniżej przedstawiono kilka kluczowych aspektów bezpieczeństwa w sieciach IoT:
+#### Poniżej przedstawiono kilka kluczowych aspektów bezpieczeństwa w sieciach IoT:
 + Aktualizacje oprogramowania: ważne jest, aby urządzenia w sieci IoT były zawsze zaktualizowane do najnowszej wersji oprogramowania. Aktualizacje zawierają łatki bezpieczeństwa, które poprawiają lukę w zabezpieczeniach i chronią przed atakami.
 + Wprowadzenie certyfikatów SSL/TLS: to standardowe narzędzie zabezpieczające dane przesyłane między urządzeniami IoT i serwerami. Certyfikaty SSL/TLS zapewniają szyfrowanie danych, dzięki czemu trudniej jest uzyskać nieautoryzowany dostęp do sieci.
 + Ochrona przed atakami DDoS: ataki DDoS (Distributed Denial of Service) to próba przeciążenia sieci IoT poprzez atakowanie wielu urządzeń jednocześnie. Aby zabezpieczyć sieć przed tym rodzajem ataku, można zastosować rozwiązania takie jak filtrowanie adresów IP i wdrożenie rozwiązania zapobiegającego atakom.
@@ -1391,7 +1464,7 @@ ISO 27001 to międzynarodowy standard dla systemów zarządzania bezpieczeństwe
 
 Standard ISO 27001 składa się z czterech głównych sekcji: wprowadzenie i obszar zastosowania, normatywne odwołania, terminy i definicje oraz wymagania dla systemów zarządzania bezpieczeństwem informacji.
 
-Wymagania te obejmują:
+#### Wymagania te obejmują:
 + Określenie zakresu i celów systemu zarządzania bezpieczeństwem informacji.
 + Ustalenie polityki bezpieczeństwa informacji i kierunków działań w tym zakresie.
 + Wykonywanie oceny ryzyka i ustalanie odpowiednich środków zapobiegawczych.
@@ -1405,9 +1478,12 @@ ISO 27001 jest jednym z najczęściej stosowanych standardów w dziedzinie bezpi
 Rys. 18.1.1. ISO 27001 
 <br>
   <img src="\assets\img\Sieci\57.png" width="650" alt="ISO">
+  <br>
+  Źródło: https://tiny.pl/cmnzj
 </p>
 
-Zasady działania ISO 27001 opierają się na Plan, Do, Check, Act (PDCA) - Planuj, Wykonuj, Sprawdzaj, Działaj. W ramach tej metodologii, organizacja działa w następujący sposób:
+
+#### Zasady działania ISO 27001 opierają się na Plan, Do, Check, Act (PDCA) - Planuj, Wykonuj, Sprawdzaj, Działaj. W ramach tej metodologii, organizacja działa w następujący sposób:
 + Planowanie: Organizacja musi opracować i wdrożyć politykę bezpieczeństwa informacji, która określa cele i cele bezpieczeństwa informacji, a także identyfikuje ryzyka i planuje działania zapobiegające.
 + Wykonanie: Organizacja musi wdrożyć planowane działania zapobiegające, w tym technologie i procedury, które zapewnią bezpieczeństwo jej zasobów informacyjnych. W ramach tego procesu organizacja powinna też wyznaczyć role i odpowiedzialności w zakresie bezpieczeństwa informacji.
 + Sprawdzanie: Organizacja musi regularnie monitorować swoje środowisko informacyjne w celu identyfikacji ryzyka i zagrożeń. W przypadku wykrycia zagrożeń, organizacja powinna podjąć odpowiednie kroki w celu ich wyeliminowania.
@@ -1418,7 +1494,7 @@ Zasady działania ISO 27001 opierają się na Plan, Do, Check, Act (PDCA) - Plan
 
 Standard PCI DSS(Payment Card Industry Data Security Standard) to zestaw wymagań bezpieczeństwa informacji, który został opracowany przez Radę PCI Security Standards w celu ochrony danych kart płatniczych przed kradzieżą i nadużyciem.
 
-Standard PCI składa się z 12 wymagań bezpieczeństwa informacji, które są podzielone na 6 kategorii:
+#### Standard PCI składa się z 12 wymagań bezpieczeństwa informacji, które są podzielone na 6 kategorii:
 + Ochrona sieci: Wymagania te obejmują m.in. instalację i konfigurację zapor ogniowych, zapewnienie bezpieczeństwa sieci bezprzewodowych i utrzymanie zabezpieczeń przeciwko atakom sieciowym.
 + Ochrona danych kart płatniczych: Wymagania te dotyczą przechowywania, przetwarzania i przesyłania danych kart płatniczych. Obejmują one m.in. zapewnienie bezpiecznego przechowywania danych kart płatniczych, ograniczenie dostępu do tych danych tylko do niezbędnych pracowników i zabezpieczenie przesyłania danych za pomocą protokołu SSL.
 + Zarządzanie zabezpieczeniami: Wymagania te obejmują m.in. utrzymywanie polityki bezpieczeństwa informacji, regularne przeprowadzanie przeglądów zabezpieczeń i szkolenie pracowników w zakresie bezpieczeństwa informacji.
@@ -1440,7 +1516,9 @@ Reguła zabezpieczeń HIPAA skupia się na ochronie poufności, integralności i
 
 ## 18.4. GDRP
 
-GDPR to rozporządzenie ogólne o ochronie danych osobowych, które weszło w życie w Europie 25 maja 2018 roku. Oto kilka standardów bezpieczeństwa GDPR:
+GDPR to rozporządzenie ogólne o ochronie danych osobowych, które weszło w życie w Europie 25 maja 2018 roku. 
+
+#### Oto kilka standardów bezpieczeństwa GDPR:
 + Zasada minimalizacji danych - gromadzenie danych osobowych powinno być ograniczone do minimum potrzebnego do realizacji celów, dla których dane te są przetwarzane.
 + Pseudonimizacja - dane osobowe powinny być przetwarzane w sposób, który uniemożliwi ich identyfikację bez użycia dodatkowych informacji.
 + Ciągłość przetwarzania danych - dane osobowe powinny być przetwarzane w sposób, który zapewnia ich ciągłość, dostępność i integralność.
@@ -1455,7 +1533,9 @@ GDPR to rozporządzenie ogólne o ochronie danych osobowych, które weszło w ż
 
 ## 18.5. OWASP
 
-OWASP to organizacja non-profit, której celem jest poprawa bezpieczeństwa aplikacji internetowych. W ramach swojej działalności OWASP tworzy listy najczęstszych zagrożeń dla aplikacji internetowych oraz proponuje najlepsze praktyki dla tworzenia bezpiecznego oprogramowania. Jedną z najważniejszych inicjatyw OWASP jest lista OWASP Top 10, która zawiera dziesięć najczęstszych zagrożeń dla aplikacji internetowych. Poniżej przedstawiam standardowe zagrożenia uwzględnione na liście OWASP Top 10:
+OWASP to organizacja non-profit, której celem jest poprawa bezpieczeństwa aplikacji internetowych. W ramach swojej działalności OWASP tworzy listy najczęstszych zagrożeń dla aplikacji internetowych oraz proponuje najlepsze praktyki dla tworzenia bezpiecznego oprogramowania. Jedną z najważniejszych inicjatyw OWASP jest lista OWASP Top 10, która zawiera dziesięć najczęstszych zagrożeń dla aplikacji internetowych. 
+
+#### Poniżej przedstawiam standardowe zagrożenia uwzględnione na liście OWASP Top 10:
 + Iniekcje (Injection) - obejmują ataki, które polegają na wprowadzeniu niebezpiecznego kodu do aplikacji poprzez nieodpowiednie walidowanie lub brak sanityzacji danych.
 + Złamanie uwierzytelnienia i autoryzacji (Broken Authentication and Session Management) - obejmuje ataki na proces uwierzytelniania i autoryzacji użytkowników, takie jak haseł słabe lub wyciekające dane uwierzytelniające.
 + Wrażliwe dane (Sensitive Data Exposure) - obejmuje ataki, w których wrażliwe dane, takie jak hasła czy dane karty kredytowej, są przechowywane lub przesyłane w sposób niebezpieczny.
@@ -1469,8 +1549,10 @@ OWASP to organizacja non-profit, której celem jest poprawa bezpieczeństwa apli
 
 ## 18.6. NIST Cybersecurity Framework
 
-NIST Cybersecurity Framework to ramy opracowane przez National Institute of Standards and Technology (NIST) w celu zapewnienia ochrony infrastruktury krytycznej oraz innych organizacji przed zagrożeniami związanymi z bezpieczeństwem cybernetycznym. Framework składa się z pięciu podstawowych kategorii: Identyfikacja, Ochrona, Wykrycie, Reagowanie i Przywracanie.
+NIST Cybersecurity Framework to ramy opracowane przez National Institute of Standards and Technology (NIST) w celu zapewnienia ochrony infrastruktury krytycznej oraz innych organizacji przed zagrożeniami związanymi z bezpieczeństwem cybernetycznym. 
 
+
+#### Framework składa się z pięciu podstawowych kategorii: Identyfikacja, Ochrona, Wykrycie, Reagowanie i Przywracanie.
 + Identyfikacja: w tej kategorii chodzi o określenie podatności i zagrożeń dla systemów i sieci, w tym ocenę ryzyka i zarządzanie tożsamością.
 + Ochrona: ta kategoria dotyczy działań mających na celu ochronę przed atakami, w tym wykrycie nieautoryzowanego dostępu, zarządzanie hasłami i szyfrowanie.
 + Wykrycie: w tej kategorii chodzi o monitorowanie systemów i sieci w celu szybkiego wykrycia incydentów i ataków oraz analizę logów i innych danych, które mogą pomóc w wykryciu zagrożeń.
@@ -1483,6 +1565,8 @@ Framework NIST Cybersecurity jest elastyczny i może być dostosowany do potrzeb
 Rys. 18.6.1. NIST Cyber Security Framework
 <br>
   <img src="\assets\img\Sieci\58.png" width="650" alt="NIST">
+  <br>
+  Źródło: https://tiny.pl/cmnzn
 </p>
 
 # 19. Analiza podatności
@@ -1495,7 +1579,9 @@ Celem analizy podatności jest zidentyfikowanie słabości w systemie, takich ja
 
 Analiza podatności jest istotna nie tylko dla systemów informatycznych, ale również dla innych rodzajów systemów, takich jak infrastruktura krytyczna, systemy kontrolne przemysłowe, urządzenia medyczne, itp. Wszystkie te systemy są podatne na ataki, które mogą prowadzić do zagrożenia dla zdrowia i życia ludzi oraz dla bezpieczeństwa narodowego. Dlatego ważne jest, aby regularnie przeprowadzać analizę podatności i dostosowywać środki bezpieczeństwa w celu minimalizowania ryzyka ataków.
 
-Przeprowadzenie analizy podatności to złożony proces, który wymaga zaangażowania odpowiednich narzędzi i technik, a także doświadczenia w dziedzinie bezpieczeństwa informacyjnego. Poniżej przedstawiam krok po kroku, jak przeprowadzić analizę podatności:
+Przeprowadzenie analizy podatności to złożony proces, który wymaga zaangażowania odpowiednich narzędzi i technik, a także doświadczenia w dziedzinie bezpieczeństwa informacyjnego. 
+
+#### Poniżej przedstawiam krok po kroku, jak przeprowadzić analizę podatności:
 + Przygotowanie planu i celów analizy: W pierwszej kolejności należy zdefiniować cele i zakres analizy, aby określić, które systemy i aplikacje będą poddane testom, a także jakie rodzaje ataków i scenariuszy należy przetestować. Przygotowanie planu pomaga w skutecznym przeprowadzeniu analizy podatności i zapewnieniu, że wszystkie ważne elementy zostaną przeanalizowane.
 + Skanowanie podatności: Skanowanie podatności to proces automatycznego przeszukiwania systemów i aplikacji w celu wykrycia potencjalnych podatności. Skanowanie może być przeprowadzone za pomocą specjalistycznego oprogramowania, takiego jak Nessus, OpenVAS, QualysGuard i wiele innych. Skanowanie podatności pozwala na szybkie wykrycie potencjalnych zagrożeń, ale nie jest w stanie zidentyfikować wszystkich podatności.
 + Testowanie penetracyjne: Testowanie penetracyjne to proces manualnego przeprowadzania ataków na systemy i aplikacje, aby zidentyfikować słabości, które nie zostały wykryte podczas skanowania podatności. Testowanie penetracyjne może obejmować różne techniki, takie jak testowanie haseł, ataki typu SQL injection, ataki typu cross-site scripting (XSS) i wiele innych. Testowanie penetracyjne może być przeprowadzone ręcznie lub za pomocą specjalistycznego oprogramowania, takiego jak Metasploit, Core Impact lub Burp Suite.
@@ -1509,7 +1595,7 @@ System operacyjny (ang. Operating System, OS) to podstawowe oprogramowanie, któ
 
 Systemy operacyjne są kluczowe dla działania komputerów i innych urządzeń elektronicznych. Bez systemu operacyjnego urządzenie elektroniczne byłoby niemożliwe do uruchomienia lub działania.
 
-Rodzaje systemów operacyjnych:
+#### Rodzaje systemów operacyjnych:
 + Systemy operacyjne desktopowe: przeznaczone dla komputerów osobistych i oferujące interfejs użytkownika w postaci pulpitu. Do systemów operacyjnych desktopowych należą np. Windows, macOS, Linux, Chrome OS.
 + Systemy operacyjne serwerowe: zaprojektowane do obsługi aplikacji i usług sieciowych, takich jak serwery WWW, bazy danych itp. Systemy operacyjne serwerowe zapewniają wydajność, niezawodność i skalowalność. Do systemów operacyjnych serwerowych należą np. Windows Server, Linux, Unix.
 + Systemy operacyjne mobilne: przeznaczone dla urządzeń przenośnych, takich jak smartfony i tablety. Systemy operacyjne mobilne oferują interfejs użytkownika oparty na dotyku i są zoptymalizowane pod kątem energooszczędności. Do systemów operacyjnych mobilnych należą np. Android, iOS, Windows Mobile.
@@ -1528,7 +1614,7 @@ Windows działa na podstawie jądra systemu operacyjnego, które zapewnia podsta
 
 Interfejs użytkownika w Windowsie opiera się na tzw. "oknach", czyli osobnych obszarach ekranu, w których wyświetlane są programy i pliki. Użytkownik może korzystać z myszy lub klawiatury, aby poruszać się między oknami, wybierać opcje z menu i wprowadzać dane.
 
-System operacyjny Windows działa na poziomie sprzętu i programowym, a jego działanie można podzielić na kilka kluczowych obszarów:
+#### System operacyjny Windows działa na poziomie sprzętu i programowym, a jego działanie można podzielić na kilka kluczowych obszarów:
 + Zarządzanie sprzętem: Windows działa na poziomie sprzętowym poprzez jądro systemu operacyjnego, które odpowiada za obsługę urządzeń, takich jak procesory, pamięć RAM, dyski twarde, karty graficzne, klawiatury, myszy i wiele innych. Jądro systemu operacyjnego zapewnia interfejs między sprzętem a oprogramowaniem, umożliwiając aplikacjom korzystanie z różnych urządzeń.
 + Zarządzanie procesami: Windows zarządza procesami na poziomie programowym, czyli aplikacji, które działają na komputerze. Procesy to programy, które są uruchomione na komputerze i wykonywane przez procesor. Windows zarządza procesami poprzez menedżer zadań, który umożliwia użytkownikom monitorowanie i kontrolowanie procesów.
 + Zarządzanie pamięcią: Windows zarządza pamięcią na poziomie programowym, co oznacza, że system operacyjny kontroluje, która aplikacja może korzystać z pamięci i jak wiele pamięci może wykorzystać. Windows wykorzystuje algorytmy do zarządzania pamięcią, które umożliwiają przydzielanie i zwalnianie pamięci w zależności od potrzeb aplikacji.
@@ -1542,7 +1628,7 @@ Podsumowując, Windows działa na poziomie sprzętowym i programowym, umożliwia
 
 System operacyjny Linux to rodzaj oprogramowania open-source, który został stworzony w 1991 roku przez Linusa Torvaldsa. Linux jest jednym z najpopularniejszych systemów operacyjnych, a jego popularność wynika z wielu czynników, w tym z faktu, że jest bezpłatny i dostępny na różne platformy sprzętowe.
 
-Linux składa się z kilku podsystemów, które zapewniają różne funkcjonalności. Oto kilka z tych podsystemów i funkcjonalności:
+#### Linux składa się z kilku podsystemów, które zapewniają różne funkcjonalności. Oto kilka z tych podsystemów i funkcjonalności:
 + Jądro systemu: To podstawowy komponent systemu, który odpowiada za zarządzanie zasobami sprzętowymi, takimi jak procesory, pamięć, dyski twarde, karty sieciowe i inne. Jądro Linux jest modułowe, co oznacza, że można łatwo dodawać lub usuwać moduły, aby dostosować system do potrzeb użytkownika.
 + System plików: Linux wykorzystuje system plików do przechowywania i organizowania danych na dysku twardym. Linux obsługuje wiele różnych systemów plików, takich jak Ext4, Btrfs, XFS, FAT i NTFS. Systemy plików umożliwiają użytkownikom organizowanie i przetwarzanie danych w sposób efektywny i bezpieczny.
 + Środowisko graficzne: Linux oferuje kilka różnych środowisk graficznych, takich jak GNOME, KDE, XFCE i wiele innych. Środowiska graficzne umożliwiają użytkownikom interakcję z systemem za pomocą ikon, okien, menu i innych graficznych elementów interfejsu użytkownika.
@@ -1579,7 +1665,7 @@ Usługi sieciowe to aplikacje, które są uruchamiane na serwerach i udostępnia
 
 Usługi sieciowe są zwykle dostępne przez sieć lokalną lub przez Internet. Serwery udostępniające usługi sieciowe są zwykle konfigurowane w taki sposób, aby kontrolować dostęp do zasobów sieciowych i udostępniać je tylko uprawnionym użytkownikom lub klientom. Aby korzystać z usług sieciowych, klient musi zwykle zainstalować odpowiednie oprogramowanie klienta, które pozwoli mu na połączenie się z serwerem i uzyskanie dostępu do usług.
 
-Przykładami popularnych usług sieciowych są:
+#### Przykładami popularnych usług sieciowych są:
 + Serwer plików, który pozwala użytkownikom na udostępnianie i pobieranie plików w sieci lokalnej lub przez Internet.
 + Serwer drukowania, który umożliwia użytkownikom drukowanie dokumentów z różnych komputerów w sieci.
 + Serwer poczty elektronicznej, który umożliwia użytkownikom przesyłanie i odbieranie wiadomości e-mail.
@@ -1753,6 +1839,8 @@ HDFS jest systemem plików zaprojektowanym do przechowywania dużych zbiorów da
 Rys. 21.3.1. Hadoop
 <br>
   <img src="\assets\img\Sieci\59.png" width="650" alt="Hadoop">
+  <br>
+  Źródło: https://resources.useready.com/wp-content/uploads/2021/12/process-analyze-and-serve.png
 </p>
 
 MapReduce to model programowania do przetwarzania danych rozproszonych. Programy MapReduce są pisane w języku Java lub innym języku programowania, który może być skompilowany do kodu bytecode Javy. Program MapReduce składa się z dwóch funkcji: map i reduce. Funkcja map pobiera dane z HDFS i przetwarza je w sposób niezależny od innych części danych. Wynik funkcji map jest następnie przekazywany do funkcji reduce, która przetwarza dane wejściowe i zwraca wynik.
@@ -1782,6 +1870,8 @@ Podsumowując, Apache Kafka to system przetwarzania strumieniowego, który umoż
 Rys. 21.4.1. Kafka
 <br>
   <img src="\assets\img\Sieci\60.png" width="650" alt="Kafka">
+  <br>
+  Źródło: https://docs.confluent.io/_images/kafka-intro.png
 </p>
 
 
@@ -1801,6 +1891,8 @@ ActiveMQ oferuje również wiele funkcjonalności, takich jak klastrowanie, repl
 Rys. 21.5.1. ActiveMQ
 <br>
   <img src="\assets\img\Sieci\61.png" width="650" alt="ActiveMQ">
+  <br>
+  Źródło: https://activemq.apache.org/assets/img/competing-consumers.png
 </p>
 
 
@@ -1809,10 +1901,13 @@ Rys. 21.5.1. ActiveMQ
 Apache Camel to open-source'owy framework dla platformy Java, który umożliwia integrację systemów opartych na różnych technologiach. Jego głównym zadaniem jest ułatwienie komunikacji pomiędzy różnymi aplikacjami, usługami oraz systemami poprzez przetwarzanie i przekazywanie danych w formacie wiadomości.
 
 <p align="center">
-Rys. 21.6.1. Camel 
+Rys. 21.6.1. Camel Message Box
 <br>
   <img src="\assets\img\Sieci\62.png" width="650" alt="Camel">
+  <br>
+  Źródło: https://www.tutorialspoint.com/apache_camel/images/camel_message_box.jpg
 </p>
+
 
 Apache Camel posiada wiele wbudowanych komponentów, które umożliwiają integrację z różnymi protokołami, bazami danych, systemami plików, narzędziami ETL (Extract, Transform, Load) i wieloma innymi. Oprócz wbudowanych komponentów, Camel umożliwia także tworzenie własnych rozszerzeń i integracji.
 
@@ -1821,9 +1916,11 @@ Camel korzysta z różnych wzorców integracyjnych, takich jak: routery, transfo
 W Camel ważną koncepcją jest tzw. Exchange - obiekt reprezentujący przetwarzanie wiadomości w systemie. Exchange składa się z nagłówka, ciała oraz informacji dotyczących transakcji i kontekstu przetwarzania. Dzięki temu Camel pozwala na prostą i efektywną manipulację danymi.
 
 <p align="center">
-Rys. 21.6.3. Camel 
+Rys. 21.6.3. Camel Framework 
 <br>
   <img src="\assets\img\Sieci\63.png" width="650" alt="Camel-1">
+  <br>
+  Źródło: https://www.tutorialspoint.com/apache_camel/images/camel_framework.jpg
 </p>
 
 Jednym z najważniejszych cech Camel jest jego elastyczność. Framework jest niezależny od konkretnej platformy, dzięki czemu pozwala na integrację różnych systemów i aplikacji bez konieczności zmiany istniejącej infrastruktury. Oprócz tego Camel oferuje wiele narzędzi umożliwiających monitorowanie, debugowanie oraz zarządzanie procesami integracyjnymi.
@@ -1835,7 +1932,7 @@ Apache Kylin to otwarty framework analityczny zaprojektowany do pracy z dużymi 
 
 Kylin pozwala na integrację z różnymi źródłami danych, w tym z systemami relacyjnymi, NoSQL, Hadoop i innych. Framework wykorzystuje technologię OLAP (Online Analytical Processing) oraz Cubing, czyli proces tworzenia kostek OLAP, które są wykorzystywane do generowania raportów i analizy danych.
 
-Kylin składa się z kilku modułów, które umożliwiają integrację, przetwarzanie i analizę danych. Główne moduły to:
+#### Kylin składa się z kilku modułów, które umożliwiają integrację, przetwarzanie i analizę danych. Główne moduły to:
 + Moduł budowania kostek (Cube Build): Moduł ten umożliwia tworzenie kostek OLAP z danych źródłowych. Kylin obsługuje wiele formatów danych, w tym Apache Hadoop HDFS, Apache HBase, Apache Parquet i inne. Kostki mogą być budowane z różnych źródeł danych, a następnie agregowane i przetwarzane w czasie rzeczywistym, aby zapewnić szybką i efektywną analizę danych.
 + Moduł zapytań (Query): Moduł ten umożliwia generowanie raportów i analizowanie danych z wykorzystaniem języka SQL. Kylin oferuje wiele funkcjonalności takich jak filtrowanie, grupowanie, sortowanie, agregacja, a także obsługuje wiele funkcji analitycznych. Dodatkowo, Kylin oferuje interfejs REST API, który umożliwia integrację z innymi aplikacjami.
 + Moduł administracyjny (Admin): Moduł ten pozwala na zarządzanie i konfigurację Kylin. Oferuje wiele narzędzi, takich jak interfejs webowy, wiersz poleceń, czy narzędzia do monitorowania i debugowania.
@@ -1846,6 +1943,8 @@ Kylin został zaprojektowany z myślą o skalowalności, wydajności i elastyczn
 Rys. 21.7.1. Apache Kylin
 <br>
   <img src="\assets\img\Sieci\64.png" width="650" alt="Apache Kylin">
+  <br>
+  Źródło: https://img-blog.csdnimg.cn/img_convert/7e72bedb5b876e4ba5c3b60f450ecee0.png
 </p>
 
 
@@ -1866,6 +1965,8 @@ W celu ułatwienia korzystania z OpenVPN, dostępne są różne narzędzia grafi
 Rys. 21.8.1. OpenVPN
 <br>
   <img src="\assets\img\Sieci\65.png" width="650" alt="OpenVPN">
+  <br>
+  Źródło: https://openvpn.net/wp-content/uploads/l2sitetosite.png
 </p>
 
 
@@ -1909,6 +2010,8 @@ WebRTC jest często wykorzystywany w aplikacjach takich jak wideo-konferencje, c
 Rys. 21.11.1. Działanie WebRTC
 <br>
   <img src="\assets\img\Sieci\66.png" width="650" alt="WebRTC">
+  <br>
+  Źródło: https://cdn.ttgtmedia.com/rms/onlineimages/how_webrtc_works-f_mobile.png
 </p>
 
 
@@ -1924,11 +2027,14 @@ W *kryptografii symetrycznej* używa się jednego klucza, który jest używany z
 Rys. 22.1. Kryptografia
 <br>
   <img src="\assets\img\Sieci\67.png" width="650" alt="Kryptografia">
+  <br>
+  Źródło: https://chainkraft.com/wp-content/uploads/2022/03/asymetric-secret-1024x371.png
 </p>
+
 
 Przykładem algorytmu kryptograficznego wykorzystującego kryptografię symetryczną jest AES (Advanced Encryption Standard), który jest powszechnie stosowany w zabezpieczaniu danych w systemach informatycznych.
 
-Istnieją trzy podstawowe etapy procesu szyfrowania i deszyfrowania danych w kryptografii symetrycznej:
+#### Istnieją trzy podstawowe etapy procesu szyfrowania i deszyfrowania danych w kryptografii symetrycznej:
 + Generowanie klucza - klucz symetryczny musi być wygenerowany przed rozpoczęciem procesu szyfrowania i deszyfrowania danych. Ten sam klucz musi być znany zarówno przez nadawcę, jak i odbiorcę.
 + Szyfrowanie - dane są szyfrowane za pomocą klucza symetrycznego. Algorytm szyfrowania przekształca oryginalną wiadomość w zaszyfrowaną wersję, która jest niemożliwa do odczytania bez posiadania klucza.
 + Deszyfrowanie - odbiorca używa tego samego klucza symetrycznego, aby odszyfrować zaszyfrowaną wiadomość na oryginalną wersję.
@@ -1945,6 +2051,8 @@ Obliczenie klucza prywatnego na podstawie klucza publicznego powinno być matema
 Rys. 22.2. Kryptografia
 <br>
   <img src="\assets\img\Sieci\68.png" width="650" alt="Kryptografia-1">
+  <br>
+  Źródło: https://chainkraft.com/wp-content/uploads/2022/03/asymetric-pub-priv-1024x322.png
 </p>
 
 Inne metody kryptografii to m.in. haszowanie, które pozwala na szybkie i łatwe sprawdzanie, czy dana wiadomość została zmodyfikowana, ale nie pozwala na jej odszyfrowanie. 
@@ -1953,6 +2061,8 @@ Inne metody kryptografii to m.in. haszowanie, które pozwala na szybkie i łatwe
 Rys. 22.3. Jak działa algorytm haszujący
 <br>
   <img src="\assets\img\Sieci\69.png" width="650" alt="Kryptografia-2">
+  <br>
+  Źródło: https://www.okta.com/sites/default/files/media/image/2021-05/HashingAlgorithm.png
 </p>
 
 Kryptografia haszowania, nazywana również kryptografią jednokierunkową, to proces przetwarzania danych w taki sposób, że trudno jest odwrócić proces i odzyskać oryginalne dane. W tym procesie, z oryginalnego tekstu (nazywanego tekstem jawnym) generowany jest skrót wiadomości (hash), który jest reprezentowany przez ciąg znaków o stałej długości. Skrót ten jest zwykle znacznie krótszy niż oryginalna wiadomość.
@@ -1985,9 +2095,11 @@ Cykl życia rozwoju zabezpieczeń (Security Development Lifecycle - SDL) to proc
 Rys. 23.1.1. Cykl życia rozwoju zabezpieczeń SDL
 <br>
   <img src="\assets\img\Sieci\70.png" width="650" alt="SDL">
+  <br>
+  Źródło: https://learn.microsoft.com/pl-pl/windows/security/threat-protection/images/simplified-sdl.png
 </p>
 
-Cykl życia rozwoju zabezpieczeń SDL składa się z kilku etapów:
+#### Cykl życia rozwoju zabezpieczeń SDL składa się z kilku etapów:
 + Planowanie - w tym etapie definiowane są cele i wymagania dotyczące bezpieczeństwa, a także przeprowadzane są analizy zagrożeń oraz identyfikowane są obszary wymagające szczególnej ochrony.
 + Projektowanie - na tym etapie projektowane są mechanizmy zabezpieczeń, w tym procesy uwierzytelniania, autoryzacji i szyfrowania.
 + Implementacja - w tym etapie tworzony jest kod programu, który uwzględnia wcześniej zdefiniowane wymagania bezpieczeństwa.
@@ -1995,7 +2107,7 @@ Cykl życia rozwoju zabezpieczeń SDL składa się z kilku etapów:
 + Wdrożenie - po przeprowadzeniu testów aplikacja jest gotowa do wdrożenia.
 + Monitorowanie - po wdrożeniu aplikacji przeprowadzane są regularne audyty bezpieczeństwa, które mają na celu wykrycie ewentualnych luk w zabezpieczeniach.
 
-W ramach cyklu życia rozwoju zabezpieczeń SDL stosuje się różne narzędzia i metody, takie jak:
+#### W ramach cyklu życia rozwoju zabezpieczeń SDL stosuje się różne narzędzia i metody, takie jak:
 + kody źródłowe kontrolne, które pozwalają na wykrycie błędów w kodzie przed jego wdrożeniem;
 + testy penetracyjne, które polegają na próbie zdobycia nieautoryzowanego dostępu do systemu;
 + testy bezpieczeństwa aplikacji, które pozwalają na sprawdzenie zgodności z wymaganiami bezpieczeństwa.
@@ -2011,10 +2123,12 @@ OWASP Top Ten to lista dziesięciu najważniejszych zagrożeń bezpieczeństwa a
 Rys. 23.2.1 OWASP Top Ten 
 <br>
   <img src="\assets\img\Sieci\71.png" width="650" alt="OWASP">
+  <br>
+  Źródło: https://www.indusface.com/wp-content/uploads/2022/05/KC-Image.png
 </p>
 
 
-Poniżej przedstawione są poszczególne zagrożenia uwzględnione na liście OWASP Top Ten:
+#### Poniżej przedstawione są poszczególne zagrożenia uwzględnione na liście OWASP Top Ten:
 + Wstrzyknięcia SQL (SQL Injection) – ataki polegające na wprowadzeniu nieodpowiednich danych do formularzy internetowych lub zapytań SQL, co pozwala na przejęcie kontroli nad aplikacją i uzyskanie dostępu do wrażliwych informacji.
 + Niepoprawna autoryzacja i uwierzytelnianie (Broken Authentication and Session Management) – zagrożenie polegające na słabej ochronie systemów autoryzacji i uwierzytelniania, co pozwala na przejęcie kontroli nad kontami użytkowników.
 + Cross-Site Scripting (XSS) – ataki polegające na wprowadzeniu kodu JavaScript do aplikacji internetowej, co pozwala na przechwycenie danych użytkownika lub przejęcie kontroli nad aplikacją.
@@ -2034,10 +2148,13 @@ NIST (National Institute of Standards and Technology) to agencja rządu USA, kt�
 <p align="center">
 Rys. 23.3.1. Ramy bezpieczeństwa cybernetycznego NIST
 <br>
-  <img src="\assets\img\Sieci\72.png" width="650" alt="NIST">
+  <img src="\assets\img\Sieci\72.png" width="600" alt="NIST">
+  <br>
+  Źródło: https://www.icsec.pl/content/uploads/2022/09/tabela-nist-framework.png
 </p>
 
-Najważniejsze ramy bezpieczeństwa cybernetycznego NIST to:
+
+#### Najważniejsze ramy bezpieczeństwa cybernetycznego NIST to:
 + Cybersecurity Framework (CSF) - jest to ramowy dokument opracowany przez NIST, który pomaga organizacjom w tworzeniu i wdrażaniu programów bezpieczeństwa cybernetycznego. Składa się z pięciu elementów: identyfikacji, ochrony, wykrywania, reagowania i naprawy.
 + NIST SP 800-53 - jest to standard bezpieczeństwa informacji, który zawiera listę kontroli bezpieczeństwa, które powinny być wdrożone w systemach informatycznych. Standard ten określa wymagania dla systemów federalnych w Stanach Zjednoczonych.
 + NIST SP 800-171 - to standard bezpieczeństwa informacji, który określa wymagania dla firm prywatnych, które dostarczają produkty lub usługi dla rządu USA. Wymagania te dotyczą m.in. zarządzania dostępem, szyfrowania, weryfikacji tożsamości i monitorowania systemów informatycznych.
@@ -2057,7 +2174,10 @@ Każdy IG identyfikuje zestaw zabezpieczeń, które musi wdrożyć. W CIS Contro
 Rys. 23.4.1. Kontrole CIS
 <br>
   <img src="\assets\img\Sieci\73.png" width="650" alt="CIS">
+  <br>
+  Źródło: https://securitybeztabu.pl/wp-content/uploads/2022/11/CIS-Critical-Security-Controls-Implementation-Group-1-768x384.png
 </p>
+
 
 CIS Controls v8 definiuje grupę wdrożeniową 1 (IG1) jako niezbędną higienę cybernetyczną i reprezentuje wyłaniający się minimalny standard bezpieczeństwa informacji dla wszystkich przedsiębiorstw. IG1 jest wstępem do CIS Controls składa się z podstawowego zestawu 56 Zabezpieczeń cyberobrony. Zabezpieczenia zawarte w IG1 są tym, co każde przedsiębiorstwo powinno stosować w celu obrony przed najczęstszymi atakami.
 
@@ -2069,7 +2189,10 @@ Wrażliwość danych, które starają się chronić, jest niska i dotyczy głów
 Rys. 23.4.2. Kontrole CIS
 <br>
   <img src="\assets\img\Sieci\74.png" width="650" alt="CIS-1">
+  <br>
+  Źródło: https://securitybeztabu.pl/wp-content/uploads/2022/11/CIS-Critical-Security-Controls-Implementation-Group-2-768x384.png
 </p>
+
 
 IG2 składa się z 74 dodatkowych Zabezpieczeń i opiera się na 56 Zabezpieczeniach określonych w IG1.
 
@@ -2081,6 +2204,8 @@ Przedsiębiorstwo IG2 zatrudnia osoby odpowiedzialne za zarządzanie i ochronę 
 Rys. 23.4.3. Kontrole CIS
 <br>
   <img src="\assets\img\Sieci\75.png" width="650" alt="CIS-2">
+  <br>
+  Źródło: https://securitybeztabu.pl/wp-content/uploads/2022/11/CIS-Critical-Security-Controls-Implementation-Group-3-768x384.png
 </p>
 
 IG3 składa się z dodatkowych 23 Zabezpieczeń. Opiera się na zabezpieczeniach określonych w IG1 (56) i IG2 (74), w sumie 153 zabezpieczeniach w CIS Controls v8.
@@ -2107,9 +2232,11 @@ Obrona w głębi polega na tym, aby tworzyć kilka niezależnych warstw zabezpie
 Rys. 24.1.1. Defense in Depth
 <br>
   <img src="\assets\img\Sieci\76.png" width="650" alt="DiD">
+  <br>
+  Źródło: https://pronto-core-cdn.prontomarketing.com/2/wp-content/uploads/sites/3415/2015/11/ProactiveProtection_CircleChart.jpg
 </p>
 
-Przykłady warstw zabezpieczeń w ramach obrony w głębi to:
+#### Przykłady warstw zabezpieczeń w ramach obrony w głębi to:
 + Zabezpieczenia fizyczne - systemy alarmowe, kamery monitoringu, kontrola dostępu do pomieszczeń itp.
 + Zabezpieczenia sieciowe - zaporę ogniową, antywirusy, filtry treści, systemy wykrywania i zapobiegania włamaniom (IDS/IPS) itp.
 + Zabezpieczenia aplikacji - autoryzacja użytkowników, szyfrowanie danych, testy penetracyjne, weryfikacja kodu źródłowego itp.
@@ -2126,9 +2253,11 @@ Architektura zerowego zaufania (Zero Trust Architecture) to podejście do bezpie
 Rys. 24.2.1. Zero Trust Architecture
 <br>
   <img src="\assets\img\Sieci\77.png" width="650" alt="ZTA">
+  <br>
+  Źródło: https://www.broadcom.com/media/blt4ac44e0e6c6d8341/blta25fe8a34ca95508/6051be90ae3aec204dc6c73c/zerotrust-diagram.png?width=722
 </p>
 
-W architekturze zerowego zaufania stosuje się kilka podstawowych zasad, takich jak:
+#### W architekturze zerowego zaufania stosuje się kilka podstawowych zasad, takich jak:
 + Identyfikacja i autoryzacja użytkowników i urządzeń na każdym etapie sieci, nie tylko przy dostępie do systemów zewnętrznych.
 + Kontrola dostępu na poziomie aplikacji i danych, a nie tylko sieci, w celu zapobiegania ruchowi niepożądanego ruchu sieciowego.
 + Wdrożenie zaawansowanych technologii zabezpieczeń, takich jak sieci prywatne wirtualne (VPN), uwierzytelnianie wieloskładnikowe (MFA), izolacja aplikacji (sandboxing) i analiza ruchu sieciowego w czasie rzeczywistym.
@@ -2148,7 +2277,9 @@ Architektura bezpieczeństwa w chmurze składa się z kilku warstw, w tym warstw
 <p align="center">
 Rys. 24.3.1. Cloud Security Architecture
 <br>
-  <img src="\assets\img\Sieci\78.png" width="650" alt="CSA">
+  <img src="\assets\img\Sieci\78.png" width="600" alt="CSA">
+  <br>
+  Źródło: https://static.javatpoint.com/cloudpages/images/cloud-computing-security-architecture2.png
 </p>
 
 Ważnym elementem architektury bezpieczeństwa w chmurze jest również monitorowanie i zarządzanie bezpieczeństwem. W tym celu stosuje się różne narzędzia i usługi, takie jak systemy monitorowania zdarzeń (SIEM), usługi zarządzania zabezpieczeniami (MSS), narzędzia analizy zagrożeń i oprogramowanie zarządzania politykami bezpieczeństwa.
@@ -2164,6 +2295,8 @@ Zarządzanie tożsamością i dostępem (IAM) to procesy, narzędzia i technolog
 Rys. 24.4.1. Identity and Access Management IAM
 <br>
   <img src="\assets\img\Sieci\79.png" width="650" alt="IAM">
+  <br>
+  Źródło: https://tiny.pl/cmn32
 </p>
 
 W skład IAM wchodzą narzędzia takie jak zarządzanie tożsamością, zarządzanie uprawnieniami, uwierzytelnianie wieloskładnikowe (MFA), jednokrotne uwierzytelnienie (SSO), zarządzanie sesjami, zarządzanie hasłami, zarządzanie certyfikatami i federacja tożsamości. IAM odgrywa kluczową rolę w zapewnieniu bezpieczeństwa w organizacji, a także w spełnieniu wymagań regulacyjnych i zgodności z przepisami, takimi jak GDPR czy HIPAA.
@@ -2171,7 +2304,9 @@ W skład IAM wchodzą narzędzia takie jak zarządzanie tożsamością, zarządz
 
 ## 24.5. Ochrona danych (Data Protection)
 
-Ochrona danych to kluczowy element bezpieczeństwa informacji i sieci. Chodzi tu o zapewnienie, że dane są bezpieczne, poufne i integralne w czasie ich przetwarzania, przechowywania i przesyłania. Ochrona danych obejmuje różne aspekty, w tym:
+Ochrona danych to kluczowy element bezpieczeństwa informacji i sieci. Chodzi tu o zapewnienie, że dane są bezpieczne, poufne i integralne w czasie ich przetwarzania, przechowywania i przesyłania. 
+
+#### Ochrona danych obejmuje różne aspekty, w tym:
 + Szyfrowanie danych - to proces konwertowania danych na postać nieczytelną dla osób trzecich. Szyfrowanie może odbywać się na różnych poziomach, od pliku do dysku twardego lub całej sieci.
 + Kontrola dostępu - to mechanizmy zapewniające, że tylko uprawnione osoby mają dostęp do danych. Kontrola dostępu może obejmować mechanizmy uwierzytelniania, autoryzacji, weryfikacji tożsamości i zarządzania uprawnieniami.
 + Monitorowanie i audytowanie - to procesy śledzenia aktywności użytkowników w systemie, w tym dostępu do danych i operacji na nich. Monitorowanie i audytowanie umożliwiają wykrycie i reagowanie na nieautoryzowane aktywności.
@@ -2182,6 +2317,8 @@ Ochrona danych to kluczowy element bezpieczeństwa informacji i sieci. Chodzi tu
 Rys. 24.5.1. Data Protection
 <br>
   <img src="\assets\img\Sieci\80.png" width="650" alt="DP">
+  <br>
+  Źródło: https://miro.medium.com/v2/resize:fit:1400/0*zYdfK9-3jyXdXdEZ
 </p>
 
 Wszystkie te elementy muszą działać wspólnie, aby zapewnić ochronę danych na każdym etapie ich przetwarzania i przesyłania. Bezpieczeństwo danych jest kluczowe dla zapewnienia prywatności, integralności i dostępności informacji, co jest podstawą każdej organizacji.
@@ -2199,6 +2336,8 @@ W ramach planowania reagowania na incydenty należy przeprowadzać regularne ćw
 Rys. 24.6.1. Incident Responce Planning 
 <br>
   <img src="\assets\img\Sieci\81.png" width="650" alt="IRP">
+  <br>
+  Źródło: https://pimages.toolbox.com/wp-content/uploads/2021/06/03143013/Incident-Response-Planning-Best-Practices.png
 </p>
 
 Planowanie reagowania na incydenty jest kluczowe dla zapewnienia bezpieczeństwa informacji w organizacji i minimalizacji skutków incydentów. Dzięki odpowiedniej organizacji i szybkiej reakcji można zminimalizować straty finansowe, utratę wizerunku firmy oraz zagrożenie dla danych klientów i pracowników.
@@ -2216,6 +2355,8 @@ SIEM (Security Information and Event Management) to narzędzie i technologia bez
 Rys. 25.1.1. SIEM
 <br>
   <img src="\assets\img\Sieci\82.png" width="650" alt="SIEM">
+  <br>
+  Źródło: https://softlist.pl/images/siem-2.jpg
 </p>
 
 Narzędzia SIEM pozwalają na monitorowanie różnego rodzaju zdarzeń związanych z bezpieczeństwem, takich jak próby nieudanych logowań, ataki typu phishing, próby włamania, a także nieprawidłowe lub nieautoryzowane działania na serwerach i systemach. Dane z różnych źródeł, takich jak dzienniki systemowe, narzędzia antywirusowe, systemy detekcji intruzów, są agregowane i przetwarzane w celu wykrycia podejrzanych zdarzeń.
@@ -2226,6 +2367,8 @@ Systemy SIEM zwykle wykorzystują algorytmy uczenia maszynowego i technologie sz
 Rys. 25.1.2. Solving security management challenges
 <br>
   <img src="\assets\img\Sieci\83.png" width="650" alt="SIEM-1">
+  <br>
+  Źródło: https://www.logpoint.com/wp-content/uploads/2020/08/solving-security-management-challenges.png
 </p>
 
 Przykłady narzędzi SIEM to Splunk, ArcSight, QRadar, czy Elastic Stack. SIEM jest kluczowym elementem w dzisiejszych środowiskach sieciowych i systemach informatycznych, ponieważ pozwala na skuteczne wykrywanie i reagowanie na zagrożenia dla bezpieczeństwa w czasie rzeczywistym.
@@ -2239,6 +2382,8 @@ IDS (Intrusion Detection System) oraz IPS (Intrusion Prevention System) to narz�
 Rys. 25.2.1. Działanie IDS/IPS
 <br>
   <img src="\assets\img\Sieci\84.png" width="650" alt="IDS/IPS">
+  <br>
+  Źródło: https://purplesec.us/wp-content/uploads/2019/11/Intrusion-Detection-IDS-VS-Intrusion-Prevention-IPS-What%E2%80%99s-The-Difference.png
 </p>
 
 IDS działa w trybie pasywnym, monitorując ruch sieciowy i analizując go pod kątem zachowań, które mogą wskazywać na próbę ataku lub naruszenia zasad bezpieczeństwa. IDS może wykryć wiele różnych typów ataków, w tym próby skanowania sieci, ataki DDoS, ataki na protokoły sieciowe, próby uwierzytelnienia, a także infekcje złośliwym oprogramowaniem.
@@ -2258,6 +2403,8 @@ WAF może działać w różnych trybach, takich jak tryb zapobiegania atakom, tr
 Rys. 25.3.1. Działanie WAF
 <br>
   <img src="\assets\img\Sieci\85.png" width="650" alt="WAF">
+  <br>
+  Źródło: https://learn.microsoft.com/pl-pl/azure/web-application-firewall/media/ag-overview/waf1.png
 </p>
 
 WAF może być implementowany jako sprzętowy lub programowy, a także może działać jako usługa w chmurze. WAF może działać w połączeniu z innymi narzędziami i technologiami bezpieczeństwa, takimi jak SIEM (Security Information and Event Management) czy IDS/IPS (Intrusion Detection System / Intrusion Prevention System).
@@ -2271,6 +2418,8 @@ Skanery luk w zabezpieczeniach, nazywane również skanerami podatności lub nar
 Rys. 25.4.1. Vulnerability Scanners
 <br>
   <img src="\assets\img\Sieci\86.png" width="650" alt="Vulnerability Scanners">
+  <br>
+  Źródło: https://www.balbix.com/app/uploads/the-five-types-of-vulnerability-assessment-scanners-1024x421.png
 </p>
 
 Skanery luk w zabezpieczeniach analizują systemy pod kątem znanych podatności, wykorzystując bazy danych z informacjami na temat znanych podatności i metod ich wykorzystania. Następnie generują raporty, w których opisują wykryte podatności i proponują środki zaradcze.
@@ -2279,9 +2428,11 @@ Skanery luk w zabezpieczeniach analizują systemy pod kątem znanych podatności
 Rys. 25.4.2. Protect Against Common Security Vulnerabilities
 <br>
   <img src="\assets\img\Sieci\87.png" width="650" alt="PACSV">
+  <br>
+  Źródło: https://www.dnsstuff.com/wp-content/uploads/2019/08/how-to-protect-against-common-network-security-vunerabilities.png
 </p>
 
-Skanery luk w zabezpieczeniach mogą działać w różnych trybach, takich jak:
+#### Skanery luk w zabezpieczeniach mogą działać w różnych trybach, takich jak:
 + Skanowanie sieci: Skanowanie sieci w celu wykrycia podatności na różnych urządzeniach, takich jak routery, przełączniki, serwery i inne.
 + Skanowanie hostów: Skanowanie pojedynczych hostów, takich jak serwery, w celu wykrycia podatności na poziomie aplikacji lub systemu operacyjnego.
 + Skanowanie aplikacji: Skanowanie aplikacji internetowych w celu wykrycia podatności, takich jak SQL injection, Cross-Site Scripting (XSS) lub podatności związane z uwierzytelnianiem i autoryzacją.
@@ -2297,9 +2448,11 @@ Narzędzia do testów penetracyjnych to specjalne oprogramowanie służące do t
 Rys. 25.5.1. Działanie testów penetracyjnych
 <br>
   <img src="\assets\img\Sieci\88.png" width="650" alt="Testy">
+  <br>
+  Źródło: https://assets.website-files.com/5ff66329429d880392f6cba2/611cef0949671e000d614fd3_how%20pentest%20work.png
 </p>
 
-Przykłady popularnych narzędzi do testów penetracyjnych to:
+#### Przykłady popularnych narzędzi do testów penetracyjnych to:
 + Metasploit – jedno z najpopularniejszych narzędzi do testowania penetracyjnego, umożliwiające wykonywanie zaawansowanych testów i ataków na różne warstwy systemów;
 + Nmap – skaner sieciowy służący do wykrywania hostów i otwartych portów w sieci, wykorzystywany także do testów penetracyjnych;
 + Burp Suite – narzędzie do testów penetracyjnych aplikacji webowych, pozwalające na wykrywanie słabości w konfiguracji serwera, filtrowanie żądań i odpowiedzi, a także ataki na protokoły HTTP;
@@ -2309,6 +2462,8 @@ Przykłady popularnych narzędzi do testów penetracyjnych to:
 Rys. 25.5.2. Narzędzia testów penetracyjnych 
 <br>
   <img src="\assets\img\Sieci\89.png" width="650" alt="Testy-1">
+  <br>
+  Źródło: https://securetriad.io/wp-content/uploads/2021/06/penetration-testing-tools-768x480.png
 </p>
 
 Jest także wiele innych narzędzi dostępnych na rynku, a ich wybór zależy od potrzeb i specyfiki testowanego systemu czy aplikacji. Warto jednak pamiętać, że testy penetracyjne powinny być przeprowadzane przez doświadczonych specjalistów z odpowiednimi uprawnieniami i w ramach odpowiednich procedur, aby uniknąć naruszenia bezpieczeństwa i wycieku danych.
@@ -2322,6 +2477,8 @@ Rozwiązania w zakresie bezpieczeństwa punktów końcowych (Endpoint Security S
 Rys. 25.6.1. Endpoint Security Solutions
 <br>
   <img src="\assets\img\Sieci\90.png" width="650" alt="ESS">
+  <br>
+  Źródło: https://tiny.pl/cmkhq
 </p>
 
 W skład takich rozwiązań wchodzą między innymi antywirusy, firewalle osobiste, programy antyspyware, oprogramowanie do ochrony przed phishingiem, narzędzia do wykrywania i blokowania szkodliwych programów oraz programy do monitorowania aktywności użytkowników.
@@ -2330,6 +2487,8 @@ W skład takich rozwiązań wchodzą między innymi antywirusy, firewalle osobis
 Rys. 25.6.2. Jak Endpoint Bezpieczeństwa działa
 <br>
   <img src="\assets\img\Sieci\91.png" width="650" alt="ES">
+  <br>
+  Źródło: https://pimages.toolbox.com/wp-content/uploads/2021/11/18061426/3-6.png
 </p>
 
 Endpoint Security Solutions wykorzystują wiele technologii, takich jak machine learning, sztuczna inteligencja, heurystyka i behavioral analysis, aby wykrywać nowe zagrożenia oraz chronić przed atakami na bazie już istniejących exploitów.
@@ -2343,10 +2502,14 @@ Rozwiązania w zakresie zapobiegania utracie danych, zwane także rozwiązaniami
 <p align="center">
 Rys. 25.7.1. Data Loss Prevention
 <br>
-  <img src="\assets\img\Sieci\92.png" width="650" alt="ES">
+  <img src="\assets\img\Sieci\92.png" width="600" alt="ES">
+  <br>
+  Źródło: https://www.imperva.com/learn/wp-content/uploads/sites/13/2019/01/DLP-.png
 </p>
 
-DLP jest stosowany w organizacjach, aby zapobiegać wyciekom danych, a także w celu zapewnienia zgodności z regulacjami dotyczącymi prywatności i bezpieczeństwa danych, takimi jak RODO czy HIPAA. W ramach systemów DLP stosuje się szereg narzędzi, takich jak:
+DLP jest stosowany w organizacjach, aby zapobiegać wyciekom danych, a także w celu zapewnienia zgodności z regulacjami dotyczącymi prywatności i bezpieczeństwa danych, takimi jak RODO czy HIPAA. 
+
+#### W ramach systemów DLP stosuje się szereg narzędzi, takich jak:
 + Skanery wrażliwych danych - narzędzia te skanują systemy, sieci i urządzenia w poszukiwaniu wrażliwych danych, takich jak numery kart kredytowych, dane osobowe czy hasła.
 + Systemy monitorujące ruch sieciowy - narzędzia te analizują ruch sieciowy w poszukiwaniu nieautoryzowanych przepływów danych, takich jak próby wysyłania wrażliwych danych na zewnątrz organizacji.
 + Systemy kontroli dostępu - narzędzia te kontrolują dostęp do wrażliwych danych wewnątrz organizacji i pozwalają na określenie, kto ma dostęp do danych i w jakim celu.
@@ -2357,13 +2520,16 @@ DLP jest stosowany w organizacjach, aby zapobiegać wyciekom danych, a także w 
 Rys. 25.7.3. Działanie Data Loss Prevention
 <br>
   <img src="\assets\img\Sieci\93.png" width="650" alt="ES-1">
+  <br>
+  Źródło: https://www.uih.co.th/files/2020/Product/Security-Service/Security_Data-Loss-Prevention-(DLP).png
 </p>
 
 DLP wymaga odpowiedniego wdrożenia i konfiguracji, aby działał skutecznie i nie wpłynął negatywnie na normalne działanie organizacji. Wymaga także ścisłej współpracy między działami IT, bezpieczeństwa i zarządzania organizacją.
 
 # 26. Operacje związane z cyberbezpieczeństwem
 
-Operacje związane z cyberbezpieczeństwem (Cyber Security Operations) to kompleksowe podejście do zarządzania zagrożeniami związanymi z cyberbezpieczeństwem. Celem tych operacji jest ochrona sieci i systemów przed atakami oraz szybka reakcja w przypadku naruszenia bezpieczeństwa. Operacje związane z cyberbezpieczeństwem obejmują wiele działań, w tym:
+Operacje związane z cyberbezpieczeństwem (Cyber Security Operations) to kompleksowe podejście do zarządzania zagrożeniami związanymi z cyberbezpieczeństwem. Celem tych operacji jest ochrona sieci i systemów przed atakami oraz szybka reakcja w przypadku naruszenia bezpieczeństwa. 
+#### Operacje związane z cyberbezpieczeństwem obejmują wiele działań, w tym:
 + Monitoring i analiza zdarzeń bezpieczeństwa - monitorowanie sieci i systemów w celu wykrycia nieprawidłowości, a następnie analizowanie zgromadzonych danych w celu oceny zagrożeń.
 + Reagowanie na incydenty - szybka reakcja na wykryte incydenty, aby zminimalizować skutki i przywrócić normalne funkcjonowanie systemów.
 + Zarządzanie zdarzeniami bezpieczeństwa - dokumentowanie i śledzenie wszystkich zdarzeń bezpieczeństwa w celu zapewnienia ciągłości działań i udokumentowania działań podejmowanych w przypadku naruszeń bezpieczeństwa.
@@ -2384,6 +2550,8 @@ Security Operations Center (SOC) to zaawansowane centrum operacyjne, które odpo
 Rys. 26.1.1. SOC
 <br>
   <img src="\assets\img\Sieci\94.png" width="650" alt="SOC">
+  <br>
+  Źródło: https://purplesec.us/wp-content/uploads/2021/02/What-Is-A-Security-Operations-Center.png
 </p>
 
 SOC zazwyczaj składa się z wysoko wykwalifikowanych specjalistów, którzy pracują w kilku różnych obszarach, takich jak monitorowanie zdarzeń (security monitoring), zarządzanie incydentami (incident management), analiza zagrożeń (threat intelligence), badanie zdarzeń (incident investigation), zarządzanie identyfikacją i dostępem (identity and access management), zarządzanie ryzykiem (risk management) oraz zapewnienie ciągłości działania usług (business continuity).
@@ -2401,6 +2569,8 @@ Threat intelligence to informacje o zagrożeniach, które umożliwiają organiza
 Rys. 26.2.1. Threat Intelligence 
 <br>
   <img src="\assets\img\Sieci\95.png" width="650" alt="Threat Intelligence">
+  <br>
+  Źródło: https://www.plotlights.com/wp-content/uploads/2021/08/threat_intelligence.png
 </p>
 
 Istnieją różne źródła informacji o zagrożeniach, takie jak bazy danych o podatnościach, analizy ruchu sieciowego, systemy wykrywania intruzów (IDS) oraz systemy zarządzania zdarzeniami bezpieczeństwa (SIEM). Wiele organizacji korzysta z publicznie dostępnych źródeł informacji o zagrożeniach, takich jak raporty branżowe, ostrzeżenia CERT oraz dane dotyczące zidentyfikowanych ataków.
@@ -2409,6 +2579,8 @@ Istnieją różne źródła informacji o zagrożeniach, takie jak bazy danych o 
 Rys. 26.2.2. Działanie Threat Intelligence
 <br>
   <img src="\assets\img\Sieci\96.png" width="650" alt="Threat Intelligence">
+  <br>
+  Źródło: https://media.kasperskydaily.com/wp-content/uploads/sites/92/2019/05/17084832/threat-intelligence-scheme.png
 </p>
 
 Threat intelligence może być wykorzystywane do monitorowania aktywności sieciowej, identyfikowania niebezpiecznych zachowań oraz wykrywania nieznanych wcześniej zagrożeń. Dzięki temu organizacje mogą szybciej reagować na potencjalne zagrożenia, unikać strat wynikających z incydentów bezpieczeństwa oraz lepiej zabezpieczyć swoje systemy informatyczne.
@@ -2422,6 +2594,8 @@ Polowanie na zagrożenia (ang. Threat Hunting) to proces aktywnego przeszukiwani
 Rys. 26.3.1. Działanie Threat Hunting
 <br>
   <img src="\assets\img\Sieci\97.png" width="650" alt="Threat Hunting">
+  <br>
+  Źródło: https://socradar.io/wp-content/uploads/2022/03/threat-hunting-stages-1024x388.png
 </p>
 
 Polowanie na zagrożenia obejmuje wykorzystanie różnorodnych technik i narzędzi, w tym analizę logów systemowych, analizę ruchu sieciowego, skanowanie systemów pod kątem podatności, wykorzystanie narzędzi do analizy kodu źródłowego i obrazów systemów, czy też korzystanie z wywiadu i danych o zagrożeniach (Threat Intelligence).
@@ -2440,6 +2614,8 @@ W celu skutecznego przeprowadzenia cyfrowej kryminalistyki konieczne jest wykorz
 Rys. 26.4.1. Digital Forencis
 <br>
   <img src="\assets\img\Sieci\98.png" width="650" alt="Digital Forencis">
+  <br>
+  Źródło: https://www.guru99.com/images/1/102219_1057_WhatisDigit1.png
 </p>
 
 Cyfrowa kryminalistyka znajduje zastosowanie w wielu dziedzinach, takich jak śledztwa kryminalne, wykrywanie nadużyć finansowych, czy dochodzenie roszczeń w związku z naruszeniami praw autorskich. W dzisiejszych czasach, wraz z coraz większą ilością danych przetwarzanych i przechowywanych w cyfrowej formie, cyfrowa kryminalistyka staje się coraz bardziej istotna dla zapewnienia bezpieczeństwa cyfrowego.
@@ -2452,7 +2628,9 @@ Reagowanie na incydenty (Incident Response) to proces, który ma na celu przywr�
 <p align="center">
 Rys. 26.5.1. Incident Response
 <br>
-  <img src="\assets\img\Sieci\99.png" width="650" alt="Incident Response">
+  <img src="\assets\img\Sieci\99.png" width="550" alt="Incident Response">
+  <br>
+  Źródło: https://www.netwitness.com/wp-content/uploads/2021/11/Harsch_IR-Blog_Image1.jpg
 </p>
 
 W przypadku incydentu związanego z bezpieczeństwem informacji, odpowiedź na incydent musi być natychmiastowa i skoordynowana. W tym celu organizacje powinny mieć przygotowany plan reagowania na incydenty (Incident Response Plan), który zawiera procedury postępowania w przypadku różnych rodzajów incydentów, takich jak atak hakerski, wyciek danych, utrata sprzętu, itp.
@@ -2470,6 +2648,8 @@ Odzyskiwanie po awarii (Disaster Recovery) to proces przywracania działania sys
 Rys. 26.6.1. Disaster Recovery
 <br>
   <img src="\assets\img\Sieci\100.png" width="650" alt="Disaster Recovery">
+  <br>
+  Źródło: https://www.creative-n.com/wp-content/uploads/2020/10/rpo-rto-infographic.jpg
 </p>
 
 W procesie odzyskiwania po awarii wykorzystuje się różne technologie i strategie, takie jak backup i recovery, replikację danych, wirtualizację, konteneryzację, przetwarzanie w chmurze i wiele innych. Planowanie odzyskiwania po awarii powinno obejmować ocenę ryzyka, strategie odzyskiwania, harmonogramy testów i ćwiczeń, a także procedury zarządzania incydentami.
@@ -2489,6 +2669,8 @@ Szkolenie ze świadomości bezpieczeństwa (Security Awareness Training) to proc
 Rys. 27.1.1. Security Awareness Training
 <br>
   <img src="\assets\img\Sieci\101.png" width="650" alt="SAT">
+  <br>
+  Źródło: https://data3.com/wp-content/uploads/2018/04/security-awareness-diagram-1024x290.png
 </p>
 
 Szkolenie ze świadomości bezpieczeństwa jest ważnym elementem strategii bezpieczeństwa cybernetycznego każdej organizacji, ponieważ większość incydentów związanych z bezpieczeństwem informacji wynika z działań użytkowników końcowych, którzy nie są świadomi zagrożeń lub nie wiedzą, jak postępować w przypadku podejrzenia ataku.
@@ -2508,6 +2690,8 @@ Zarządzanie hasłami to kluczowy element bezpieczeństwa cybernetycznego. Wiele
 Rys. 27.2.1. Password Management
 <br>
   <img src="\assets\img\Sieci\102.png" width="650" alt="PM">
+  <br>
+  Źródło: https://pimages.toolbox.com/wp-content/uploads/2021/05/24110843/Password-Management-2-1.png
 </p>
 
 + Silne hasła - hasła powinny składać się z co najmniej 12 znaków i zawierać różne rodzaje znaków, takie jak litery (w tym duże i małe litery), cyfry i znaki specjalne.
@@ -2530,6 +2714,8 @@ W przypadku oprogramowania, zwłaszcza systemów operacyjnych i aplikacji, łatk
 Rys. 27.3.1. Patch  Management
 <br>
   <img src="\assets\img\Sieci\103.png" width="650" alt="PM-1">
+  <br>
+  Źródło: https://www.manageengine.com/products/desktop-central/images/patch-management-software-process.jpg
 </p>
 
 Proces zarządzania poprawkami powinien obejmować identyfikację dostępnych aktualizacji, ich ocenę pod kątem wpływu na systemy i aplikacje, testowanie łatek na środowisku testowym przed wdrożeniem ich na produkcji oraz wdrażanie ich na systemach produkcyjnych. Ważne jest również monitorowanie systemów i aplikacji, aby upewnić się, że wszystkie poprawki są aktualne i systemy są bezpieczne.
@@ -2545,6 +2731,8 @@ Segmentacja sieci (ang. network segmentation) to technika polegająca na podzial
 Rys. 27.4.1. Network Segmentation
 <br>
   <img src="\assets\img\Sieci\104.png" width="650" alt="NS">
+  <br>
+  Źródło: https://static.javatpoint.com/blog/images/network-segmentation.png
 </p>
 
 Segmentacja sieci umożliwia ograniczenie dostępu do poszczególnych zasobów sieciowych tylko dla uprawnionych użytkowników i urządzeń. Oznacza to, że użytkownicy i urządzenia w jednym segmencie sieci nie mają dostępu do zasobów w innych segmentach, chyba że posiadają odpowiednie uprawnienia.
@@ -2562,6 +2750,8 @@ Kopie zapasowe i odzyskiwanie (Backup and Recovery) to proces tworzenia i przech
 Rys. 27.5.1. Backup and Recovery
 <br>
   <img src="\assets\img\Sieci\105.png" width="650" alt="BaR">
+  <br>
+  Źródło: https://www.baculasystems.com/wp-content/uploads/2019/01/arch-new-300x189.jpg
 </p>
 
 W przypadku awarii lub ataku, kopia zapasowa danych umożliwia przywrócenie systemów i danych do stanu sprzed zdarzenia, minimalizując tym samym straty wynikające z utraty danych lub czasu niedostępności systemów. Warto zauważyć, że kopia zapasowa powinna być regularnie tworzona, a także przechowywana w bezpiecznym miejscu, np. na zewnętrznym dysku twardym lub w chmurze.
@@ -2583,6 +2773,8 @@ Sztuczna inteligencja (AI) i uczenie maszynowe (ML) są coraz częściej wykorzy
 Rys. 28.1.1. AI i ML w cyberbezpieczeństwie
 <br>
   <img src="\assets\img\Sieci\106.png" width="650" alt="AI and ML">
+  <br>
+  Źródło: https://tiny.pl/cmkhj
 </p>
 
 AI i ML pozwalają na szybkie przetwarzanie dużych ilości danych, dzięki czemu mogą automatycznie wykrywać nieznane wcześniej zagrożenia, analizować zachowania użytkowników i dostarczać rekomendacje dotyczące działań obronnych. Wykorzystując te technologie, systemy bezpieczeństwa mogą przewidywać, które aplikacje i urządzenia są najbardziej narażone na ataki oraz dostarczać odpowiednie zabezpieczenia, takie jak automatyczne aktualizacje lub blokowanie niebezpiecznych aplikacji.
@@ -2600,6 +2792,8 @@ Blockchain i kryptowaluty to dwie technologie, które wprowadziły rewolucję w 
 Rys. 28.2.1. Jak działa Blockchain
 <br>
   <img src="\assets\img\Sieci\107.png" width="650" alt="Blockchain">
+  <br>
+  Źródło: https://www.filipiakbabicz.com/nowe-media-i-technologie/wp-content/uploads/2019/11/jakdzialablockchain-1024x690.jpg
 </p>
 
 Kryptowaluty, takie jak Bitcoin czy Ethereum, są cyfrowymi aktywami, które funkcjonują na podstawie technologii blockchain. Dzięki temu, że transakcje są zapisywane na blockchainie, a każdy blok danych jest chroniony algorytmem kryptograficznym, kryptowaluty zapewniają bezpieczeństwo transakcji oraz anonimowość użytkowników. Oczywiście, tak jak każda inna technologia, blockchain i kryptowaluty także niosą ze sobą pewne ryzyka, takie jak np. utrata kluczy prywatnych, ataki hakerskie czy złośliwe oprogramowanie. W związku z tym, wraz z rozwojem technologii, pojawiają się coraz bardziej zaawansowane narzędzia i rozwiązania, które pomagają zwiększać bezpieczeństwo i chronić użytkowników przed różnymi zagrożeniami.
@@ -2613,7 +2807,10 @@ Internet Rzeczy (IoT) to rozwijająca się dziedzina technologii, która pozwala
 Rys. 28.3.1. Bezpieczeństwo Internetu Rzeczy (IoT)
 <br>
   <img src="\assets\img\Sieci\108.png" width="650" alt="IoT">
+  <br>
+  Źródło: https://komputery.pl/wp-content/uploads/2019/05/IIoT-vs-IoT-grafika-2.jpg
 </p>
+
 
 
 Bezpieczeństwo Internetu Rzeczy jest jednym z najważniejszych wyzwań, jakie stawia przed nami ta technologia. Urządzenia IoT są zazwyczaj małe, mają ograniczone zasoby, a ich producenci często skupiają się na funkcjonalności, kosztem bezpieczeństwa. To sprawia, że takie urządzenia są podatne na ataki hakerskie, a zagrożenia te mogą mieć poważne konsekwencje, takie jak kradzież danych lub sterowanie urządzeniami przez niepowołane osoby.
