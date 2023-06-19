@@ -186,7 +186,7 @@ Rys. 4.1.1. Jak działa TCP
   Źródło: https://nordvpn.com/wp-content/uploads/blog-how-tcp-works-infographic-server-phone-pl-1200x628-1.svg
 </p>
 
-TCP działa w następujący sposób:
+#### TCP działa w następujący sposób:
 + Nawiązanie połączenia - przed rozpoczęciem transmisji danych, aplikacje korzystające z protokołu TCP muszą najpierw nawiązać połączenie między sobą. W tym celu inicjują proces zwany "trzykrotne potwierdzenie", który służy do ustanowienia połączenia między nadawcą a odbiorcą.
 + Segmentacja - dane są dzielone na mniejsze segmenty, ponieważ większe pakiety mogą przeciążać sieć lub być utracone. Każdy segment jest numerowany i zawiera informację o sekwencji, która jest wykorzystywana do uporządkowania segmentów po otrzymaniu ich przez odbiorcę.
 + Kontrola przepływu - TCP zapewnia mechanizmy kontroli przepływu, które ograniczają ilość danych, które można przesłać w danej chwili, aby uniknąć przeciążenia sieci.
@@ -304,6 +304,8 @@ Znając już ten adres przeglądarka wysyła żądanie do serwera o udostępnien
 Rys. 5.1.3. Końcowa odpowiedź 
 <br>
   <img src="\assets\img\Sieci\15.png" width="650" alt="HTTP-2">
+  <br>
+  Źródło: https://pasja-informatyki.pl/pliki/strona-www.jpg
 </p>
 
 
@@ -313,7 +315,7 @@ HTTPS (Hypertext Transfer Protocol Secure) to protokół bezpieczny oparty na pr
 
 HTTPS chroni prywatność i bezpieczeństwo przesyłanych danych, takich jak dane logowania, dane karty kredytowej, informacje osobiste itp. Szyfrowanie SSL/TLS chroni przed przechwyceniem danych przez osoby trzecie, ponieważ dane są szyfrowane w trakcie transmisji.
 
-Protokół HTTPS działa w następujący sposób:
+#### Protokół HTTPS działa w następujący sposób:
 + Przeglądarka internetowa łączy się z serwerem WWW i wysyła prośbę o połączenie HTTPS.
 + Serwer przesyła do przeglądarki certyfikat SSL/TLS, który zawiera klucz publiczny.
 + Przeglądarka sprawdza autentyczność certyfikatu SSL/TLS i pobiera klucz publiczny.
@@ -324,7 +326,7 @@ Protokół HTTPS działa w następujący sposób:
 
 FTP (File Transfer Protocol) to protokół aplikacyjny wykorzystywany do przesyłania plików między komputerami w sieci. FTP wykorzystuje klient-serwer model, w którym klient nawiązuje połączenie z serwerem FTP i przesyła lub pobiera pliki.
 
-Komunikacja między klientem a serwerem FTP składa się z trzech części:
+#### Komunikacja między klientem a serwerem FTP składa się z trzech części:
 + Połączenie: Klient nawiązuje połączenie z serwerem FTP i przesyła dane uwierzytelniające, takie jak login i hasło.
 + Transfer plików: Po nawiązaniu połączenia klient i serwer mogą rozpocząć przesyłanie plików. Klient może pobierać pliki z serwera lub przesyłać pliki na serwer.
 + Zamknięcie połączenia: Po przesłaniu lub pobraniu plików klient kończy połączenie z serwerem FTP.
@@ -337,7 +339,10 @@ FTP nie zapewnia szyfrowania danych, co oznacza, że dane przesyłane między kl
 Rys. 5.3.1. Działanie FTP
 <br>
   <img src="\assets\img\Sieci\16.png" width="650" alt="FTP">
+  <br>
+  Źródło: https://pasja-informatyki.pl/pliki/porty-ftp.jpg
 </p>
+
 
 
 ## 5.4. SFTP
@@ -346,7 +351,7 @@ SFTP (Secure File Transfer Protocol) to protokół aplikacyjny wykorzystywany do
 
 SFTP wykorzystuje szyfrowanie SSL/TLS, aby zapewnić bezpieczne przesyłanie danych między klientem a serwerem. W przeciwieństwie do protokołu FTP, który nie zapewnia szyfrowania danych, SFTP szyfruje całą komunikację między klientem a serwerem, w tym loginy i hasła oraz przesyłane pliki.
 
-SFTP działa w następujący sposób:
+#### SFTP działa w następujący sposób:
 + Klient nawiązuje połączenie z serwerem SFTP poprzez protokół SSH.
 + Po nawiązaniu połączenia klient przesyła dane uwierzytelniające, takie jak login i hasło.
 + Po uwierzytelnieniu klient może przesyłać lub pobierać pliki z serwera SFTP.
@@ -364,10 +369,12 @@ Kiedy użytkownik wysyła wiadomość e-mail, klient pocztowy wysyła ją na ser
 <p align="center">
 Rys. 5.5.1. Działanie SMTP
 <br>
-  <img src="\assets\img\Sieci\17.png" width="650" alt="SMTP">
+  <img src="\assets\img\Sieci\17.png" width="600" alt="SMTP">
+  <br>
+  Źródło: https://fotc.com/app/uploads/2022/06/SMTP.jpg
 </p>
 
-SMTP działa w następujący sposób:
+#### SMTP działa w następujący sposób:
 + Klient pocztowy nawiązuje połączenie z serwerem SMTP.
 + Klient przesyła dane uwierzytelniające, takie jak login i hasło.
 + Klient przesyła wiadomość e-mail na serwer SMTP, który następnie przesyła ją do serwera poczty przychodzącej.
@@ -385,9 +392,11 @@ Kiedy użytkownik chce pobrać wiadomości e-mail, klient pocztowy nawiązuje po
 Rys. 5.6.1. Działanie POP3
 <br>
   <img src="\assets\img\Sieci\18.png" width="650" alt="POP3">
+  <br>
+  Źródło: https://www.nazwa.pl/pomoc/wp-content/uploads/2020/10/pop3.png
 </p>
 
-POP3 działa w następujący sposób:
+#### POP3 działa w następujący sposób:
 + Klient pocztowy nawiązuje połączenie z serwerem POP3.
 + Klient przesyła dane uwierzytelniające, takie jak login i hasło.
 + Klient pobiera wiadomości e-mail z serwera POP3.
@@ -405,9 +414,11 @@ IMAP (Internet Message Access Protocol) to protokół aplikacyjny wykorzystywany
 Rys. 5.7.1. Działanie IMAP
 <br>
   <img src="\assets\img\Sieci\19.png" width="650" alt="IMAP">
+  <br>
+  Źródło: https://www.getmailbird.com/wp-content/uploads/2022/08/How-IMAP-works-1024x410.png
 </p>
 
-IMAP działa w następujący sposób:
+#### IMAP działa w następujący sposób:
 + Klient pocztowy nawiązuje połączenie z serwerem IMAP.
 + Klient przesyła dane uwierzytelniające, takie jak login i hasło.
 + Klient łączy się z serwerem poczty przychodzącej i pobiera informacje o wiadomościach e-mail, takie jak nagłówki, treść wiadomości i załączniki.
@@ -420,6 +431,14 @@ IMAP jest często używany w połączeniu z protokołem SMTP (Simple Mail Transf
 ## 5.8. XMPP
 
 XMPP (Extensible Messaging and Presence Protocol) to protokół komunikacyjny wykorzystywany do przesyłania wiadomości tekstowych, multimediów oraz informacji o dostępności użytkowników. XMPP jest protokołem open-source, co oznacza, że jego kod źródłowy jest dostępny publicznie i może być modyfikowany przez społeczność programistów.
+
+<p align="center">
+Rys. 5.8.1. Działanie XMPP
+<br>
+  <img src="\assets\img\Sieci\109.png" width="650" alt="XMPP">
+  <br>
+  Źródło: https://assets.website-files.com/5ff66329429d880392f6cba2/61ee54e490c02caf78e8f9b3_XMPP%20protocol%20work.jpg
+</p>
 
 XMPP jest zwykle stosowany w aplikacjach służących do komunikacji w czasie rzeczywistym, takich jak komunikatory internetowe i aplikacje do wideokonferencji. Protokół ten pozwala użytkownikom na prowadzenie rozmów w czasie rzeczywistym z innymi użytkownikami, wymianę plików, a także na tworzenie grupowych czatów.
 
@@ -437,12 +456,14 @@ LDAP (Lightweight Directory Access Protocol) to protokół aplikacyjny, który u
 <p align="center">
 Rys. 5.9.1. Działanie LDAP
 <br>
-  <img src="\assets\img\Sieci\20.png" width="650" alt="LDAP">
+  <img src="\assets\img\Sieci\20.png" width="550" alt="LDAP">
+  <br>
+  Źródło: https://blog.invgate.com/hs-fs/hubfs/03%20-%20What%20is%20LDAP%20and%20How%20Does%20it%20Work%20-%20Asset%2002.jpg?width=1001&name=03%20-%20What%20is%20LDAP%20and%20How%20Does%20it%20Work%20-%20Asset%2002.jpg
 </p>
 
 LDAP działa w oparciu o model klient-serwer, w którym klient LDAP żąda informacji z serwera LDAP, który przechowuje katalog informacji. Protokół ten wykorzystuje protokół TCP/IP do komunikacji między klientem a serwerem.
 
-LDAP oferuje wiele zalet, w tym:
+#### LDAP oferuje wiele zalet, w tym:
 + Skalowalność: dzięki możliwości dodawania nowych wpisów i atrybutów, LDAP jest łatwy do skalowania w zależności od potrzeb organizacji.
 + Bezpieczeństwo: protokół LDAP oferuje wiele funkcji zabezpieczeń, takich jak szyfrowanie SSL/TLS i autentykację.
 + Efektywność: LDAP jest bardzo efektywnym protokołem, który pozwala na szybkie przeszukiwanie dużych katalogów.
@@ -453,6 +474,8 @@ LDAP jest często stosowany w firmach i organizacjach, które potrzebują centra
 Rys. 5.9.2. Drzewo katalogów LDAP
 <br>
   <img src="\assets\img\Sieci\21.png" width="650" alt="LDAP-1">
+  <br>
+  Źródło: https://sekurak.pl/wp-content/uploads/2017/03/LDAP_tree.png
 </p>
 
 # 6. Protokoły zarządzania siecią
@@ -472,7 +495,7 @@ Protokół SNMP jest szeroko stosowany w sieciach komputerowych, zwłaszcza w ś
 <p align="center">
 Rys. 6.1.1. Działanie protokołu SNMP
 <br>
-  <img src="\assets\img\Sieci\21.png" width="650" alt="SNMP">
+  <img src="\assets\img\Sieci\22.png" width="650" alt="SNMP">
 </p>
 
 Agenci rezydują na każdym urządzeniu sieciowym (routerze, punkcie dostępowym, stacji roboczej czy nawet drukarce obsługującej SNMP) i tworzą bazę danych zwaną MIB (ang. Management Information Base). W bazie przechowywane są obiekty opisujące właściwości danego urządzenia. Na żądanie zarządcy, obiekty te są udostępniane, ujawniając informacje takie, jak np. temperatura procesora, ilość wolnego miejsca na dysku, bieżące obciążenie interfejsu sieciowego czy liczba aktualnie zalogowanych użytkowników.
