@@ -441,7 +441,7 @@ Rys. 5.8.1. Działanie XMPP
 <br>
   <img src="\assets\img\Sieci\109.png" width="650" alt="XMPP">
   <br>
-  Źródło: https://assets.website-files.com/5ff66329429d880392f6cba2/61ee54e490c02caf78e8f9b3_XMPP%20protocol%20work.jpg
+  Źródło: https://tiny.pl/cmk3f
 </p>
 
 XMPP jest zwykle stosowany w aplikacjach służących do komunikacji w czasie rzeczywistym, takich jak komunikatory internetowe i aplikacje do wideokonferencji. Protokół ten pozwala użytkownikom na prowadzenie rozmów w czasie rzeczywistym z innymi użytkownikami, wymianę plików, a także na tworzenie grupowych czatów.
@@ -742,7 +742,7 @@ Protokół Kerberos jest szeroko stosowany w systemach operacyjnych, takich jak 
 
 S/MIME (Secure/Multipurpose Internet Mail Extensions) to protokół bezpieczeństwa, który zapewnia poufność, integralność i uwierzytelnienie dla e-maili. Protokół S/MIME działa poprzez dodanie kryptograficznych funkcji do standardowych protokołów pocztowych, takich jak SMTP, POP i IMAP.
 
-Główne funkcje S/MIME to:
+#### Główne funkcje S/MIME to:
 + szyfrowanie treści wiadomości, co oznacza, że tylko odbiorca, który zna klucz prywatny, może odszyfrować wiadomość,
 + podpisywanie wiadomości, co umożliwia odbiorcy sprawdzenie, że wiadomość nie została zmodyfikowana w trakcie przesyłki,
 + uwierzytelnianie nadawcy, co zapewnia odbiorcy, że wiadomość pochodzi od rzeczywistego nadawcy, a nie od oszusta podszywającego się pod nadawcę.
@@ -1076,7 +1076,7 @@ Sieci bezpieczne to sieci komputerowe, w których zastosowano odpowiednie środk
 <p align="center">
 Rys. 11.1. Sieci LAN, WAN, MAN
 <br>
-  <img src="\assets\img\Sieci\46.png" width="550" alt="Sieci">
+  <img src="\assets\img\Sieci\46.png" width="500" alt="Sieci">
   <br>
   Źródło: https://www.utracki.us.edu.pl/wp-content/uploads/2020/11/obraz-32-1020x1024.png
 </p>
@@ -1086,7 +1086,7 @@ Sieć LAN (Local Area Network) to sieć lokalna, która zwykle obejmuje niewielk
 <p align="center">
 Rys. 11.2. LAN i WAN
 <br>
-  <img src="\assets\img\Sieci\47.png" width="550" alt="Sieci-1">
+  <img src="\assets\img\Sieci\47.png" width="500" alt="Sieci-1">
   <br>
   Źródło: https://techterms.com/img/lg/wlan_1283.png
 </p>
@@ -1339,7 +1339,7 @@ Rys. 17.3.1. Password Attack
 <br>
   <img src="\assets\img\Sieci\54.png" width="600" alt="Ransomware">
   <br>
-  Źródło: https://crashtest-security.com/wp-content/uploads/2022/03/password-attack_light-1024x576.png
+  Źródło: https://tiny.pl/cm2hg
 </p>
 
 ## 17.3.1. Brute-Force ataki na hasła
@@ -1660,8 +1660,6 @@ W MacOS istnieją również wbudowane narzędzia do tworzenia i edycji multimedi
 
 System MacOS jest również znany z bezpieczeństwa i prywatności. W porównaniu z innymi systemami operacyjnymi, MacOS ma mniej problemów z wirusami i innymi zagrożeniami bezpieczeństwa. Istnieje również wiele wbudowanych narzędzi, takich jak zapora sieciowa i szyfrowanie plików, które pomagają użytkownikom chronić swoje dane.
 
-Podsumowując, MacOS to zaawansowany system operacyjny, który oferuje użytkownikom wiele funkcjonalności i narzędzi, które ułatwiają codzienną pracę i korzystanie z multimediów. System MacOS jest również znany z bezpieczeństwa i stabilności, co czyni go popularnym wyborem wśród profesjonalistów, kreatywnych i wymagających użytkowników.
-
 
 # 21. Usługi sieciowe
 
@@ -1853,8 +1851,6 @@ Hadoop obsługuje wiele narzędzi i bibliotek, które ułatwiają programistom p
 
 Hadoop oferuje również narzędzia do monitorowania i zarządzania klastrami, takie jak Hadoop YARN i Apache Ambari. Te narzędzia umożliwiają administratorom systemów zarządzanie zasobami klastra i zapewnienie niezawodności i skalowalności.
 
-Podsumowując, Hadoop to system do przetwarzania danych rozproszonych, który składa się z HDFS do przechowywania danych i MapReduce do przetwarzania danych. Hadoop oferuje wiele narzędzi i bibliotek do pracy z dużymi zbiorami danych oraz narzędzia do zarządzania klastrami. Jest to popularne narzędzie w dziedzinie analizy danych i uczenia maszynowego, ze względu na swoją zdolność do obsługi ogromnych zbiorów danych i łatwej skalowalności.
-
 ## 21.4. Kafka
 
 Apache Kafka to open-source'owy system przetwarzania strumieniowego, który umożliwia przetwarzanie i przesyłanie dużych ilości danych w czasie rzeczywistym. Kafka jest wykorzystywana w wielu dziedzinach, w tym w analizie danych, przetwarzaniu w czasie rzeczywistym, przetwarzaniu logów i systemach monitorujących.
@@ -1867,8 +1863,6 @@ Broker to serwer Kafka, który przechowuje partycje tematów i umożliwia konsum
 
 Konsument odbiera wiadomości z tematu. Kafkowy konsument może subskrybować jeden lub wiele tematów i przetwarzać dane w czasie rzeczywistym. Konsument może być skonfigurowany w celu przetwarzania danych z określonych partycji, aby umożliwić równoległe przetwarzanie danych.
 Kafka oferuje wiele zalet, takich jak wysoka wydajność i skalowalność, niezawodność i spójność danych oraz łatwość obsługi. Kafka umożliwia również łatwe integrowanie z innymi narzędziami, takimi jak Hadoop, Spark i Flink. Ponadto Kafka oferuje wiele narzędzi i bibliotek, takich jak Kafka Connect i Kafka Streams, które ułatwiają pracę z danymi strumieniowymi.
-
-Podsumowując, Apache Kafka to system przetwarzania strumieniowego, który umożliwia przetwarzanie i przesyłanie dużych ilości danych w czasie rzeczywistym. Kafka opiera się na architekturze publikuj-subskrybuj i składa się z trzech głównych komponentów: producentów, brokerów i konsumentów. Kafka oferuje wiele zalet, takich jak wysoka wydajność i skalowalność, niezawodność i spójność danych oraz łatwość obsługi.
 
 <p align="center">
 Rys. 21.4.1. Kafka
@@ -2258,7 +2252,7 @@ Rys. 24.2.1. Zero Trust Architecture
 <br>
   <img src="\assets\img\Sieci\77.png" width="650" alt="ZTA">
   <br>
-  Źródło: https://www.broadcom.com/media/blt4ac44e0e6c6d8341/blta25fe8a34ca95508/6051be90ae3aec204dc6c73c/zerotrust-diagram.png?width=722
+  Źródło: https://tiny.pl/cm2h8
 </p>
 
 #### W architekturze zerowego zaufania stosuje się kilka podstawowych zasad, takich jak:
@@ -2341,7 +2335,7 @@ Rys. 24.6.1. Incident Responce Planning
 <br>
   <img src="\assets\img\Sieci\81.png" width="650" alt="IRP">
   <br>
-  Źródło: https://pimages.toolbox.com/wp-content/uploads/2021/06/03143013/Incident-Response-Planning-Best-Practices.png
+  Źródło: https://tiny.pl/cm2qq
 </p>
 
 Planowanie reagowania na incydenty jest kluczowe dla zapewnienia bezpieczeństwa informacji w organizacji i minimalizacji skutków incydentów. Dzięki odpowiedniej organizacji i szybkiej reakcji można zminimalizować straty finansowe, utratę wizerunku firmy oraz zagrożenie dla danych klientów i pracowników.
@@ -2453,7 +2447,7 @@ Rys. 25.5.1. Działanie testów penetracyjnych
 <br>
   <img src="\assets\img\Sieci\88.png" width="650" alt="Testy">
   <br>
-  Źródło: https://assets.website-files.com/5ff66329429d880392f6cba2/611cef0949671e000d614fd3_how%20pentest%20work.png
+  Źródło: https://tiny.pl/cm2q9
 </p>
 
 #### Przykłady popularnych narzędzi do testów penetracyjnych to:
@@ -2688,7 +2682,7 @@ Wprowadzenie szkoleń ze świadomości bezpieczeństwa może przyczynić się do
 
 ## 27.2. Zarządzanie hasłami (Password Management)
 
-Zarządzanie hasłami to kluczowy element bezpieczeństwa cybernetycznego. Wiele naruszeń bezpieczeństwa wynika z niewłaściwego zarządzania hasłami lub korzystania z haseł słabych i łatwych do odgadnięcia. W celu zapewnienia bezpieczeństwa, należy stosować się do najlepszych praktyk w zakresie zarządzania hasłami, takich jak:
+Zarządzanie hasłami to kluczowy element bezpieczeństwa cybernetycznego. Wiele naruszeń bezpieczeństwa wynika z niewłaściwego zarządzania hasłami lub korzystania z haseł słabych i łatwych do odgadnięcia.
 
 <p align="center">
 Rys. 27.2.1. Password Management
@@ -2698,6 +2692,7 @@ Rys. 27.2.1. Password Management
   Źródło: https://pimages.toolbox.com/wp-content/uploads/2021/05/24110843/Password-Management-2-1.png
 </p>
 
+#### W celu zapewnienia bezpieczeństwa, należy stosować się do najlepszych praktyk w zakresie zarządzania hasłami, takich jak:
 + Silne hasła - hasła powinny składać się z co najmniej 12 znaków i zawierać różne rodzaje znaków, takie jak litery (w tym duże i małe litery), cyfry i znaki specjalne.
 + Niepowtarzalne hasła - każde konto powinno mieć inne, unikalne hasło. Nigdy nie należy używać tego samego hasła do wielu kont.
 + Regularna zmiana hasła - hasła należy zmieniać co najmniej co 90 dni.
