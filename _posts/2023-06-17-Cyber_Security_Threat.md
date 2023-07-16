@@ -42,7 +42,7 @@ Logi systemowe – to są zdarzenie, które miało miejsce w określonym czasie 
 <br>
   <img src="\assets\img\Cyber\1.png" width="650" alt="logi">
   <br>
-  Źródło: 
+  Źródło: https://tiny.pl/c71cb
 </p>
 
 #### Podstawowa struktura logów: 
@@ -68,7 +68,7 @@ Prawie wszystko tworzy jakąś wersję logów, np.:
 <br>
   <img src="\assets\img\Cyber\2.png" width="650" alt="logi-1">
   <br>
-  Źródło: 
+  Źródło: https://www.crowdstrike.com/wp-content/uploads/2022/09/logfilesources-768x713.webp
 </p>
 
 #### Rodzaje dzienników:
@@ -110,7 +110,7 @@ Ataki mogą miec miejsce na różnych poziomach modeli sieci z różnymi protoko
 <br>
   <img src="\assets\img\Cyber\3.png" width="650" alt="iso/osi">
   <br>
-  Źródło: 
+  Źródło: https://miro.medium.com/v2/resize:fit:720/format:webp/1*eWE2QWWS6jS9o3EqTibncw.png
 </p>
 
 
@@ -133,11 +133,11 @@ Cross-site scripting polega na manipulowaniu podatną na ataki witryną internet
 <br>
   <img src="\assets\img\Cyber\4.png" width="650" alt="xss">
   <br>
-  Źródło: 
+  Źródło: https://portswigger.net/web-security/images/cross-site-scripting.svg
 </p>
 
 
-#### Rodzaje ataków XSS:
+### Rodzaje ataków XSS:
 + Odzwierciedlający XSS – złośliwy skrypt pochodzi z bieżącego żądania http
 
 ##### Oto prosty przykład odzwierciedlonej luki w zabezpieczeniach XSS:
@@ -154,6 +154,8 @@ https://insecure-website.com/status?message=<script>/*+Bad+stuff+here...+*/</scr
 <p>Status: <script>/* Bad stuff here...*/</script></p>
 ~~~
 
+<br>
+
 + Zapisany XSS – złośliwy skrypt pochodzi z bazy danych serwisu
 
 Oto prosty przykład zapisanej luki XSS. Aplikacja tablicy ogłoszeń umożliwia użytkownikom przesyłanie wiadomości, które są wyświetlane innym użytkownikom:
@@ -166,6 +168,8 @@ Aplikacja nie wykonuje żadnego innego przetwarzania danych, więc osoba atakuj�
 ~~~
 <𝑝><𝑠𝑐𝑟𝑖𝑝𝑡>/∗ 𝐵𝑎𝑑 𝑠𝑡𝑢𝑓𝑓 ℎ𝑒𝑟𝑒...∗/</𝑠𝑐𝑟𝑖𝑝𝑡></𝑝>
 ~~~
+
+<br>
 
 + XSS oparty na DOM – luka występuje w kodzie po stronie klienta, a nie w kodzie po stronie serwera
 
@@ -195,7 +199,7 @@ Wstrzyknięcie SQL (SQLi) to luka w zabezpieczeniach sieci Web, która umożliwi
 <br>
   <img src="\assets\img\Cyber\5.png" width="650" alt="sqli">
   <br>
-  Źródło: 
+  Źródło: https://portswigger.net/web-security/images/sql-injection.svg
 </p>
 
 
@@ -224,7 +228,7 @@ W przypadku iniekcji SQL drugiego rzędu (znanej również jako iniekcja zapisan
 <br>
   <img src="\assets\img\Cyber\6.png" width="650" alt="sqli-1">
   <br>
-  Źródło: 
+  Źródło: https://portswigger.net/web-security/images/second-order-sql-injection.svg
 </p>
 
 Wstrzykiwanie SQL drugiego rzędu często pojawia się w sytuacjach, gdy programiści są świadomi luk w zabezpieczeniach wstrzykiwania SQL, więc bezpiecznie obsługują początkowe umieszczanie danych wejściowych w bazie danych. Gdy dane są później przetwarzane, uważa się je za bezpieczne, ponieważ zostały wcześniej bezpiecznie umieszczone w bazie danych. W tym momencie dane są traktowane w niebezpieczny sposób, ponieważ programista błędnie uznaje je za zaufane.
@@ -256,14 +260,6 @@ Ten kod można łatwo przepisać w sposób, który zapobiega ingerencji użytkow
 
 Zapytań sparametryzowanych można używać w każdej sytuacji, w której jako dane w zapytaniu pojawiają się niezaufane dane wejściowe, w tym klauzula WHERE i wartości w instrukcji INSERT lub UPDATE. Nie można ich używać do obsługi niezaufanych danych wejściowych w innych częściach zapytania, takich jak nazwy tabel lub kolumn lub klauzula ORDER BY. Funkcjonalność aplikacji, która umieszcza niezaufane dane w tych częściach zapytania, będzie musiała przyjąć inne podejście, takie jak umieszczenie dozwolonych wartości wejściowych na białej liście lub użycie innej logiki w celu zapewnienia wymaganego zachowania.
 
-<p align="center">
-  Rys.2.1.2.3. Plusy SQL Injection
-<br>
-  <img src="\assets\img\Cyber\7.png" width="650" alt="sqli-2">
-  <br>
-  Źródło: 
-</p>
-
 
 Aby sparametryzowana kwerenda była skuteczna w zapobieganiu iniekcji SQL, ciąg używany w kwerendzie musi zawsze być stałą zakodowaną na stałe i nigdy nie może zawierać żadnych zmiennych danych z dowolnego źródła. Nie ulegaj pokusie decydowania o tym, czy dany element danych jest zaufany, i kontynuuj stosowanie konkatenacji ciągów w zapytaniu w przypadkach, które są uważane za bezpieczne. Bardzo łatwo jest popełnić błąd co do możliwego pochodzenia danych lub wprowadzić zmiany w innym kodzie, aby naruszyć założenia dotyczące tego, jakie dane są skażone.
 
@@ -278,7 +274,7 @@ Cross-Site Request Forgery to atak, który zmusza uwierzytelnionych użytkownik�
 <br>
   <img src="\assets\img\Cyber\8.png" width="650" alt="CSRF">
   <br>
-  Źródło: 
+  Źródło: https://portswigger.net/web-security/images/cross-site%20request%20forgery.svg
 </p>
 
 Załóżmy na przykład, że aplikacja zawiera funkcję umożliwiającą użytkownikowi zmianę adresu e-mail na koncie. Gdy użytkownik wykonuje tę czynność, wysyła żądanie HTTP w następujący sposób:
@@ -326,7 +322,7 @@ Jeszcze jeden często przeczytany przykład wykorzystania CSRF wymagający uwier
 <br>
   <img src="\assets\img\Cyber\9.png" width="650" alt="csrf-1">
   <br>
-  Źródło: 
+  Źródło: https://sekurak.pl/wp-content/uploads/2015/04/csrf-admin3.gif
 </p>
 
 
@@ -350,7 +346,7 @@ Zauważmy również, że gdyby bankowośc przyjmowała requesty HTTP tylko metod
 </form>
 ~~~
 
-#### 2.1.4. MitM
+### 2.1.4. MitM
 
 Atak typu Man in the Middle to atak, w którym sprawca ustawia się w rozmowie między użytkownikiem a aplikacją – albo w celu podsłuchania, albo podszycia się pod jedną ze stron, co sprawia wrażenie normalnej wymiany informacji jest w toku. 
 Celem ataku jest kradzież danych osobowych, takich jak dane logowania, dane konta i numery kart kredytowych. 
@@ -360,7 +356,7 @@ Celem ataku jest kradzież danych osobowych, takich jak dane logowania, dane kon
 <br>
   <img src="\assets\img\Cyber\10.png" width="650" alt="mitm">
   <br>
-  Źródło: 
+  Źródło: https://www.imperva.com/learn/wp-content/uploads/sites/13/2017/09/man-in-the-middle-mitm-attack.png.webp
 </p>
 
 #### Atak składa się z dwóch odrębnych faz:
@@ -401,11 +397,11 @@ W tym scenariuszu osoba atakująca przechwytuje rozmowę, przekazując jej czę�
 <br>
   <img src="\assets\img\Cyber\11.png" width="650" alt="mitm-1">
   <br>
-  Źródło: 
+  Źródło: https://www.veracode.com/sites/default/files/2021-07/veracode-mitm-remake.png
 </p>
 
 
-### 2.1.5. DoS i DDoS Attacks on Application Layer
+### 2.1.5. DoS i DDoS ataki na warstwie aplikacji
 
 Celem tych ataków są protokoły warstwy aplikacji, takie jak HTTP i DNS, często z zamiarem zakłócenia usług lub przejęcia protokołów aplikacji. Typowe techniki ataków obejmują zalewy żądań, wykorzystywanie lub w zabezpieczeniach aplikacji, ataki specyficzne dla aplikacji, takie jak zalewy XML-RPC i ataki zero-day wykorzystywanie luk w zabezpieczeniach. 
 
@@ -416,7 +412,7 @@ Taki atak może doprowadzić do zakłócenia działania serwisu, a nawet całkow
 <br>
   <img src="\assets\img\Cyber\12.png" width="650" alt="ddos">
   <br>
-  Źródło: 
+  Źródło: https://www.onelogin.com/images/patterns/text-image/ddos-app-layer-attack.png
 </p>
 
 
@@ -424,9 +420,9 @@ Taki atak może doprowadzić do zakłócenia działania serwisu, a nawet całkow
 
 Atak phishing – jest to wyłudzanie informacji, czyli jest to rodzaj ataku socjotechnicznego często wykorzystywanego do kradzieży danych użytkownika. Występuje, gdy atakujący, podszywając się pod zaufaną jednostkę, nakłania ofiarę do otwarcia wiadomości e-mail lub innych rodzajów wiadomości tekstowych. Następnie odbiorca zostaje nakłoniony do kliknięcia złośliwego łącza, co może doprowadzić do instalacji złośliwego oprogramowania, zawieszenia systemu w ramach ataku ransomware lub ujawnienia poufnych informacji. 
 
-#### Przykłady ataków phishingowych: 
+#### Przykłady ataków phishingowych
 
-##### Poniżej przedstawiam przykłady typowe próby wyłudzenia informacji: 
+Poniżej przedstawiam przykłady typowe próby wyłudzenia informacji: 
 
 + Sfałszowany e-mail rzekomo z  myuniversity.edu  jest masowo dystrybuowany do jak największej liczby członków wydziału.
 + Wiadomość e-mail zawiera informację, że hasło użytkownika wkrótce wygaśnie. Podano instrukcje, aby przejść do  myuniversity.edu/renewal  w celu odnowienia hasła w ciągu 24 godzin.
@@ -437,7 +433,7 @@ Atak phishing – jest to wyłudzanie informacji, czyli jest to rodzaj ataku soc
 <br>
   <img src="\assets\img\Cyber\13.png" width="650" alt="phishing">
   <br>
-  Źródło: 
+  Źródło: https://www.imperva.com/learn/wp-content/uploads/sites/13/2019/01/phishing-attack-email-example.png
 </p>
 
 
@@ -456,7 +452,7 @@ Osoba atakująca wysyła tysiące wiadomości, które mogą wykraść znaczące 
 <br>
   <img src="\assets\img\Cyber\14.png" width="650" alt="phishing-1">
   <br>
-  Źródło: 
+  Źródło: https://www.imperva.com/learn/wp-content/uploads/sites/13/2019/01/phishing-scam-techniques-link.png.webp
 </p>
 
 + Wyłudzanie informacji – celem jest konkretna osoba lub firma, a nie losowi użytkownicy. Jest to bardziej dogłębna wersja phishingu, która wymaga specjalnej wiedzy o organizacji, w tym o jej strukturze władzy. 
@@ -486,7 +482,7 @@ Podczas gdy niektórzy atakujący nadal wykonują ataki siłowe ręcznie, obecni
 <br>
   <img src="\assets\img\Cyber\15.png" width="650" alt="brute-force">
   <br>
-  Źródło: 
+  Źródło: https://tiny.pl/c71fx
 </p>
 
 + Proste ataki Brute Force – jest to atak siłowy, w którym haker próbuje ręcznie odgadnąć dane logowania użytkownika bez użycia oprogramowania. Ataki te są proste, ponieważ wiele osób nadal używa słabych haseł lub stosuje złą etykietę dotyczącą haseł, na przykład używając tego samego hasła do wielu witryn internetowych. 
@@ -505,7 +501,7 @@ Podczas gdy niektórzy atakujący nadal wykonują ataki siłowe ręcznie, obecni
 <br>
   <img src="\assets\img\Cyber\16.png" width="650" alt="hydra">
   <br>
-  Źródło: 
+  Źródło: https://www.imperva.com/learn/wp-content/uploads/sites/13/2018/01/hydra-brute-force-attack.png.webp
 </p>
 
 + Aircrack-ng – wykorzystuje słownik powszechnie używanych haseł do włamań do sieci bezprzewodowych.
@@ -526,7 +522,7 @@ Systemy fuzzingowe bardzo dobrze radzą sobie z wykrywaniem pewnych rodzajów lu
 <br>
   <img src="\assets\img\Cyber\17.png" width="650" alt="fuzzing">
   <br>
-  Źródło: 
+  Źródło: https://journals.plos.org/plosone/article/figure/image?size=large&id=10.1371/journal.pone.0237749.g001
 </p>
 
 
@@ -554,7 +550,7 @@ Atak Pharming to forma cyberataku, w której cyberprzestępca wysyła fałszywą
 <br>
   <img src="\assets\img\Cyber\18.png" width="650" alt="pharming">
   <br>
-  Źródło: 
+  Źródło: https://media.geeksforgeeks.org/wp-content/uploads/20211018205404/pharmingattack1.png
 </p>
 
 + Za każdym razem, gdy użytkownik odwiedza oszukańcze strony internetowe, złośliwe oprogramowanie jest instalowane na komputerze i uszkadza informacje, co okazuje się być atakiem typu pharming.
@@ -574,7 +570,7 @@ Atakujący RCE skanują Internet w poszukiwaniu wrażliwych aplikacji. Gdy zauwa
 <br>
   <img src="\assets\img\Cyber\19.png" width="650" alt="RCE">
   <br>
-  Źródło: 
+  Źródło: https://tblocks.com/wp-content/uploads/2023/06/How-Does-A-LOG4J-JNDI-Attack-Happen.jpg
 </p>
 
 #### Rodzaje ataków RCE:
@@ -596,7 +592,7 @@ Clickjacking to atak polegający na nakłonieniu użytkownika do kliknięcia ele
 <br>
   <img src="\assets\img\Cyber\20.png" width="650" alt="clickjacking">
   <br>
-  Źródło: 
+  Źródło: https://portswigger.net/web-security/images/clickjacking-infographic.svg
 </p>
 
 #### Istnieje kilka odmian ataku typu clickjacking, takie jak:
@@ -616,7 +612,7 @@ Clickjacking to atak polegający na nakłonieniu użytkownika do kliknięcia ele
 <br>
   <img src="\assets\img\Cyber\21.png" width="650" alt="clickjacking-1">
   <br>
-  Źródło: 
+  Źródło: https://www.imperva.com/learn/wp-content/uploads/sites/13/2019/01/Clickjacking.png.webp
 </p>
 
 #### Jak skonstruować podstawowy atak typu clickjacking?
@@ -664,7 +660,7 @@ Atak Server-Side Request Forgery – polega na tym, że osoba atakująca naduży
 <br>
   <img src="\assets\img\Cyber\22.png" width="650" alt="ssrf">
   <br>
-  Źródło: 
+  Źródło: https://portswigger.net/web-security/images/server-side%20request%20forgery.svg
 </p>
 
 #### Rodzaje ataków SSRF:
@@ -675,7 +671,7 @@ Atak Server-Side Request Forgery – polega na tym, że osoba atakująca naduży
 <br>
   <img src="\assets\img\Cyber\23.png" width="650" alt="ssrf-2">
   <br>
-  Źródło: 
+  Źródło: https://www.imperva.com/learn/wp-content/uploads/sites/13/2021/12/How-Server-SSRF-works.png
 </p>
 
 + Back-endowe ataki SSRF – atak, w którym serwer ma zaufaną relację z komponentem zaplecza. Jeśli serwer, który połączy się z tym komponentem, ma pełne prawa dostępu, osoba atakująca może sfałszować żądanie i uzyskać dostęp do wrażliwych danych lub wykonać nieautoryzowane operacje. Komponenty zaplecza często mają słabe zabezpieczenia, ponieważ są uważane za chronione wewnątrz obwodu sieci.
@@ -699,7 +695,7 @@ Załóżmy na przykład, że aplikacja zawiera lukę umożliwiającą otwarcie p
 /product/nextProduct?currentProductId=6&path=http://evil-user.net
 ~~~
 
-zwraca przekierowanie: 
+Zwraca przekierowanie: 
 
 ~~~
 http://evil-user.net
@@ -726,7 +722,7 @@ XM External Entity Injection – to luka w zabezpieczeniach, która umożliwia a
 <br>
   <img src="\assets\img\Cyber\24.png" width="650" alt="xxe">
   <br>
-  Źródło: 
+  Źródło: https://portswigger.net/web-security/images/xxe-injection.svg
 </p>
 
 #### Rodzaje ataków XXE:
@@ -744,7 +740,7 @@ Na przykład osoba atakująca może wykonać następujące żądanie przy użyci
 <br>
   <img src="\assets\img\Cyber\25.png" width="650" alt="xxe-1">
   <br>
-  Źródło: 
+  Źródło: https://www.imperva.com/learn/wp-content/uploads/sites/13/2023/01/Screen-Shot-2023-01-30-at-14.27.42.png.webp
 </p>
 
 
@@ -753,7 +749,7 @@ Na przykład osoba atakująca może wykonać następujące żądanie przy użyci
 <br>
   <img src="\assets\img\Cyber\26.png" width="650" alt="xxe-2">
   <br>
-  Źródło: 
+  Źródło: https://www.imperva.com/learn/wp-content/uploads/sites/13/2023/01/Screen-Shot-2023-01-30-at-14.34.18.png.webp
 </p>
 
 
@@ -766,7 +762,7 @@ Remote File Inclusion – to atak ukierunkowany na luki w aplikacjach internetow
 <br>
   <img src="\assets\img\Cyber\27.png" width="650" alt="rfi">
   <br>
-  Źródło: 
+  Źródło: https://www.imperva.com/learn/wp-content/uploads/sites/13/2019/01/what-is-rfi-attack.png
 </p>
 
 #### Przykład dołączania plików zdalnych:
@@ -795,7 +791,7 @@ Local File Inclusion to technika ataku polegająca na nakłanianiu aplikacji int
 <br>
   <img src="\assets\img\Cyber\28.png" width="650" alt="Lfi">
   <br>
-  Źródło: 
+  Źródło: https://miro.medium.com/v2/resize:fit:720/format:webp/1*UPMlwBWgKMSUzSvY5mt5uw.png
 </p>
 
 #### Przykład ataku LFI:
@@ -821,7 +817,7 @@ Directory Traversal – to luka w zabezpieczeniach sieci WEB, która umożliwia 
 <br>
   <img src="\assets\img\Cyber\29.png" width="650" alt="DT">
   <br>
-  Źródło: 
+  Źródło: https://portswigger.net/web-security/images/directory-traversal.svg
 </p>
 
 #### Odczytywanie dowolnych plików poprzez przeglądanie katalogów
@@ -868,7 +864,7 @@ Oto typowy proces, po którym przeprowadza się atakujący w ataku polegającym 
 <br>
   <img src="\assets\img\Cyber\30.png" width="650" alt="CS">
   <br>
-  Źródło: 
+  Źródło: https://www.imperva.com/learn/wp-content/uploads/sites/13/2020/01/credentials.png.webp
 </p>
 
 
@@ -883,11 +879,11 @@ Atakujący wykorzystują technikę wstrzykiwania szablonów po stronie serwera, 
 Identyfikacja podatności na wstrzyknięcie szablonu po stronie serwera i przygotowanie udanego ataku zazwyczaj obejmuje następujący proces wysokiego poziomu.
 
 <p align="center">
-  Rys.2.1.18.1. Kontruowanie ataku
+  Rys.2.1.18.1. Konstruowanie ataku
 <br>
   <img src="\assets\img\Cyber\31.png" width="650" alt="SSTI">
   <br>
-  Źródło: 
+  Źródło: https://portswigger.net/web-security/images/ssti-methodology-diagram.png
 </p>
 
 + Wykryć
@@ -900,7 +896,7 @@ Po wykryciu potencjału wstrzyknięcia szablonu następnym krokiem jest zidentyf
 <br>
   <img src="\assets\img\Cyber\32.png" width="650" alt="SSTI-1">
   <br>
-  Źródło: 
+  Źródło: https://portswigger.net/web-security/images/template-decision-tree.png
 </p>
 
 + Wykorzystać
@@ -917,7 +913,7 @@ Ataki na logikę biznesową (ang. business logic attacks) to rodzaj cyberataków
 <br>
   <img src="\assets\img\Cyber\33.png" width="650" alt="BLA">
   <br>
-  Źródło: 
+  Źródło: https://portswigger.net/web-security/images/logic-flaws.jpg
 </p>
 
 Celem atakujących jest wprowadzenie systemu w stan, w którym będzie generował nieprawidłowe wyniki lub umożliwiał wykonanie działań, które normalnie byłyby niedozwolone. Przykładowo, atakujący może próbować zmodyfikować warunki rabatów w sklepie internetowym, aby uzyskać wyższe zniżki niż przysługujące, lub zmieniać parametry transakcji w bankowości elektronicznej, aby manipulować saldem konta.
@@ -926,5 +922,193 @@ Celem atakujących jest wprowadzenie systemu w stan, w którym będzie generowa�
 
 Aby chronić się przed atakami na logikę biznesową, organizacje powinny podjąć kilka działań. Przede wszystkim należy odpowiednio projektować i testować logikę biznesową, aby minimalizować możliwość manipulacji i błędów. Należy również wprowadzić mechanizmy kontroli i monitorowania, które pozwolą wykryć nieprawidłowości w działaniu systemu. Ważne jest również szkolenie personelu, aby zwiększyć świadomość zagrożeń i umożliwić identyfikację podejrzanych aktywności.
 
+## 2.2. Ataki na warstwie prezentacji
 
-### 2.1.20. DNS Amplification
+Warstwa prezentacji, zwana także „warstwą składni”, odpowiada za formatowanie i tłumaczenie danych do formatu określonego przez warstwę aplikacji. Oznacza to, że działa jako translator danych w sieci, aby zapewnić, że dane wysyłane przez warstwę aplikacji są czytelne dla warstwy aplikacji systemu odbierającego.
+
+### 2.2.1. Man-in-the-browser (MitB)
+
+Man-in-the-browser (MitB) – jest to atak, w którym sprawca instaluje na komputerze ofiary konia trojańskiego, który jest w stanie modyfikować transakcje internetowe tego użytkownika. Z tej racji, że ataki tego typu wymagają zainstalowanego złośliwego oprogramowania trojana na docelowym komputerze, sprawcy często wykorzystują luki w zabezpieczeniach lub taktyki phishingu, aby zainicjować atak. Ataki MitB są przeprowadzane za pośrednictwem skryptu użytkownika, obiektu pomocniczego przeglądarki lub niezabezpieczonego rozszerzenia przeglądarki. 
+Atak MitB ma miejsce, gdy ofiara samodzielnie wpisze adres URL w przeglądarce, bez zewnętrznego monitu. 
+
+<p align="center">
+  Rys.2.2.1.1. Działanie ataku MitB
+<br>
+  <img src="\assets\img\Cyber\34.png" width="650" alt="mitb">
+  <br>
+  Źródło: https://cdn.ttgtmedia.com/rms/onlineimages/a_man_in_the_browser_attack-f_mobile.png
+</p>
+
+#### Przykłady ataków Man-in-the-browser:
++ Zeus to atak MitB, który kradnie dane logowania do bankowości internetowej i przeprowadza nieautoryzowane transfery środków. Był również używany do przeprowadzania oszustw związanych z pomocą techniczną.
++ OddJob to atak MitB przeznaczony do użycia na stronach bankowych. Atak jest instalowany przez przeglądarkę Firefox lub IE i aktywuje się, gdy zainfekowany użytkownik otworzy stronę bankową. Celem ataku jest token identyfikatora sesji użytkownika w czasie rzeczywistym w celu dokonania transakcji na koncie bankowym. Atak jest trudny do wykrycia, ponieważ nie jest przechowywany na dysku urządzenia.
++ SpyEye to trojan, który prosi użytkownika o podanie informacji, takich jak konta bankowe, hasła, nazwy użytkownika lub numery kart kredytowych. Atak może również działać jako keylogger.
+
+## 2.2.2. Content Spoofing
+
+Content Spoofing (ang. fałszowanie treści) – jest to atak wymierzony w użytkownika, możliwy dzięki luce w zabezpieczeniach aplikacji internetowej. Atak typu Content Spoofing na warstwie prezentacji odnosi się do manipulacji zawartością, która jest wyświetlana użytkownikom na stronie internetowej lub aplikacji. Atak ten polega na fałszowaniu wyglądu strony lub aplikacji w celu uzyskania poufnych informacji od użytkowników lub przekierowania ich na złośliwe strony.
+
+### Sposoby ataku Content Spoofing: 
++ Fałszywe strony internetowe: Atakujący może stworzyć fałszywą stronę internetową, która wygląda jak oryginalna, np. logowanie do konta bankowego. Strona może wykorzystywać podobną szatę graficzną, aby zmylić użytkowników i skłonić ich do podania poufnych informacji, takich jak hasła czy dane karty kredytowej.
++ Modyfikacja zawartości: Atakujący może zmieniać zawartość wyświetlaną na stronie lub aplikacji, np. zmieniać treść formularzy, przekierować na złośliwe strony lub wstrzykiwać złośliwe skrypty. W rezultacie użytkownik może zostać oszukany, wykonując nieświadomie działania, które są korzystne dla atakującego.
++ Spoofing adresu URL: Atakujący może manipulować adresem URL wyświetlanym w przeglądarce, aby wyglądał jak zaufany serwis, podczas gdy w rzeczywistości użytkownik jest kierowany na złośliwą stronę. To może być szczególnie skuteczne w przypadku phishingu, gdzie atakujący podszywa się pod znane instytucje, takie jak banki czy serwisy społecznościowe.
+
+## 2.2.3. MIME Sniffing
+
+MIME Sniffing (ang. uniwersalne wąchanie rozszerzeń poczty internetowej) – to proces automatycznego rozpoznawania typu zawartości pliku na podstawie jego treści, a nie jedynie na podstawie nagłówków HTTP. Jest to funkcjonalność często wbudowana w przeglądarki internetowe.
+
+<p align="center">
+  Rys.2.2.3.1. Działanie MIME Sniffing
+<br>
+  <img src="\assets\img\Cyber\35.png" width="650" alt="mime">
+  <br>
+  Źródło: https://www.keycdn.com/img/support/mime-sniffing-md.webp
+</p>
+
+### Jak działa wykrywanie MIME?
++ Przeglądarka internetowa żąda określonego zasobu, który odpowiada bez typu zawartości lub z typem zawartości ustawionym wcześniej na serwerze źródłowym.
++ Przeglądarka internetowa „węszy” zawartość, aby przeanalizować, w jakim formacie pliku jest ten konkretny zasób.
++ Po zakończeniu analizy przeglądarka porównuje to, co znalazła, z tym, co serwer WWW podał w nagłówku Content-Type. W przypadku niezgodności przeglądarka używa typu MIME, który został powiązany z zasobem.
+
+## 2.2.4. HTML Injection
+
+HTML Injection (ang. wstrzyknięcie HTML) – to technika używana do wykorzystania niezweryfikowanych danych wejściowych do modyfikowania strony internetowej prezentowanej użytkownikom przez aplikację internetową. Atakujący wykorzystują fakt, że zawartość strony internetowej jest często związana z wcześniejszą interakcją z użytkownikiem. Gdy aplikacje nie sprawdzają poprawności danych użytkownika, osoba atakująca może wysłać tekst w formacie HTML w celu zmodyfikowania zawartości witryny, która jest prezentowana innym użytkownikom. Specjalnie spreparowane zapytanie może doprowadzić do umieszczenia na stronie internetowej kontrolowanych przez osobę atakującą elementów HTML, które zmieniają sposób, w jaki zawartość aplikacji jest udostępniana w sieci.
+
+<p align="center">
+  Rys.2.2.4.1. Działanie ataku HTNL Injection
+<br>
+  <img src="\assets\img\Cyber\36.png" width="650" alt="html">
+  <br>
+  Źródło: https://assets.website-files.com/5ff66329429d880392f6cba2/6455e1f13e0fb0b257e9ce71_HTML%20Injection%20Work.jpg
+</p>
+
+### Przykład HTML Injection
++ Najpierw atakujący znajduje witrynę podatną na wstrzyknięcie kodu HTML
++ Następnie osoba atakująca wysyła adres URL ze złośliwym kodem wstrzykniętym do adresu URL do użytkownika ofiary za pośrednictwem poczty elektronicznej lub innego mechanizmu.
++ Jeśli ofiara kliknie ten szkodliwy adres URL, uruchomi kod JavaScript lub VBScript z uprawnieniami użytkownika ofiary.
++ W zależności od wykonywanego kodu może ujawnić poufne informacje użytkownika, a nawet skompromitować komputer ofiary.
+
+## 2.2.5. JavaScript Injection
+
+JavaScript Injection (ang. wstrzyknięcie JavaScript) – atak, który polega na tym, że osoba atakująca wstrzykuje złośliwy kod bezpośrednio do kodu JavaScript po stronie klienta. Kod ten jest uruchamiany i renderowany, gdy ofiara ładuje witrynę ze złośliwym skryptem w swojej aplikacji klienckiej/ przeglądarce. Osoba atakująca może polegać na różnych technikach wprowadzania złośliwego kodu do podatnej witryny, w tym:
++ Używanie konsoli programisty przeglądarki do wstawiania kodu JavaScript lub zmiany kodu źródłowego
++ Dodanie skryptu poprzez wpisanie elementu JavaScript: SCRIPT do paska adresu klienta
++ Używanie skryptów międzywitrynowych do dodawania skryptów do pola komentarza lub formularza wejściowego
+
+### Przykłady JavaScript Injection
++ Wstrzykiwanie zależności w JavaScript – skierowany jest na platformę DI (dependency injection), w której atakujący nakłania witrynę do pobrania niestandardowych skryptów z wybranego repozytorium. Podczas instalowania pakietów dla aplikacji JavaScript instalatorzy zazwyczaj wybierają najnowszą wersję, gdy mają do wyboru dwie wersje tego samego pliku. Załóżmy, że złośliwy użytkownik może uzyskać nazwę wewnętrznej zależności lub pliku skryptu. W takim przypadku mogą opublikować złośliwy kod aplikacji o wyższym numerze wersji w publicznym repozytorium określanym jako package.json lub inny plik kodu źródłowego. Podczas instalowania pakietów lub zależności złośliwy kod zostaje wstrzyknięty do kodu źródłowego aplikacji, gdy instalator aplikacji wybierze zaktualizowaną-zmodyfikowaną wersję.
++ Atak polegający na wstrzykiwaniu kodu JavaScript – polega na wstrzykiwaniu wykonywalnego kodu HTML przez wrażliwe pole wejściowe. Typowe znaczniki używane do osadzenia kodu HTML w aplikacjach JavaScript to: <SCRIPT>, <OBJECT>, <APPLET>, <EMBED>, <FK>, <LI>, <BR>, <DIV>, <TITLE>
++ Wstrzykiwanie kodu JavaScript – te ataki akceptują dane wprowadzane przez użytkownika i wykonują je po stronie serwera. Poniższy fragment kodu pokazuje przykład podatnej witryny:
+
+~~~
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Darwin Website</title>
+</head><body>
+    <input type="button" onclick="randomScript()">
+</body>
+</html>
+~~~
+
+W takim wzorcu kodu osoba atakująca może przesłać złośliwy kod do losowej funkcji randomScript() w celu wdrożenia detektora zdarzeń. Osiąga się to poprzez zbudowanie niestandardowego skryptu w konsoli zgodnej z JavaScript i JQuery w celu zmiany zdarzenia onclick. Kod będzie wyglądał podobnie do:
+
+~~~
+function randomScript(){
+  alert("Test!");
+}
+~~~
+
+Następnie wszyscy hakerzy muszą sprawdzić element przycisku po otwarciu strony internetowej. Daje to hakerowi dostęp do zakładki detektorów zdarzeń, która wyświetla kod uruchamiany przez funkcję randomScript(). 
++ Wstrzykiwanie kodu JavaScript do kodu SQL – polega na wykorzystywaniu błędów sprawdzania poprawności danych wejściowych w celu wstrzyknięcia złośliwych zapytań SQL do aplikacji. Modyfikuje to oryginalne zapytania do bazy danych, co umożliwia atakującemu odczytywanie poufnych treści, modyfikowanie/usuwanie wpisów w bazie danych lub zmianę zachowania serwera.
+
+
+Aplikacja podatna na ataki może używać ciągów literalnych, aby umieścić wyszukiwane hasło bezpośrednio w ciągu kodu, jak pokazano:
+~~~
+const query = `SELECT * FROM Repository WHERE TAG = '${userQuery}' AND public = 1`;
+~~~
+
+Zgodnie z powyższą konstrukcją zapytania, ciąg zapytania SQL do wyszukiwania terminu Darwin byłby podobny do:
+~~~
+SELECT * FROM Repository WHERE TAG = 'darwin' AND public = 1;
+~~~
+
+Osoba atakująca może podać złośliwe wyszukiwane hasło darwin' ;–, które modyfikuje instrukcję SQL w następujący sposób:
+~~~
+SELECT * FROM Repository WHERE TAG = 'darwin';--' AND public = 1;
+~~~
+
+To komentuje każdą część po — znakach, skutecznie pozostawiając wykonane polecenie SQL podobne do:
+~~~
+SELECT * FROM Repository WHERE TAG = 'darwin';
+~~~
+
+Ponieważ usuwa to dodatkową klauzulę, która zapobiega ujawnianiu prywatnych repozytoriów w odpowiedzi serwera bazy danych, osoba atakująca może uzyskać dostęp do kodu źródłowego, plików konfiguracyjnych serwera i innych własności intelektualnych organizacji.
+
+## 2.2.6. Web Scraping
+
+Screen (Web) Scraping (ang. skrobanie sieci) – to proces wykorzystywania botów do wydobywania treści i danych ze strony internetowej. 
+
+W przeciwieństwie do screen scrapingu, który kopiuje tylko piksele wyświetlane na ekranie, web scraping wyodrębnia leżący u podstaw kod HTML, a wraz z nim dane przechowywane w bazie danych. Skrobak może następnie replikować całą zawartość witryny w innym miejscu.
+
+### Narzędzia do scrapingu i boty:
+
+Narzędzia do skrobania stron internetowych to oprogramowanie (tj. boty) zaprogramowane do przeszukiwania baz danych i wydobywania informacji. Wykorzystywane są różne typy botów, z których wiele można w pełni dostosować do:
++ Rozpoznać unikalne struktury witryn HTML
++ Wyodrębnić i przekształć zawartość
++ Przechować zeskrobane dane
++ Wyodrębnić dane z interfejsów API
+
+<p align="center">
+  Rys.2.2.6.1. Działanie Web Scraping
+<br>
+  <img src="\assets\img\Cyber\37.png" width="650" alt="scraping">
+  <br>
+  Źródło: https://www.imperva.com/learn/wp-content/uploads/sites/13/2019/01/web-scraping-attack.jpg.webp
+</p>
+
+### Przykłady złośliwego web scraping:
++ Skrobanie cen – sprawca wykorzystuje botnet, z którego uruchamia boty typu scraper w celu sprawdzenia konkurencyjnych biznesowych baz danych. Celem jest uzyskanie dostępu do informacji o cenach, podcięcie konkurencji i zwiększenie sprzedaży.
++ Skrobanie treści – obejmuje kradzież treści na dużą skalę z danej witryny. Typowe cele obejmują katalogi produktów online i strony internetowe, które wykorzystują treści cyfrowe do napędzania biznesu. W przypadku tych przedsiębiorstw atak polegający na skrobaniu treści może być katastrofalny.
+
+
+## 2.2.7. Code Injection
+
+Wstrzykiwanie kodu (ang. Code Injection) – polega na wstrzyknięciu kodu do osadzenia złośliwego kodu w kodzie źródłowym, który aplikacja interpretuje i wykonuje. Podczas złośliwego wstrzykiwania osoby atakujące wykorzystują fakt, że systemy te konstruują część segmentu kodu przy użyciu danych zewnętrznych, bez wystarczającej weryfikacji danych wejściowych. Złośliwy kod jest zwykle tworzony w celu kontrolowania przepływu danych, co prowadzi do utraty poufności i ograniczenia dostępności aplikacji.
+
+Atakujący identyfikują luki w walidacji danych wprowadzanych przez użytkownika, takie jak – format danych, dozwolone znaki i ilość oczekiwanych danych – i wykorzystują je jako podstawę do opracowania złośliwego kodu.
+
+<p align="center">
+  Rys.2.2.7.1. Działanie ataku Code Injection
+<br>
+  <img src="\assets\img\Cyber\38.png" width="650" alt="cinjection">
+  <br>
+  Źródło: https://images.ctfassets.net/4un77bcsnjzw/5biUz7wg0X90MDjKEwVAbm/42283a77ad24497dee3aea2f5c51632d/CodeInjection_Attack.svg
+</p>
+
+### Jak działa Code Injection
+
+Hakerzy najpierw sondują aplikację pod kątem powierzchni ataku, które mogą akceptować niezaufane dane i wykorzystywać je podczas wykonywania kodu programu. Obejmują one bezpośrednie dane wejściowe, takie jak przesyłanie plików, pola formularzy lub inne źródła danych, takie jak pliki cookie i parametry ciągu zapytania.
+
+Wprowadzenie kodu zazwyczaj polega na bezpośredniej konkatenacji ciągu znaków, funkcji PHP eval() lub jej odpowiednika w innym języku. Udany exploit zapewnia atakującym dostęp do interpretera aplikacji po stronie serwera. Atakujący mogą używać wywołań systemowych do uruchamiania poleceń na serwerze i penetrować dalej w celu głębszego wykorzystania.
+
+### Rodzaje exploitów ataku
+
+#### Wstrzykiwanie kodu po stronie klienta
+
+Podczas wstrzykiwania po stronie klienta hakerzy wykorzystują luki w aplikacjach, w których sprawdzanie poprawności danych wejściowych odbywa się w przeglądarce przed wysłaniem danych na serwer. Takie ataki obejmują:
++ Wstrzykiwanie kodu SQL – atakujący atakują wrażliwe szczegóły konfiguracji w systemach zarządzania relacyjnymi bazami danych, aby kontrolować serwer bazy danych aplikacji internetowej za pomocą złośliwych instrukcji SQL. Instrukcje te modyfikują zapytania SQL, dając hakerom dostęp do kluczowych danych, takich jak dane logowania i informacje o konfiguracji aplikacji.
++ Wstrzykiwanie kodu Pythona – aplikacje zbudowane w Pythonie, skrypty, które akceptują wyrażenia od użytkowników i oceniają ich dane wejściowe, mogą być wykorzystywane do wstrzykiwania złośliwego kodu.
++ Wstrzykiwanie kodu HTML – wykorzystanie luk w zabezpieczeniach związanych z wstrzyknięciem kodu HTML, aby naruszyć sposób interakcji użytkowników z aplikacją internetową. Robiąc to, haker wstrzykuje złośliwy kod HTML do zaufanej witryny internetowej, wykonując niezaufane skrypty w przeglądarce użytkownika końcowego.
+
+#### Wstrzykiwanie kodu po stronie serwera
+
+Wstrzyknięcie kodu po stronie serwera polega na wykorzystaniu luk w aplikacjach, które sprawdzają poprawność danych wprowadzonych przez użytkownika po stronie serwera. Obejmują one:
++ Wstrzykiwanie kodu PHP –  niektóre aplikacje internetowe zbudowane w języku PHP mogą zawierać niebezpieczną funkcję, która umożliwia atakującym kontrolę nad częścią lub całością oprogramowania. Te luki umożliwiają hakerom zmianę przebiegu wykonywania kodu poprzez modyfikację części ciągu wejściowego
++ Wstrzykiwanie kodu JavaScript po stronie serwera – stosunkowo łatwo jest wstawić własny kod Javascript witryny internetowej i użyć go, znajdując lukę w zabezpieczeniach skryptów krzyżowych lub umieszczając kod w pasku adresu.
+
+
+## 2.2.8. Malformed Content Attack 
