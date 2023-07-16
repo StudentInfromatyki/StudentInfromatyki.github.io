@@ -1112,3 +1112,965 @@ Wstrzyknięcie kodu po stronie serwera polega na wykorzystaniu luk w aplikacjach
 
 
 ## 2.2.8. Malformed Content Attack 
+
+Atak zniekształconej zawartości (ang. Malformed Content Attack) – rodzaj cyberataku, w których atakujący celowo tworzy lub modyfikuje zawartość, tatką jak dane lub pliki, w sposób naruszający oczekiwany format lub strukturę. 
+
+Podstawową ideą tego ataku jest wprowadzanie nieprawidłowych lub nieoczekiwanych danych do systemu lub aplikacji, które mogą prowadzić do wykorzystania podatności w oprogramowaniu. Atakujący może wykorzystać te naruszenia w celu wykonania różnych działań, takich jak:
++ Wstrzyknięcie złośliwego kodu
++ Wywołanie błędów systemowych
++ Odwrócenie kolejności wykonywania instrukcji
++ Przechwycenie danych
+
+## 2.2.9. Session Sidejacking
+
+Session Sidejacking – atak, w którym atakujący uzyskuje dostęp do sesyjnego pliku cookie i nadużywa go, aby podszyć się pod użytkownika ofiary. Pozwala to złośliwemu użytkownikowi na wykonywanie różnych czynności, które w innym przypadku użytkownik mógłby wykonać po zalogowaniu się na stronie internetowej. 
+
+### Jak odbywa się atak Sidejacking?
+
+Zasadniczo sidejacking opiera się na identyfikacji niezaszyfrowanego - nie przez SSL – pliku cookie. Atakujący może użyć sniffera pakietów do wyszukania takiego sesyjnego pliku cookie. 
+
+Po znalezieniu dobrego celu złośliwy użytkownik podsłuchuje ruch sieciowy. Następnie może użyć niezaszyfrowanego pliku cookie do podszywania się pod zwykłego użytkownika za pomocą swoich danych uwierzytelniających. Atakujący widzi zatem wszystkie dane przesyłane między przeglądarką ofiary a serwerem lub stroną internetową.
+
+Dobrą wiadomością jest jednak to, że po zakończeniu sesji i wylogowaniu uprawnionego użytkownika należy wysłać dalsze żądania do serwera, a przyszłe sesje będą wymagały uwierzytelnienia nowego klienta. Oznacza to, że po zakończeniu aktywnej sesji atakujący traci nieautoryzowany dostęp.  
+
+### Rodzaje Sidejacking 
++ Cookie hijacking – polega na kradzieży plików cookie sesji. Pliki cookie są używane do przechowywania informacji o sesji, takich jak identyfikator sesji, loginy, tokeny uwierzytelniające itp. Atakujący może przejąć te pliki cookie i użyć ich do podszywania się pod użytkownika, oszukując serwer.
++ Session hijacking – polega na przechwyceniu aktywnej sesji użytkownika. Atakujący monitoruje komunikację między użytkownikiem a serwerem, w poszukiwaniu wartości sesji, takich jak identyfikatory sesji, tokeny itp. Gdy atakujący przechwyci te dane, może użyć ich do uzyskania nieuprawnionego dostępu do konta użytkownika.
++ SSL/TLS stripping – wykorzystuje braki w zabezpieczeniach SSL/TLS, które chronią transmisję danych między użytkownikiem a serwerem. Atakujący może przechwycić komunikację między użytkownikiem a serwerem, zdejmując zaszyfrowanie SSL/TLS. W rezultacie atakujący może podejrzeć i modyfikować przesyłane dane, takie jak hasła, poufne informacje itp.
++ Man-in-the-Middle attack – polega na wprowadzeniu się pomiędzy użytkownika a serwer, tworząc fałszywe połączenie między nimi. Atakujący może monitorować i przechwytywać komunikację między nimi, kradnąc wrażliwe informacje. Może również modyfikować przesyłane dane lub przekierowywać użytkownika na fałszywe strony.
+
+
+## 2.2.10. CSS Injection
+
+Podatności na wstrzykiwanie CSS pojawiają się, gdy aplikacja importuje arkusz stylów z adresu URL podanego przez użytkownika lub osadza dane wprowadzone przez użytkownika w blokach CSS bez odpowiedniej ucieczki. Są one ściśle powiązane z lukami w zabezpieczeniach związanymi ze skryptami krzyżowymi (XSS), ale ich wykorzystanie jest często trudniejsze.
+
+<p align="center">
+  Rys.2.2.10.1. Działanie ataku CSS Injection
+<br>
+  <img src="\assets\img\Cyber\39.png" width="650" alt="cssinjection">
+  <br>
+  Źródło: https://palant.info/2021/06/28/having-fun-with-css-injection-in-a-browser-extension/css_injection.png
+</p>
+
+Możliwość wstrzyknięcia dowolnego kodu CSS do przeglądarki ofiary może umożliwić różne ataki, w tym:
++ Wykonywanie dowolnego kodu JavaScript przy użyciu funkcji expression() przeglądarki IE.
++ Używanie selektorów CSS do odczytywania części źródła HTML, które mogą zawierać poufne dane, takie jak tokeny anty-CSRF.
++ Przechwytywanie wszelkich poufnych danych w ciągu zapytania adresu URL poprzez dalsze importowanie arkusza stylów do adresu URL w domenie atakującego i monitorowanie przychodzącego nagłówka strony odsyłającej.
+
+## 2.2.11. Cookie Manipulation
+
+Przeglądarka traktuje pliki cookie jako węzły DOM, więc możliwe jest manipulowanie plikami cookie za pośrednictwem DOM. Najczęstszym zastosowaniem tej techniki jest usunięcie lub edycja wartości pliku cookie. Na przykład usunięcie plików cookie innych firm może pozwolić komuś na ominięcie problemów ze śledzeniem między witrynami poprzez wyczyszczenie identyfikatora modułu śledzącego z jego pamięci.
+
+<p align="center">
+  Rys.2.2.11.1. Cookie Manipulation
+<br>
+  <img src="\assets\img\Cyber\40.png" width="650" alt="cmanipulation">
+  <br>
+  Źródło: https://media.geeksforgeeks.org/wp-content/uploads/20220817124742/dombasedcookiemanipulationattack1.png
+</p>
+
+
+## 2.2.12. Browser Fingerprinting
+
+Odcisk palca (ang. Browser Fingerprinting) przeglądarki to termin używany do opisania czynności polegającej na dyskretnym gromadzeniu danych o oprogramowaniu i ustawieniach urządzenia za pośrednictwem przeglądarki internetowej użytkownika, gdy jest on online. Ta kombinacja ustawień jest następnie wykorzystywana do zbudowania unikalnej tożsamości – lub „odcisku palca” – dla tej osoby. Jest to również czasami określane jako „odcisk palca urządzenia” lub po prostu „odcisk palca”.
+
+### Jak działa odcisk palca przeglądarki internetowej?
+
+Za każdym razem, gdy witryna internetowa jest odświeżana przeglądarka musi dostarczyć serwerowi hostingowemu pewną ilość niezbędnych informacji, aby zapewnić prawidłowe działanie witryny na indywidualnej maszynie. 
+
+Te informacje mogą obejmować model i specyfikację urządzenia, język i układ klawiatury, lokalizację, strefę czasową, zainstalowany sprzęt, wersje oprogramowania i wiele innych.
+
+Pojedynczo te ustawienia i konfiguracje mogą wydawać się nieszkodliwe – i tak jest. Ale po złożeniu mogą stworzyć niepowtarzalną kombinację lub „odcisk palca”.
+
+## 2.3. Ataki na warstwie sesji
+
+Warstwa sesji jest odpowiedzialna za synchronizację wszystkiego działania. Na przykład nie można po prostu „wyświetlić” strony internetowej. Przejęcie sesji może nastąpić na różne sposoby, w tym cross-site scripting, sidejacking, naprawę, kradzież plików cookie i próby brutalnej siły. 
+
+## 2.3.1. Session Hijacking
+
+Przejęcie sesji to technika wykorzystywana przez hakerów w celu uzyskania dostępu do komputera lub kont internetowych ofiary. Podczas ataku polegającego na przejęciu sesji haker przejmuje kontrolę nad sesją przeglądania użytkownika, aby uzyskać dostęp do jego danych osobowych i haseł. 
+
+### Jak działa przejęcie sesji?
+
+Porywacz sesji może przejąć kontrolę nad sesją użytkownika na kilka sposobów. Jedną z powszechnych metod jest użycie sniffera pakietów do przechwycenia komunikacji między użytkownikiem a serwerem, co pozwala hakerowi zobaczyć, jakie informacje są wysyłane i odbierane. Mogą następnie użyć tych informacji, aby zalogować się na konto lub uzyskać dostęp do wrażliwych danych.
+
+Przejęcie sesji może również nastąpić poprzez wdrożenie złośliwego oprogramowania w celu zainfekowania komputera użytkownika. Daje to hakerowi bezpośredni dostęp do maszyny, umożliwiając mu przejęcie dowolnej aktywnej sesji.
+
+### Przykłady
+
+Session Sniffing- atakujący najpierw używa sniffera do przechwycenia ważnej sesji tokena o nazwie „Session ID”, a następnie używa ważnej sesji tokena do uzyskania nieautoryzowanego dostępu do serwera WWW.
+
+<p align="center">
+  Rys.2.3.1.1. Session Sniffing
+<br>
+  <img src="\assets\img\Cyber\41.png" width="650" alt="sniffing">
+  <br>
+  Źródło: https://owasp.org/www-community/assets/images/attacks/session-hijacking.jpg
+</p>
+
+Cross-site script attack – osoba atakująca może naruszyć token sesji, używając złośliwego kodu lub programów działających po stronie klienta. Przykład pokazuje, w jaki sposób osoba atakująca może użyć ataku XSS do kradzieży tokena sesji. Jeśli atakujący wyśle do ofiary spreparowany link ze złośliwym kodem JavaScript, gdy ofiara kliknie link, JavaScript zostanie uruchomiony i wykona instrukcje podane przez atakującego.
+
+<p align="center">
+  Rys.2.3.1.2. Cross-site script attack
+<br>
+  <img src="\assets\img\Cyber\42.png" width="650" alt="cssattack">
+  <br>
+  Źródło: https://owasp.org/www-community/assets/images/attacks/code-injection.jpg
+</p>
+
+## 2.3.2. Session Fixation
+
+Atak utrwalania sesji to rodzaj ataku polegającego na zdalnym wykonaniu kodu, który jest wykorzystywany do wykorzystywania oprogramowania zaprojektowanego z funkcją zarządzania sesją serwera WWW. Gdy witryna internetowa korzysta z serwera HTTP, informacje o stanie sesji serwera mogą zostać skradzione, a następnie odzyskane przez osobę atakującą w celu przejęcia przeglądarki lub wykorzystania jej do dalszych ataków.
+
+<p align="center">
+  Rys.2.3.2.1. Działanie Session Fixation Attack
+<br>
+  <img src="\assets\img\Cyber\43.png" width="650" alt="sfixation">
+  <br>
+  Źródło: https://media.geeksforgeeks.org/wp-content/uploads/20220711160012/sessionfixationattack.png
+</p>
+
+### Atak utrwalania sesji:
++ Atak utrwalania sesji to atak, który ma miejsce, gdy złośliwy użytkownik konfiguruje fałszywą sesję, zanim legalni użytkownicy będą mogli się zalogować. Prowadzi to do naruszenia bezpieczeństwa całego systemu i wykorzystania go do kradzieży poufnych danych.
++ Atak utrwalania sesji jest najczęściej obserwowany w systemach bankowych, gdzie hakerzy próbują uzyskać dostęp poprzez założenie konta z minimalnymi wymaganiami startowymi. 
++ Dzięki tej metodzie omijają wszelkie środki bezpieczeństwa, takie jak CAPTCHA lub rozpoznawanie odcisków palców, które banki mogły zastosować przed kradzieżą poufnych danych. Jedną z metod stosowanych przez banki przeciwko atakom utrwalania sesji jest tokenizacja, która chroni konta, jednocześnie utrudniając hakerom wykorzystanie fałszywych danych uwierzytelniających.
++ Atak utrwalania sesji to rodzaj ataku polegającego na zdalnym wykonaniu kodu, który jest wykorzystywany do wykorzystywania oprogramowania zaprojektowanego z funkcjami zarządzania sesją serwera WWW.
++ Gdy witryna działa na serwerze HTTP, informacje o stanie sesji serwera mogą zostać skradzione, a następnie odzyskane przez atakującego w celu przejęcia przeglądarki lub wykorzystania jej do dalszych ataków.
+
+### Procedura:
++ Atakujący tworzy złośliwą sesję HTTP z przeglądarką ofiary, przejmuje uwierzytelnianie klienta i kopiuje użytkownika. 
++ Atakujący może to zrobić, przechwytując ruch HTTP z/do przeglądarki, modyfikując lub odtwarzając istniejące prawidłowe sesje lub projektując nową szkodliwą sesję. Kradzież sesji wykorzystuje luki w zabezpieczeniach aplikacji, które nie chronią odpowiednio swoich danych. 
++ Następnie osoba atakująca uzyskuje dostęp i modyfikuje dane związane z przechwyconą sesją, takie jak pliki cookie.
++ Funkcje protokołu HTTP, takie jak metody GET i POST, umożliwiają klientom wysyłanie informacji do serwera, ale nie zawierają mechanizmu powiadamiania serwera przez klientów o odebraniu tych informacji. 
++ Aby ułatwić tę wymianę informacji, protokół HTTP obsługuje pliki cookie. Ponieważ pliki cookie są przesyłane tam iz powrotem między przeglądarką a serwerem w każdym cyklu żądania/odpowiedzi, możemy ich również używać do przejmowania sesji klientów ze stronami internetowymi.
++ Pliki cookie mogą być wykorzystywane przez osoby atakujące w celu przeprowadzania ataków polegających na przejęciu sesji, a dokładnie o to chodzi w atakach typu Session Hijacking lub Session Fixation. Techniki utrwalania sesji, takie jak cross-site scripting (XSS), cross-site request forgery (CSRF) i kradzież sesji, to aktywne zagrożenia, które są już znane w środowisku naturalnym.
+
+## 2.2.3. Session Replay
+
+Session Replay – jest to atak, polegający na powtórce sesji przy pomocy narzędzi takich jak Wireshark. Celem hakera jest uzyskanie dostępu do sieci, danych i zasobów w celu naprawienia wszelkich luk, które mogą zostać wykorzystane przez adwersarzy.
+
+Ataki z powtórzeniem sesji, znane również jako ataki z powtórzeniem lub powtórzeniem, to ataki sieciowe, które złośliwie „ponawiają” lub „opóźniają” prawidłowe transmisje danych. Hakerzy mogą to zrobić, przechwytując sesję i kradnąc unikalny identyfikator sesji użytkownika (przechowywany jako plik cookie, adres URL lub pole formularza). Haker może teraz podszywać się pod autoryzowanego użytkownika i mieć pełny dostęp do wszystkiego, co autoryzowany użytkownik może robić w witrynie.
+
+Atak powtórkowy ma miejsce, gdy cyberprzestępca przechwytuje bezpieczną komunikację sieciową, przechwytuje ją i w nieuczciwy sposób opóźnia lub przesyła, aby skłonić odbiorcę do zrobienia tego, czego chce haker. Dodatkowe ryzyko ataków polega na tym, że hakerzy nie potrzebują nawet zaawansowanych umiejętności do odszyfrowywania wiadomości po przechwyceniu ich z sieci. Atak może się powieść po prostu poprzez ponowne wysłanie wszystkiego.
+
+<p align="center">
+  Rys.2.3.3.1. Działanie Session Replay Attack
+<br>
+  <img src="\assets\img\Cyber\44.png" width="650" alt="sra">
+  <br>
+  Źródło: https://media.geeksforgeeks.org/wp-content/uploads/20220720163836/sessionreplay1.png
+</p>
+
+### Przykład:
+
+Aplikacja internetowa przechowuje sesję w parametrze zapytania:
+
+Aplikacja internetowa może zarządzać sesją użytkownika na podstawie wartości parametru zapytania.
+
+~~~
+http://example.com/home/show.php?SESSIONID=MOJASESJA
+~~~
+gdzie MYSESJA to identyfikator sesji.
+
+Ta metoda jest podatna na atak polegający na powtórzeniu sesji, znany jako atak polegający na utrwalaniu sesji. 
++ Atakujący generuje własny identyfikator sesji.
++ Atakujący wysyła adres URL ze swoim identyfikatorem sesji do prawidłowego użytkownika aplikacji. 
+
+~~~
+Np.: http://example.com/home/show.php?SESSIONID=ATTACKER-SESSION
+~~~
+
++ Gdy prawidłowy użytkownik kliknie łącze, sesja zostanie uruchumiona z identyfikatorem sesji ATTACKER_SESSION. 
++ Prawidłowy użytkownik łączy się z aplikacją przy użyciu swoich poświadczeń. 
++ Osoba atakująca może teraz podszyć się pod prawidłowego użytkownika, odwiedzając go. 
+
+~~~
+http://example.com/home/show.php?SESSIONID=SESJA ATAKUJĄCA
+~~~
+
+## 2.3.4. Session Prediction
+
+Session Prediction Attack (atak przewidywany) – jest to atak przewidujący sesję, który koncentruje się na przewidywaniu wartości identyfikatora sieci, która pozwalaja atakującemu ominąć schemat uwierzytelnienia aplikacji. Analizując i rozumiejąc proces generowania identyfikatora sesji, osoba atakująca może przewidzieć prawidłową wartość identyfikatora sesji i uzyskać dostęp do aplikacji.
+
+<p align="center">
+  Rys.2.3.4.1. Działanie Session Replay Attack
+<br>
+  <img src="\assets\img\Cyber\45.png" width="650" alt="sp">
+  <br>
+  Źródło: https://media.geeksforgeeks.org/wp-content/uploads/20220715114649/SessionPrediction1.png
+</p>
+
+### Jak działa Session Prediction?
++ Najpierw należy zebrac kilka prawidłowych wartości identyfikatora sesji, które są używane do identyfikacji uwierzytelnionych użytkowników. 
++ Nastepnie należy zrozumieć struktuę identyfikatora sesji, informacje używane do jego utworzenia oraz algorytm szyfrowania lub skrótu używay przez aplikację do jego ochrony. 
+
+### Przykład
+
+Informacje o identyfikatorze sesji dla określonej aplikacji zwykle składają się z ciągu znaków o stałej szerokości. Losowość jest bardzo ważna, aby uniknąć jej przewidywania. Patrząc na przykład na rysunku 2.3.4.1, zmienna identyfikatora sesji jest reprezentowana przez JSESSIONID, a jej wartość to „user01”, co odpowiada nazwie użytkownika. Wypróbowując dla niego nowe wartości, takie jak „user02”, można dostać się do aplikacji bez wcześniejszego uwierzytelnienia.
+
+<p align="center">
+  Rys.2.3.4.2. Przewidywalny plik cookie
+<br>
+  <img src="\assets\img\Cyber\46.png" width="650" alt="sp-1">
+  <br>
+  Źródło: https://owasp.org/www-community/assets/images/attacks/predictable-cookie.jpg
+</p>
+
+## 2.3.5. Brute-Force Attacks on Session IDs
+
+Ataki brute force na identyfikatory sesji są jedną z metod atakujących systemy informatyczne. Identyfikatory sesji są unikalnymi wartościami przypisanymi użytkownikom podczas korzystania z aplikacji internetowych, aby śledzić ich sesje. Brute force attack to technika polegająca na wielokrotnym próbowaniu różnych kombinacji, aż do znalezienia poprawnego identyfikatora sesji.
+
+Atakujący, korzystając z metody brute force, próbuje automatycznie generować i testować różne wartości identyfikatorów sesji, aż do znalezienia takiego, który będzie pasował i umożliwi nieuprawniony dostęp do konta użytkownika. Jest to proces czasochłonny, ponieważ atakujący musi sprawdzić ogromną ilość kombinacji, aby znaleźć właściwy identyfikator sesji.
+
+## 2.3.6. Cross-Site Session Transfer
+
+Atak przeniesienia sesji między stronami (ang. Cross-Site Session Transfer Attack) jest to technika wykorzystywana przez atakujących w celu przejęcia sesji użytkownika z jednej witryny na inną. Polega to na przechwyceniu identyfikatora sesji (np. ciasteczka) podczas interakcji użytkownika z jedną stroną i wykorzystaniu go do nieuprawnionego dostępu do innej strony, na której sesja jest aktywna.
+
+### Główne czynniki, które mogą przyczynić się do takiego ataku, to:
++ Użycie niebezpiecznych metod przesyłania identyfikatora sesji
++ Współużytkowanie identyfikatora sesji
++ Luki w mechanizmach zarządzania sesją
+
+## 2.3.7. Session Timeout Attacks
+
+Session Timeout Attacks (przekroczenie limitu czasu sesji) – atak, w którym użytkownik nie wykonuje żadnej akcji na stronie internetowej w czasie (określonym przez serwer WWW). Zdarzenie po stronie serwera zmienia status sesji użytkownika na „nieważna” (tzn. „nieużywana”) i nakazuje serwerowi sieciowemu zniszczenie sesji (usunięcie wszystkich zawartych w niej danych).
+
+### Rodzaje Session Timeout Attack:
++ Deklaratywnie w deskryptorze wdrożenia sieciowego (plik “web.xml”) – stosowana do wszystkich sesji utworzonych dla aplikacji. 
+
+~~~
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    ns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+    id="WebApp_ID" version="3.0">
+    ...
+    <!-- Define a session timeout to 15 minutes -->
+    <session-config>
+        <session-timeout>15</session-timeout>
+    </session-config>
+    ...
+</web-app>
+~~~
+
++ Programowo w obiekcie sesji – dotyczy tylko bieżącej sesji. 
+
+~~~
+package org.owasp.javaproject.sessiontimeout;
+
+import java.io.IOException;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+/**
+ * Code sample showing how to access to session timeout and act on it.
+ */
+@SuppressWarnings("serial")
+@WebServlet("/SessionTimeout")
+public class SessionTimeoutCodeSample extends HttpServlet {
+    /**
+     * {@inheritDoc}
+     *
+     * @see javax.servlet.http.HttpServlet#doGet(javax.servlet.http.HttpServletRequest,
+     *      javax.servlet.http.HttpServletResponse)
+     */
+    @SuppressWarnings("boxing")
+    @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        // Get reference on session object
+        HttpSession session = req.getSession();
+        // Display session timeout value defined in "web.xml"
+        // Value here is specified in seconds...
+        System.out.printf("Session timeout defined at application level : %s\n", session.getMaxInactiveInterval());
+        // Change session timeout for this session and display new timeout value
+        // Value here is defined in seconds...
+        session.setMaxInactiveInterval(60);
+        System.out.printf("Session timeout defined at code level : %s\n", session.getMaxInactiveInterval());
+    }
+}
+Session timeout defined at application level : 900
+Session timeout defined at code level : 60
+~~~
+
+## 2.3.8. Insufficient Session Expiration
+
+Insufficient Session Expiration (niewystarczające wygaśnięcie sesji) – może być wynikiem złego wdrożonego zarządzania sesją. Ta słabość może pojawić się na poziomie projektowania i implementacji i może zostać wykorzystana przez osoby atakujące w celu uzyskania nieautoryzowanego dostępu do aplikacji. 
+
+Podczas obsługi sesji twórcy stron internetowych mogą polegać na tokenach serwera lub generować identyfikatory sesji w aplikacji. Każda sesja powinna zostać zniszczona po naciśnięciu przez użytkownika przycisku wylogowania lub po upływie określonego czasu, zwanego limitem czasu. Niestety błędy w kodowaniu i błędne konfiguracje serwera mogą mieć wpływ na proces obsługi sesji, co może skutkować nieautoryzowanym dostępem.
+
+### Przykład podatnego kodu
+
+Załóżmy, że mamy aplikację, która używa ciasteczek do uwierzytelniania użytkowników. Identyfikator sesji jest przekazywany w pliku cookie i jest używany przez twórców oprogramowania do uwierzytelniania odwiedzających.
+
+Identyfikator sesji jest generowany w bezpieczny sposób za pomocą funkcji „GenerateSecureToken()”. Funkcja „ValidateSession()” przeprowadza walidację wcześniej wygenerowanej sesji.
+
+~~~
+<?php
+if ( puste ( $_COOKIE [ "ID_SESJI" ] ) ) :
+        $SessionID = GenerateSecureToken ( ) ;
+        setcookie ( "SESSION_ID" , $SessionID , czas ( ) * 3600 ) ;
+elseif ( ValidateSession ( $_COOKIE [ "SESSION_ID" ] ) ) :
+        echo "Cześć" . $Logowanie użytkownika ;
+inaczej :
+        echo "Proszę podać dane uwierzytelniające" ;
+endif ;
+?>
+~~~
+
+Luka jest wprowadzana z powodu nieprawidłowego użycia funkcji PHP „setcookie()”. Deweloper zapewnił wyjątkowo długi czas życia pliku cookie „SESSION_ID”, co oznacza, że ta sesja nie wygaśnie szybko, a właściciel pliku cookie może automatycznie uwierzytelnić się w długim okresie czasu. Jeśli ten plik cookie zostanie skradziony, osoba atakująca może użyć identyfikatora sesji do uwierzytelnienia aplikacji podatnej na ataki i uzyskania do niej nieautoryzowanego dostępu z uprawnieniami zaatakowanego konta użytkownika.
+
+## 2.3.9. Session Data Tampering
+
+Modyfikacja danych sesji (ang. session data tampering) to technika, w której atakujący manipuluje zawartością danych sesji w celu uzyskania nieuprawnionego dostępu lub zmiany funkcjonalności aplikacji.
+
+<p align="center">
+  Rys.2.3.9.1. Działanie Session Data Tampering
+<br>
+  <img src="\assets\img\Cyber\47.png" width="650" alt="sdt">
+  <br>
+  Źródło: https://media.geeksforgeeks.org/wp-content/uploads/20220908163148/WebParameterTempering.jpg
+</p>
+
+Podczas ataku typu session data tampering, atakujący próbuje zmodyfikować dane przechowywane w sesji użytkownika, takie jak uprawnienia, identyfikatory sesji, dane użytkownika lub inne parametry, które wpływają na funkcjonowanie aplikacji. Celem ataku jest uzyskanie dostępu do informacji lub wykonanie nieautoryzowanych akcji w imieniu użytkownika.
+
+### Atakujący może wykorzystać różne metody do manipulacji danych sesji, takie jak: 
++ Podstawienie danych – podmienianie danych przez atakującego 
++ Przechwycenie sesji – przechwytywanie identyfikatora sesji użytkownika przez atakującego
++ Ataki typu replay – przechwytywanie przez atakującego poprawnego żądania HTTP
+
+## 2.3.10. Session Elevation
+
+Atak podwyższenia sesji (ang. session elevation attack) to technika, w której atakujący próbuje uzyskać wyższe uprawnienia w kontekście sesji użytkownika, aby zyskać dostęp do funkcji lub danych, do których normalnie nie miałby uprawnień.
+
+Podczas ataku podwyższenia sesji, atakujący wykorzystuje podatności lub luki w mechanizmach uwierzytelniania, autoryzacji lub zarządzania sesją, aby uzyskać dostęp do zasobów, których nie powinien mieć uprawnień. Atak taki może prowadzić do nieautoryzowanego dostępu do poufnych informacji, manipulacji danych, przejęcia kontroli nad sesją innego użytkownika lub wykonania akcji w imieniu użytkownika z wyższymi uprawnieniami.
+
+### Przykłady ataków podwyższenia sesji
++ Atak polegający na przejęciu sesji administratora
++ Wykorzystanie podatności w mechanizmach autoryzacji
++ Przejście przez zaporę bezpieczeństwa
+
+## 2.3.11. Session Impersonal
+
+Atak podwyższenia sesji (session impersonation attack) to technika, w której atakujący próbuje przejąć kontrolę nad sesją innego użytkownika w celu uzyskania wyższych uprawnień lub dostępu do funkcji, do których normalnie nie ma dostępu.
+
+Podczas ataku podwyższenia sesji, atakujący może wykorzystać podatności w mechanizmach uwierzytelniania, autoryzacji lub zarządzania sesją w celu podszywania się pod innego użytkownika. Celem ataku jest uzyskanie dostępu do informacji, wykonanie nieautoryzowanych akcji lub zmiana uprawnień użytkownika.
+
+### Przykładowe metody ataku podwyższenia sesji
++ Przechwycenie identyfikatora sesji – atakujący przechwytuje identyfikator sesji innej osoby, na przykład poprzez podsłuchanie transmisji sieciowej lub wykorzystanie luki w zabezpieczeniach.
++ Atak typu session fixation – atakujący moze zainicjować sesję dla użytkownika, a następnie przekazać mu manipulowany identyfikator sesji. 
++ Manipulacja danymi sesji – atakujący próbuje zmienić zawartość danych przechowywanych w sesji, takich jka uprawnienia, role czy inne parametry, które wpływają na logikę aplikacji. 
+
+## 2.3.12. Session Riding
+
+Session Riding – jest to wysyłanie poleceń do aplikacji internetowej w imieniu docelowego użytkownika, po prostu wysylając mu wiadomość e-mail lub nakłaniając go do odwiedzenia specjalnie spreparowanej strony internetowej. 
+
+### Jak działa Session Riding?
+
+Przeglądarka wysyła plik cookie ustawiony przez stronę A przy każdym kolejnym żądaniu skierowanym do ośrodka A.
+
+Jeśli przyjrzeć się temu mechanizmowi bardziej szczegółowo, należy spełnić więcej warunków: ścieżka, do której uzyskuje się dostęp, musi odpowiadać ścieżce, dla której zdefiniowano plik cookie, czas życia pliku cookie nie może wygasnąć itp. W większości przypadków możemy je zignorować poniższych rozważań, ponieważ nie są one krytycznymi elementami podstawowej zasady.
+
+Załóżmy, że ta aplikacja używa plików cookie jako nośnika identyfikatora sesji. Załóżmy, że użytkownik pomyślnie się zalogował, więc plik cookie jest już ustawiony w jego przeglądarce. Następnie wypełnia formularz, aby złożyć ofertę:
+
+<p align="center">
+  Rys.2.3.12.1. Formularz
+<br>
+  <img src="\assets\img\Cyber\48.png" width="650" alt="formularz">
+  <br>
+  Źródło: https://crypto.stanford.edu/cs155old/cs155-spring08/papers/Session_Riding.pdf
+</p>
+
+Gdy użytkownik kliknie przycisk Prześlij, do serwera wysyłane jest żądanie (w tym przypadku żądanie GET), takie jak to poniżej:
+
+<p align="center">
+  Rys.2.3.12.2. Wysyłanie żądania
+<br>
+  <img src="\assets\img\Cyber\49.png" width="650" alt="zadanie">
+  <br>
+  Źródło: https://crypto.stanford.edu/cs155old/cs155-spring08/papers/Session_Riding.pdf
+</p>
+
+Plik cookie SESSIONID=123456789 jest automatycznie dodawany do żądania. Dzięki temu aplikacja jest w stanie rozpoznać użytkownika, potwierdzić, że wcześniej się uwierzytelnił i przeprowadzić transakcję na podstawie danych użytkownika, czyli złożyć ofertę na artykuł o nr. 1122 o wartości 100 EUR w imieniu użytkownika, który wcześniej się zalogował.
+
+## 2.1.13. Session Revocation Bypass 
+
+Ominięcie unieważnienia sesji (session revocation bypass) to technika, w której atakujący próbuje uzyskać dostęp do zasobów lub kontynuować aktywną sesję po unieważnieniu lub wygaśnięciu sesji użytkownika.
+
+Unieważnienie sesji jest ważnym mechanizmem bezpieczeństwa, który pozwala zakończyć ważność sesji użytkownika, gdy użytkownik się wylogowuje lub występuje inna akcja wygaszająca sesję. Ominięcie unieważnienia sesji polega na wykorzystaniu luk w implementacji mechanizmu unieważniania sesji lub zaawansowanych technik, które pozwalają atakującemu na utrzymanie aktywnej sesji po jej unieważnieniu.
+
+### Przykładowe metody omijania unieważnienia sesji to:
++ Utrzymanie aktywnego stanu sesji: Atakujący może manipulować danymi lub parametrami sesji, aby utrzymać jej aktywny stan po unieważnieniu. Na przykład, jeśli atakujący może kontrolować lub zmieniać identyfikator sesji, może nadal wykorzystywać tę samą sesję, nawet po wylogowaniu się użytkownika.
++ Wykorzystanie podatności w mechanizmach unieważniania sesji: Atakujący może znaleźć podatność w implementacji mechanizmu unieważniania sesji i wykorzystać ją do omijania procesu unieważnienia. Na przykład, atakujący może używać zmodyfikowanego identyfikatora sesji, który nie jest prawidłowo oznaczany jako unieważniony.
++ Przechwycenie sesji: Jeśli atakujący jest w stanie przechwycić identyfikator sesji lub uzyskać dostęp do aktywnej sesji innego użytkownika, może nadal korzystać z tej sesji nawet po unieważnieniu. Na przykład, jeśli atakujący przechwyci identyfikator sesji użytkownika, który wylogował się, może go użyć do uzyskania dostępu do konta użytkownika.
+
+## 2.3.14. Man-in-the-Middle Attacks on Session Communication
+
+Ataki typu Man-in-the-Middle (MitM) na komunikację sesji są technikami, w których atakujący podsłuchuje i przechwytuje komunikację między dwoma stronami, które nawiązały sesję, w celu przejęcia kontroli nad sesją lub pozyskania poufnych informacji.
+
+Podczas ataku typu Man-in-the-Middle, atakujący umieszcza się pomiędzy dwoma komunikującymi się stronami, tworząc pozornie bezpieczne połączenie z każdą z nich. Atakujący może osiągnąć to poprzez różne metody, takie jak podsłuchy w sieci, ataki DNS spoofing, ataki ARP spoofing czy wykorzystanie bezprzewodowych punktów dostępowych.
+
+Po umieszczeniu się pomiędzy komunikującymi się stronami, atakujący może monitorować całą komunikację między nimi, przechwytując wysyłane dane, w tym także sesje i identyfikatory sesji. Atakujący może również modyfikować przesyłane dane, wstrzykując własne pakiety lub zmieniając zawartość wysyłanych żądań.
+
+### Przykładowe zagrożenia
++ Przechwycenie identyfikatora sesji: Atakujący może przechwycić identyfikator sesji wysyłany między klientem a serwerem, co umożliwia mu przejęcie kontroli nad sesją użytkownika.
++ Manipulacja danymi sesji: Atakujący może zmieniać przesyłane dane sesji, np. modyfikując wartości parametrów sesji, co może prowadzić do nieautoryzowanych akcji lub dostępu do chronionych zasobów.
++ Przechwycenie poufnych informacji: Atakujący może przechwytywać poufne dane przesyłane w trakcie komunikacji sesji, takie jak hasła, dane osobowe lub informacje finansowe.
+
+## 2.4. Ataki warstwy transportowej
+
+Atak na warstwę transportową to jedno z wielu zagrożeń, z jakimi spotykają się systemy komunikacyjne i sieci informatyczne. Warstwa transportowa jest jednym z pięciu poziomów modelu odniesienia OSI, który definiuje protokoły i mechanizmy służące do przesyłania danych między urządzeniami sieciowymi. Ataki na tę warstwę mają na celu wykorzystanie słabości w protokołach transportowych w celu zakłócenia lub przechwycenia transmisji danych.
+
+## 2.4.1. Złamanie szyfrowania
+
+Złamanie szyfrowania na warstwie transportowej oznacza naruszenie bezpieczeństwa protokołu komunikacyjnego na tym poziomie. Warstwa transportowa jest odpowiedzialna za zapewnienie niezawodnej i poufnej transmisji danych pomiędzy aplikacjami działającymi na różnych urządzeniach w sieci.
+
+Najpopularniejszym protokołem transportowym jest protokół TCP (Transmission Control Protocol), który zapewnia niezawodną transmisję danych poprzez segmentację, numerowanie i potwierdzanie otrzymania pakietów. Protokół TCP nie oferuje jednak domyślnie szyfrowania, dlatego do zabezpieczenia transmisji można wykorzystać protokół SSL/TLS (Secure Sockets Layer/Transport Layer Security).
+
+### Aby zapobiec złamaniu szyfrowania na warstwie transportowej, ważne jest:
++ Używanie silnych protokołów szyfrowania, takich jak TLS 1.2 lub TLS 1.3, i unikanie przestarzałych protokołów.
++ Regularne aktualizowanie oprogramowania i łatania zabezpieczeń w celu uniknięcia słabych punktów, które mogą być wykorzystane przez atakujących.
++ Uważne sprawdzanie i zarządzanie certyfikatami SSL/TLS oraz korzystanie z autoryzowanych dostawców certyfikatów.
++ Utrzymywanie świadomości na temat najnowszych zagrożeń i praktyk bezpieczeństwa oraz wdrażanie odpowiednich zabezpieczeń.
+
+## 2.4.2. SYN Flood 
+
+Atak SYN flood (atak półotwarty) to rodzaj ataku typu „odmowa usługi” (DDoS), którego celem jest uniemożliwienie dostępu do serwera legalnemu ruchowi poprzez wykorzystanie wszystkich dostępnych zasobów serwera. Wielokrotnie wysyłając pakiety początkowego żądania połączenia (SYN), osoba atakująca jest w stanie przeciążyć wszystkie dostępne porty na docelowej maszynie serwera, powodując, że docelowe urządzenie reaguje wolno lub wcale na prawidłowy ruch.
+
+### Jak atak SYN flood działa? 
+
+W normalnych warunkach połączenie TCP wykazuje trzy różne procesy w celu nawiązania połączenia: 
++ Najpierw klient wysyła pakiet SYN do serwera w celu zainicjowania połączenia.
++ Następnie serwer odpowiada na ten początkowy pakiet pakietem SYN/ACK w celu potwierdzenia komunikacji.
++ Na koniec klient zwraca pakiet ACK, aby potwierdzić otrzymanie pakietu z serwera. Po zakończeniu tej sekwencji wysyłania i odbierania pakietów połączenie TCP jest otwarte i może wysyłać i odbierać dane.
+
+<p align="center">
+  Rys.2.4.2.1. Działanie ataku SYN Flood
+<br>
+  <img src="\assets\img\Cyber\50.png" width="650" alt="synf">
+  <br>
+  Źródło: https://www.cloudflare.com/img/learning/ddos/syn-flood-ddos-attack/syn-flood-attack-ddos-attack-diagram-1.png
+</p>
+
+Aby wywołać atak typu „odmowa usługi”, atakujący wykorzystuje fakt, że po odebraniu początkowego pakietu SYN serwer odpowiada jednym lub kilkoma pakietami SYN/ACK i czeka na ostatni etap uzgadniania. 
+
+### Oto jak to działa:
++ Atakujący wysyła dużą liczbę pakietów SYN do docelowego serwera, często ze sfałszowanymi adresami IP.
++ Następnie serwer odpowiada na każde żądanie połączenia i pozostawia otwarty port gotowy do odebrania odpowiedzi.
++ Podczas gdy serwer czeka na ostatni pakiet ACK, który nigdy nie dociera, atakujący kontynuuje wysyłanie kolejnych pakietów SYN. Nadejście każdego nowego pakietu SYN powoduje, że serwer tymczasowo utrzymuje połączenie z nowym otwartym portem przez określony czas, a po wykorzystaniu wszystkich dostępnych portów serwer nie może normalnie funkcjonować.
+
+<p align="center">
+  Rys.2.4.2.2. Przeprowadzanie ataku
+<br>
+  <img src="\assets\img\Cyber\51.png" width="650" alt="dos">
+  <br>
+  Źródło: https://www.cloudflare.com/img/learning/ddos/syn-flood-ddos-attack/syn-flood-attack-ddos-attack-diagram-2.png
+</p>
+
+SYN flood może wystapic na trzy sposoby: 
++ Direct attack – jest to tak SYN flood, w którym adres IP nie jest sfałszowany, nazywany jest atakiem bezpośrednim. W tym ataku atakujący w ogóle nie maskuje swojego adresu IP. W wyniku użycia przez osobę atakującą jednego urządzenia źródłowego z prawdziwym adresem IP do przeprowadzenia ataku, osoba atakująca jest bardzo narażona na wykrycie i ograniczenie zagrożeń. Aby stworzyć stan półotwarty na zaatakowanej maszynie, haker uniemożliwia swojej maszynie reagowanie na pakiety SYN-ACK serwera. Osiąga się to często za pomocą reguł zapory, które zatrzymują wychodzące pakiety inne niż pakiety SYN lub filtrując wszelkie przychodzące pakiety SYN-ACK, zanim dotrą one do komputera złośliwego użytkownika.
++ Spoofed attack – złośliwy użytkownik może również sfałszować adres IP w każdym wysyłanym pakiecie SYN, aby powstrzymać działania łagodzące i utrudnić wykrycie swojej tożsamości. Chociaż pakiety mogą być sfałszowane, potencjalnie można je prześledzić aż do ich źródła.
++ Distributed attack (DDoS) – jeśli atak jest tworzony przy użyciu botnetu, prawdopodobieństwo wyśledzenia ataku z powrotem do jego źródła jest niskie. Aby uzyskać dodatkowy poziom zaciemnienia, osoba atakująca może sprawić, że każde rozproszone urządzenie fałszuje również adresy IP, z których wysyła pakiety. Jeśli atakujący korzysta z botnetu, takiego jak botnet Mirai, generalnie nie będzie dbał o maskowanie adresu IP zainfekowanego urządzenia.
+
+## 2.4.3. TCP/IP Hijacking
+
+TCP/IP Hijacking – jest to atak sieciowy, w którym autoryzowany użytkownik może uzyskać dostęp do autoryzowanego połączenia sieciowego innego użytkownika lub klienta. Po przejęciu sesji TCP/IP atakujący może łatwo odczytać i zmodyfikować przesłane pakiety, a także może wysłać własne żądania do użytkownika. Do przejmowania kontroli nad TCP/IP napastnicy wykorzystują ataki DOS i fałszowanie adresów IP.
+
+<p align="center">
+  Rys.2.4.3.1. Działanie ataku TCP/IP Hijacking
+<br>
+  <img src="\assets\img\Cyber\52.png" width="650" alt="dos">
+  <br>
+  Źródło: https://media.geeksforgeeks.org/wp-content/uploads/20220718090253/Sender22.png
+</p>
+
+Proces TCP/IP Hijacking: 
++ Pierwszym głównym celem atakującego jest uzyskanie adresów IP dwóch urządzeń komunikujących się za pomocą tej samej sieci lub połączenia. W tym celu atakujący monitoruje transmisję danych w sieci do momentu uzyskania adresu IP urządzenia.
++ Po pomyślnym przechwyceniu adresu IP użytkownika hakerzy mogą łatwo zaatakować połączenie.
++ Aby uzyskać dostęp do połączenia, haker przerywa połączenie innego użytkownika poprzez atak DOS, a połączenie użytkownika czeka na ponowne połączenie.
++ Fałszując adres IP rozłączonego użytkownika, hakerzy mogą łatwo przywrócić komunikację.
+
+## 2.4.4. UDP Flood
+
+UDP flood – jest rodzaj ataku typu „odmowa usługi”, w którym duża liczba pakietów UDP (User Datagram Protocol) jest wysyłana do docelowego serwera w celu ograniczenia możliwości przetwarzania i reagowania na to urządzenie. Zapora chroniąca docelowy serwer może również zostać wyczerpana w wyniku zalewania UDP, co skutkuje odmową usługi dla legalnego ruchu.
+
+### Jak atak UDP flood działa?
+
+UDP flood działa głównie poprzez wykorzystanie kroków, które podejmuje serwer, gdy odpowiada na pakiet UDP wysłany do jednego z jego portów. W normalnych warunkach, gdy serwer odbiera pakiet UDP na określonym porcie, w odpowiedzi przechodzi przez dwa etapy:
++ Serwer najpierw sprawdza, czy są uruchomione programy, które obecnie nasłuchują żądań na określonym porcie.
++ Jeśli żaden program nie odbiera pakietów na tym porcie, serwer odpowiada pakietem ICMP (ping), aby poinformować nadawcę, że miejsce docelowe jest nieosiągalne.
+
+<p align="center">
+  Rys.2.4.4.1. Działanie UDP Flood
+<br>
+  <img src="\assets\img\Cyber\53.png" width="650" alt="udpf">
+  <br>
+  Źródło: https://www.cloudflare.com/img/learning/ddos/udp-flood-ddos-attack/amplification-ddos-attack-metaphor.png
+</p>
+
+Gdy każdy nowy pakiet UDP jest odbierany przez serwer, przechodzi przez kolejne kroki w celu przetworzenia żądania, wykorzystując w tym procesie zasoby serwera. Podczas przesyłania pakietów UDP każdy pakiet będzie zawierał adres IP urządzenia źródłowego. Podczas tego typu ataku DDoS osoba atakująca na ogół nie używa własnego prawdziwego adresu IP, ale zamiast tego sfałszuje źródłowy adres IP pakietów UDP, uniemożliwiając ujawnienie prawdziwej lokalizacji osoby atakującej i potencjalne nasycenie pakietami odpowiedzi z atakowanego serwer.
+Ponieważ docelowy serwer wykorzystuje zasoby do sprawdzania, a następnie odpowiadania na każdy odebrany pakiet UDP, zasoby docelowego mogą zostać szybko wyczerpane po odebraniu dużej ilości pakietów UDP, co skutkuje odmową usługi dla normalnego ruchu.
+
+<p align="center">
+  Rys.2.4.4.2. Działanie UDP Flood
+<br>
+  <img src="\assets\img\Cyber\54.png" width="650" alt="udpf-1">
+  <br>
+  Źródło: https://www.cloudflare.com/img/learning/ddos/udp-flood-ddos-attack/udp-flood-attack-ddos-attack-diagram.png
+</p>
+
+## 2.4.5. Reflective Amplification
+
+Atak Reflective Amplification polega na tym, że atakujący fałszuje adres IP celu i wysyła żądanie informacji, głównie przy użyciu protokołu UDP lub w niektórych przypadkach protokołu TCP. Następnie serwer odpowiada na żądanie wysyłając odpowiedź na adres IP celu. 
+
+Ataki amplification generują dużą liczbę pakietów, które są wykorzystywane do przytłoczenia docelowej witryny internetowej bez alarmowania pośrednika. Dziej się tak, gdy podatna na ataki usługa odpowiada dużą odpowiedzią, gdy atakujący wysyła swoje żądanie, często nazywane “pakietem wyzwalającym”. Korzystając z łatwo dostępnych narzędzi, osoba atakująca jest w stanie wysłać wiele tysięcy takich żądań do wrażliwych usług, powodując w ten sposób odpowiedzi, które są znacznie większe niż pierwotne żądanie i znacznie zwiększając rozmiar i przepustowość wysyłane do celu.
+
+<p align="center">
+  Rys.2.4.5.1. Działanie ataku Reflective
+<br>
+  <img src="\assets\img\Cyber\55.png" width="650" alt="reflective">
+  <br>
+  Źródło: https://www.educative.io/answers/what-are-reflection-and-amplification-attacks
+</p>
+
+Atak wzmacniający również należy do kategorii ataków typu „odmowa usługi” (DoS): 
++ Współczynnik wzmocnienia jest utrzymywany na jak najwyższym poziomie.
++ Atakujący generuje dużą liczbę pakietów, które zalewają witrynę ofiary bez alarmowania pośrednika.
++ Atakujący wykorzystuje publicznie dostępny protokół UDP i wysyła „pakiet wyzwalający”, którego wynikiem jest obszerna odpowiedź na żądanie.
++ Równocześnie generowanych jest kilka żądań obsługiwanych przez różne podatne na ataki usługi. Atakujący może to zrobić lub użyć botnetu.
++ Zwiększa to rozmiar odpowiedzi pierwotnego żądania i pochłania ogromną przepustowość ofiary.
+
+<p align="center">
+  Rys.2.4.5.2. Działanie ataku Amplification 
+<br>
+  <img src="\assets\img\Cyber\56.png" width="650" alt="amplification">
+  <br>
+  Źródło: https://educative.io/answers/what-are-reflection-and-amplification-attacks
+</p>
+
+## 2.4.6. TCP Reset Attack
+
+TCP Reset Attack to rodzaj ataku, w którym atakujący wysyłają do hosta sfałszowane pakiety TCP RST (Reset).  Jest to najczęstszy atak w Internecie, który powoduje wiele problemów. Ataki te są przeprowadzane głównie w celu zamknięcia stron internetowych, które z nimi nie współpracują. Atak ten można również przeprowadzić w celu przeprowadzenia rozproszonego ataku typu „odmowa usługi” (ataku DDoS).
+
+### Jak TCP Reset Attack działa? 
++ Kiedy połączenie TCP jest ustanawiane między dwoma komputerami, komputer wysyłający wysyła pakiet TCP RST (Reset) do komputera odbierającego.
++ Przed wysłaniem pakietu TCP RST (Reset) komputer wysyłający najpierw sprawdza, czy komputer odbierający faktycznie nasłuchuje komunikacji, czy nie.
++ Jeśli komputer odbierający nie nasłuchuje komunikacji, komputer wysyłający wysyła pakiet TCP RST (Reset) do komputera odbierającego.
++ Ten pakiet TCP RST (Reset) jest zwykle wysyłany, gdy komputer odbierający nie wysyła potwierdzenia przez pewien czas.
++ Jeśli komputer odbierający faktycznie nasłuchuje komunikacji, komputer wysyłający nie wyśle pakietu TCP RST (Reset) do komputera odbierającego
++ Zamiast tego komputer wysyłający wyśle pakiet TCP RST (Reset) do komputera wysyłającego.
++ Ale w ataku resetowania protokołu TCP komputer wysyłający wysyła pakiet TCP RST (Reset) do komputera odbierającego.
+
+<p align="center">
+  Rys.2.4.6.1. Działanie ataku TCP Reset
+<br>
+  <img src="\assets\img\Cyber\57.png" width="650" alt="tcpreset">
+  <br>
+  Źródło: https://assets.website-files.com/5ff66329429d880392f6cba2/60a4fdf7a4cd57ac6da7fe11_Syn%20Spoofing%20attack.png
+</p>
+
+## 2.4.7. Port Scanning 
+
+Port Scanning – jest to technika wykorzystywana przez hakerów do wykrywania otwartych drzwi lub słabych punktów w sieci. Kiedy hakerzy wysyłają wiadomość do portu, otrzymana odpowiedź określa czy port jest używany i czy istnieją potencjalne słabe punkty, które można wykorzystać. 
+
+### Skanowanie portów może dostarczyć takich informacji jak: 
++ Usługi, które są uruchumione
++ Użytkownicy, którzy są anonimowe logowania
++ Czy dozwolone są anonimowe logowania
++ Które usługi sieciowe wymagaja uwierzytelnienia
+
+### Techniki skanowania portów:
++ Skanowanie ping – jest to technika, która wysyła grupę kilku żądań ICMP do różnych serwerów w celu uzyskania odpowiedzi. Skanowanie ping może być używane przez administratora do rozwiązywania problemów, a ping może być blokowany i wyłączany przez zaporę ogniową.
++ Skanowanie vanilla – jest to technikia, która próbuje połączyć się ze wszystkimi 65 536 portami w tym samym czasie. Wysyła flagę synchronizacji (SYN) lub żądanie połączenia. Kiedy otrzymuje odpowiedź SYN-ACK lub potwierdzenie połączenia, odpowiada flagą ACK.
++ Skanowanie SYN – jest to skanowanie półotwarte, które wysyła flagę SYN do celu i czeka  na odpowiedź SYN-ACK. W przypadku odpowiedzi skaner nie odpowiada, co oznacza, że połączenie TCP nie zostało zakończone. Dlatego interakcja nie jest rejestrowana, ale nadawca dowiaduje się, czy port jest otwarty.
++ Skany XMAS i FIN – ten typ skanowania wysyła zestaw flag, które po udzieleniu odpowiedzi mogą ujawnić wgląd w zaporę ogniową i stan portów. Skanowanie FIN polega na tym, że osoba atakująca wysyła flagę FIN, często używaną do zakończenia ustanowionej sesji, do określonego portu. Reakcja systemu na to może pomóc atakującemu zrozumieć poziom aktywności i zapewnić wgląd w wykorzystanie zapory sieciowej w organizacji.
++ Skanowanie odyłaczy FTP – ta technika umożliwia nadawcy ukrycie swojej lokalizacji za pomocą serwera FTP w celu odbicia pakietu.
++ Sweep skanowanie – ta technika skanowania portów wysyła ruch do portu przez kilka komputerów w sieci, aby zidentyfikować te, które są aktywne. Nie udostępnia żadnych informacji o aktywności portu, ale informuje nadawcę, czy jakieś systemy są w użyciu.
+
+<p align="center">
+  Rys.2.4.7.1. Techniki Port Scanning
+<br>
+  <img src="\assets\img\Cyber\58.png" width="650" alt="portscanning">
+  <br>
+  Źródło: https://www.fortinet.com/resources/cyberglossary/what-is-port-scan/_jcr_content/par/c05_container_copy/par/c28_image.img.jpg/1667849404946.jpg
+</p>
+
+### Rodzaje Port Chcecker albo Scanner:
++ Ping skanowanie – polecenie ping służy do sprawdzenia, czy pakiet danych sieciowych może dotrzeć do adresu IP bez żadnych problemów
++ Half-open or SYNC scans – ten rodzaj skanowania po prostu przesyła wiadomość SYN i nie kończy połączenia z odbiorcą.
++ XMAS skanowanie – skany XMAS wysyłają pewną liczbę pakietów do portu, aby sprawdzić, czy jest on otwarty. Jeśli port jest zamknięty, skaner otrzymuje odpowiedź. Jeśli nie otrzyma odpowiedzi, oznacza to, że port jest otwarty i można go użyć do uzyskania dostępu do sieci.
+
+## 2.4.8. Man-in-the-Middle Attacks on Transport Layer
+
+Man-in-the-Middle (MitM) – to rodzaj cyberataku, w którym osoba atakująca przechwytuje i manipuluje komunikacją między dwiema stronami. Może to pozwolić atakującemu na podsłuchiwanie rozmowy, zmianę wymienianych wiadomości lub podszywanie się pod jedną ze stron w celu uzyskania dostępu do poufnych informacji.
+
+Na przykład osoba atakująca może przechwycić wiadomości przesyłane między klientem a serwerem, a następnie zmienić te wiadomości w celu kradzieży poufnych informacji lub uzyskania dostępu do serwera.
+
+Ataki MitM sa często do wykrycia, ponieważosoba atakująca zasadniczo “siedzi w środku” komunikacji między dwiema stronami i może manipulować wiadomościami bez wiedzy żadnej ze stron. 
+
+<p align="center">
+  Rys.2.4.8.1. Działanie ataku MitM 
+<br>
+  <img src="\assets\img\Cyber\59.png" width="650" alt="mitm">
+  <br>
+  Źródło: https://www.imperva.com/learn/wp-content/uploads/sites/13/2017/09/man-in-the-middle-mitm-attack.png.webp
+</p>
+
+### Jak atak Man-in-the-Middle działa?
++ Atakujący przechwytuje komunikację między klientem a serwerem. Można to zrobić za pomocą różnych środków, takich jak użycie złośliwego urządzenia sieciowego lub złamanie zabezpieczeń routera lub przełącznika sieciowego.
++ Następnie atakujący manipuluje komunikacją między klientem a serwerem. Może to obejmować zmianę wymienianych wiadomości, przekierowanie ruchu do innego miejsca docelowego lub podszywanie się pod jedną ze stron w celu uzyskania dostępu do poufnych informacji.
++ Klient i serwer nie są świadomi, że atakujący przechwytuje i manipuluje ich komunikacją. W rezultacie nadal komunikują się ze sobą w normalny sposób, a atakujący może uzyskać dostęp do poufnych informacji lub zakłócić komunikację między nimi.
+
+### Technika MitM:
++ ARP spoofing – w tej technice atakujący wysyła fałszywe komunikaty protokołu ARP do sieci, powodując, że urządzenia w sieci aktualizują swoje pamięci podręczne ARP niepoprawnymi informacjami. Pozwala to atakującemu przechwycić ruch między dwoma urządzeniami, kierując go przez własne urządzenie.
++ DNS spoofing – w tej technice osoba atakująca manipuluje rekordami systemu nazw domen (DNS) witryny internetowej, przekierowując użytkowników do złośliwej witryny, która wygląda na legalną. Pozwala to atakującemu na kradzież poufnych informacji od niczego niepodejrzewających użytkowników, takich jak dane logowania.
++ SSL stripping – w tej technice osoba atakująca obniża poziom bezpiecznego połączenia HTTPS między klientem a serwerem do niezabezpieczonego połączenia HTTP. Pozwala to atakującemu przeglądać i modyfikować dane wymieniane między klientem a serwerem, co pozwala na kradzież poufnych informacji lub uzyskanie nieautoryzowanego dostępu do serwera.
++ Packet injection – w tej technice atakujący wstrzykuje złośliwe pakiety do sieci, zakłócając komunikację między dwoma urządzeniami i umożliwiając atakującemu uzyskanie dostępu do poufnych informacji lub zakłócenie działania sieci.
+
+## 2.4.9. Denial of Service Attacks on Transport Layer
+
+Ataki typu Denial of Service (DoS) na warstwie transportowej (Transport Layer) są metodą, w której przeciwnik próbuje sparaliżować lub uniemożliwić prawidłowe funkcjonowanie usług sieciowych poprzez przeciążenie warstwy transportowej protokołu komunikacyjnego.
+
+Ataki DoS na warstwie transportowej koncentrują się na wykorzystaniu podatności w protokołach takich jak TCP (Transmission Control Protocol) i UDP (User Datagram Protocol), które są odpowiedzialne za przekazywanie danych między aplikacjami w sieci.
+
+Przykładem ataku DoS na warstwie transportowej może być atak SYN flood. W tym przypadku, atakujący wysyła duże ilości żądań połączenia TCP do celu, ale nie finalizuje procesu nawiązywania połączenia poprzez przesłanie potwierdzenia (ACK). W rezultacie cel musi przechowywać otwarte sesje, co prowadzi do wyczerpania zasobów i uniemożliwia nawiązanie nowych, prawidłowych połączeń TCP.
+
+Innym przykładem jest atak UDP flood, który polega na przesyłaniu ogromnej liczby pakietów UDP do celu. Ponieważ protokół UDP nie wymaga potwierdzania dostarczenia pakietów, atakujący może wysłać wiele fałszywych pakietów, co prowadzi do przeciążenia zasobów systemowych.
+Ataki DoS na warstwie transportowej mają na celu uniemożliwienie użytkownikom korzystania z usług sieciowych, co może prowadzić do zakłóceń w działaniu serwisów online, a nawet prowadzić do poważnych strat finansowych dla firm lub organizacji.
+
+## 2.4.10. Blind SQL Injection
+
+Blind SQL Injection – to rodzaj wstrzyknięcia SQL, w którym atakujący nie otrzymuje oczywistej odpowiedzi z atakowanej bazy danych i zamiast tego rekonstruuje strukturę bazy danych krok po kroku, obserwując zachowanie serwera bazy danych i aplikacji.
+
+### Istnieją dwa rodzaje ślepych iniekcji SQL: 
++ Oparte na wartościach logicznych (boolean-based blind):
+
+Jako przykład załóżmy, że poniższe zapytanie ma na celu wyświetlenie szczegółów produktu z bazy.
+
+~~~
+SELECT * FROM products WHERE id = product_id
+~~~
+
+Najpierw złośliwy haker używa aplikacji w legalny sposób, aby wykryć co najmniej jeden istniejący identyfikator produktu — w tym przykładzie jest to produkt 42. Następnie może podać następujące dwie wartości dla product_id:
+
+~~~
+42 AND 1=1
+42 AND 1=0
+~~~
+
+Jeśli to zapytanie jest wykonywane w aplikacji przy użyciu prostej konkatenacji łańcuchów, zapytanie staje się odpowiednio:
+
+~~~
+SELECT * FROM products WHERE id = 42 and 1=1
+SELECT * FROM products WHERE id = 42 and 1=0
+~~~
+
+Jeśli aplikacja zachowuje się inaczej w każdym przypadku, jest podatna na ślepe iniekcje SQL oparte na wartościach boolowskich.
+
+Jeśli serwerem bazy danych jest Microsoft SQL Server, osoba atakująca może teraz podać następującą wartość parametru product_id:
+
+~~~
+42 AND (SELECT TOP 1 substring(name, 1, 1)
+  FROM sysobjects
+  WHERE id=(SELECT TOP 1 id
+    FROM (SELECT TOP 1 id
+      FROM sysobjects
+      ORDER BY id)
+    AS subq
+    ORDER BY id DESC)) = 'a'
+~~~
+
+W rezultacie podzapytanie w nawiasach po 42 AND sprawdza, czy nazwa pierwszej tabeli w bazie zaczyna się na literę a. Jeśli to prawda, aplikacja będzie zachowywać się tak samo, jak dla ładunku 42 AND 1=1. Jeśli false, aplikacja będzie zachowywać się tak samo, jak dla ładunku 42 AND 1=0.
+
+Atakujący może iterować przez wszystkie litery, a następnie przejść do drugiej litery, trzeciej litery itd. W rezultacie atakujący może odkryć pełną nazwę pierwszej tabeli w strukturze bazy danych. Następnie mogą spróbować uzyskać więcej danych o strukturze tej tabeli i ostatecznie – wyodrębnić dane z tabeli. Chociaż ten przykład jest specyficzny dla MS SQL, podobne techniki istnieją dla innych typów baz danych.
+
++ Oparte na czasie (time-based blind) – atakujący obserwuje zachowanie serwera bazy danych i aplikacji po połączeniu prawidłowych zapytań z poleceniami SQL powodującymi opóźnienia.
+
+### Przykłady time-based blind SQL Injection:
+~~~
+SELECT * FROM products WHERE id = product_id
+~~~
+
+Złośliwy haker może podać następującą wartość product_id:
+~~~
+42; WAITFOR DELAY '0:0:10'
+~~~
+
+W rezultacie zapytanie staje się:
+~~~
+SELECT * FROM products WHERE id = 1; WAITFOR DELAY '0:0:10'
+~~~
+
+Jeśli serwerem bazy danych jest Microsoft SQL Server, a aplikacja jest podatna na oparte na czasie ślepe iniekcje SQL, osoba atakująca zobaczy 10-sekundowe opóźnienie w aplikacji.
+
+Teraz, gdy atakujący wie, że możliwe są ślepe iniekcje SQL oparte na czasie, może podać następujący product_id:
+~~~
+42; IF(EXISTS(SELECT TOP 1 *
+  FROM sysobjects
+  WHERE id=(SELECT TOP 1 id
+    FROM (SELECT TOP 1 id 
+      FROM sysobjects 
+      ORDER BY id) 
+    AS subq
+    ORDER BY id DESC)
+  AND ascii(lower(substring(name, 1, 1))) = 'a'))
+  WAITFOR DELAY '0:0:10'
+~~~
+
+Jeżeli nazwa pierwszej tabeli w strukturze bazy zaczyna się na literę a, to druga część tego zapytania będzie prawdziwa, a aplikacja zareaguje z 10-sekundowym opóźnieniem. Podobnie jak w przypadku ślepych iniekcji SQL opartych na wartościach boolowskich powyżej, osoba atakująca może użyć tej metody wielokrotnie, aby odkryć nazwę pierwszej tabeli w strukturze bazy danych, a następnie spróbować uzyskać więcej danych o strukturze tej tabeli i ostatecznie wyodrębnić dane z tabela.
+
+## 2.4.11. 
+
+TCP/IP Sequence Number Attack – to technika używana do wykrywania złośliwych działań w sieci. Działa poprzez analizę numerów sekwencyjnych pakietów wysyłanych przez sieć i przewidywanie następnego numeru sekwencyjnego. Pomaga to wykryć wszelkie złośliwe działania, które mogą występować w sieci. Technika ta służy do wykrywania i zapobiegania atakom typu spoofing, hijacking i denial of service.
+
+<p align="center">
+  Rys.2.4.11.1. TCP/IP Sequence Number Attacks
+<br>
+  <img src="\assets\img\Cyber\60.png" width="650" alt="sna">
+  <br>
+  Źródło: https://www.tech-faq.com/wp-content/uploads/TCP-Sequence-Prediction-Attack.gif
+</p>
+
+### Jak TCP Sequence Number działa?
+
+Przewidywanie numerów sekwencyjnych TCP polega na analizie numerów sekwencyjnych pakietów wysyłanych przez sieć i przewidywaniu kolejnego numeru sekwencyjnego. Pomaga to wykryć wszelkie złośliwe działania, które mogą występować w sieci. Technika ta polega na analizie numerów sekwencyjnych pakietów wysyłanych przez sieć i przewidywaniu następnego numeru sekwencyjnego. Pomaga to wykryć wszelkie złośliwe działania, które mogą występować w sieci.
+
+## 2.4.12. Teardrop Attack 
+
+Teardrop attack – to rodzaj ataku typu “odmowa usługi”. Osoba atakująca wysyła pofragmentowane pakiety do serwera docelowego, a w niektórych przypadkach, gdy występuje luka w zabezpieczeniach TCP/IP, serwer nie może ponownie złożyć pakietu, co powoduje przeciążenie.
+
+<p align="center">
+  Rys.2.4.12.1. Atak Teardrop
+<br>
+  <img src="\assets\img\Cyber\61.png" width="650" alt="sna">
+  <br>
+  Źródło: https://www.cloudns.net/blog/wp-content/uploads/2022/12/How-does-Teardrop-attack-work-1024x576.png
+</p>
+
+### Jak działa? 
+
+Implementacje TCP/IP różnią się nieznacznie w zależności od platformy. Niektóre systemy operacyjne — zwłaszcza starsze wersje systemów Windows i Linux — zawierają błąd ponownego montażu fragmentacji TCP/IP. Ataki teardrop mają na celu wykorzystanie tej słabości. W tym ataku klent wysyła celowo pofragmentowany pakiet informacyjny do urządzenia docelowego. Ponieważ pakiety nakładają się, błąd występuje, gdy urządzenie próbuje ponownie złożyć pakiet. Atak wykorzystuje ten błąd, aby spowodować awarię krytyczną w systemie operacyjnym lub aplikacji obsługującej pakiet.
+
+## 2.4.13. TCP/IP Fragmentation Attacks
+
+TCP/IP Fragmentations Attack – jest to atak, w którym sprawca przejmuje kontrolę nad siecią, wykorzystując mechanizmy fragmentacji datagramów.
+
+<p align="center">
+  Rys.2.4.13.1. Atak TCP/IP Fragmentation i Reassembly
+<br>
+  <img src="\assets\img\Cyber\62.png" width="650" alt="fir">
+  <br>
+  Źródło: https://www.imperva.com/learn/wp-content/uploads/sites/13/2019/01/ip-fragmentation.jpeg.webp
+</p>
+
+### Typy ataków:
++ Ataki fragmentacji UDP i ICMP – ataki te obejmują transmisję fałszywych pakietów UDP lub ICMP, które są większe niż MTU sieci. Ponieważ pakiety te są fałszywe i nie można ich ponownie złożyć, zasoby serwera docelowego są szybko zużywane, co powoduje niedostępność serwera.
++ Ataki fragmentacji TCP – ataki te, znane również jako ataki Teardrop, są wymierzone w mechanizmy ponownego składania TCP/IP, uniemożliwiając im łączenie pofragmentowanych pakietów danych. W rezultacie pakiety danych nakładają się na siebie i szybko przytłaczają serwery ofiary, powodując ich awarię.
+
+## 2.5. Ataki warstwy sieciowej
+
+Ataki na warstwie sieciowej, nazywane również atakami na sieć, to próby naruszenia lub zakłócenia normalnego działania sieci komputerowej. Warstwa sieciowa odnosi się do drugiej warstwy modelu OSI (Open Systems Interconnection), a jej głównym zadaniem jest zapewnienie komunikacji między różnymi hostami w sieci.
+
+## 2.5.1. IP Spoofing
+
+IP Spoofing polega na tworzeniu pakietów protokołu internetowego (IP), które maja zmodyfikowany adres źródłowy w celu ukrycia tożsamości nadawcy, podszywania się pod inny system komputerowy lub obu tych elementów. Jest to technika często wykorzystywana przez złych aktorów do wywoływania ataków DDoS na docelowe urządzenia lub otaczają infrastukturę. 
+
+<p align="center">
+  Rys.2.5.1.1. IP Spoofing attack
+<br>
+  <img src="\assets\img\Cyber\63.png" width="650" alt="ips">
+  <br>
+  Źródło: https://www.cloudflare.com/img/learning/ddos/glossary/ip-spoofing/ip-spoofing.png
+</p>
+
+Fałszowanie adresów IP jest analogiczne do sytuacji, w której osoba atakująca wysyła paczkę do osoby z nieprawidłowym adresem zwrotnym. Jeśli osoba odbierająca paczkę chce powstrzymać nadawcę przed wysyłaniem paczek, zablokowanie wszystkich paczek z fałszywego adresu niewiele pomoże, ponieważ adres zwrotny można łatwo zmienić. W związku z tym, jeśli odbiorca chce odpowiedzieć na adres zwrotny, jego pakiet odpowiedzi trafi gdzie indziej niż do prawdziwego nadawcy. Możliwość fałszowania adresów pakietów jest podstawową luką wykorzystywaną przez wiele ataków DDoS.
+
+## 2.5.2. ICMP Flood
+
+Jest to atak, w którym osoba atakująca próbuje przeciążyć docelowe urządzenia pakietami żądań echa ICMP, powodując, że cel staje się niedostępny dla normalnego ruchu. Gdy ruch ataku pochodzi z wielu urządzeń, atak staje się atakiem DDoS lub rozproszonym atakiem “odmowa usługi”. 
+
+### Jak działa atak ICMP Flood?
++ Osoba atakująca wysyła wiele pakietów żądania echa ICMP do docelowego serwera przy użyciu wielu urządzeń.
++ Następnie serwer docelowy wysyła pakiet odpowiedzi echa ICMP na adres IP każdego żądającego urządzenia jako odpowiedź.
+
+<p align="center">
+  Rys.2.5.2.1. Działanie ataku ICMP Flood
+<br>
+  <img src="\assets\img\Cyber\64.png" width="650" alt="icmpf">
+  <br>
+  Źródło: https://www.cloudflare.com/img/learning/ddos/ping-icmp-flood-ddos-attack/ping-icmp-flood-ddos-attack-diagram.png
+</p>
+
+## 2.5.3. Smurf Attack
+
+Smurf Attack to rozproszony atak typu “odmowa usługi”, w którym osoba atakująca próbuje zalać atakowany serwer pakietami ICMP. Wysyłając żądania ze sfałszowanym adresem IP docelowego urządzenia do jednej lub więcej sieci komputerowych, sieci komputerowe odpowiadają następnie atakowanemu serwerowi, wzmacniając początkowy ruch ataku i potencjalnie przytłaczając cel, czyniąc go niedostępnym.
+
+### Jak działa Smurf Attack?
++ Najpierw szkodliwe oprogramowanie Smerf buduje sfałszowany pakiet, którego adres źródłowy jest ustawiony na prawdziwy adres IP atakowanej ofiary.
++ Pakiet jest następnie wysyłany na adres rozgłoszeniowy IP routera lub zapory, który z kolei wysyła żądania do każdego adresu urządzenia hosta sieci nadawczej, zwiększając liczbę żądań o liczbę urządzeń sieciowych w sieci.
++ Każde urządzenie w sieci odbiera żądanie od nadawcy, a następnie odpowiada na sfałszowany adres celu pakietem ICMP Echo Respond.
++ Docelowa ofiara otrzymuje następnie zalew pakietów ICMP Echo Respond, potencjalnie przytłoczony i powodujący odmowę usługi dla legalnego ruchu.
+
+### Rodzaje ataków Smurf Attack:
++ Basic Smurf Attack – występuje, gdy atakujący zalewa sieć docelową nieskończoną liczbą pakietów żądań ICMP. Pakiety zawierają adres źródłowy ustawiony na adres rozgłoszeniowy sieci, który monituje każde urządzenie w sieci, które odbiera żądanie, o udzielenie odpowiedzi. Powoduje to ogromny ruch, który ostatecznie usunie system.
++ Advanced Smurf Attack – ten atak rozpoczyna się jako atak podstawowy. Jednak żądania echa są w stanie skonfigurować źródła, aby mogły odpowiadać na dodatkowe ofiary stron trzecich. Dzięki temu atakujący mogą atakować wiele ofiar jednocześnie, co oznacza, że mogą spowolnić bardziej rozbudowane sieci i atakować większe grupy ofiar i większe sekcje sieci.
++ Smurf Attack Transmission end Effects
+
+
+## 2.5.4. Ping of Death
+
+Ping of Death to atak, w którym osoba atakująca ma na celu zakłócenie działania docelowej maszyny poprzez wysłanie pakietu większego niż maksymalny dopuszczalny rozmiar, powodując zamrożenie lub awarię komputera docelowego. 
+
+### Jak działa ping of death?
+<p align="center">
+  Rys.2.5.4.1. Działanie ataku Ping of Death
+<br>
+  <img src="\assets\img\Cyber\65.png" width="650" alt="icmpf">
+  <br>
+  Źródło: https://www.cloudflare.com/img/learning/ddos/ping-of-death-ddos-attack/attack-mitigation.png
+</p>
+
+Gdy złośliwie duży pakiet jest przesyłany od osoby atakującej do celu, zostaje on podzielony na segmenty, z których każdy jest poniżej maksymalnego limitu rozmiaru. Gdy komputer docelowy próbuje ponownie połączyć elementy, suma przekracza limit rozmiaru i może wystąpić przepełnienie bufora, powodując zamrożenie, awarię lub ponowne uruchomienie komputera docelowego.
+
+Podczas gdy echo ICMP może zostać wykorzystane do tego ataku, wszystko, co wysyła datagram IP, może zostać wykorzystane do tego exploita. Obejmuje to transmisje TCP, UDP i IPX.
+
+## 2.5.5. Fragmentation Attack
+
+Fragmentation Attack – jest to rodzaj ataku typu “odmowa usługi”, którego celem jest zakłócenie komunikacji poprzez fragmentację pakietów. Bombardując cel pofragmentowanymi pakietami, atakujący może przeciążyć zdolność celu do ponownego złożenia pakietów, uniemożliwiając mu skuteczną komunikację. 
+
+### Typy Fragmentation attack: 
++ Bezpołączeniowy atak na fragment pakietu – atakujący wysyła pofragmentowane pakiety do ofiary bez uprzedniego nawiązania połączenia. System ofiary ponownie złoży pakiety, ale ponieważ są one niesprawne, dane zostaną uszkodzone.
++ Atak na fragment pakietów zorientowany na połączenie – osoba atakująca najpierw nawiązuje połączenie z ofiarą, a następnie wysyła pofragmentowane pakiety. System ofiary ponownie złoży pakiety, ale ponieważ są one niesprawne, dane zostaną uszkodzone.
++ Atak fragmentów pakietów w warstwie aplikacji – osoba atakująca wysyła do ofiary pofragmentowane pakiety, które zostały specjalnie zaprojektowane do wykorzystania luk w protokołach warstwy aplikacji. System ofiary ponownie złoży pakiety, ale ponieważ są one niesprawne, dane zostaną uszkodzone.
++ Atak fragmentów pakietów warstwy transportowej – osoba atakująca wysyła do ofiary pofragmentowane pakiety, które zostały specjalnie zaprojektowane w celu wykorzystania luk w protokołach warstwy transportowej. System ofiary ponownie złoży pakiety, ale ponieważ są one niesprawne, dane zostaną uszkodzone.
+
+### Jak działa atak fragmentowany?
+Gdy haker wysyła wiele małych pakietów danych do komputera docelowego, może przeciążyć system i spowodować jego awarię. Nazywa się to atakiem fragmentacji.
+
+Ataki fragmentacji wykorzystują fakt, że większość systemów komputerowych ma ograniczoną ilość pamięci do przechowywania przychodzących danych. Gdy zbyt wiele danych dociera na raz, system nie może sobie poradzić i zaczyna fragmentować lub dzielić dane na mniejsze kawałki. Proces ten zużywa cenne zasoby, co może ostatecznie doprowadzić do awarii systemu.
+
+Istnieją dwa główne typy ataków fragmentacyjnych: bezpośredni i pośredni. Ataki z bezpośrednią fragmentacją wysyłają małe pakiety danych bezpośrednio do systemu docelowego, podczas gdy ataki fragmentacji pośredniej najpierw wysyłają duże pakiety danych do systemu pośredniczącego, a następnie przekazują je do systemu docelowego.
+
+## 2.5.6. Land Attack
+
+Land Attack – to atak, w którym osoba atakująca ustawia informacje o źródle i miejscu docelowym segmentu TCP na takie same. Podatna na atak maszyna ulegnie awarii lub zamarznie z powodu wielokrotnego przetwarzania pakietu przez stos TCP. 
+
+W ataku LAND tworzony jest specjalnie spreparowany pakiet TCP SYN w taki sposób, że źródłowy adres IP i port są ustawione na taki sam jak adres docelowy i port, który z kolei wskazuje otwarty port na komputerze ofiary. Podatna na ataki maszyna odebrałaby taką wiadomość i odpowiedziałaby na adres docelowy, skutecznie wysyłając pakiet do ponownego przetworzenia w nieskończonej pętli. W ten sposób procesor maszyny jest zużywany w nieskończoność, zamrażając podatną na ataki maszynę, powodując blokadę, a nawet jej awarię.
+
+## 2.5.7. DNS Spoofing
+
+DNS Spoofing to atak, w którym zmienione rekordy DNS są wykorzystywane do przekierowywania ruchu online do fałszywej witryny internetowej przypominającej zamierzone miejsce docelowe. 
+
+Tam użytkownicy są proszeni o zalogowanie się na swoje konto, dając sprawcy możliwość kradzieży danych uwierzytelniających i innych rodzajów poufnych informacji. Ponadto szkodliwa strona internetowa jest często wykorzystywana do instalowania robaków lub wirusów na komputerze użytkownika, dając sprawcy długoterminowy dostęp do niej i przechowywanych danych.
+
+### Metody przeprowadzania ataku DNS z fałszowaniem obejmują:
++ Man-in-the-Middle (MitM)
++ DNS server compromise
+
+<p align="center">
+  Rys.2.5.7.1. Działanie ataku DNS Spoofing
+<br>
+  <img src="\assets\img\Cyber\66.png" width="650" alt="dnss">
+  <br>
+  Źródło: https://www.imperva.com/learn/wp-content/uploads/sites/13/2019/01/DNS-spoofing.jpg.webp
+</p>
+
+### Przykład zatruwania pamięci podręcznej DNS
+
+Poniższy przykład ilustruje atak polegający na zatruwaniu pamięci podręcznej DNS, w którym osoba atakująca (IP 192.168.3.300) przechwytuje kanał komunikacyjny między klientem (IP 192.168.1.100) a komputerem serwera należącym do www.estores.com witryny sieci Web (IP 192.168.2.200).
+
+W tym scenariuszu narzędzie (np. arpspoof) jest używane do oszukania klienta, aby myślał, że adres IP serwera to 192.168.3.300. Jednocześnie serwer jest zmuszony myśleć, że IP klienta to również 192.168.3.300.
+
+### Taki scenariusz przebiegałby następująco:
++ Osoba atakująca używa arpspoof do wydania polecenia: arpspoof 192.168.1.100 192.168.2.200. Powoduje to modyfikację adresów MAC w tabeli ARP serwera, powodując, że komputer osoby atakującej należy do klienta.
++ Atakujący po raz kolejny używa arpspoof do wydania polecenia: arpspoof 192.168.2.200 192.168.1.100, które informuje klienta, że komputer sprawcy jest serwerem.
++ Atakujący wydaje polecenie Linux: echo 1> /proc/sys/net/ipv4/ip_forward. W rezultacie pakiety IP przesyłane między klientem a serwerem są przekazywane do komputera sprawcy.
++ Plik hosta 192.168.3.300 estores.com jest tworzony na komputerze lokalnym osoby atakującej, który mapuje witrynę sieci Web www.estores.com na jej lokalny adres IP.
++ Sprawca konfiguruje serwer WWW na adresie IP komputera lokalnego i tworzy fałszywą stronę internetową, która przypomina www.estores.com.
++ Wreszcie, narzędzie (np. dnsspoof) jest używane do kierowania wszystkich żądań DNS do lokalnego pliku hosta sprawcy. W rezultacie fałszywa strona internetowa jest wyświetlana użytkownikom i tylko poprzez interakcję z witryną malware jest instalowane na ich komputerach.
+
+## 2.5.8. DHCP Attack
+
+DHCP Attack służy do automatycznego przypisywania adresów IP do komputerów w dowolnej sieci. Aby przeprowadzić ten atak osoba atakująca wysyła mnóstwo fałszywych wiadomości DHCP Discover ze sfałszowanymi źródłowymi adresami MAC. 
+
+Serwer DHCP próbuje odpowiedzieć na wszystkie te fałszywe wiadomości, w wyniku czego pula adresów IP używanych przez serwer DHCP jest wyczerpana. W związku z tym legalny użytkownik nie będzie mógł uzyskać adresu IP za pośrednictwem DHCP. Powoduje to atak DoS. Ponadto osoba atakująca może skonfigurować nieautoryzowany serwer DHCP, aby przypisać adresy IP uprawnionym użytkownikom. Ten nieautoryzowany serwer może również udostępniać użytkownikom router bramy i serwer DNS. Teraz cały ruch sieciowy może być kierowany przez maszynę atakującego, a to nic innego jak atak MITM.
+
+<p align="center">
+  Rys.2.5.7.1. Działanie ataku DHCP
+<br>
+  <img src="\assets\img\Cyber\67.png" width="650" alt="dhcp">
+  <br>
+  Źródło: https://media.geeksforgeeks.org/wp-content/uploads/20220709123409/gfgDHCPstarvationattack.jpg
+</p>
+
+Adres IP serwera DHCP to 10.10.10.1/24 z maską podsieci 255.255.255.0. Dzięki temu serwer DHCP może rozdawać 254 unikatowe adresy IP. Jednak niektóre adresy IP są zarezerwowane dla routingu statycznego, więc może być mniejszy niż 254. Atakujący wysyła N pakietów DHCP Discover, gdzie N jest bardzo duże w porównaniu do 254. W związku z tym serwer DHCP nie może już rozdawać adresów IP.
+
+## 2.5.9. VBLAN Hooping
+
+VLAN Hopping – to metoda atakowania zasobów sieciowych sieci VLAN poprzez wysyłanie pakietów do portu, który zwykle nie jest dostępny z systemu końcowego. Głównym celem tej formy ataku jest uzyskanie dostepu do innych sieci VLAN w tej samej sieci. 
+
+### W jaki sposób VLAN Hopping powoduje luki w zabezpieczeniach sieci? 
+
+Luki w zabezpieczeniach sieci VLAN dotyczą ich kluczowych funkcji, w tym:
++ Umożliwienie administratorom sieci podziału jednej sieci komutowanej w celu spełnienia wymagań funkcjonalnych i bezpieczeństwa ich systemów bez konieczności prowadzenia nowych lub wprowadzania istotnych zmian w infrastrukturze sieciowej.
++ Poprawa wydajności sieci poprzez grupowanie urządzeń, które często się komunikują.
++ Zapewnienie bezpieczeństwa w większych sieciach poprzez umożliwienie większej kontroli nad tym, które urządzenia mają do siebie dostęp.
+
+<p align="center">
+  Rys.2.5.10.1. Działanie magistrali sieci VLAN z przełącznikiem warstwy 3
+<br>
+  <img src="\assets\img\Cyber\68.png" width="650" alt="vlans">
+  <br>
+  Źródło: https://cdn.ttgtmedia.com/rms/onlineImages/VLAN_samplenet.jpg
+</p>
+
+### Metody przeprowadzania ataków VLAN Hopping
++ Podwójne tagowanie – ataki podwójnego tagowania występują, gdy cyberprzestępcy dodają i modyfikują znaczniki w ramce Ethernet. Takie podejście umożliwia wysyłanie pakietów przez dowolną sieć VLAN jako natywną nieoznakowaną sieć VLAN na magistrali i wykorzystuje kilka przełączników, które przetwarzają znaczniki.
+Haker przesyła dane za pośrednictwem jednego przełącznika do drugiego, wysyłając ramki z dwoma znacznikami 802.1Q: jednym dla atakującego przełącznika, a drugim dla przełącznika ofiary. To oszukuje ofiarę, która myśli, że rama była do tego przeznaczona. Następnie przełącznik celu wysyła ramkę do portu ofiary.
+Może się tak zdarzyć, ponieważ większość przełączników usuwa znacznik zewnętrzny tylko przed przekazaniem ramki do wszystkich natywnych portów VLAN. Jeśli na przykład przełącznik sieciowy został skonfigurowany do automatycznego trunkingu, osoba atakująca zamienia go w przełącznik, który wygląda tak, jakby stale potrzebował połączenia trunkingowego w celu uzyskania dostępu do wszystkich sieci VLAN dozwolonych na porcie magistrali. Ponieważ hermetyzacja pakietu zwrotnego jest niemożliwa, ten exploit bezpieczeństwa jest zasadniczo atakiem jednokierunkowym. Jest to możliwe tylko wtedy, gdy haker należy do tego samego natywnego łącza VLAN.
++ Przełączanie spoofingu – fałszowanie przełącznika ma miejsce, gdy osoba atakująca wysyła pakiety protokołu DTP w celu wynegocjowania trunku z przełącznikiem. Jest to możliwe tylko w przypadku korzystania z dynamicznego automatycznego lub dynamicznego pożądanego domyślnego trybu przełączania. Po podłączeniu magistrali do komputera osoba atakująca uzyskuje dostęp do wszystkich sieci VLAN. Jest to błędna konfiguracja, ponieważ interfejsy nie powinny być konfigurowane do korzystania z trybów portu przełącznika dynamicznego.
+
+## 2.5.10. Routing Attack
+
+Routing Attacks, czyli ataki na trasowanie, są to próby naruszenia lub zmiany sposobu, w jaki dane są kierowane w sieci komputerowej. Ataki tego typu mają na celu zakłócenie normalnego przepływu informacji, zmianę trasowania pakietów lub przejęcie kontroli nad siecią. Przestępcy mogą wykorzystywać różne techniki i luki w zabezpieczeniach, aby osiągnąć swoje cele.
+
+Jednym z rodzajów ataków na trasowanie jest atak Man-in-the-Middle (MitM). W tym scenariuszu, atakujący umiejscawia się pomiędzy nadawcą a odbiorcą danych, podszywając się pod obie strony komunikacji. Atakujący może przechwycić, modyfikować lub zatrzymać przesyłane pakiety, a także wprowadzać fałszywe dane do sieci. W wyniku tego ataku, dane mogą być przekierowane do niepożądanych lokalizacji lub dostarczane do nieuprawnionych osób.
+
+Innym przykładem ataku na trasowanie jest atak typu Distributed Denial of Service (DDoS). W tym przypadku, atakujący wysyła duże ilości żądań do routerów i serwerów w sieci, przeciążając je i uniemożliwiając normalne funkcjonowanie. DDoS może spowodować przestój w dostarczaniu usług, utrudnić komunikację między urządzeniami sieciowymi lub nawet całkowicie zablokować dostęp do zasobów sieciowych.
+
+## 2.5.11. BGP Hijacking
+
+BGP Hijacking ma miejsce, gdy atakujący złośliwie przekierowują ruch internetowy. Atakujący osiągają to fałszywie oglaszając własność grup adresów IP, zwanych prefiksami IP, których w rzeczywistości nie posiadają, nie kontrolują ani nie kierują do nich. 
+Jak można przejąc BGP?
+
+Gdy system AS ogłasza trasę do prefiksów IP, których w rzeczywistości nie kontroluje, komunikat ten, jeśli nie zostanie przefiltrowany, może zostać rozpowszechniony i dodany do tabel routingu w routerach BGP w Internecie. Od tego momentu, dopóki ktoś nie zauważy i nie poprawi tras, ruch do tych adresów IP będzie kierowany do tego AS.
+
+BGP zawsze preferuje najkrótszą, najbardziej szczegółową ścieżkę do żądanego adresu IP. Aby porwanie BGP zakończyło się powodzeniem, ogłoszenie trasy musi:
++ Zaproponować bardziej szczegółową trasę, ogłaszając mniejszy zakres adresów IP niż wcześniej ogłoszone inne ASy.
++ Zaoferpwać krótszą trasę do niektórych bloków adresów IP. Ponadto nie każdy może ogłaszać trasy BGP do większego Internetu. Aby doszło do porwania BGP, ogłoszenie musi zostać dokonane przez operatora systemu AS lub przez ugrupowanie cyberprzestępcze, które włamało się do systemu AS. 
+
+<p align="center">
+  Rys.2.5.11.1. Działanie ataku BGP Hijacking
+<br>
+  <img src="\assets\img\Cyber\69.png" width="650" alt="bgph">
+  <br>
+  Źródło: https://www.cloudflare.com/img/learning/security/glossary/bgp-hijacking/bgp-hijacking-technical-flow.png
+</p>
+
+## 2.5.12. IP Fragmentation Attack
+
+IP Fragmentation Attack jest standardową formą ataku wolumetrycznej typu "odmowa usługi" (DoS). Odmowa usługi (DoS) to każdy rodzaj ataku, w którym osoby atakujące próbują uniemożliwić prawdziwym użytkownikom online dostęp do usługi. Podczas ataku fragmentacji IP mechanizmy fragmentacji datagramów są wykorzystywane do miażdżenia sieci.
+
+### Jak działa IP Fragmentation Attack?
+
+Fragmentacja IP ma miejsce, gdy datagramy IP są rozbite na małe pakiety. Uszkodzone pakiety są następnie wysyłane przez sieć, gdzie są rekonstruowane w oryginalny datagram w ramach regularnej komunikacji online.
+Cały ten proces jest niezbędny, aby spełnić parametry wielkości, które każda sieć może wytrzymać. Ten limit wielkości jest zdefiniowany jako maksymalna jednostka transmisji (MTU).
+
+### Typy ataków IP Fragmentaion adresów IP
++ Tiny fragment attack – każdy pakiet IP zawiera nagłówek i ładunek. Nagłówek składa się ze szczegółów, które kierują pakiet IP do zamierzonego miejsca docelowego. Z drugiej strony ładunek jest strukturą, która przenosi dane w kierunku nagłówka. Atak z małym fragmentem to mały miniaturowy atak, który występuje, gdy mały fragment pakietu ląduje na serwerze. Zwykle dzieje się tak, gdy jeden z fragmentów nie mieści się w nagłówku, ponieważ jest zbyt mały, co powoduje problemy z ponownym złożeniem, które mogą potencjalnie zamknąć serwer.
++ UDP i ICMP fragmentation attacks – ataki UDP i ICMP zalewają serwery dużymi i podejrzanymi pakietami. Proces ten drastycznie przeciąża serwer, uniemożliwiając mu wykonywanie zaplanowanych funkcji.
++ TCP fragmentation attack – atak Teardrop lub atak TCP wykorzystuje pakiety, które zostały opracowane tak, aby nie łączyć się ponownie po dostarczeniu. Bez środków bezpieczeństwa te fragmenty pakietów mogą zatrzymać system operacyjny i spowodować jego awarię, czyniąc go bezużytecznym.
