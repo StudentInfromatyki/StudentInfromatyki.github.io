@@ -2009,7 +2009,7 @@ Serwer DHCP próbuje odpowiedzieć na wszystkie te fałszywe wiadomości, w wyni
 
 Adres IP serwera DHCP to 10.10.10.1/24 z maską podsieci 255.255.255.0. Dzięki temu serwer DHCP może rozdawać 254 unikatowe adresy IP. Jednak niektóre adresy IP są zarezerwowane dla routingu statycznego, więc może być mniejszy niż 254. Atakujący wysyła N pakietów DHCP Discover, gdzie N jest bardzo duże w porównaniu do 254. W związku z tym serwer DHCP nie może już rozdawać adresów IP.
 
-## 2.5.9. VBLAN Hooping
+## 2.5.9. VLAN Hooping
 
 VLAN Hopping – to metoda atakowania zasobów sieciowych sieci VLAN poprzez wysyłanie pakietów do portu, który zwykle nie jest dostępny z systemu końcowego. Głównym celem tej formy ataku jest uzyskanie dostepu do innych sieci VLAN w tej samej sieci. 
 
@@ -2074,3 +2074,993 @@ Cały ten proces jest niezbędny, aby spełnić parametry wielkości, które ka�
 + Tiny fragment attack – każdy pakiet IP zawiera nagłówek i ładunek. Nagłówek składa się ze szczegółów, które kierują pakiet IP do zamierzonego miejsca docelowego. Z drugiej strony ładunek jest strukturą, która przenosi dane w kierunku nagłówka. Atak z małym fragmentem to mały miniaturowy atak, który występuje, gdy mały fragment pakietu ląduje na serwerze. Zwykle dzieje się tak, gdy jeden z fragmentów nie mieści się w nagłówku, ponieważ jest zbyt mały, co powoduje problemy z ponownym złożeniem, które mogą potencjalnie zamknąć serwer.
 + UDP i ICMP fragmentation attacks – ataki UDP i ICMP zalewają serwery dużymi i podejrzanymi pakietami. Proces ten drastycznie przeciąża serwer, uniemożliwiając mu wykonywanie zaplanowanych funkcji.
 + TCP fragmentation attack – atak Teardrop lub atak TCP wykorzystuje pakiety, które zostały opracowane tak, aby nie łączyć się ponownie po dostarczeniu. Bez środków bezpieczeństwa te fragmenty pakietów mogą zatrzymać system operacyjny i spowodować jego awarię, czyniąc go bezużytecznym.
+
+## 2.6. Ataki warstwy łączy danych
+
+Ataki na warstwie łącza danych są jednym z rodzajów cyberataków, które koncentrują się na podważaniu, przechwytywaniu lub zakłócaniu komunikacji między różnymi urządzeniami w sieci. Warstwa łącza danych odnosi się do drugiej warstwy modelu OSI (Open Systems Interconnection), która jest odpowiedzialna za przesyłanie danych między bezpośrednio połączonymi węzłami w sieci.
+
+## 2.6.1. MAC Flooding
+
+Atak MAC flooding to rodzaj cyberataku, w którym atakujący zalewa tabelę CAM przełącznika fałszywymi adresami MAC. Tabela CAM zawiera listę podłączonych urządzeń i odpowiadających im adresów MAC.
+Po przekroczeniu limitu przełącznik przechodzi w tryb fail-open i rozpoczyna rozgłaszanie wszystkich przychodzących pakietów do wszystkich portów.
+
+<p align="center">
+  Rys.2.6.1.1. MAC Flooding i Spoofing
+<br>
+  <img src="\assets\img\Cyber\70.png" width="650" alt="macfis">
+  <br>
+  Źródło: https://media.geeksforgeeks.org/wp-content/uploads/20220729111728/macspoofing1.png
+</p>
+
+Jak działa MAC Flooding? 
+
+<p align="center">
+  Rys.2.6.1.2. Działanie ataku MAC Flooding
+<br>
+  <img src="\assets\img\Cyber\71.png" width="650" alt="macf">
+  <br>
+  Źródło: https://www.rfwireless-world.com/images/MAC-flooding-1.jpg
+</p>
+
+MAC Flooding Attack to rodzaj cyberataku, który wykorzystuje słabość w sposobie, w jaki przełączniki obsługują adresy MAC. W tego rodzaju ataku atakujący zalewa przełącznik fałszywymi ramkami adresów MAC, aby przeciążyć pojemność pamięci.
+
+Następnie przełącznik wchodzi w stan, w którym nie może odróżnić prawdziwych i fałszywych adresów MAC. Powoduje to akceptowanie całego ruchu bez weryfikacji źródła.
+
+Pozwala to atakującym na przechwytywanie poufnych informacji, ponieważ mogą teraz uzyskać dostęp do pakietów danych przeznaczonych dla innych urządzeń podłączonych do tej samej sieci.
+
+### Plusy i minusy ataku MAC Flooding
+
+Zalety:
++ MAC Flooding może sprawić, że cała sieć stanie się bezużyteczna bez konieczności posiadania rozległej wiedzy technicznej lub zasobów.
+
+Wady: 
++ MAC Flooding Attack nie zapewnia pełnej kontroli nad docelowymi urządzeniami, ponieważ wpłynie to tylko na ich łączność.
++ Wymagają dużego wykorzystania przepustowości, co może spowodować spowolnienie sieci.
++ Atakujący może potrzebować wielu komputerów.
+
+## 2.6.2. Mac Spoofing
+
+MAC Spoofing to rodzaj ataku wykorzystywanego do wykorzystania luk w mechanizmie uwierzytelniania zaimplementowanym przez sprzęt sieci przewodowej i bezprzewodowej.
+
++ MAC spoofing jest często uważany za bardzo stary atak i może być wykorzystany do implementacji wielu ładunków.
++ Fałszowanie adresów MAC może być również wykorzystane do utworzenia nieautoryzowanego punktu dostępu i sprawienia, by wyglądał tak, jakby był legalnym punktem dostępu.
++ Ten rodzaj ataku, znany również jako "Broadcast Spoofing", wymaga, aby atakujący fizycznie znajdował się w zasięgu sieci docelowej lub w inny sposób miał do niej fizyczny dostęp, aby ten rodzaj ataku mógł mieć miejsce. Dobrym przykładem typu Broadcast Spoofing Attack jest atak siłowy, w którym atakujący nieustannie próbuje wielu kombinacji, dopóki nie znajdzie takiej, która zapewni mu dostęp.
+
+### Jak działa MAC Spoofing? 
+
+Jeśli adres MAC urządzenia to "11:AA:33:BB:55:CC", a adres MAC osoby atakującej to "22:BB:33:DD:44:FF", a osoba atakująca chce uzyskać dostęp do zasobów sieciowych ograniczonych do urządzenia, może zmienić adres MAC urządzenia na "11:AA:33:BB:55:CC" i podszyć się pod urządzenie. Sieć będzie wtedy traktować urządzenie atakującego tak, jakby było czyjeś, przyznając mu taki sam dostęp i uprawnienia.
+
+Aby przeprowadzić fałszowanie adresów MAC, osoba atakująca musi najpierw znaleźć adres MAC urządzenia docelowego, pod które chce się podszyć. Mogą to zrobić, skanując sieć w poszukiwaniu odpowiednich adresów MAC.
+
+Gdy atakujący uzyska adres MAC celu, może zmienić adres MAC swojego urządzenia, aby pasował do adresu MAC celu. Można to zrobić w ustawieniach sieciowych urządzenia, gdzie adres MAC można ręcznie wprowadzić lub zmienić.
+
+Ponieważ urządzenie osoby atakującej ma taki sam adres MAC jak urządzenie docelowe, sieć będzie traktować je tak, jakby było urządzeniem docelowym. Umożliwi to osobie atakującej dostęp do zasobów ograniczonych do urządzenia docelowego, a sieć nie będzie w stanie odróżnić tych dwóch urządzeń.
+
+
+## 2.6.3. ARP Spoofing/ARP Poisoning
+
+ARP Spoofing/ARP Poinsoning – umożliwia atakującym przechwytywanie komunikacji między urządzeniami sieciowymy. Atak działa w następujący sposób: 
++ Osoba atakująca musi mieć dostęp do sieci. Skanują sieć, aby określić adresy IP co najmniej dwóch urządzeń - powiedzmy, że są to stacja robocza i router.
++ Osoba atakująca używa narzędzia do fałszowania, takiego jak Arpspoof lub Driftnet, do wysyłania sfałszowanych odpowiedzi ARP.
++ Sfałszowane odpowiedzi informują, że prawidłowy adres MAC dla obu adresów IP, należących do routera i stacji roboczej, jest adresem MAC atakującego. To oszukuje zarówno router, jak i stację roboczą, aby połączyć się z maszyną atakującego, a nie ze sobą.
++ Oba urządzenia aktualizują swoje wpisy pamięci podręcznej ARP i od tego momentu komunikują się z atakującym, a nie bezpośrednio ze sobą.
++ Atakujący jest teraz potajemnie w środku całej komunikacji.
+
+<p align="center">
+  Rys.2.6.3.1. Działanie ataku ARP Spoofing
+<br>
+  <img src="\assets\img\Cyber\72.png" width="650" alt="arps">
+  <br>
+  Źródło: https://tiny.pl/c74t7
+</p>
+
+Gdy atakujący odniesie sukces w ataku ARP spoofing, może:
++ Kontynuować przekierowywanie komunikacji bez zmian – osoba atakująca może podsłuchiwać pakiety i kraść dane, chyba że są one przesyłane przez zaszyfrowany kanał, taki jak HTTPS.
++ Przechwycić sesję –  jeśli osoba atakująca uzyska identyfikator sesji, może uzyskać dostęp do kont, na których użytkownik jest aktualnie zalogowany.
++ Zmienić komunikację – na przykład wypchać złośliwy plik lub witrynę internetową na stację roboczą.
++ Rozproszona odmowa usługi (DDoS) –  osoby atakujące mogą podać adres MAC serwera, który chcą zaatakować za pomocą ataku DDoS, zamiast własnego komputera. Jeśli zrobią to dla dużej liczby adresów IP, serwer docelowy będzie bombardowany ruchem.
+
+## 2.6.4. CAM Table Overflow
+
+Atak CAM Table Overflow występuje, gdy osoba atakująca łączy się z jednym lub wieloma portami przełącznika, a następnie uruchamia narzędzie, które naśladuje istnienie tysięcy losowych adresów MAC na tych portach przełącznika. Przełącznik wprowadza je do tabeli CAM, a ostatecznie tabela CAM wypełnia się do pełna.
+
+Gdy tabela CAM na przełączniku zostanie zapełniona, dodatkowy ruch żądań ARP zaleje każdy port na przełączniku. Spowoduje to zmianę zachowania przełącznika, aby zresetować go do trybu uczenia się, nadawania na każdym porcie podobnym do koncentratora.
+
+Tabela CAM lub tabela adresowalnej pamięci zawartości jest obecna we wszystkich przełącznikach do przełączania warstwy 2. Dzięki temu przełączniki ułatwiają komunikację między podłączonymi stacjami z dużą prędkością i w trybie pełnego dupleksu, niezależnie od liczby urządzeń podłączonych do przełącznika.
+
+MAC Flooding MAC ma miejsce, gdy osoba atakująca próbuje wysłać do tabeli MAC niezliczone nieprawidłowe adresy MAC. Zalewa tabelę źródłową nieprawidłowymi adresami MAC. Gdy tabela MAC osiągnie przypisany limit tabeli MAC, zaczyna usuwać prawidłowe adresy MAC.
+
+## 2.6.5. Spanning Tree Attack
+
+Atak na drzewo rozpinające (ang. Spanning Tree Attack) jest techniką wykorzystywaną do manipulowania protokołem drzewa rozpinającego (STP) w celu zakłócenia lub wywołania awarii w sieci komputerowej. STP jest protokołem wykorzystywanym w sieciach Ethernet do zapobiegania pętlom danych, które mogą wystąpić w sieci o złożonej topologii.
+
+### Działanie ataku na drzewo rozpinające może obejmować następujące kroki:
++ Odkrycie topologii sieci: Atakujący analizuje sieć w poszukiwaniu urządzeń działających w trybie STP. Może to obejmować identyfikację przełączników sieciowych, punktów dostępowych lub innych urządzeń, które wykorzystują protokół STP.
++ Fałszywe pakiety STP: Atakujący generuje fałszywe pakiety STP i wysyła je do sieci. Te pakiety mogą zawierać fałszywe informacje o priorytetach, identyfikatorach korzenia lub długościach ścieżek. Atakujący może również próbować zająć rolę korzenia sieci, aby uzyskać kontrolę nad ruchem sieciowym.
++ Manipulacja topologią sieci: Fałszywe pakiety STP są propagowane przez sieć i wpływają na proces wyboru korzenia. Protokół STP wybiera urządzenie z najniższym priorytetem jako korzeń i oblicza najkrótsze ścieżki dla pozostałych urządzeń. Atakujący może manipulować tym procesem, wprowadzając fałszywe informacje, które mogą spowodować zmianę topologii sieci i utworzenie niepożądanych ścieżek.
++ Pętle danych i awarie sieci: Jeśli atakujący manipuluje topologią sieci w taki sposób, że powstają pętle danych, może to prowadzić do spowolnienia lub awarii sieci. Pętle danych powodują nieustanny przesył danych w sieci, zajmując zasoby sieciowe i powodując utratę łączności. W skrajnych przypadkach atak może doprowadzić do całkowitego przerwania sieci lub utraty integralności danych.
+
+### Celem ataku na drzewo rozpinające może być osiągnięcie różnych celów, takich jak:
++ Przejęcie kontroli nad ruchem sieciowym: Atakujący może próbować zająć rolę korzenia sieci w celu kontrolowania ruchu sieciowego. Może to prowadzić do podsłuchiwania komunikacji między urządzeniami lub przekierowywania ruchu przez atakującego.
++ Zablokowanie sieci: Atakujący może próbować celowo zablokować lub zakłócić działanie sieci poprzez manipulację protokołem STP i generowanie fałszywych pakietów. Może to spowodować utratę łączności w sieci lub znaczne spowolnienie ruchu.
++ Atak typu "Denial of Service" (DoS): Atak na drzewo rozpinające może być wykorzystany do przeprowadzenia ataku typu DoS na sieć. Atakujący może manipulować protokołem STP w taki sposób, że generuje duży ruch w sieci, zajmując jej zasoby i uniemożliwiając normalne funkcjonowanie.
+
+## 2.6.6. CDP/LLDP Spoofing
+
+Atak CDP/LLDP Spoofing to technika polegająca na podszywaniu się pod urządzenie sieciowe i wysyłaniu fałszywych pakietów CDP (Cisco Discovery Protocol) lub LLDP (Link Layer Discovery Protocol) w celu wprowadzenia w błąd urządzenia sieciowe i uzyskania nieuprawnionego dostępu do sieci.
+
+Atak CDP/LLDP Spoofing wykorzystuje brak autentykacji i niezabezpieczone komunikaty protokołów CDP i LLDP. Atakujący tworzy fałszywe pakiety, podszywając się pod legitymujące się urządzenie sieciowe. Następnie wysyła te fałszywe pakiety do innych urządzeń sieciowych w celu wprowadzenia ich w błąd.
+
+Gdy inne urządzenia sieciowe otrzymują fałszywe pakiety CDP lub LLDP, mogą one uwierzyć, że pochodzą one od prawdziwego urządzenia i zaufać im. Atakujący może wtedy uzyskać nieuprawniony dostęp do sieci lub przeprowadzić inne złośliwe działania, takie jak przekierowanie ruchu sieciowego, przejmowanie sesji użytkowników lub analiza struktury sieci w celu planowania dalszych ataków.
+
+Atak CDP/LLDP Spoofing może prowadzić do poważnych konsekwencji, takich jak naruszenie bezpieczeństwa sieci, utrata poufności danych, przechwycenie uwierzytelnienia użytkowników i kompromitacja urządzeń sieciowych.
+
+## 2.6.7. Switch Port Stealing
+
+Switch port scanning attack na warstwie łącza danych jest to technika wykorzystywana do identyfikacji aktywnych portów na przełączniku warstwy łącza danych w sieci komputerowej. Atak ten ma na celu zdobycie informacji o konfiguracji i topologii sieci oraz potencjalne wykorzystanie tych informacji w celach nieautoryzowanych.
+
+W switch port scanning attack, atakujący wykorzystuje specjalne techniki i narzędzia, aby zidentyfikować, które porty są aktywne, nawet jeśli nie są przypisane do docelowych urządzeń.
+
+Atakujący może wysyłać specjalnie spreparowane ramki Ethernet lub wykorzystywać różne protokoły sieciowe w celu sprawdzenia, czy odpowiedź jest otrzymywana z danego portu. Jeśli odpowiedź jest otrzymywana, to oznacza, że dany port jest aktywny. Przełączniki mogą reagować na te specjalne ramki, co może ułatwić atakującemu identyfikację aktywnych portów.
+
+<p align="center">
+  Rys.2.6.7.1. Działanie ataku Port Scanning
+<br>
+  <img src="\assets\img\Cyber\73.png" width="650" alt="ps">
+  <br>
+  Źródło: https://media.geeksforgeeks.org/wp-content/uploads/20220906112959/white.jpg
+</p>
+
+Głównym zagrożeniem związanym z switch port scanning attack jest to, że atakujący może uzyskać wiedzę o topologii sieci oraz zidentyfikować podatne na ataki porty, które mogą być wykorzystane w dalszych atakach. Atak taki może prowadzić do nieautoryzowanego dostępu do sieci, podsłuchiwania danych lub innych działań szkodliwych.
+
+## 2.6.8. Ethernet Frame Injection
+
+2.6.8.	Ethernet Frame Injection
+Ethernet frame injection, znane również jako frame spoofing lub frame forging, to technika polegająca na wstrzykiwaniu fałszywych ramek Ethernet na warstwie łącza danych. Jest to możliwe dzięki temu, że protokół Ethernet nie zapewnia żadnych mechanizmów autoryzacji ani uwierzytelniania dla ramek, co otwiera możliwość manipulacji i wprowadzania fałszywych informacji do sieci.
+
+Podstawowym celem frame injection jest oszukanie urządzeń sieciowych i wprowadzenie fałszywych danych do sieci Ethernet. Może to prowadzić do różnych skutków, w zależności od celów atakującego. Przykłady takich ataków obejmują:
++ ARP Spoofing 
++ MAC flooding
++ DNS spoofing
++ Man-in-the-Middle
+
+Aby przeprowadzić frame injection, atakujący musi mieć dostęp do sieci Ethernet i zdolność do manipulowania ruchem sieciowym. Może to wymagać fizycznego dostępu do urządzeń sieciowych lub wykorzystania innych technik ataku, takich jak ataki na bezprzewodowe sieci lokalne (WiFi) lub kompromitacja urządzeń sieciowych.
+
+## 2.6.9. Link Layer Protocol Exploitation
+
+Link Layer Protocol Exploitation to technika polegająca na wykorzystywaniu podatności i słabości protokołów warstwy łącza w sieciach komputerowych.
+
+Exploatacja protokołów warstwy łącza może obejmować wykorzystanie błędów projektowych, luk w zabezpieczeniach, niewłaściwej implementacji lub innych podatności w protokołach komunikacyjnych na tym poziomie. Ataki na warstwę łącza mogą prowadzić do różnych konsekwencji, takich jak przechwytywanie, modyfikacja lub blokowanie ruchu sieciowego, podszywanie się pod inne urządzenia, czy też zatruwanie tablic MAC w celu przekierowania ruchu sieciowego.
+
+Przykłady technik eksploatacji protokołów warstwy łącza to między innymi ataki typu "ARP poisoning", "MAC flooding", "STP manipulation" czy "802.11 Wi-Fi attacks".
+
+Działania o charakterze eksploatacji protokołów warstwy łącza mogą być wykorzystywane przez atakujących w celu uzyskania nieautoryzowanego dostępu do sieci, podsłuchiwania komunikacji, przeprowadzania ataków typu "man-in-the-middle" czy też prowadzenia innych działań mających na celu naruszenie integralności, poufności lub dostępności sieci komputerowej. Dlatego też ważne jest, aby administratorzy sieci i użytkownicy byli świadomi tych zagrożeń i podejmowali odpowiednie środki ochronne, takie jak konfiguracja zabezpieczeń na poziomie warstwy łącza, monitorowanie ruchu sieciowego oraz regularne aktualizacje oprogramowania i firmware'u urządzeń sieciowych.
+
+## 2.6.10. MAC Address Table Modification
+
+Atak typu MAC Address Table Modification to technika, w której atakujący próbuje zmienić zawartość tablicy adresów MAC przełącznika sieciowego w celu przechwycenia lub przekierowania ruchu sieciowego.
+
+Atakujący korzystający z ataku typu MAC Address Table Modification może próbować podrobić lub zmienić adresy MAC urządzeń w tablicy przełącznika, aby przechwycić ruch sieciowy skierowany do innych urządzeń lub przekierować go na inny port. Na przykład, atakujący może wysłać fałszywe ramki Ethernet z innymi adresami MAC i sprawić, że przełącznik zaktualizuje swoją tablicę adresów MAC, myśląc, że te adresy są poprawne.
+
+W rezultacie atakujący może przechwycić pakiety skierowane do innych urządzeń, które miałyby być dostarczone na inny port. To umożliwia atakującemu podsłuchanie ruchu sieciowego lub próbę przeprowadzenia ataku typu "man-in-the-middle", gdzie atakujący przejmuje kontrolę nad komunikacją między dwoma innymi urządzeniami w sieci.
+
+## 2.6.11. VLAN Manipulation
+
+VLAN Manipulation to technika polegająca na modyfikacji informacji dotyczących VLAN na warstwie łącza danych w sieciach komputerowych. VLAN to logiczna grupa urządzeń w sieci, które są ze sobą powiązane, pomimo że fizycznie mogą znajdować się na różnych przełącznikach.
+
+Atakujący wykorzystujący manipulację VLAN może próbować zmieniać konfigurację VLAN w celu uzyskania dostępu do danych, które normalnie byłyby ograniczone tylko do określonej grupy urządzeń lub segmentu sieciowego. Atak ten może być realizowany na różne sposoby, zależnie od wykorzystywanych słabości i podatności w implementacji protokołów VLAN.
+
+### Przykładowe techniki manipulacji VLAN obejmują:
++ VLAN Hopping
++ Double Tagging
++ VLAN Membership Spoofing
+
+Ataki oparte na manipulacji VLAN mogą prowadzić do różnych konsekwencji, takich jak nieautoryzowany dostęp do danych, przechwytywanie ruchu sieciowego lub destabilizacja sieci. Aby chronić się przed tego rodzaju atakami, zaleca się odpowiednie skonfigurowanie protokołów VLAN, ograniczanie dostępu do portów trunkingowych, monitorowanie ruchu sieciowego oraz stosowanie zabezpieczeń na poziomie przełączników, takich jak port security czy Private VLANs (PVLANs).
+
+## 2.7. Ataki warstwy fizycznej
+
+Ataki na warstwie fizycznej sieci dotyczą manipulacji i wykorzystania fizycznych komponentów infrastruktury sieciowej.
+
+## 2.7.1. Physical Access
+
+Atak typu "Physical Access" odnosi się do sytuacji, w której atakujący uzyskuje nieautoryzowany fizyczny dostęp do urządzeń sieciowych lub innych zasobów systemowych. Atak ten polega na umożliwieniu atakującemu bezpośredniego dostępu do urządzeń, takich jak serwery, routery, przełączniki lub komputery, które są kluczowymi elementami infrastruktury sieciowej.
+
+Atakujący może skorzystać z różnych sposobów, aby zdobyć fizyczny dostęp, takich jak:
++ Kradzież: Atakujący może kraść identyfikatory dostępu, karty identyfikacyjne, klucze lub hasła do fizycznie zabezpieczonych obszarów, w których znajdują się urządzenia sieciowe.
++ Podszywanie się: Atakujący może podszywać się pod pracowników, dostawców lub techników serwisowych, aby uzyskać nieuprawniony dostęp do pomieszczeń, w których znajdują się urządzenia sieciowe. Może to obejmować np. używanie fałszywych identyfikatorów lub stosowanie innych technik socjotechnicznych.
++ Włamanie fizyczne: Atakujący może próbować włamać się do zabezpieczonych fizycznie pomieszczeń, takich jak centra danych, biura lub szafy telekomunikacyjne, w celu uzyskania bezpośredniego dostępu do urządzeń sieciowych.
+
+Gdy atakujący uzyska fizyczny dostęp, może przeprowadzać różne nieautoryzowane działania, takie jak:
++ Manipulacja konfiguracją urządzeń sieciowych.
++ Podłączenie urządzeń podsłuchujących lub innych nieautoryzowanych urządzeń.
++ Przechwytywanie danych przesyłanych przez sieć.
++ Wykorzystanie podatności w systemach lub oprogramowaniu.
+
+## 2.7.2. Hardware Manipulation
+
+Atak typu "Hardware Manipulation" odnosi się do działań, w których atakujący dokonuje manipulacji sprzętem lub fizycznych komponentów sieciowych w celu osiągnięcia nieautoryzowanego dostępu do danych lub urządzeń sieciowych lub przeprowadzenia innych niepożądanych działań. Atak ten polega na wprowadzeniu zmian lub modyfikacji w fizycznym sprzęcie sieciowym w celu uzyskania kontroli lub wykorzystania podatności.
+
+Atak typu "Hardware Manipulation" jest szczególnie niebezpieczny, ponieważ operuje na fizycznych komponentach sieciowych, które są trudne do wykrycia za pomocą tradycyjnych środków zabezpieczających.
+
+### Przykłady działań związanych z atakiem typu "Hardware Manipulation" mogą obejmować:
++ Podmiana sprzętu: Atakujący dokonuje podmiany oryginalnego sprzętu sieciowego na zmodyfikowane lub fałszywe urządzenia. Nowe urządzenia mogą zawierać dodatkowe komponenty, takie jak ukryte mikrofony, kamery, rejestratory danych lub inny złośliwy sprzęt, który pozwala atakującemu na podsłuchiwanie komunikacji sieciowej, przechwytywanie poufnych danych lub wykonywanie innych działań nieautoryzowanych.
++ Modyfikacja sprzętu: Atakujący dokonuje fizycznych modyfikacji w istniejącym sprzęcie sieciowym w celu wprowadzenia zmian w jego funkcjonalności lub umożliwienia dalszych ataków. Na przykład, atakujący może dodać specjalne układy, które umożliwiają zdalne sterowanie urządzeniem lub wykorzystanie jego zasobów w nieautoryzowany sposób.
++ Przechwytywanie danych: Atakujący może manipulować fizycznymi komponentami sieciowymi, takimi jak kable sieciowe, w celu przechwycenia danych przesyłanych między urządzeniami. Przykładem może być użycie urządzenia do przechwycenia sygnałów elektrycznych lub optycznych przesyłanych przez kable sieciowe, co umożliwia atakującemu odczytanie lub przechwycenie poufnych informacji.
++ Manipulacja firmware'u: Atakujący może modyfikować firmware lub oprogramowanie wbudowane w urządzeniach sieciowych. Poprzez zmianę oprogramowania urządzenia, atakujący może zdobyć kontrolę nad jego funkcjonalnością, uzyskać nieuprawniony dostęp do danych lub wprowadzić zmiany w sposobie działania sieci.
+
+## 2.7.3. Physical Impersonation
+
+Atak typu "Physical Impersonation" polega na podszywaniu się pod inną osobę lub urządzenie w celu uzyskania nieuprawnionego dostępu do zasobów sieciowych lub fizycznie zabezpieczonych obszarów. Atakujący próbuje zdobyć zaufanie innych użytkowników lub personelu, udając osobę, która ma uprawnienia dostępu do określonych zasobów lub obszarów.
+
+### Przykłady ataku typu "Physical Impersonation" obejmują:
++ Kradzież tożsamości: Atakujący kradnie lub podmienia identyfikatory, karty dostępu lub inne formy identyfikacji, które upoważniają do dostępu do chronionych obszarów. Mogą to być na przykład identyfikatory pracownicze, karty dostępu RFID lub hasła dostępu.
++ Podszywanie się pod pracownika: Atakujący może udawać pracownika, technika serwisowego, dostawcę lub innych zaufanych osób, które mają dostęp do chronionych obszarów. Mogą nosić stroje służbowe, używać fałszywych identyfikatorów lub wykorzystywać informacje, które zdobyli o osobach uprawnionych.
++ Wykorzystanie słabości procedur bezpieczeństwa: Atakujący może wykorzystać słabości w procedurach bezpieczeństwa, takie jak brak odpowiedniej weryfikacji tożsamości, nieścisłości w identyfikatorach lub brak restrykcji dotyczących dostępu do fizycznie zabezpieczonych obszarów. Mogą to być również sytuacje, w których personel nie jest wystarczająco świadomy zagrożeń związanych z atakami typu "Physical Impersonation".
++ Atak typu "Physical Impersonation" ma na celu obejście fizycznych zabezpieczeń i uzyskanie nieuprawnionego dostępu do chronionych zasobów. Może prowadzić do różnych niepożądanych konsekwencji, takich jak kradzież danych, naruszenie poufności informacji, uszkodzenie infrastruktury sieciowej lub działania sabotażowe.
+
+## 2.7.4. Electromagnetic Interference
+
+Atak typu "Electromagnetic Interference" (EMI) dotyczy zakłóceń elektromagnetycznych wprowadzanych w celu zakłócenia działania urządzeń elektronicznych lub sieci komunikacyjnych. Ten rodzaj ataku wykorzystuje emisję elektromagnetyczną w celu zakłócenia normalnego funkcjonowania urządzeń lub systemów.
+
+### Atak typu EMI może mieć różne formy i metody działania. Oto kilka przykładów:
++ Prowadzenie zakłóceń elektromagnetycznych: Atakujący może celowo generować i wprowadzać zakłócenia elektromagnetyczne w celu zakłócenia sygnałów elektrycznych lub radiowych. Może to obejmować stosowanie urządzeń generujących silne pola elektromagnetyczne, które zakłócają komunikację lub działanie urządzeń elektronicznych w danym obszarze.
++ Wykorzystanie urządzeń zakłócających: Atakujący może używać specjalnie zaprojektowanych urządzeń zakłócających, które emitują silne sygnały elektromagnetyczne, zakłócające komunikację lub działanie określonych urządzeń. Mogą to być np. urządzenia do generowania zakłóceń radiowych lub elektromagnetycznych.
++ Ataki elektromagnetyczne z odległości: Atakujący może użyć zdalnych urządzeń lub technologii, takich jak ukryte nadajniki elektromagnetyczne, aby celowo wprowadzać zakłócenia w sieci komunikacyjnej lub wrażliwych urządzeniach elektronicznych.
+Skutki ataku typu EMI mogą być różne, w zależności od rodzaju urządzeń i systemów, które są celem ataku. Mogą to obejmować:
++ Zakłócenia w komunikacji sieciowej: Atak typu EMI może zakłócać sygnały radiowe lub przewodowe, powodując utratę lub zniekształcenie transmisji danych między urządzeniami.
++ Uszkodzenie sprzętu elektronicznego: Silne zakłócenia elektromagnetyczne mogą spowodować uszkodzenie lub degradację działania urządzeń elektronicznych, takich jak serwery, routery, komputery czy urządzenia peryferyjne.
+
+## 2.7.5. Physical Destruction
+
+Atak typu "Physical Destruction" odnosi się do celowego działania, w którym atakujący dokonuje zniszczenia fizycznego infrastruktury, urządzeń lub zasobów sieciowych w celu spowodowania straty danych, przerwania działania sieci lub wywołania innych negatywnych skutków. Jest to forma ataku, która skupia się na fizycznej szkodzie, która może być trudna lub kosztowna do naprawienia.
+
+### Atak typu "Physical Destruction" może mieć różne formy i metody działania, w zależności od celu ataku i dostępnych środków. Oto kilka przykładów:
++ Uszkodzenie sprzętu: Atakujący może celowo uszkodzić sprzęt sieciowy, takie jak serwery, routery, przełączniki czy urządzenia pamięci masowej. Może to obejmować fizyczne uszkodzenie komponentów sprzętowych, np. poprzez rozbicie, podpalenie lub zalanie substancją chemiczną.
++ Przerwanie zasilania: Atakujący może zainicjować przerwanie zasilania w celu spowodowania wyłączenia lub uszkodzenia sprzętu. Może to obejmować odłączenie kabli zasilających, uszkodzenie transformatorów lub wprowadzenie zakłóceń elektrycznych, które prowadzą do awarii sprzętu.
++ Sabotaż fizyczny: Atakujący może umyślnie dokonywać działań sabotażowych, takich jak usunięcie lub uszkodzenie kluczowych kabli sieciowych, odcięcie linii komunikacyjnych lub uszkodzenie fizyczne struktur sieciowych, takich jak anteny, wieże transmisyjne czy maszty.
++ Wywołanie pożaru: Atakujący może celowo podpalić lub wywołać pożar w miejscach, w których znajdują się urządzenia sieciowe lub zasoby, co prowadzi do ich zniszczenia lub uszkodzenia.
+Atak typu "Physical Destruction" ma na celu spowodowanie poważnych szkód, utraty danych lub przerwania działania sieci. Może mieć poważne konsekwencje dla organizacji, takie jak przestój w działaniu, straty finansowe, utrata poufności lub niezdolność do przywrócenia normalnego funkcjonowania infrastruktury.
+
+
+## 3. Bezpeczeństwo sieci komputerowych
+
+Bezpieczeństwo sieci to dziedzina cyberbezpieczeństwa skoncentrowana na ochronie sieci komputerowych przed zagrożeniami cybernetycznymi. Bezpieczeństwo sieci ma trzy główne cele: zapobieganie nieautoryzowanemu dostępowi do zasobów sieciowych; wykrywanie i powstrzymywanie trwających cyberataków i naruszeń bezpieczeństwa; oraz zapewnienie autoryzowanym użytkownikom bezpiecznego dostępu do zasobów sieciowych, których potrzebują, kiedy ich potrzebują.
+
+### Jak działa bezpieczeństwo sieci? 
+
+Sieci i bezpieczeństwo obejmują trzy główne obszary: 
++ Fizyczny – są to mechanizmy kontroli bezpieczeństwa sieci, które uniemożliwiają nieautoryzowanemu personelowi dostęp do komponentów sieci. Na przykład routery i szafki kablowe można chronić, wdrażając uwierzytelnianie biometryczne i blokady bezpieczeństwa.
++ Techniczny – chronią dane znajdujące się w sieci. Ten rodzaj ochrony bezpieczeństwa sieci zapobiega złośliwemu uszkodzeniu danych z sieci i wydostaniu się wszelkich bezpiecznych informacji bez odpowiedniej autoryzacji.
++ Administracyjny – kontrolują poziom dostępu dla każdego użytkownika w sieci. Procesy i zasady są ustawione tak, aby ograniczać lub zezwalać na dostęp i kontrolować zachowanie każdego użytkownika w sieci. Bezpieczeństwo to będzie również kontrolować ilość i poziom zmian, jakie personel IT może wprowadzić w infrastrukturze sieci.
+
+Istnieją różne typy zabezpieczeń sieci, które obejmują: 
++ Zabezpieczenia typu zero-trust: Obejmuje to zasadę "nigdy nie ufaj, zawsze weryfikuj" przy podejmowaniu decyzji, kto i co może uzyskać dostęp do Twojej sieci oraz metod, których należy użyć, aby upewnić się, że ludzie i systemy są tym, za kogo się podają. Ponieważ kwestionuje wszystkie połączenia, zerowe zaufanie stało się kluczowe dla ochrony bezpieczeństwa sieci. Na przykład klucz zabezpieczeń sieciowych na komputerze przenośnym jest przykładem zabezpieczeń typu zero-trust. Ale co oznacza bezpieczeństwo sieci? Jest to kod lub hasło dostępu do sieci.
++ Edukacja w zakresie cyberbezpieczeństwa: Obejmuje to nauczenie wszystkich pracowników czerwonych flag, na które powinni zwracać uwagę i co mogą zrobić, aby uniknąć zagrożeń.
++ Włączenie sztucznej inteligencji: Systemy sztucznej inteligencji mogą zarówno wykrywać i łagodzić zagrożenia, jak i wysyłać automatyczne alerty dotyczące ataków.
+
+### Narzędzia i techniki bezpieczeństwa sieci
++ Metaspoit
++ Nessus
++ Argus
++ Wireshark
++ Aircrack
+
+<p align="center">
+  Rys.3.1. Narzędzia bezpieczeństwa sieci
+<br>
+  <img src="\assets\img\Cyber\74.png" width="650" alt="bs">
+  <br>
+  Źródło: https://tiny.pl/c74rr
+</p>
+
+### Typy zabezpieczeń sieciowych
++ Zapora sieciowa (firewall) – filtrują ruch w sieci, zapobiegają i blokują nieautoryzowany ruch internetowy oraz zarządzają autoryzowanym dostępem w sieci
++ Segmentacja sieci – dzieli sieć na wiele sekcji, a każda sekcja działa jako odrębne siec.
++ Kontrola dostępu – umożliwia udzielanie lub odmawianie dostępu poszczególnym użytkownikom na podstawie ich obowiązków w sieci.
++ Dostępy zdalne VPN – zapewnia integralność i prywatność informacji dzięki wykorzystaniu skanowania zgodności punktów końcowych, uwierzytelniania wieloskładnikowego (MFA) i szyfrowania przesyłanych danych. 
++ Dostęp do sieci o zerowym zaufaniu (ZTNA) – przyznaje określony dostęp indywidualnemu użytkownikowi w oparciu o dokładną rolę, jaką odgrywa w sieci.
++ Bezpieczeństwo poczty e-mail – są skonfigurowane w celu uniemożliwienia użytkownikom nieświadomego dostarczania poufnych informacji lub zezwalania na dostęp do sieci za pośrednictwem wiadomości e-mail zainfekowanych złośliwym oprogramowaniem.
++ Zapobieganie utracie danych (DLP) – to technologia zabezpieczeń sieci, która pomaga zapobiegać przypadkowemu wyciekowi poufnych informacji poza sieć przez użytkowników.
+
+## 3.1. Mechanizmy AAA
+
+Mechanizmy AAA (Authentication, Authorization, and Accounting) są szeroko stosowane w procesie ochrony dostępu do zasobów sieciowych. Są one kluczowe dla zapewnienia bezpieczeństwa i kontroli dostępu do różnych zasobów w sieci.
+
+### Oto sposoby wykorzystania mechanizmów AAA w procesie ochrony dostępu do zasobów sieciowych:
++ Autoryzacja (Authentication): Autoryzacja to proces weryfikacji tożsamości użytkownika. Może obejmować uwierzytelnianie na podstawie loginu i hasła, certyfikatów cyfrowych, tokenów, biometrii itp. Mechanizmy autoryzacji sprawdzają, czy użytkownik jest tym, za kogo się podaje, przed udzieleniem dostępu do zasobów sieciowych.
++ Autoryzacja (Authorization): Po uwierzytelnieniu użytkownika, proces autoryzacji określa uprawnienia i zakres dostępu, jakie użytkownik ma do zasobów sieciowych. Może to obejmować kontrolę dostępu na podstawie ról, grup, poziomów uprawnień lub innych czynników. Mechanizmy autoryzacji sprawdzają, czy użytkownik ma uprawnienia do żądanych zasobów i czynności.
++ Rachunkowość (Accounting): Rachunkowość odnosi się do monitorowania i rejestrowania działań użytkowników w systemie. Mechanizmy rachunkowości zbierają i rejestrują informacje o dostępie użytkownika, takie jak daty logowania, wykonywane operacje, zużycie zasobów, itp. Te informacje mogą być wykorzystane do audytów, zarządzania zasobami, identyfikacji nieprawidłowości lub śledzenia działań użytkowników w przypadku naruszeń.
+
+
+## 3.2. Projektowanie i implementacja zapór sieciowych
+
+Projektowanie i implementacja zapór sieciowych, znanych również jako firewalle, są kluczowe dla ochrony sieci przed nieautoryzowanym dostępem, atakami i niepożądanym ruchem sieciowym. 
+
+### Oto kilka kroków do zaprojektowania i wdrożenia efektywnej zapory sieciowej:
++ Określenie polityki bezpieczeństwa: Pierwszym krokiem jest zdefiniowanie polityki bezpieczeństwa, czyli określenie zasad i wymagań dotyczących ochrony sieci. Polityka powinna obejmować zasady uwierzytelniania, autoryzacji, dostępu do zasobów, zarządzania ruchem sieciowym i wiele innych aspektów. Polityka bezpieczeństwa stanowi podstawę projektowania zapory sieciowej.
++ Identyfikacja zasobów i usług: Następnie należy zidentyfikować zasoby i usługi sieciowe, które mają być chronione przez zapórę. Mogą to być serwery, aplikacje, bazy danych, usługi internetowe. Ta analiza pomoże w ustaleniu, jakie reguły bezpieczeństwa należy zastosować w zaporze.
++ Projektowanie reguł zapory: Na podstawie polityki bezpieczeństwa i identyfikowanych zasobów można opracować reguły zapory sieciowej. Reguły te definiują, jakie typy ruchu są dozwolone lub blokowane i jakie działania podejmowane są w zależności od reguł. Reguły mogą obejmować filtry adresów IP, porty sieciowe, protokoły, typy ruchu, reguły NAT.
++ Wybór odpowiedniej zapory sieciowej: Istnieje wiele dostępnych rozwiązań zapór sieciowych, takich jak sprzętowe zapory, oprogramowanie zapór, zapory w chmurze. Wybór odpowiedniego rozwiązania zależy od wielu czynników, takich jak wielkość sieci, budżet, funkcje bezpieczeństwa, łatwość konfiguracji i zarządzania.
++ Implementacja i konfiguracja zapory: Po wyborze zapory sieciowej należy ją wdrożyć w sieci. Wymaga to instalacji zapory i konfiguracji reguł zgodnie z ustalonymi wymaganiami bezpieczeństwa. Konfiguracja powinna obejmować uwierzytelnianie, autoryzację, reguły dostępu, ochronę przed atakami, zabezpieczenia przed włamaniami itp.
++ Monitorowanie i utrzymanie zapory: Zapora sieciowa powinna być stale monitorowana i utrzymywana. Wymaga to regularnej aktualizacji oprogramowania zapory, bieżącego monitorowania ruchu sieciowego, analizy dzienników zdarzeń, audytów beapieczeństwa. 
+
+
+## 3.3. Projektowanie i implementacja systemów IPs
+
+Projektowanie i implementacja systemów IPS (Intrusion Prevention System) jest istotnym elementem ochrony sieci przed atakami i nieautoryzowanym dostępem. IPS jest rozwiązaniem, które monitoruje ruch sieciowy w czasie rzeczywistym i podejmuje działania mające na celu wykrycie i blokowanie potencjalnie niebezpiecznych działań. 
+
+### Oto kilka kroków do zaprojektowania i wdrożenia systemu IPS:
++ Analiza i ocena środowiska sieciowego: Pierwszym krokiem jest dokładna analiza środowiska sieciowego, w którym ma być wdrożony system IPS. Należy uwzględnić topologię sieci, rodzaje zasobów, komunikację sieciową i zagrożenia, z jakimi można się spotkać. Ważne jest również zidentyfikowanie najbardziej krytycznych obszarów sieci, które wymagają szczególnej ochrony.
++ Wybór odpowiedniego systemu IPS: Istnieje wiele dostępnych rozwiązań IPS na rynku, zarówno sprzętowych, jak i opartych na oprogramowaniu. Ważne jest dokładne zrozumienie funkcji, możliwości i ograniczeń różnych systemów IPS. 
++ Konfiguracja reguł i polityk bezpieczeństwa: Po wyborze systemu IPS należy skonfigurować reguły i polityki bezpieczeństwa. Reguły definiują, jakie rodzaje ruchu sieciowego powinny być monitorowane i jak na nie reagować. Polityki bezpieczeństwa obejmują również inne aspekty, takie jak zarządzanie atakami, ochrona przed malware'em itp.
++ Wdrożenie i testowanie: Po skonfigurowaniu systemu IPS należy go wdrożyć w sieci. W tym kroku istotne jest przeprowadzenie dokładnych testów, aby upewnić się, że system działa zgodnie z oczekiwaniami i skutecznie wykrywa oraz blokuje niebezpieczne działania. Testowanie powinno obejmować scenariusze ataków, sprawdzanie skuteczności blokowania niepożądanego ruchu i minimalizację fałszywych alarmów.
++ Monitorowanie i aktualizacja: System IPS powinien być stale monitorowany, aby wykrywać nowe zagrożenia i aktualizować reguły i polityki bezpieczeństwa. Ważne jest również śledzenie i analiza raportów z systemu IPS w celu identyfikacji potencjalnych luk w zabezpieczeniach i dostosowywania konfiguracji systemu, aby poprawić skuteczność.
++ Integracja z innymi systemami bezpieczeństwa: System IPS powinien być zintegrowany z innymi narzędziami i systemami bezpieczeństwa, takimijak systemy wykrywania intruzów (IDS), systemy zarządzania zdarzeniami i incydentami (SIEM) itp. Integracja tych systemów umożliwia bardziej kompleksową analizę i reakcję na incydenty bezpieczeństwa.
+
+
+## 3.4. Systemy NMS
+
+Systemy NMS (Network Management Systems) są narzędziami, które wspierają implementację i zarządzanie zabezpieczeniami w sieciach komputerowych. 
+
+### Oto kilka przykładów systemów NMS, które mogą wspierać zabezpieczenia sieciowe:
++ Nagios: Nagios to popularne narzędzie NMS, które umożliwia monitorowanie stanu sieci, urządzeń sieciowych, usług i aplikacji. Może być wykorzystywane do monitorowania dostępności i wydajności systemów zabezpieczeń, takich jak zapory sieciowe, systemy IDS/IPS, serwery antywirusowe itp. Nagios pozwala na szybkie wykrywanie problemów i podejrzanej aktywności w sieci.
++ SolarWinds Network Performance Monitor: SolarWinds NPM to zaawansowany system NMS, który oferuje kompleksowe funkcje monitorowania i zarządzania siecią. Wspiera zarządzanie urządzeniami sieciowymi, wydajnością sieci, monitorowanie bezpieczeństwa, wykrywanie anomalii w ruchu sieciowym itp. SolarWinds NPM może integrować się z systemami bezpieczeństwa, takimi jak zapory sieciowe, systemy antywirusowe i systemy IDS/IPS, aby dostarczać informacje o stanie zabezpieczeń sieciowych.
++ Cisco Prime Infrastructure: Cisco Prime Infrastructure to rozwiązanie NMS opracowane specjalnie dla urządzeń i rozwiązań Cisco. Oferuje zaawansowane funkcje monitorowania, konfiguracji i zarządzania infrastrukturą sieciową. Cisco Prime Infrastructure może wspierać zarządzanie zabezpieczeniami, w tym monitorowanie i konfigurację urządzeń zabezpieczających, takich jak zapory sieciowe Cisco ASA.
++ PRTG Network Monitor: PRTG Network Monitor to narzędzie NMS, które umożliwia monitorowanie i zarządzanie siecią. Posiada szeroki zakres funkcji, w tym monitorowanie urządzeń sieciowych, ruchu sieciowego, wydajności aplikacji itp. Może być skonfigurowane do monitorowania urządzeń zabezpieczających, takich jak zapory sieciowe, systemy IDS/IPS, serwery antywirusowe, dostarczając informacji o ich stanie i działaniu.
+
+
+## 4. Bezpieczeństwo systemów komputerowych
+
+Bezpieczeństwo systemów komputerowych jest kluczowym aspektem, który ma na celu ochronę danych, zasobów i infrastruktury przed nieautoryzowanym dostępem, utratą poufności, integralności i dostępności. 
+
+### Oto kilka ważnych elementów bezpieczeństwa systemów komputerowych:
++ Uwierzytelnianie: Proces uwierzytelniania służy do potwierdzenia tożsamości użytkownika lub urządzenia przed udzieleniem dostępu do systemu. Może to obejmować wykorzystywanie unikalnych loginów i haseł, uwierzytelnianie dwuetapowe, certyfikaty cyfrowe, biometrię. 
++ Zarządzanie uprawnieniami: Ważne jest, aby kontrolować i zarządzać uprawnieniami użytkowników do różnych zasobów i funkcji systemu. Każdy użytkownik powinien mieć przyznane tylko te uprawnienia, które są niezbędne do wykonywania swoich obowiązków. Minimalizowanie nadmiernych uprawnień zmniejsza ryzyko nadużyć i naruszeń.
++ Zabezpieczenia fizyczne: Zabezpieczenia fizyczne obejmują kontrolę dostępu do pomieszczeń, w których znajdują się serwery i inne urządzenia systemowe. Powinno się zastosować odpowiednie środki, takie jak karty dostępu, zabezpieczenia biometryczne, monitoring wizyjny, aby zapobiec nieautoryzowanemu dostępowi do fizycznej infrastruktury.
++ Zaporę sieciową: Wdrożenie zapory sieciowej (firewalla) jest niezwykle istotne dla ochrony systemów komputerowych. Zapora sieciowa kontroluje ruch sieciowy, blokując nieautoryzowane połączenia i chroniąc przed atakami z zewnątrz.
++ Aktualizacje i łatki: Regularne aktualizacje oprogramowania systemowego, aplikacji i urządzeń są niezbędne, aby naprawiać znane luki w zabezpieczeniach i chronić przed nowymi zagrożeniami. Zarządzanie aktualizacjami powinno być integralną częścią strategii bezpieczeństwa systemów.
++ Monitorowanie zdarzeń: Systemy monitorowania zdarzeń (SIEM) pozwalają na zbieranie, analizę i reagowanie na zdarzenia związane z bezpieczeństwem. Analiza logów i śledzenie podejrzanej aktywności może pomóc w wykryciu wczesnych oznak ataku lub naruszenia.
++ Szkolenia i świadomość użytkowników: Szkolenia z zakresu bezpieczeństwa informatycznego dla pracowników są kluczowe. Użytkownicy powinni być świadomi zagrożeń, takich jak phishing, złośliwe oprogramowanie i praktyki bezpiecznego korzystania z systemówkomputerowych. Edukacja użytkowników dotycząca silnych haseł, nieotwierania podejrzanych załączników, regularnego wykonywania kopii zapasowych danych i innych podstawowych zasad bezpieczeństwa może znacznie zmniejszyć ryzyko naruszenia systemów.
++ Szyfrowanie danych: Szyfrowanie danych jest kluczowe dla zapewnienia poufności i integralności informacji przechowywanych i przesyłanych w systemach komputerowych. Wykorzystywanie protokołów szyfrowania, takich jak SSL/TLS, VPN, zapewnia dodatkową ochronę przed przechwytywaniem i manipulacją danymi.
++ Monitorowanie wydajności i wydajności: Monitorowanie wydajności systemów komputerowych pozwala na wykrywanie anomalii, wykorzystania zasobów czy obciążenia, które mogą wskazywać na ataki lub naruszenia. Monitorowanie pozwala na wczesne wykrycie i reagowanie na potencjalne zagrożenia.
++ Plan kontynuacji działania i przywracania po awarii: W przypadku awarii lub incydentu bezpieczeństwa ważne jest posiadanie planu kontynuacji działania i przywracania systemów. Regularne tworzenie kopii zapasowych danych, testowanie procedur przywracania oraz działanie na wypadek awarii zapewniają szybkie odtworzenie działania systemów i minimalizację strat.
+
+## 5. Bezpieczeństwo aplikacji webowych
+
+Zabezpieczanie aplikacji webowych jest ważnym aspektem, aby chronić dane i użytkowników przed atakami. Jednym z kluczowych mechanizmów zabezpieczających jest reguła Same-Origin Policy (SOP), która ogranicza dostęp do zasobów między różnymi źródłami (originami) w przeglądarce internetowej.
+
+### Reguła Same-Origin Policy:
+
+Same-Origin Policy jest regułą stosowaną przez przeglądarki internetowe, która określa, że skrypty JavaScript wykonujące się w kontekście jednego źródła (originu) mają dostęp tylko do zasobów (takich jak pliki HTML, pliki CSS, pliki JavaScript itp.) pochodzących z tego samego źródła. Oznacza to, że skrypt wykonujący się na stronie internetowej nie ma dostępu do zasobów z innych domen.
+
+### Przykład:
+
+Jeśli strona internetowa o adresie http://example.com zawiera skrypt JavaScript, ten skrypt będzie miał dostęp tylko do zasobów (np. obrazów, styli CSS itp.) z tego samego źródła, czyli http://example.com. Nie będzie mógł uzyskać dostępu do zasobów z innych domen, takich jak http://innyprzyklad.com.
+
+### CORS (Cross-Origin Resource Sharing):
+
+CORS to mechanizm, który został wprowadzony w celu omówienia ograniczeń Same-Origin Policy i umożliwienia bezpiecznej wymiany zasobów między różnymi domenami. W przypadku, gdy aplikacja webowa na jednej domenie chce uzyskać dostęp do zasobów na innej domenie, serwer na drugiej domenie może odpowiednio skonfigurować nagłówki odpowiedzi HTTP, aby wskazać, że żądanie jest dozwolone (jeśli tak jest) przez korzystanie z odpowiednich nagłówków CORS.
+
+### Ograniczenia mechanizmu CORS:
++ Bezpieczeństwo: Mechanizm CORS ogranicza dostęp do zasobów tylko dla określonych domen, co pomaga w ochronie danych i zabezpieczeniu użytkowników. Bez odpowiedniej konfiguracji na serwerze, żądania Cross-Origin są blokowane.
++ Konfiguracja serwera: Mechanizm CORS wymaga odpowiedniej konfiguracji na serwerze, aby wskazać, które żądania są dozwolone i które nagłówki są dołączane do odpowiedzi HTTP. Niepoprawna konfiguracja może prowadzić do potencjalnych luk w zabezpieczeniach.
++ Złożoność w implementacji: CORS może wprowadzać pewne wyzwania w implementacji aplikacji webowych, szczególnie jeśli wymaga się wymiany zasobów między wieloma domenami. Konieczne jest odpowiednie zarządzanie nagłówkami CORS i ich obsługa po stronie serwera.
+
+
+## 6. Bezpieczeństwo aplikacji mobilnych
+
+Bezpieczeństwo aplikacji mobilnych jest kluczowe, ponieważ smartfony i tablety są powszechnie używane do przechowywania poufnych danych, jak również do dostępu do różnych usług i aplikacji online. 
+
+### Oto kilka kluczowych aspektów dotyczących bezpieczeństwa aplikacji mobilnych:
++ Weryfikacja źródeł: W przypadku pobierania aplikacji z oficjalnych sklepów aplikacji, takich jak Google Play Store lub Apple App Store, istnieje pewne zabezpieczenie przed szkodliwym oprogramowaniem. Jednakże, należy zawsze sprawdzać recenzje, oceny i reputację dewelopera przed pobraniem aplikacji. Należy unikać pobierania aplikacji z nieznanych źródeł, ponieważ może to prowadzić do zainstalowania złośliwego oprogramowania.
++ Ograniczenia uprawnień: Podczas instalacji aplikacji mobilnych, użytkownik powinien być świadomy uprawnień, które aplikacja wymaga. Ważne jest, aby dokładnie przeczytać wymagane uprawnienia i zastanowić się, czy są one uzasadnione w kontekście funkcjonalności aplikacji. Jeśli aplikacja prosi o zbyt wiele uprawnień, warto być ostrożnym i zastanowić się, czy warto zainstalować taką aplikację.
++ Aktualizacje: Ważne jest, aby regularnie aktualizować aplikacje mobilne do najnowszych wersji udostępnianych przez deweloperów. Aktualizacje często zawierają poprawki związane z bezpieczeństwem, które naprawiają znane luki i zagrożenia. Należy włączyć automatyczną aktualizację aplikacji, jeśli jest taka opcja, lub regularnie sprawdzaj dostępność aktualizacji i instlować ją.
++ Szyfrowanie danych: Dane przechowywane na urządzeniu mobilnym lub przesyłane przez aplikacje powinny być zabezpieczone za pomocą odpowiednich protokołów szyfrowania. Wykorzystywanie protokołów takich jak SSL/TLS do komunikacji z serwerami, oraz przechowywanie poufnych danych w zaszyfrowanej formie na urządzeniu, zapewnia większe bezpieczeństwo.
++ Autoryzacja i uwierzytelnianie: Aplikacje mobilne powinny wymagać autoryzacji i uwierzytelniania, aby zapobiec nieautoryzowanemu dostępowi do danych i funkcji. Silne i unikalne hasła, uwierzytelnianie dwuetapowe i inne metody identyfikacji, takie jak odciski palców lub rozpoznawanie twarzy, powinny być stosowane w celu zapewnienia dostępu tylko uprawnionym użytkownikom.
++ Analiza zabezpieczeń i testowanie penetracyjne: Deweloperzy aplikacji powinni przeprowadzać analizy zabezpieczeń i testowanie penetracyjne, aby zidentyfikować potencjalne luki w zabezpieczeniach i podatności. Regularne testy mogą pomóc w odkrywaniu i naprawianiu luk w zabezpieczeniach przed ich wykorzystaniem przez cyberprzestępców.
++ Ochrona przed atakami z sieci: Aplikacje mobilne powinny być chronione przed różnymi rodzajami ataków z sieci, takimi jak ataki typu Man-in-the-Middle (MITM) czy ataki z wykorzystaniem fałszywych punktów dostępu Wi-Fi. Wykorzystanie bezpiecznych protokołów komunikacyjnych, takich jak HTTPS, oraz uważne korzystanie z publicznych sieci Wi-Fi może pomóc w minimalizacji ryzyka ataków z sieci.
++ Ograniczenia w dostępie do danych: Aplikacje mobilne powinny stosować odpowiednie zabezpieczenia, aby zapobiec nieuprawnionemu dostępowi do przechowywanych danych. Dostęp do danych powinien być ograniczony tylko do niezbędnych funkcji i uprawnień. Wrażliwe dane, takie jak dane osobowe czy dane logowania, powinny być przechowywane w bezpiecznym miejscu, np. w zaszyfrowanej pamięci urządzenia lub w chmurze.
++ Audyt i monitorowanie: Ważne jest, aby monitorować aktywność aplikacji mobilnych i przeprowadzać audyty w celu wykrywania nieprawidłowości czy podejrzanej aktywności. Dzięki monitorowaniu można szybko reagować na incydenty bezpieczeństwa i podejmować odpowiednie środki zaradcze.
++ Edukacja użytkowników: Użytkownicy aplikacji mobilnych powinni być edukowani w zakresie podstawowych zasad bezpieczeństwa, takich jak unikanie instalowania aplikacji z nieznanych źródeł, nieotwieranie podejrzanych linków czy podawanie poufnych informacji tylko na zaufanych stronach. Świadomość użytkowników jest kluczowa w zapobieganiu atakom i ochronie danych.
+
+## 7. Bezpieczeństwo w chmurze
+
+Gdy ktoś udostępnia między sobą zdjęcia, współpracownicy pracują nad nowym produktem, a instytucje rządowe wprowadzają usługi online, nie zawsze do końca wiadomo, gdzie te dane są tak naprawdę przechowywane. Ludzie mogą nieumyślnie przenieść dane do mniej bezpiecznej lokalizacji, a ponieważ wszystko jest dostępne przez Internet, zasoby są bardziej narażone na nieautoryzowany dostęp.
+
+### Jak działa bezpieczeństwo w chmurze?
+
+Bezpieczeństwo w chmurze to wspólny obowiązek dostawców usług w chmurze i ich klientów. Odpowiedzialność różni się w zależności o typu oferowanych usług:
++ Infrastruktura jako usługa: W tym modelu dostawca usług w chmurze oferuje zasoby obliczeniowe, sieciowe i magazynowe na żądanie. Dostawca odpowiada za zabezpieczenie podstawowych usług obliczeniowych. Klient musi zabezpieczyć wszystko, co działa w systemie operacyjnym, w tym aplikacje, dane, środowiska uruchomieniowe i oprogramowanie pośredniczące, a także sam system operacyjny.
++ Platforma jako usługa: Wielu dostawców oferuje kompletne środowisko programistyczne i wdrożeniowe w chmurze. W takim przypadku, poza ochroną podstawowych usług obliczeniowych, są oni odpowiedzialni także za ochronę środowiska uruchomieniowego, oprogramowania pośredniczącego i systemu operacyjnego. Klient musi zabezpieczyć swoje aplikacje, dane, dostęp użytkowników oraz urządzenia i sieci użytkowników końcowych.
++ Oprogramowanie jako usługa: Organizacje mogą także uzyskiwać dostęp do oprogramowania w modelu płatności zgodnie z rzeczywistym użyciem, tak jak w przypadku rozwiązań Microsoft Office 365 czy Google Drive. W tym modelu klient musi zabezpieczyć swoje dane, użytkowników i urządzenia.
+
+### Niezależnie od podziału odpowiedzialności istnieją cztery główne aspekty bezpieczeństwa w chmurze:
++ Ograniczenia dostępu: w chmurze wszystko jest dostępne przez Internet, dlatego niezwykle ważne jest, aby tylko odpowiednie osoby miały dostęp do odpowiednich narzędzi przez odpowiednią ilość czasu.
++ Ochrona danych: organizacje muszą wiedzieć, gdzie znajdują się ich dane, i zastosować odpowiednie mechanizmy kontroli w celu zabezpieczenia zarówno danych, jak i infrastruktury, w której te dane są hostowane.
++ Odzyskiwanie danych: dobre rozwiązanie do tworzenia kopii zapasowych i plan odzyskiwania danych mają kluczowe znaczenie w przypadku naruszenia.
++ Plan reagowania: kiedy organizacja zostanie zaatakowana, potrzebuje planu, aby zminimalizować konsekwencje i zapobiec naruszeniu innych systemów.
+
+
+## 8. Bezpieczeństwo systemów IoT
+
+Urządzenia IoT są podatne na ataki głównie dlatego, że nie mają skutecznych zabezpieczeń do obrony przed zagrożeniami. Hakerzy mogą chcieć uzyskać dostęp do poufnych informacji przechowywanych w systemach, do których podłączone są urządzenia IoT.
+
+Urządzenia IoT mogą być również używane jako botnety do przeprowadzania rozproszonych ataków typu „odmowa usługi” (DDoS) na sieć zewnętrzną, którą haker chce zniszczyć.
+
+### Zabezpieczenia infrastruktury IoT
++ Prawidłowa konfiguracja urządzenia IoT: Podczas konfigurowania nowego urządzenia IoT należy wyłączyć zbędne funkcje dostępu i łączności. Wiele urządzeń IoT będzie domyślnie próbowało automatycznie łączyć się z innymi urządzeniami i sieciami w okolicy. Chociaż może to pomóc uprościć proces tworzenia inteligentnej sieci biurowej lub domowej, może również spowodować poważną lukę w zabezpieczeniach.
++ Zastosowanie szyfrowania: Istnieją niezliczone protokoły szyfrowania danych w internecie, które zapewniają sprawne zarządzanie pakietami danych i większą kontrolę operacyjną. Warto pamiętać, że starsze routery i karty sieci bezprzewodowej mogą nie obsługiwać wszystkich rodzajów szyfrowania, dlatego na etapie projektowania infrastruktury warto uwzględnić urządzenia, które wspierają najnowsze rozwiązania w zakresie bezpieczeństwa.
++ Używanie zapory sieciowej (firewall-a) nowej generacji: To zintegrowana platforma sieciowa, która łączy w sobie tradycyjną zaporę sieciową z wyżej wymienionymi funkcjami bezpieczeństwa. NGFW wykorzystuje wszystkie możliwości tradycyjnej zapory, dzięki czemu jest skuteczna w wykrywaniu cyberataków i ochronie przed nimi.
++ Aktualizowanie oprogramowania: Mądrze jest regularnie aktualizować jego oprogramowanie. Aby cała infrastruktura korzystała z aktualnych poprawek bezpieczeństwa, warto włączyć opcję automatycznych aktualizacji.
+
+
+## 9. Testy penetracyjne
+
+Testy penetracyjne to systemowy cyberatak na system komputerowy w celu sprawdzenia luk w zabezpieczeniach. W kontekście bezpieczeństwa aplikacji internetowych testy penetracyjne są powszechnie stosowane w celu rozszerzenia zapory aplikacji internetowej (WAF).
+
+<p align="center">
+  Rys.9.1. Etapy testów penetracyjnych
+<br>
+  <img src="\assets\img\Cyber\75.png" width="650" alt="etp">
+  <br>
+  Źródło: https://www.imperva.com/learn/wp-content/uploads/sites/13/2019/01/pen-testing.jpg.webp
+</p>
+
+Planowanie i rozpoznawanie
++ Zdefiniowanie zakresu i celów testu, systemów oraz metod testowania
++ Gromadzenie danych wywiadowczych w celu lepszego zrozumienia działania celu i jego potencjalnych luk w zabezpieczeniach.
+
+Skanowanie – zrozumienie w jaki sposób docelowa aplikacja zareaguje na różne próby włamania
++ Analiza statyczna – sprawdzanie kodu aplikacji w celu oszacowania jej zachowania podczas działania,
++ Analiza dynamiczna – sprawdzanie kodu aplikacji w stanie uruchomienia. 
+
+Uzyskanie  dostępu – wykorzystanie ataków aplikacji internetowej, aby odkryć luki w zabezpieczeniach celu. 
+
+Utrzymanie dostępu – sprawdzenie czy luka może zostać wykorzystana do osiągnięcia trwałej obecności w wykorzystywanym systemie
+
+Analiza – raportowanie wyników testu penetracyjnego
+
+### Metody badań penetracyjnych
++ Testy zewnętrzne (external testing) – testowanie aplikacji, strony internetowej oraz serwerów poczty e-mail i nazw domen, które są widoczne dla wszystkich. 
++ Testy wewnętrzne (internal testing) – tester z dostępem do aplikacji za zaporą sieciową symuluje atak złośliwego insidera.
++ Ślepe testy (blind testing) – tester otrzymuje tylko nazwę przedsiębiorstwa, które jest celem.
++ Testy z podwójnie ślepą próbą (double-blind testing) – testowanie, w którym pracownicy ochrony nie mają wcześniejszej wiedzy na tenat symulowanego ataku.
++ Ukierunkowane testy (Target testing) – W tym scenariuszu zarówno tester, jak i personel ochrony współpracują ze sobą i wzajemnie oceniają swoje ruchy.
+
+## 9.2. Rekonesans - zbieranie informacji
+
+Rekonesans to proces zbierania informacji o docelowej organizacji, zebranie kluczowych informacji dotyczących celu, aby atakujący mógł następnie wykorzystać te informacje dowykorzystania i przniknięcia do docelowych sieci. 
+
+### Rodzaje rekonesansu
++ Aktywny rekonesans – używany jest do zbierania informacji o systemach komputerowych, wykorzystuje narzędzia takie jak skanowanie, testowanie ręczne, ping i netcat. Aktywny rekonesans jest szybszy i dokładniejszy, ponieważ generuje więcej szumów w systemie i ma większą szansę na wykrycie.
++ Pasywne rekonesans – atakujący może zbierać dane bez interakcji z aplikacją lub frameworkiem, który staramy się zrozumieć. Osoąga się to poprzez wyszukiwanie w Internecie i pobieranie bezpłatnych raportów. 
+
+<p align="center">
+  Rys.9.2.1. Modele referencyjne wykorzystywane do rozkładania cyberataku na fazy
+<br>
+  <img src="\assets\img\Cyber\76.png" width="650" alt="mrwdrcbf">
+  <br>
+  Źródło: https://dl.acm.org/cms/attachment/dc918a60-76da-4fc5-869d-f9c5df7e8512/f1.jpg
+</p>
+
+## 9.3. Skanowanie luk w zabezpieczeniach
+
+Oto etapy skanowania luk:
++ Skanowanie luk w zabezpieczeniach jest procesem analizowania systemów komputerowych, aplikacji lub sieci w celu identyfikacji potencjalnych podatności, które mogą być wykorzystane przez potencjalnych atakujących. Jest to istotny krok w zapewnieniu bezpieczeństwa informacji i ochrony przed cyberatakami.
++ Proces skanowania luk w zabezpieczeniach obejmuje szereg działań mających na celu identyfikację słabych punktów w systemie. Oto kilka kluczowych etapów tego procesu:
++ Identyfikacja celu: Skanowanie luk w zabezpieczeniach może być przeprowadzane na różnych poziomach, takich jak system operacyjny, aplikacje, sieć czy usługi internetowe. Pierwszym krokiem jest określenie, jakie elementy będą poddane analizie.
++ Wybór narzędzi: Istnieje wiele narzędzi dostępnych do przeprowadzenia skanowania luk w zabezpieczeniach.
++ Skanowanie podatności: Głównym celem skanowania luk w zabezpieczeniach jest wykrycie podatności, które mogą prowadzić do ataku na system. Narzędzia skanują system pod kątem znanych podatności, takich jak słabe hasła, braki w aktualizacjach oprogramowania, otwarte porty sieciowe, niebezpieczne konfiguracje systemowe i wiele innych.
++ Analiza wyników: Generowanie raportu zawierającego wyniki analizy. Raport zawiera informacje o znalezionych podatnościach, ich stopniu zagrożenia i zalecenia dotyczące naprawy.
++ Naprawa i monitorowanie: Po otrzymaniu raportu z wynikami skanowania należy podjąć odpowiednie działania naprawcze, aby zabezpieczyć system.
+
+## 9.4. Socjotechnika
+
+Socjotechnika – jest to sztuka wykorzystania ludzkich zachowań do złamania zabezpieczeń bez spostrzeżenia przez daną osobę, że została zmanipulowana. Celem hakera jest nakłonienie „ofiary” do wykonania określonej aktywności, np. podania hakerowi danych logowania do konta bankowego czy haseł zabezpieczających kluczowe dane firmy.
+
+### Typy ataków socjotechnicznych
++ pretexting – polega na pozyskaniu danych pod wiarygodnie brzmiącym pretekstem. Może to być np. konieczność weryfikacji tożsamości celem otrzymania ważnej informacji z banku
++ vishing – działania zmierzające do uzyskania informacji umożliwiających identyfikację osoby lub zresetowania hasła
++ phishing – najczęściej przybiera formę fałszywych e-maili czy wiadomości SMS.
+
+## 9.5. Symulowany test penetracyjny
+
+Symulowany test penetracyjny, często nazywany jako test ethical hacking lub test red teaming, to proces oceny bezpieczeństwa systemu informatycznego poprzez symulację ataku ze strony potencjalnego intruza. Celem takiego testu jest identyfikacja słabości w infrastrukturze, aplikacjach, sieciach lub systemach, które mogą być wykorzystane przez niepożądane osoby w celu uzyskania nieautoryzowanego dostępu lub wyrządzenia szkód.
+
+Podczas symulowanego testu penetracyjnego, specjaliści ds. bezpieczeństwa próbują odkryć luki w zabezpieczeniach, używając technik i narzędzi, które mogą być wykorzystane przez potencjalnych atakujących. Mogą to być takie działania jak skanowanie portów, testy podatności, próby złamania haseł, próby włamania się do systemu lub manipulowanie aplikacjami w celu uzyskania dostępu do poufnych danych.
+
+### Podstawowe etapy symulowanego testu penetracyjnego obejmują:
++ Faza planowania: Określenie celów testu, zakresu oraz uzyskanie zgody właściciela systemu.
++ Faza zbierania informacji: Pozyskiwanie informacji o infrastrukturze, aplikacjach, systemach, sieciach i potencjalnych lukach w zabezpieczeniach.
++ Faza identyfikacji słabości: Wykorzystanie narzędzi i technik do odkrywania słabych punktów w systemie, takich jak niezałatane podatności, słabe hasła czy niewłaściwie skonfigurowane zabezpieczenia.
++ Faza eksploatacji: Próba wykorzystania zidentyfikowanych słabości w celu uzyskania nieautoryzowanego dostępu, przechwycenia danych lub przeprowadzenia innych szkodliwych działań.
++ Faza raportowania: Dokumentacja wszystkich znalezionych słabości, wraz z rekomendacjami dotyczącymi poprawy zabezpieczeń.
++ Faza oceny: Przedstawienie wyników testu właścicielowi systemu, w celu oceny i podjęcia odpowiednich działań naprawczych.
+
+
+## 10. Metodologie cyberbezpieczeństwa
+
+Metodologia cyberbezpieczeństwa odnosi się do zestawu praktyk i podejść stosowanych w celu ochrony systemów informatycznych, sieci komputerowych i danych przed zagrożeniami cyfrowymi. Składa się ona z różnych etapów i działań, które mają na celu identyfikację, ocenę, ochronę i zarządzanie ryzykiem związanym z cyberatakami.
+
+## 10.1. CIA Triad
+
+Trzy litery w "triadzie CIA" oznaczają poufność, integralność i dostępność. Triada CIA jest wspólnym modelem, który stanowi podstawę rozwoju systemów bezpieczeństwa. Służą do znajdowania luk i metod tworzenia rozwiązań.
+
+Poufność, integralność i dostępność informacji ma kluczowe znaczenie dla funkcjonowania firmy, a triada CIA dzieli te trzy idee na oddzielne punkty kontaktowe. To rozróżnienie jest pomocne, ponieważ pomaga zespołom ds. bezpieczeństwa wskazać różne sposoby, w jakie mogą rozwiązać każdy problem.
+
+<p align="center">
+  Rys.10.1.1. CIA Triad
+<br>
+  <img src="\assets\img\Cyber\77.png" width="650" alt="ciatriad">
+  <br>
+  Źródło: https://tiny.pl/c749p
+</p>
+
+
+Triada CIA zapewnia prostą, ale obszerną listę kontrolną wysokiego poziomu do oceny procedur i narzędzi bezpieczeństwa. Skuteczny system spełnia wszystkie trzy elementy: poufność, integralność i dostępność. System bezpieczeństwa informacji, którego brakuje w jednym z trzech aspektów triady CIA, jest niewystarczający.
+
+Triada bezpieczeństwa CIA jest również cenna w ocenie, co poszło nie tak – i co zadziałało – po negatywnym incydencie. Na przykład, być może dostępność została zagrożona po ataku złośliwego oprogramowania, takiego jak ransomware, ale istniejące systemy nadal były w stanie zachować poufność ważnych informacji. Dane te można wykorzystać do wyeliminowania słabych punktów i powielenia udanych polityk i wdrożeń.
+
+Triady CIA należy używać w większości stytuacji bezpieczeńswa, szczególnie dlatego, że każdy komponent jest krytyczny. Jest to jednak szczególnie pomocne podczas opracowywania systemów wokół klasyfikacji danych oraz zarządzania uprawnieniami i uprawnieniami dostępu.
+
+## 10.2. Defense-in-Depth
+
+Defense-in-Depth jest to strategia zapewniania informacji, która zapewnia wiele zbędnych środków obronnych w przypadku awarii kontroli bezpieczeństwa lub wykorzystania luki w zabezpieczeniach.
+
+Kompleksowe zastosowania cyberbezpieczeństwa obejmują bezpieczeństwo użytkowników końcowych, projektowanie produktów i bezpieczeństwo sieci.
+
+Przeciwstawna zasada obrony w głębi jest znana jako prostota w zabezpieczeniach, która działa przy założeniu, że zbyt wiele środków bezpieczeństwa może wprowadzić problemy lub luki, które atakujący mogą wykorzystać.
+
+<p align="center">
+  Rys.10.3.1. Defense-in-Depth
+<br>
+  <img src="\assets\img\Cyber\78.png" width="650" alt="did">
+  <br>
+  Źródło: https://www.imperva.com/learn/wp-content/uploads/sites/13/2019/01/defense-in-depth.jpg.webp
+</p>
+
++ hysical controls – obejmują środki bezpieczeństwa, które uniemożliwiają fizyczny dostęp do systemów informatycznych, takich jak ochroniarze lub zamknięte drzwi.
++ Technical controls – obejmują środki bezpieczeństwa, które chronią systemy sieciowe lub zasoby przy użyciu specjalistycznego sprzętu lub oprogramowania, takiego jak urządzenie zapory sieciowej lub program antywirusowy.
++ Administrative controls – to środki bezpieczeństwa składające się z zasad lub procedur skierowanych do pracowników organizacji, np. instruowanie użytkowników, aby oznaczali poufne informacje jako "poufne".
+
+
+## 10.3. Zero Trust
+
+Zero Trust – jest to architektuta, która chroni wszystkie pliki, wiadomości, e-mail i sieci, uwierzytelniając wszystkie tożsamości i urządzenia. Architektura Zero Trust nie zabezpiecza tylko jednej sieci, lecz pomaga też chronić dostęp zdalny, urządzenia osobiste i aplikacje innych firm.
+
+### Zasady modelu Zero Trust: 
++ Jawna weryfikacja: Przed uwierzytelnieniem dostępu użytkownika należy rozważyć każdą informację, w tym tożsamość, lokalizację i urządzenie, a także to, jak jest klasyfikowany zasób i czy występuje coś nietypowego, co może być sygnałem ostrzegawczym.
++ Stosowanie najmniejszych uprawnień dostępu: Należy ograniczyć ilość informacji i czas dostępu użytkowników, zamiast udostępniać wszystkie zasoby firmy przez nieograniczony czas.
++ Założenia, że będą występować naruszenia zabezpieczeń: Należy podzielić sieci na segmenty, aby w przypadku nieautoryzowanego dostępu szkody były ograniczone. Należy wymagać kompleksowego szyfrowania.
+
+### Kluczowe cechy architektury Zero Trust obejmują:
++ Kompleksowe zarządzanie: Izolacja systemów stwarza ryzyko. Natomiast model Zero Trust zapewnia uwierzytelnianie dostępu do całego środowiska cyfrowego organizacji przez kompleksowe szyfrowanie i efektywne zarządzanie tożsamością.
++ Widoczność: Wykrywanie niezatwierdzonego zasobu IT i wszystkich urządzeń próbujących uzyskać dostęp do sieci. Należy sprawdzać, czy użytkownicy i urządzenia zachowują zgodność, i ograniczaj dostęp, jeśli tak nie jest.
++ Analizy: Analizowanie danych automatycznie i otrzymywanie w czasie rzeczywistym powiadomienia o nietypowych zachowaniach, aby szybciej wykrywać zagrożenia i reagować na nie.
++ Automatyzacja: Należy korzystać ze sztucznej inteligencji, aby blokować ataki, ograniczać fałszywe alarmy i wyznaczać priorytetowe alerty, na które należy reagować.
+
+### Przypadki użycia modelu Zero Trust obejmują:
++ Wspieranie pracy hybrydowej i zdalnej lub w środowiskach wielochmurowych.
++ Reagowanie na wyłudzanie informacji, kradzież poświadczeń i oprogramowanie wymuszające okup.
++ Udzielanie bezpiecznego, ograniczonego czasowo dostępu pracownikom tymczasowym.
++ Chronienie i monitorowanie dostępu do aplikacji innych firm.
++ Obsługa pracowników pierwszego kontaktu korzystających z różnych urządzeń.
++ Zachowywanie zgodności z wymaganiami prawnymi.
+
+### Rozwiązania oparte na modelu Zero Trust: 
++ Rozwiązania Zero Trust obejmują zarówno narzędzia, których może używać każdy, jak i złożone, wielkoskalowe metodologie dla przedsiębiorstw. 
+
+### Oto kilka przykładów:
++ Użytkownicy mogą włączyć uwierzytelnianie wieloskładnikowe, aby otrzymywać jednorazowy kod przed uzyskaniem dostępu do aplikacji lub witryny internetowej. Można też logować się przy użyciu danych biometrycznych, takich jak odcisk palca lub twarz.
++ Szkoły i społeczności mogą przejść na uwierzytelnianie bez haseł, ponieważ hasła łatwo jest zapomnieć. Mogą też poprawić zabezpieczenia punktów końcowych, aby wspierać pracę zdalną i w szkole, a także zastosować segmentację dostępu na wypadek zgubienia lub kradzieży urządzenia.
++ Organizacje mogą wdrożyć architekturę Zero Trust, identyfikując wszystkie punkty dostępu i wdrażając zasady na potrzeby bezpieczniejszego dostępu. Ponieważ model Zero Trust jest podejściem długoterminowym, organizacje powinny nastawić się na ciągłe monitorowanie w celu wykrywania nowych zagrożeń.
+
+
+## 10.4. Least Privilege
+
+Metoda Least Privilege (Minimalne uprawnienia) to zasada bezpieczeństwa informatycznego, która polega na przyznawaniu użytkownikom minimalnej ilości uprawnień i dostępów do systemów, aplikacji i zasobów, które są niezbędne do wykonania ich pracy lub przeprowadzenia określonych zadań.
+
+Zasada Least Privilege ma na celu ograniczenie potencjalnych szkód wynikających z nadmiernych uprawnień. Jeśli użytkownik posiada tylko niezbędne uprawnienia, w przypadku kompromitacji jego konta przez atakującego, szkody, które mogą zostać wyrządzone w systemie, są ograniczone.
+
+### Oto kilka kluczowych aspektów metody Least Privilege:
++ Minimalny dostęp: Użytkownicy otrzymują tylko te uprawnienia, które są konieczne do wykonania swoich zadań. Nie powinni mieć automatycznego dostępu do wszystkich zasobów i funkcji systemu.
++ Zasady ograniczeń: Tworzy się zasady, które określają, jakie uprawnienia mają użytkownicy na podstawie ich roli, stanowiska i potrzeb biznesowych. Wsparcie techniczne, administracyjne i kadrowe jest odpowiedzialne za ustalenie tych zasad.
++ Separacja obowiązków: Ważne jest, aby rozdzielać zadania i odpowiedzialności między różnych użytkowników. Na przykład, użytkownik z uprawnieniami do wprowadzania danych nie powinien mieć jednocześnie możliwości zatwierdzania tych danych.
++ Regularne przeglądy uprawnień: Wraz z rozwojem organizacji, role i uprawnienia użytkowników mogą się zmieniać. Dlatego istotne jest regularne przeglądanie i aktualizowanie przyznawanych uprawnień, aby utrzymać zgodność z zasadą Least Privilege.
+
+
+## 10.5. Risk Management
+
+Metoda zarządzania ryzykiem (Risk Management) jest procesem identyfikowania, analizowania, oceny, monitorowania i zarządzania ryzykiem związanym z działalnością organizacji. Ma na celu minimalizację negatywnych skutków zagrożeń i maksymalizację korzyści związanych z osiąganiem celów biznesowych. 
+
+### Oto kilka kluczowych kroków w metodzie zarządzania ryzykiem:
++ Identyfikacja ryzyka: Pierwszym krokiem jest identyfikacja potencjalnych zagrożeń, które mogą wpływać na organizację. Mogą to być czynniki zewnętrzne, takie jak zmiany w przepisach prawnych, zagrożenia cybernetyczne, czy też czynniki wewnętrzne, takie jak błędy ludzkie, awarie sprzętu, czy problemy operacyjne.
++ Analiza ryzyka: W tym kroku przeprowadza się szczegółową analizę ryzyka, oceniając prawdopodobieństwo wystąpienia zagrożeń oraz ich potencjalne skutki. Można wykorzystać techniki takie jak analiza SWOT (Strengths, Weaknesses, Opportunities, Threats), analiza przyczyn i skutków (Ishikawa), czy analiza ryzyka konkretnych scenariuszy.
++ Ocena ryzyka: Na podstawie analizy ryzyka dokonuje się oceny ryzyka, która polega na przypisaniu poziomów priorytetów i ważności dla poszczególnych zagrożeń. Pomaga to w identyfikacji kluczowych obszarów, na które należy się skoncentrować.
++ Zarządzanie ryzykiem: Po ocenie ryzyka, podejmuje się działania w celu zarządzania nim. Istnieje kilka podejść do zarządzania ryzykiem, w tym: unikanie ryzyka (np. zaprzestanie pewnych działań, które wiążą się z dużym ryzykiem), minimalizowanie ryzyka (np. wdrażanie środków zapobiegawczych, zabezpieczeń), przenoszenie ryzyka (np. korzystanie z ubezpieczeń), czy akceptowanie ryzyka (w przypadku, gdy ryzyko jest akceptowalne lub koszt związany z jego likwidacją jest zbyt wysoki).
++ Monitorowanie i kontrola: Zarządzanie ryzykiem to proces ciągły. Warto regularnie monitorować i oceniać ryzyko, sprawdzać skuteczność wdrożonych działań i dostosowywać strategie zarządzania w zależności od zmieniających się warunków i nowych zagrożeń.
++ Plan awaryjny: Ważnym elementem metody zarządzania ryzykiem jest tworzenie planów awaryjnych i przygotowanie na sytuacje kryzysowe. Plan awaryjny obejmuje procedury postępowania w przypadku wystąpienia poważnego incydentu lub zagrożenia i powinien zawierać wytyczne dotyczące działań do podjęcia, komunikacji wewnętrznej i zewnętrznej oraz przywracania normalnego działania.
+
+## 10.6. Secure Development Lifecycle 
+
+Secure Development Lifecycle (SDLC) to kompleksowa metodyka stosowana w procesie tworzenia oprogramowania, która ma na celu zapewnienie bezpieczeństwa i ochrony danych przez cały cykl życia rozwoju aplikacji. SDLC skupia się na wdrażaniu praktyk zabezpieczeń od samego początku projektu, aż do jego wdrożenia i utrzymania. 
+
+### Oto szczegółowe etapy SDLC:
++ Planowanie: W tym etapie określa się cele, wymagania i zakres projektu. Należy uwzględnić również cele związane z bezpieczeństwem. Tworzy się politykę bezpieczeństwa, w której określa się wytyczne dotyczące zabezpieczeń i przestrzegania standardów.
++ Analiza zagrożeń: Przeprowadza się analizę zagrożeń, aby zidentyfikować potencjalne luki w zabezpieczeniach, podatności i ryzyka. Na tej podstawie opracowuje się profil ryzyka, który pozwala określić priorytety i środki zaradcze.
++ Projektowanie: Projektowanie aplikacji uwzględnia aspekty bezpieczeństwa od samego początku. Przemyślane są koncepcje zabezpieczeń, takie jak architektura sieciowa, kontrole dostępu, uwierzytelnianie, szyfrowanie danych i mechanizmy kontroli integralności.
++ Implementacja: W tym etapie kod aplikacji jest tworzony zgodnie z zabezpieczeniami i standardami. Wdraża się praktyki takie jak walidacja danych wejściowych, minimalizacja ataku XSS (Cross-Site Scripting), zapobieganie wstrzyknięciu SQL (SQL Injection) i innych podatności.
++ Testowanie: Przeprowadza się różne testy bezpieczeństwa, takie jak testy penetracyjne, testy zabezpieczeń aplikacji webowych, testy podatności i ocena ryzyka. Celem jest wykrycie potencjalnych luk w zabezpieczeniach i weryfikacja skuteczności zastosowanych mechanizmów.
++ Wdrożenie: Po pomyślnym przetestowaniu aplikacji, jest ona przygotowana do wdrożenia. Przygotowuje się środowisko produkcyjne i dokonuje konfiguracji zabezpieczeń zgodnie z najlepszymi praktykami. Istotne jest również monitorowanie aplikacji w czasie rzeczywistym, aby wykrywać ewentualne incydenty i podejrzane aktywności.
++ Utrzymanie: Po wdrożeniu aplikacji konieczne jest regularne utrzymanie i aktualizacja zabezpieczeń w celu minimalizacji ryzyka wystąpienia nowych zagrożeń. To obejmuje monitorowanie, łatanie podatności, aktualizowanie oprogramowania i przeglądy regularne.
+
+Ważnym elementem SDLC jest również edukacja i świadomość bezpieczeństwa dla zespołów deweloperskich. Osoby zaangażowane w proces tworzenia oprogramowania powinny być szkolone w dziedzinie bezpieczeństwa i zrozumieć najważniejsze zagrożenia oraz metody zapobiegania im.
+
+SDLC jest kompleksowym podejściem do tworzenia bezpiecznego oprogramowania, które ma na celu minimalizację ryzyka ataków i naruszeń bezpieczeństwa danych. Stosowanie SDLC w procesie rozwoju aplikacji może znacznie zwiększyć poziom bezpieczeństwa i chronić zarówno użytkowników, jak i organizacje przed zagrożeniami związanymi z cyberprzestępczością.
+
+
+## 10.7. Threat Intelligence
+
+Analiza zagrożeń (Threat Inteligence) – to dane, które są gromadzone, przetwarzane i analizowane w celu zrozumienia motywów, celów i zachowań atakujących cyberprzestępców. Analiza zagrożeń pozwala nam podejmować szybsze, bardziej świadome, poparte danymi decyzje dotyczące bezpieczeństwa i zmieniać ich zachowanie z reaktywnego na proaktywne w walce z cyberprzestępcami.
+
+<p align="center">
+  Rys.10.7.1. Threat Intelligence Lifecycle
+<br>
+  <img src="\assets\img\Cyber\79.png" width="650" alt="til">
+  <br>
+  Źródło: https://www.crowdstrike.com/wp-content/uploads/2019/07/threat-intelligence-lifecycle-3.jpg
+</p>
+
+W świecie cyberbezpieczeństwa zaawansowane trwałe zagrożenia (APT) i obrońcy nieustannie próbują wymanewrować się nawzajem. Dane dotyczące następnego ruchu cyberprzestępcy mają kluczowe znaczenie dla proaktywnego dostosowania obrony i zapobiegania przyszłym atakom.
+
+### Analiza zagrożeń jest ważna z następujących powodów:
++ Rzuca światło na nieznane, umożliwiając zespołom ds. bezpieczeństwa podejmowanie lepszych decyzji
++ Wzmacnia pozycję interesariuszy zajmujących się bezpieczeństwem cybernetycznym, ujawniając motywy kontradyktoryjne oraz ich taktyki, techniki i procedury (TTP)
++ Pomaga specjalistom ds. bezpieczeństwa lepiej zrozumieć proces decyzyjny cyberprzestępcy
++ Wzmacnia pozycję interesariuszy biznesowych, takich jak zarządy, CISO, CIO i CTO; mądrze inwestować, ograniczać ryzyko, stawać się bardziej wydajnym i podejmować szybsze decyzje
+
+### Cykl życia analizy zagrożeń
++ Cykl życia inteligencji to proces przekształcania surowych danych w gotowe informacje na potrzeby podejmowania decyzji i działania. 
++ Cykl życia inteligencji to proces przekształcania surowych danych w gotowe informacje na potrzeby podejmowania decyzji i działania.
++ Wymagania: Cykl życia inteligencji to proces przekształcania surowych danych w gotowe informacje na potrzeby podejmowania decyzji i działania.
++ Odbiór: Po zdefiniowaniu wymagań zespół przystępuje do zbierania informacji wymaganych do osiągnięcia tych celów. W zależności od celów zespół zazwyczaj poszukuje dzienników ruchu, publicznie dostępnych źródeł danych, odpowiednich forów, mediów społecznościowych oraz ekspertów branżowych lub merytorycznych.
++ Przetwarzanie: Po zebraniu surowych danych będą one musiały zostać przetworzone do formatu odpowiedniego do analizy. W większości przypadków wiąże się to z organizowaniem punktów danych w arkusze kalkulacyjne, odszyfrowywaniem plików, tłumaczeniem informacji z zagranicznych źródeł oraz oceną danych pod kątem trafności i wiarygodności.
++ Analiza: Po przetworzeniu zestawu danych zespół musi przeprowadzić dokładną analizę, aby znaleźć odpowiedzi na pytania postawione w fazie wymagań. Podczas fazy analizy zespół pracuje również nad rozszyfrowaniem zbioru danych na działania i cenne zalecenia dla interesariuszy.
++ Rozpowszechnianie: Faza rozpowszechniania wymaga od zespołu ds. analizy zagrożeń przełożenia analizy na strawny format i przedstawienia wyników interesariuszom.
++ Informacja zwrotna: Ostatni etap cyklu życia analizy zagrożeń obejmuje uzyskanie informacji zwrotnej na temat dostarczonego raportu w celu ustalenia, czy należy wprowadzić zmiany w przyszłych operacjach analizy zagrożeń.
+
+## 10.8. Incident Responce
+
+Reagowanie na incydenty (Incident Responce) – to plan stosowany po cyberataku, używany do reagowania na incydenty związane z bezpieczeństwem. Posiadanie jasno zdefiniowanego planu reagowania na incydenty może ograniczyć szkody spowodowane atakiem, obniżyć koszty i zaoszczędzić czas po naruszeniu bezpieczeństwa.
+
+Cyberatak lub naruszenie danych może spowodować ogromne szkody dla organizacji, potencjalnie wpływając na jej klientów, wartość marki, własność intelektualną oraz czas i zasoby. Reagowanie na incydenty ma na celu zmniejszenie szkód powodowanych przez atak i pomoc organizacji w jak najszybszym odzyskaniu sił.
+
+<p align="center">
+  Rys.10.8.1. Incident Responce
+<br>
+  <img src="\assets\img\Cyber\80.png" width="650" alt="ir">
+  <br>
+  Źródło: https://tiny.pl/c74wq
+</p>
+
+### Kroki planu reagowania na incydenty
++ Przygotowanie: jest najważniejszą fazą w planie reagowania na incydenty, ponieważ określa, jak dobrze organizacja będzie w stanie zareagować w przypadku ataku. Wymaga wdrożenia następujących elementów, aby umożliwić organizacji obsługę incydentu: polityki, planu reagowania, komunikacji, dokumentacji, zespołu, kontroli dostępu, narzędzia, szkolenia. 
++ Zidentyfikowanie: Druga faza dotyczy wykrywania i ustalania, czy incydent miał miejsce. Aby podjąć tę decyzję, informacje, takie jak komunikaty o błędach i pliki dziennika, muszą być gromadzone z różnych źródeł, w tym z systemów wykrywania włamań i zapór sieciowych.
++ Zawierać: Po zidentyfikowaniu zagrożenia organizacja musi ograniczyć i zapobiec dalszym szkodom. Istnieje kilka niezbędnych kroków, które pomogą im złagodzić incydent i zapobiec zniszczeniu dowodów.
++ Wyeliminowanie: W tej fazie następuje usunięcie i przywrócenie systemów, których dotyczy incydent bezpieczeństwa. Podobnie jak we wszystkich fazach planu, dokumentacja ma kluczowe znaczenie dla określenia kosztu roboczogodzin, zasobów i ogólnego wpływu ataku. Organizacja musi również upewnić się, że złośliwa zawartość została usunięta z systemów, których dotyczy problem, a systemy zostały dokładnie wyczyszczone, aby zapobiec ryzyku ponownej infekcji.
++ Odzyskanie: Ta faza pomaga organizacjom ostrożnie wprowadzać zagrożone systemy z powrotem do środowiska produkcyjnego i zapewnia, że nie wystąpi kolejny incydent. Systemy muszą być testowane, monitorowane i weryfikowane po powrocie do środowiska produkcyjnego, aby nie zostały ponownie zainfekowane złośliwym oprogramowaniem ani naruszone.
++ Nauczenie się: Ważne jest, aby organizacje dokonały przeglądu reakcji na incydenty i dostosowały swoje podejście do przyszłych ataków. Cała dokumentacja, która nie została ukończona podczas incydentu, musi teraz zostać skompilowana, wraz z dodatkowymi informacjami, które mogą przynieść korzyści przyszłym incydentom.
+
+
+## 10.9. Vulnerability Assessment
+
+Ocena luk w zabezpieczeniach (Vulnerability Assessment) to systematyczny przegląd słabych punktów bezpieczeństwa w systemie informatycznym. Ocenia, czy system jest podatny na znane luki w zabezpieczeniach, przypisuje tym lukom poziomy ważności i zaleca podjęcie działań naprawczych lub łagodzących, jeśli i kiedykolwiek zajdzie taka potrzeba.
+
+### Przykłady zagrożeń, którym można zapobiec poprzez ocenę podatności na zagrożenia, obejmują:
++ SQL injection, XSS i inne ataki polegające na wstrzykiwaniu kodu.
++ Eskalacja uprawnień z powodu wadliwych mechanizmów uwierzytelniania.
++ Niezabezpieczone ustawienia domyślne – oprogramowanie, które jest dostarczane z niezabezpieczonymi ustawieniami, takimi jak możliwe do odgadnięcia hasła administratora.
+
+### Istnieje kilka rodzajów ocen podatności na zagrożenia. Należą do nich:
++ Ocena hosta – ocena krytycznych serwerów, które mogą być podatne na ataki, jeśli nie zostaną odpowiednio przetestowane lub wygenerowane z testowanego obrazu maszyny.
++ Ocena sieci i sieci bezprzewodowej – ocena zasad i praktyk mających na celu zapobieganie nieautoryzowanemu dostępowi do sieci prywatnych lub publicznych oraz zasobów dostępnych w sieci.
++ Ocena bazy danych — ocena baz danych lub systemów dużych zbiorów danych pod kątem luk w zabezpieczeniach i błędnych konfiguracji, identyfikowanie nieautoryzowanych baz danych lub niezabezpieczonych środowisk deweloperskich/testowych oraz klasyfikowanie poufnych danych w infrastrukturze organizacji.
++ Skanowanie aplikacji – identyfikacja luk w zabezpieczeniach aplikacji internetowych i ich kodu źródłowego poprzez automatyczne skanowanie front-end lub statyczną/dynamiczną analizę kodu źródłowego.
+
+### Ocena luk w zabezpieczeniach: Proces skanowania zabezpieczeń 
+
+Proces skanowania bezpieczeństwa składa się z czterech etapów: testowania, analizy, oceny i korygowania.
+
+<p align="center">
+  Rys.10.9.1. Proces skanowania zabezpieczeń
+<br>
+  <img src="\assets\img\Cyber\81.png" width="650" alt="psz">
+  <br>
+  Źródło: https://www.imperva.com/learn/wp-content/uploads/sites/13/2019/03/vulnerability-assessment.png.webp
+</p>
+
++ Identykacja podatności (testowanie): Celem tego kroku jest sporządzenie wyczerpującej listy luk w zabezpieczeniach aplikacji. Analitycy bezpieczeństwa testują kondycję bezpieczeństwa aplikacji, serwerów lub innych systemów, skanując je za pomocą zautomatyzowanych narzędzi lub testując i oceniając je ręcznie.
++ Analiza podatnmości: Celem tego kroku jest zidentyfikowanie źródła i głównej przyczyny luk w zabezpieczeniach zidentyfikowanych w kroku pierwszym.
++ Ocena ryzyka: Celem tego kroku jest nadanie priorytetu lukom w zabezpieczeniach.
++ Naprawa: Celem tego kroku jest wypełnienie luk w zabezpieczeniach.
+
+## 10.10. Security Awareness Training
+
+Metoda szkoleń z zakresu świadomości bezpieczeństwa (security awareness training) obejmuje szereg kroków, które mają na celu edukację pracowników w zakresie zagrożeń bezpieczeństwa, najlepszych praktyk i polityk związanych z ochroną informacji. 
+
+### Oto ogólne kroki, które można podjąć podczas przeprowadzania szkoleń z zakresu świadomości bezpieczeństwa:
++ Ocena ryzyka i identyfikacja zagrożeń: Przed rozpoczęciem szkoleń z zakresu świadomości bezpieczeństwa warto przeprowadzić analizę ryzyka, aby zidentyfikować najważniejsze zagrożenia, z którymi organizacja może się spotkać. W oparciu o te informacje można dostosować treści szkoleń do specyficznych potrzeb i ryzyk.
++ Określenie celów szkolenia: Należy zdefiniować konkretne cele, które trzeba osiągnąć dzięki szkoleniom z zakresu świadomości bezpieczeństwa. Na przykład, zwiększenie rozpoznawania phishingu, poprawa praktyk higieny haseł czy świadomość związana z ochroną danych.
++ Opracowanie treści szkoleniowych: Należy przygotować materiały szkoleniowe, które są dostosowane do specyfiki organizacji. Treści mogą obejmować prezentacje, wideo, scenariusze, quizy czy ćwiczenia praktyczne. Ważne jest, aby przedstawić zagrożenia w sposób przystępny i zrozumiały dla wszystkich uczestników.
++ Dostosowanie treści do różnych grup pracowników: Z uwagi na różne role i poziomy zaangażowania pracowników w organizacji, warto dostosować treści szkoleniowe do ich specyficznych potrzeb. Pracownicy IT mogą wymagać bardziej technicznych informacji, podczas gdy pracownicy działu księgowości powinni skupić się na ochronie danych finansowych.
++ Przeprowadzenie regularnych szkoleń: Szkolenia z zakresu świadomości bezpieczeństwa powinny być przeprowadzane regularnie, aby zapewnić stały przepływ informacji i utrzymać świadomość pracowników na wysokim poziomie. Można rozważyć harmonogram comiesięcznych lub kwartalnych szkoleń, a także roczne odświeżanie treści.
++ Wykorzystanie różnych metod dydaktycznych: Dobrze dobrana metodyka szkoleniowa może być kluczowa dla skuteczności szkoleń z zakresu świadomości bezpieczeństwa. Można stosować interaktywne prezentacje, scenariusze, symulacje ataków czy case study, które angażują pracowników i pomagają im lepiej zrozumieć zagrożenia.
++ Śledzenie postępów: Ważne jest monitorowanie postępów pracowników w zakresie świadomości bezpieczeństwa. Można to osiągnąć poprzez regularne testy, quizy lub symulacje, które pozwolą ocenić, jak dobrze pracownicy przyswajają wiedzę i jakie obszary wymagają poprawy.
++ Kultura bezpieczeństwa: Szkolenia z zakresu świadomości bezpieczeństwa powinny być elementem większego programu kultury bezpieczeństwa w organizacji. Warto wzbudzać świadomość bezpieczeństwa na wszystkich poziomach organizacji i promować odpowiedzialne zachowanie w zakresie ochrony informacji.
++ Aktualizacje i śledzenie nowych zagrożeń: Zagrożenia bezpieczeństwa zmieniają się ciągle, dlatego ważne jest, aby szkolenia były aktualizowane wraz z pojawianiem się nowych zagrożeń. Bądź na bieżąco z najnowszymi trendami i technikami wykorzystywanymi przez cyberprzestępców.
++ Nagradzanie i promowanie pozytywnych zachowań: Należy zachęcać pracowników do zgłaszania incydentów i proponowania ulepszeń w obszarze bezpieczeństwa. Także można nagrywać pozytywne zachowania i postępy w zakresie bezpieczeństwa, aby podkreślić znaczenie odpowiedzialności indywidualnej i wspólnego zaangażowania w ochronę informacji.
+
+
+## 10.11. Security Audits
+
+Metoda audytów bezpieczeństwa jest procesem oceny, sprawdzania i weryfikacji systemów, procedur i kontroli w organizacji w celu zidentyfikowania ewentualnych luk bezpieczeństwa oraz zapewnienia zgodności z politykami i regulacjami dotyczącymi bezpieczeństwa. 
+
+### Oto ogólne kroki, które można podjąć podczas przeprowadzania audytów bezpieczeństwa:
++ Planowanie audytu: Określić cele audytu, zakres prac i harmonogram. Ustalić, które obszary organizacji będą poddane audytowi, takie jak systemy informatyczne, sieci, infrastruktura fizyczna, procedury bezpieczeństwa, zarządzanie dostępem itp. Sporządźić listę kontrolną lub zestaw standardów, które zostaną zastosowane podczas oceny.
++ Przygotowanie: Należy przygotować się do audytu, zbierając niezbędne dokumenty, takie jak polityki bezpieczeństwa, procedury, umowy i przeglądy poprzednich audytów. Także należy uzyskać dostęp do odpowiednich systemów, sieci i danych, które będą poddane ocenie. Należy zidentyfikować osoby, które będą zaangażowane w audyt, w tym personel IT, zarządzanie i inne odpowiednie zespoły.
++ Analiza ryzyka: Należy przeprowadzić analizę ryzyka, aby zidentyfikować główne obszary ryzyka, w których organizacja może być narażona na zagrożenia. Na podstawie tej analizy trzeba skupić się na obszarach, które wymagają szczególnej uwagi podczas audytu.
++ Wykonanie audytu: Należy przeprowadzić ocenę i weryfikację zgodności z politykami i standardami bezpieczeństwa. Można wykorzystać różne metody, takie jak inspekcje fizyczne, przeglądy dokumentów, wywiady z pracownikami, testy penetracyjne, skanowanie sieci, ocena kontroli dostępu itp. Także trzeba zbierać dowody, dokumentuj ustalenia i ewentualne uchybienia.
++ Analiza i ocena wyników: Należy przeanalizować zebrane dane i ustalenia z audytu. Ocena wyników polega na porównaniu istniejących praktyk z najlepszymi praktykami branżowymi, regulacjami i politykami wewnętrznymi. Także należy zweryfikować zgodność z wymaganiami i identyfikuj uchybienia, słabe punkty i obszary do poprawy.
++ Wypracowanie rekomendacji: Na podstawie analizy wyników audytu trzeba opracować  konkretne rekomendacje w celu poprawy bezpieczeństwa. Także należy określić priorytety i zaproponuj działania naprawcze dla każdego uchybienia lub słabego punktu. Zalecane działania powinny być realistyczne, osiągalne i dostosowane do specyficznych potrzeb organizacji.
++ Raportowanie i komunikacja: Należy przygotować raport z audytu, który zawiera ustalenia, rekomendacje i plan działań naprawczych. Raport powinien być zrozumiały dla zarządu i innych zainteresowanych stron. Należy przedstawić wyniki audytu i rekomendacje zarządowi, właścicielom systemów i innym odpowiedzialnym za bezpieczeństwo.
++ Wdrożenie działań naprawczych: Należy prześledzić rekomendacje audytu i wdrożenie działań naprawczych. Póżniej przypisać odpowiedzialność za realizację działań, monitoruj postępy i zapewnij, że wszelkie uchybienia lub słabe punkty są usuwane w odpowiednim czasie.
++ Śledzenie i monitorowanie: Należy zapewnić systematyczne monitorowanie i śledzenie, aby sprawdzić, czy wprowadzone zmiany i poprawki są skuteczne i trwałe. Regularnie przeprowadzać przeglądy postępu i ocenę skuteczności działań naprawczych.
++ Kontynuacja audytów: Audyt bezpieczeństwa powinien być kontynuowany jako proces ciągły. Regularnie przeprowadzaj audyty, aby utrzymać bieżącą wiedzę o bezpieczeństwie, identyfikować nowe zagrożenia i zapewniać zgodność z regulacjami i politykami bezpieczeństwa.
+
+
+## 10.12. Identity and Access Management 
+
+Identity and Access Management (IAM) to metoda zarządzania tożsamościami i dostępem w organizacji, która ma na celu kontrolowanie i zabezpieczanie dostępu do systemów informatycznych, aplikacji, danych i zasobów. IAM obejmuje zarówno technologie, jak i procesy biznesowe, które umożliwiają efektywne zarządzanie tożsamościami użytkowników oraz ich uprawnieniami do zasobów. 
+
+### Oto ogólne kroki, które są często stosowane w ramach metody IAM:
++ Identyfikacja i autentykacja użytkowników: W pierwszym kroku identyfikuje się użytkowników i uwierzytelnia ich tożsamość. Może to obejmować użycie nazwy użytkownika i hasła, dwuskładnikowej autentykacji, certyfikatów cyfrowych lub innych metod uwierzytelniania.
++ Tworzenie kont użytkowników: Po autentykacji użytkownika tworzone są konta użytkowników w systemie IAM. Każdemu użytkownikowi przypisywane są unikalne identyfikatory, takie jak nazwy użytkowników, identyfikatory pracowników lub adresy e-mail.
++ Zarządzanie tożsamościami: W ramach IAM jest prowadzony proces zarządzania tożsamościami, który obejmuje tworzenie, aktualizację i usuwanie kont użytkowników w odpowiednim czasie. Zarządzanie tożsamościami może również obejmować zarządzanie grupami użytkowników, rolami, uprawnieniami i innymi atrybutami użytkowników.
++ Kontrola dostępu: IAM zapewnia kontrolę dostępu do zasobów na podstawie zasad i polityk organizacji. Uprawnienia dostępu są przypisywane na podstawie ról, grup lub atrybutów użytkownika. Zapewnia to, że użytkownicy mają dostęp tylko do tych zasobów, które są im niezbędne w celu wykonywania swoich obowiązków.
++ Jednolity logowanie (Single Sign-On - SSO): SSO to funkcja, która umożliwia użytkownikom logowanie się tylko raz, a następnie uzyskanie dostępu do różnych aplikacji i zasobów bez konieczności ponownego uwierzytelniania. To zwiększa wygodę użytkowników i ułatwia zarządzanie dostępem.
++ Audyt i monitorowanie: System IAM umożliwia monitorowanie i rejestrowanie działań użytkowników oraz przegląd logów w celu identyfikacji nieprawidłowości lub podejrzanej aktywności. Audyt i monitorowanie pomagają w wykrywaniu i reagowaniu na potencjalne zagrożenia i incydenty bezpieczeństwa.
++ Zgodność i raportowanie: IAM pomaga w zapewnieniu zgodności z przepisami prawnymi, regulacjami branżowymi i wewnętrznymi politykami bezpieczeństwa. System IAM umożliwia generowanie raportów, które są niezbędne do przeprowadzania audytów, weryfikacji zgodności i monitorowania działań użytkowników.
++ Automatyzacja procesów: IAM umożliwia automatyzację wielu procesów związanych z zarządzaniem tożsamościami i dostępem, takich jak tworzenie i usuwanie kont użytkowników, przypisywanie uprawnień i zarządzanie cyklem życia użytkownika. Automatyzacja pomaga w zapewnieniu spójności, skuteczności i efektywności procesów IAM.
+
+## 10.13. Data Loss Prevention
+
+Zapobieganie utracie danych (Data Loss Prevention) – to rozwiązanie zabezpieczające, które identyfikuje i pomaga zapobiegać niebezpiecznym lub niewłaściwym udostępnianiu, przesyłaniu lub wykorzystywaniu poufnych danych. Może pomóc organizacji w monitorowaniu i ochronie poufnych informacji w systemach lokalnych, lokalizacjach chmurowych i urządzeniach końcowych. Pomaga również osiągnąć zgodność z przepisami, takimi jak ustawa o przenośności i odpowiedzialności w ubezpieczeniach zdrowotnych (HIPAA) i ogólne rozporządzenie o ochronie danych (RODO).
+
+### Jak działa DLP?
+
+Zapobieganie utracie danych to połączenie ludzi, procesów i technologii, które wykrywają i zapobiegają wyciekowi poufnych danych. Rozwiązanie DLP wykorzystuje takie elementy, jak oprogramowanie antywirusowe, sztuczna inteligencja i uczenie maszynowe, do wykrywania podejrzanych działań przez porównywanie zawartości z zasadami DLP organizacji, które określają, w jaki sposób organizacja etykietuje, udostępnia i chroni dane bez ujawniania ich nieautoryzowanym użytkownikom.
+
+### Rodzaje zagrożeń dla danych
++ Cyberatak – celowa, złóśliwa próba uzyskania nieautoryzowanego dostępu do systemów komputerowych oraz kradzieży, modyfikacji lub zniszczenia danych. 
++ Złośliwe oprogramowanie – w tym robaki, wirusy i programy szpegujące – często samkuje się pod zaufanym załącznikiem lub programem do wiadomości e-mail.
++ Ryzyko wewnętrzne – insiderzy to osoby, które mają informacje o Twoich danych, systemach komputerowych i praktykach bezpieczeństwa, takie jak pracownicy, dostawcy, kontrahenci i partnerzy.
++ Niezamierzone narażenie – ma miejsce, gdy pracownicy nieświadomie zezwalają na dostęp do nieautoryzowanych użytkowników lub wirusów.
++ Wyłudzanie informacji – ma miejsce, gdy pracownicy nieświadomie zezwalają na dostęp do nieautoryzowanych użytkowników lub wirusów.
++ Ransomware – ma miejsce, gdy pracownicy nieświadomie zezwalają na dostęp do nieautoryzowanych użytkowników lub wirusów.
+
+### Najlepsze praktyki DLP
++ Należy postępować zgodnie z tymi najlepszymi praktykami, aby skutecznie zapobiegać utracie danych:
++ Identyfikować i klasyfikować dane poufne. Aby chronić swoje dane, należy wiedzieć, co masz. Należy używać zasad DLP, aby zidentyfikować poufne dane i odpowiednio je oznaczyć.
++ Należy użyć szyfrowania danych. Także warto szyfrować dane, które są w spoczynku lub są przesyłane, aby nieautoryzowani użytkownicy nie mogli wyświetlać zawartości pliku, nawet jeśli uzyskają dostęp do ich lokalizacji.
++ Mięc należne zabezpieczenie swoich systemów. Sieć jest tak bezpieczna, jak jej najsłabszy punkt wejścia. Należy ograniczyć dostęp do pracowników, którzy potrzebują go do wykonywania swojej pracy.
++ Implementować DLP etapami. Poznawać swoje priorytety biznesowe i ustal test pilotażowy. Pozwolić swojej organizacji rozwinąć się w rozwiązanie i wszystko, co ma do zaoferowania.
++ Wdrażać strategii zarządzania poprawkami. Testować wszystkie poprawki dla swojej infrastruktury, aby upewnić się, że w organizacji nie ma luk w zabezpieczeniach.
++ Przydzielać role. Ustalać role i obowiązki, aby wyjaśnić, kto jest odpowiedzialny za bezpieczeństwo danych.
++ Automatyzować. Ręczne procesy DLP mają ograniczony zakres i nie można ich skalować w celu zaspokojenia przyszłych potrzeb organizacji.
++ Użyj wykrywania anomalii. Uczenie maszynowe i analiza behawioralna mogą być wykorzystywane do identyfikowania nietypowych zachowań, które mogą spowodować wyciek danych.
++ Edukuj interesariuszy. Polityka DLP nie wystarczy, aby zapobiec celowym lub przypadkowym incydentom; Interesariusze i użytkownicy muszą znać swoją rolę w ochronie danych organizacji.
++ Ustal metryki. Wskaźniki śledzenia — takie jak liczba incydentów i czas reakcji — pomogą określić skuteczność strategii DLP.
+
+## 10.14. Patch Management
+
+Patch management to proces zarządzania aktualizacjami (patchami) oprogramowania w organizacji w celu poprawienia bezpieczeństwa, wydajności i funkcjonalności systemów. Aktualizacje oprogramowania, które są wydawane przez dostawców, często zawierają poprawki błędów, łatki bezpieczeństwa i ulepszenia. Skuteczne zarządzanie patchami jest kluczowe dla zapewnienia ochrony przed zagrożeniami i utrzymania stabilności środowiska IT. 
+
+### Oto ogólne kroki, które są często uwzględniane w procesie zarządzania patchami:
++ Śledzenie i identyfikacja: Monitorowanie źródeł informacji o patchach, takich jak ogłoszenia producentów oprogramowania, listy mailingowe, fora dyskusyjne lub subskrypcje bezpieczeństwa. Identyfikowanie patchy, które są dostępne dla używanych systemów i oprogramowania.
++ Analiza i ocena: Analiza wpływu patcha na środowisko IT organizacji. Ocena, czy patch jest krytyczny, związany z bezpieczeństwem czy wymaga natychmiastowego wdrożenia. Dokładna ocena może obejmować testowanie patcha w środowisku testowym, aby sprawdzić jego wpływ na systemy, aplikacje i funkcjonalność.
++ Planowanie i priorytetyzacja: Opracowanie planu wdrożenia patchy, uwzględniając priorytetyzację na podstawie ryzyka i znaczenia. Krytyczne patche bezpieczeństwa powinny być wdrażane jak najszybciej, aby zminimalizować ryzyko wykorzystania podatności przez cyberprzestępców.
++ Testowanie: Przeprowadzenie testów patchy w środowisku testowym przed wdrożeniem w produkcji. Testowanie pozwala upewnić się, że patch nie wpłynie negatywnie na funkcjonalność systemów i aplikacji, ani nie spowoduje incydentów.
++ Wdrożenie: Planowane wdrożenie patchy w środowisku produkcyjnym, zgodnie z harmonogramem i priorytetami. Może to obejmować instalację patchy na poszczególnych komputerach lub serwerach, aktualizację systemów operacyjnych, aplikacji lub innych składników oprogramowania.
++ Monitorowanie i sprawdzanie: Monitorowanie i śledzenie wdrożonych patchy w celu upewnienia się, że zostały prawidłowo zainstalowane i działają zgodnie z oczekiwaniami. Może to obejmować weryfikację w systemach zarządzania patchami lub raportowanie automatycznych narzędzi do monitorowania.
++ Zarządzanie wyjątkami: W przypadkach, gdy nie można zastosować patcha ze względu na specyficzne wymagania systemu lub aplikacji, należy dokładnie zdefiniować procedury zarządzania wyjątkami. Konieczne jest monitorowanie i dokumentowanie takich przypadków oraz podjęcie odpowiednich działań, takich jak implementacja dodatkowych środków bezpieczeństwa.
++ Audyt i raportowanie: Przeprowadzanie regularnych audytów procesu zarządzania patchami, aby ocenić skuteczność i zgodność z politykami organizacji. Przygotowywanie raportów dotyczących wdrożeń patchy, niezgodności lub opóźnień, aby zapewnić pełną transparentność i kontrolę.
+
+## 10.15. Intrussion Detection and Prevention Systems
+
+IDPS – jest zdefiniowany jako system, który monitoruje sieć i skanuje ją w poszukiwaniu możliwych zagrożeń, aby ostrzec administratora i zapobiec potencjalnym atakom.
+
+### Co to jest system wykrywania włamań i zapobiegania im?
+
+System wykrywania włamań i zapobiegania im (IDPS) monitoruje sieć pod kątem możliwych zagrożeń, aby ostrzec administratora, zapobiegając w ten sposób potencjalnym atakom.
+
+<p align="center">
+  Rys.10.15.1. Działanie IDPS
+<br>
+  <img src="\assets\img\Cyber\82.png" width="650" alt="IDPS">
+  <br>
+  Źródło: https://pimages.toolbox.com/wp-content/uploads/2022/02/10140626/How-IDPS-Functions.png
+</p>
+
+### Podstawowe funkcje IDPS
+
+System wykrywania włamań i zapobiegania im oferuje następujące funkcje:
+
+<p align="center">
+  Rys.10.15.2. Funkcje IDPS
+<br>
+  <img src="\assets\img\Cyber\83.png" width="650" alt="IDPS-1">
+  <br>
+  Źródło: https://pimages.toolbox.com/wp-content/uploads/2022/02/10140409/34_1.png
+</p>
+
++ Guards technology infrastructure and sensitive data: Żaden system nie może istnieć w silosie, szczególnie w obecnej erze firm opartych na danych. Dane stale przepływają przez sieć, więc najprostszym sposobem ataku lub uzyskania dostępu do systemu jest ukrycie się w rzeczywistych danych. Część systemu IDS jest reaktywna, ostrzegając ekspertów ds. Bezpieczeństwa o takich możliwych incydentach. Część systemu IPS jest proaktywna, umożliwiając zespołom ds. bezpieczeństwa łagodzenie tych ataków, które mogą powodować szkody finansowe i wizerunkowe.
++ Reviews existing user and security policies: Każda organizacja oparta na zabezpieczeniach ma własny zestaw zasad użytkowników i zasad związanych z dostępem dla swoich aplikacji i systemów. Zasady te znacznie zmniejszają obszar ataku, zapewniając dostęp do krytycznych zasobów tylko kilku zaufanym grupom użytkowników i systemom. Ciągłe monitorowanie przez systemy wykrywania włamań i zapobiegania im gwarantuje, że administratorzy natychmiast wykryją wszelkie luki w tych ramach polityki. Pozwala także administratorom modyfikować zasady w celu przetestowania maksymalnego bezpieczeństwa i wydajności.
++ Reviews existing user and security policies: IDS-IPS zapewnia również zespołowi ds. bezpieczeństwa widok z lotu ptaka na ruch przepływający przez jego sieci. Pomaga im to śledzić zasoby sieciowe, umożliwiając modyfikację systemu w przypadku przeciążenia ruchu lub niedostatecznego wykorzystania serwerów.
++ Helps meet compliance regulations: Wszystkie firmy, bez względu na branżę, są coraz częściej regulowane w celu zapewnienia prywatności i bezpieczeństwa danych konsumentów. Przede wszystkim pierwszym krokiem w kierunku wypełnienia tych mandatów jest wdrożenie systemu wykrywania włamań i zapobiegania im.
+
+IDPS działa poprzez skanowanie procesów w poszukiwaniu szkodliwych wzorców, porównywanie plików systemowych oraz monitorowanie zachowania użytkowników i wzorców systemowych. System IPS wykorzystuje zapory aplikacji internetowych i rozwiązania filtrowania ruchu w celu zapobiegania incydentom.
+
+### Typy IDPS
+
+<p align="center">
+  Rys.10.15.3. Typy IDPS
+<br>
+  <img src="\assets\img\Cyber\84.png" width="650" alt="IDPS-2">
+  <br>
+  Źródło: https://pimages.toolbox.com/wp-content/uploads/2022/02/10140259/33_1.png
+</p>
+
++ Network-based intrusion prevention system (NIPS): sieciowe systemy zapobiegania włamaniom monitorują całe sieci lub segmenty sieci pod kątem złośliwego ruchu. Zwykle odbywa się to poprzez analizę aktywności protokołu. Jeśli aktywność protokołu jest zgodna z bazą danych znanych ataków, odpowiednie informacje nie mogą się przedostać. Moduły NIP są zwykle wdrażane na granicach sieci, za zaporami, routerami i serwerami dostępu zdalnego.
++ Wireless intrusion prevention system (WIPS): Bezprzewodowe systemy zapobiegania włamaniom monitorują sieci bezprzewodowe, analizując protokoły specyficzne dla sieci bezprzewodowych. Chociaż WIPS są cenne w zasięgu sieci bezprzewodowej organizacji, systemy te nie analizują wyższych protokołów sieciowych, takich jak protokół kontroli transmisji (TCP). Systemy zapobiegania włamaniom bezprzewodowym są wdrażane w sieci bezprzewodowej oraz w obszarach podatnych na nieautoryzowaną sieć bezprzewodową.
++ Network behavior analysis (NBA) system: Podczas gdy NIPS analizuje odchylenia w aktywności protokołu, systemy analizy zachowania sieci identyfikują zagrożenia, sprawdzając nietypowe wzorce ruchu. Takie wzorce są zazwyczaj wynikiem naruszeń zasad, ataków generowanych złośliwym oprogramowaniem lub ataków DDoS (distributed denial of service). Systemy NBA są wdrażane w sieciach wewnętrznych organizacji oraz w punktach, w których ruch przepływa między sieciami wewnętrznymi i zewnętrznymi.
++ Host-based intrusion prevention system (HIPS): Systemy zapobiegania włamaniom oparte na hoście różnią się od pozostałych tym, że są wdrażane na jednym hoście. Hosty te są krytycznymi serwerami z ważnymi danymi lub publicznie dostępnymi serwerami, które mogą stać się bramami do systemów wewnętrznych. System HIPS monitoruje ruch przychodzący i wychodzący z tego konkretnego hosta, monitorując uruchomione procesy, aktywność sieciową, dzienniki systemowe, aktywność aplikacji i zmiany konfiguracji.
+
+### Techniki  IDPS
+
+- Funkjce IDPS na poziomie wykrywania 
++ Monitorowanie progów: polega na ustawieniu akceptowanych poziomów powiązanych z każdym użytkownikiem, aplikacją i zachowaniem systemu.
++ Profilowanie: obejmuje monitorowanie, czy użytkownik z określoną rolą lub grupą użytkowników generuje tylko dozwolony ruch.
+
+- Funkcje IDPS na poziomie prewencji
++ Powstrzymanie ataku: inaczej znane jako "czujność na wygnanie", systemy zapobiegania włamaniom zapobiegają incydentom przed ich wystąpieniem.
++ Zmiany w środowisku bezpieczeństwa: wiąże się to ze zmianą konfiguracji zabezpieczeń w celu zapobiegania atakom. Przykładem jest ponowna konfiguracja ustawień zapory przez system IPS w celu zablokowania określonego adresu IP.
++ Modyfikacja treści ataku: szkodliwe treści mogą być wprowadzane do systemu w różnych formach. Jednym ze sposobów uczynienia tej treści bardziej przyjazną jest usunięcie obraźliwych segmentów.
+
+### Najlepsze praktyki IDPS
+
+Aby w pełni wykorzystać system wykrywania włamań i zapobiegania im, oto kilka najlepszych praktyk, których organizacje powinny przestrzegać:
+
+<p align="center">
+  Rys.10.15.4. Najlepsze praktyki IDPS na rok 2022
+<br>
+  <img src="\assets\img\Cyber\85.png" width="650" alt="IDPS-3">
+  <br>
+  Źródło: https://pimages.toolbox.com/wp-content/uploads/2022/02/10140004/37.png
+</p>
+
+## 10.16. Security Information and Event Management 
+
+Zarządzanie informacjami i zdarzeniami zabezpieczeń, w skrócie SIEM, to rozwiązanie, które ułatwia organizacjom wykrywanie i analizowanie zagrożeń dla bezpieczeństwa oraz reagowanie na nie, zanim zaszkodzą one operacjom biznesowym.
+
+SIEM, wymawiane jako „sim”, łączy zarządzanie informacjami zabezpieczeń (SIM) i zarządzanie zdarzeniami zabezpieczeń (SEM) w jeden system zarządzania zabezpieczeniami. Technologia SIEM zbiera dane dziennika zdarzeń z szeregu źródeł, identyfikuje aktywność odbiegającą od normy za pomocą analizy w czasie rzeczywistym oraz podejmuje odpowiednie działania.
+
+<p align="center">
+  Rys.10.16.1. Rozwiązanie SIEM
+<br>
+  <img src="\assets\img\Cyber\86.png" width="650" alt="siem">
+  <br>
+  Źródło: https://miro.medium.com/v2/resize:fit:720/format:webp/1*6wdswKwlmL1IGmCWjuV66w.jpeg
+</p>
+
+### Jak działają narzędzia SIEM?
+
+Narzędzia SIEM zbierają, agregują i analizują wolumeny danych pochodzących z aplikacji, urządzeń, serwerów i od użytkowników organizacji w czasie rzeczywistym, dzięki czemu zespoły ds. zabezpieczeń mogą wykrywać ataki i blokować je. Narzędzia SIEM używają wstępnie ustalonych reguł, aby wspomagać zespoły ds. zabezpieczeń w definiowaniu zagrożeń oraz generowaniu alertów.
+
+### Funkcje i przypadki użycia SIEM
++ Pulpit nawigacyjny: jedno okienko zapewnia przyjazny dla użytkownika sposób interakcji z danymi dla personelu Security Operations Center (SOC), zarządzania alertami, śledzenia stanu i aktywności produktów do ochrony przed lukami w zabezpieczeniach oraz identyfikowania systemów, które nie są już skanowane w poszukiwaniu luk w zabezpieczeniach.
++ Możliwości analityczne: uzyskuje wgląd w ogromne ilości danych i stosuje uczenie maszynowe do automatycznego identyfikowania ukrytych zagrożeń. Oparte na analizie systemy SIEM mogą łączyć dane operacyjne IT i analizę zabezpieczeń, aby umożliwić identyfikację określonej luki w zabezpieczeniach.
++ Zaawansowane wykrywania zagrożeń: wykorzystuje monitorowanie bezpieczeństwa sieci, wykrywanie punktów końcowych i reagowanie w trybie izolowanym oraz analizę zachowania w celu identyfikowania i poddawania kwarantannie nowych potencjalnych zagrożeń oraz korelowania zabezpieczeń w różnych stylach zaawansowanych trwałych zagrożeń.
++ Analiza zagrożeń: koreluje bieżące dane dotyczące wskaźników taktyk, technik i procedur włamania i przeciwnika w kontekście innych informacji na temat incydentów i działań, aby ułatwić ujawnianie nietypowych zdarzeń.
++ Sprawozdawczość w zakresie zgodności: dzienniki każdego hosta, które muszą być uwzględnione w raportowaniu, są regularnie i automatycznie przesyłane do SIEM, gdzie są agregowane w jeden raport, który można dostosować w celu uzyskania rozbudowanego raportowania zgodności na jednym hoście lub wielu. Funkcje raportowania są zgodne z obowiązkowymi wymaganiami PCI DSS, HIPAA, GDPR i SOX.
++ Dochodzenia kryminalistyczne: SIEM przeprowadza dogłębną analizę głównych zdarzeń związanych z bezpieczeństwem przy użyciu zaawansowanych narzędzi, aby zapewnić niezmienne dowody, które mogą być przydatne w sądzie, w dużej mierze dzięki zgodności z chmurą i możliwościom raportowania.
+
+## 11. Narzędzia cyebrbezpieczeństwa
+
+Oprogramowanie CyberSecurity jest niezbędne dla bezpieczeństwa cybernetycznego i prywatności firmy lub osoby. Cyberbezpieczeństwo to metoda używana do ochrony sieci, systemu lub aplikacji przed cyberatakami. Służy do unikania nieautoryzowanego dostępu do danych, cyberataków i kradzieży tożsamości.
+
+<p align="center">
+  Rys.11.1. Architektura cyberbezpieczeństwa firmy Microsoft
+<br>
+  <img src="\assets\img\Cyber\87.png" width="650" alt="cyber">
+  <br>
+  Źródło: https://www.nixu.com/sites/default/files/inline-images/microsoft-cybersecurity-architecture.png
+</p>
+
+Poniższy rysunek nie obejmuje wszystkich możliwych rozwiązań bezpieczeństwa i scenariuszy integracji, zamiast tego daje ogólne zrozumienie, które rozwiązania pomagają badać alerty i podejrzane działania znalezione w chmurze lub lokalnie.
+
+Usługa Azure Sentinel przedstawia rozwiązanie SIEM na obrazku. Podnosi alerty, a dochodzenie zwykle zaczyna się od tego miejsca. Jeśli zastanawiasz się, dlaczego badanie nie rozpoczyna się od usługi Azure Security Center lub M365 Security Center, powodem jest to, że alerty z tych rozwiązań można znaleźć lub wysłać do rozwiązania SIEM. W tym przykładzie produktem SIEM jest Sentinel, ale może to być dowolne inne rozwiązanie SIEM, takie jak Splunk lub QRadar.
+
+Najlepsze zalety synergii rozwiązań bezpieczeństwa wynikają z integracji. W najwyższej kategorii znajdują się rozwiązania, które moim zdaniem są najlepsze do rozpoczęcia śledztwa.
+
+Zarówno Sentinel, jak i Cloud App Security mają bogaty zestaw możliwości badania i oba mogą mieć dane pozyskiwane z różnych źródeł. Rozwiązania bezpieczeństwa w dolnej części obrazu działają jako dostawca rozwiązań bezpieczeństwa najwyższego poziomu, Sentinel & Cloud App Security. Dostawca, taki jak alert usługi Azure ATP, jest przekazywany do rozwiązań zabezpieczeń najwyższego poziomu, jeśli integracje są odpowiednio skonfigurowane.
+
+<p align="center">
+  Rys.11.2. Integracja rozwiązań zabezpieczających 
+<br>
+  <img src="\assets\img\Cyber\88.png" width="650" alt="cyber-1">
+  <br>
+  Źródło: https://www.nixu.com/sites/default/files/inline-images/security-solution-integrations_1.png
+</p>
+
+## 11.1. Microsoft 365 Security
+
+Microsoft 365 Security to kompleksowe narzędzie bezpieczeństwa oferowane przez firmę Microsoft. Jest to rozwiązanie oparte na chmurze, które zapewnia zaawansowaną ochronę danych, identyfikację użytkowników, zarządzanie zagrożeniami i zgodność z przepisami dla organizacji korzystających z usług Microsoft 365. Dzięki usłudze Microsoft 365 Security Center możesz uzyskać ogólny widok kondycji zabezpieczeń organizacji w obciążeniach platformy Microsoft 365.
+
+<p align="center">
+  Rys.11.1.1. Microsoft Defender
+<br>
+  <img src="\assets\img\Cyber\91.png" width="650" alt="msd">
+  <br>
+  Źródło: https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Product-Image-365-Defender-935x518_RWUM5b?resMode=sharp2&op_usm=1.5,0.65,15,0&wid=760&qlt=100&fit=constrain
+</p>
+
+Narzędzie Microsoft 365 Security składa się z kilku składowych, które łącznie zapewniają wszechstronną ochronę środowiska pracy. 
+
+### Oto kilka kluczowych elementów:
++ Ochrona tożsamości: Microsoft 365 Security zapewnia narzędzia do uwierzytelniania wieloskładnikowego, zarządzania tożsamościami i jednolitego uwierzytelniania, które chronią dane użytkowników przed nieautoryzowanym dostępem.
++ Ochrona informacji: Narzędzia takie jak Microsoft Information Protection pomagają chronić dane, zarządzając nimi w czasie rzeczywistym. Zapewniają one możliwość klasyfikowania, etykietowania i zabezpieczania danych w celu uniknięcia wycieku informacji.
++ Zarządzanie zagrożeniami: Microsoft 365 Security wykorzystuje funkcje takie jak Advanced Threat Protection (ATP), które pomagają w wykrywaniu i blokowaniu zaawansowanych zagrożeń, takich jak złośliwe oprogramowanie, phishing czy ransomware. System korzysta z zaawansowanych algorytmów uczenia maszynowego, aby analizować i wykrywać podejrzane działania.
++ Zgodność z przepisami: Narzędzia takie jak Compliance Manager pomagają organizacjom spełniać wymogi związane z zasadami i przepisami, takimi jak RODO, HIPAA czy ISO 27001. Zapewniają one kontrolę i monitorowanie zgodności w ramach usług Microsoft 365.
++ Zarządzanie zabezpieczeniami: Microsoft 365 Security oferuje centrum zabezpieczeń, które umożliwia monitorowanie i zarządzanie zagrożeniami w jednym miejscu. Administracja zabezpieczeniami może być prowadzona z poziomu konsoli, która dostarcza informacje o wykrytych zagrożeniach i pozwala na podejmowanie odpowiednich działań w celu zabezpieczenia środowiska.
+
+## 11.2. MS Sentinel
+
+Microsoft Sentinel, znany również jako Microsoft Azure Sentinel, to zaawansowane narzędzie do analizy bezpieczeństwa, zarządzania zdarzeniami i reagowania na incydenty, które zostało stworzone przez firmę Microsoft. Opiera się na platformie chmury Microsoft Azure i stanowi część rozwiązania Microsoft 365 Defender, zapewniając zintegrowaną ochronę przed zagrożeniami dla organizacji.
+
+<p align="center">
+  Rys.11.2.1. Microsoft Sentinel
+<br>
+  <img src="\assets\img\Cyber\89.png" width="650" alt="sentinel">
+  <br>
+  Źródło: https://learn.microsoft.com/pl-pl/azure/sentinel/media/investigate-cases/incident-severity.png#lightbox
+</p>
+
+### Główne cechy i funkcje Microsoft Sentinel:
++ Centralizacja danych zdarzeń: Microsoft Sentinel integruje się z różnymi źródłami danych, takimi jak logi zabezpieczeń, zdarzenia aplikacji, urządzeń, infrastruktury i wielu innych. Pozwala to na centralizację danych z różnych systemów w jednym miejscu, co ułatwia analizę i wykrywanie nieprawidłowości.
++ Inteligentne analizy: Sentinel wykorzystuje zaawansowane technologie sztucznej inteligencji, w tym uczenie maszynowe, aby automatycznie analizować dane i identyfikować podejrzane wzorce i zachowania. Dzięki temu możliwe jest wykrywanie zaawansowanych zagrożeń i ataków, które mogłyby być trudne do wykrycia za pomocą tradycyjnych metod.
++ Wyszukiwanie i korelacja zdarzeń: Narzędzie umożliwia przeprowadzanie zaawansowanych analiz, wyszukiwania i korelacji zdarzeń, co pomaga zrozumieć cały obraz zagrożeń i identyfikować powiązane incydenty.
++ Reakcja na incydenty: Microsoft Sentinel pozwala na definiowanie automatycznych odpowiedzi na wykryte zagrożenia. Można skonfigurować reguły i akcje, które zostaną podjęte w odpowiedzi na konkretne zdarzenia, takie jak blokowanie podejrzanych adresów IP czy wywołanie alarmów.
++ Integracja z innymi narzędziami: Sentinel jest zoptymalizowany do współpracy z innymi usługami Microsoft, takimi jak Microsoft 365 Defender i Azure Active Directory. Dzięki temu zapewnia pełną ochronę w ramach ekosystemu Microsoft i umożliwia wykorzystanie danych i informacji z różnych usług.
++ Zarządzanie incydentami: Microsoft Sentinel dostarcza zaawansowanych narzędzi do zarządzania incydentami. Pozwala na tworzenie raportów, śledzenie postępów, przypisywanie odpowiedzialności i zarządzanie całym cyklem reakcji na incydent.
++ Rozszerzalność: Dzięki korzystaniu z chmury Microsoft Azure, Microsoft Sentinel jest skalowalny i elastyczny, umożliwiając dostosowanie rozwiązania do potrzeb i wielkości organizacji.
+
+## 11.3. Azure Portal
+
+Microsoft Azure Portal to jednolite miejsce, w którym użytkownicy mogą zarządzać i monitorować zasoby chmurowe dostępne w platformie Azure. Jest to intuicyjny, interaktywny i dostępny w przeglądarce internetowej interfejs użytkownika, który umożliwia zarządzanie różnorodnymi usługami chmurowymi oferowanymi przez Microsoft.
+
+<p align="center">
+  Rys.11.3.1. Microsoft Azure Portal
+<br>
+  <img src="\assets\img\Cyber\90.png" width="650" alt="ap">
+  <br>
+  Źródło: https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/azure-portal_valprop5?resMode=sharp2&op_usm=1.5,0.65,15,0&wid=2000&qlt=100
+</p>
+
+### Główne cechy Microsoft Azure Portal:
++ Wszystkie usługi w jednym miejscu: Microsoft Azure oferuje szeroki wachlarz usług chmurowych, takich jak wirtualne maszyny, bazy danych, usługi obliczeniowe, magazyn danych, usługi sieciowe i wiele innych. Wszystkie te usługi są dostępne w portalu Azure, co ułatwia zarządzanie i monitorowanie ich na jednym ekranie.
++ Intuicyjny interfejs użytkownika: Interfejs portalu Azure jest zaprojektowany w taki sposób, aby był łatwy w użyciu i intuicyjny dla użytkowników. Umożliwia szybkie znalezienie i dostęp do różnych usług oraz wykonywanie operacji za pomocą intuicyjnych kroków.
++ Tworzenie i konfiguracja zasobów: Portal Azure pozwala na szybkie tworzenie i konfigurację różnych zasobów chmurowych. Na przykład, użytkownicy mogą łatwo utworzyć nową wirtualną maszynę, bazę danych czy aplikację internetową w kilku prostych krokach.
++ Monitorowanie i diagnostyka: Portal Azure zapewnia zaawansowane narzędzia do monitorowania i diagnostyki zasobów. Użytkownicy mogą śledzić wykorzystanie zasobów, wyświetlać dzienniki zdarzeń i diagnozować problemy w czasie rzeczywistym.
++ Zarządzanie uprawnieniami: Portal Azure umożliwia zarządzanie uprawnieniami użytkowników do różnych usług i zasobów. Administratorzy mogą przypisywać role i dostosowywać poziomy dostępu w celu zabezpieczenia swojego środowiska chmurowego.
++ Integracja z Azure Marketplace: Portal Azure jest zintegrowany z Azure Marketplace, co umożliwia łatwe przeglądanie, wybieranie i instalowanie gotowych rozwiązań i aplikacji oferowanych przez społeczność lub firmę Microsoft.
++ Skalowalność i elastyczność: Microsoft Azure Portal jest skalowalny i elastyczny, co oznacza, że może obsługiwać zarówno małe projekty, jak i duże wdrożenia na dużą skalę.
