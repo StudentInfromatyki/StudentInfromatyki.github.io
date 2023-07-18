@@ -18,6 +18,134 @@ tags: [Cyberbezpieczeństwo, Bezpieczeńswto, Ataki, Metody]
 [2.1. Ataki na warstwie aplikacji](#21-Atak-na-warstwie-aplikacji)
 [2.1.1. XSS](#211-xss)
 [2.1.2. SQL Injection](#212-sql-injection)
+[2.1.3. CSRF](#213-csrf)
+[2.1.4. MitM](#214-mitm)
+[2.1.5. DoS i DDoS ataki na warstwie aplikacji](#215-dos-i-ddos-ataki-na-warstwie-aplikacji)
+[2.1.6. Phising](#216-phising)
+[2.1.7. Brute Force](#217-brute-force)
+[2.1.8. Fuzzing](#218-fuzzing)
+[2.1.9. Pharming](#218-fuzzing)
+[2.1.10. Remote Code Execution (RCE)](#2110-remote-code-execution-rce)
+[2.1.11. Clickjacking / UI Redressing](#2111-clickjacking--ui-redressing)
+[2.1.12. Server-Side Request Forgery (SSRF)](#2112-server-side-request-forgery-ssrf)
+[2.1.13. XML Ecternal Entity (XXE) Injection](#2113-session-revocation-bypass)
+[2.1.14. Remote File Inclusion (RFI)](#2114-remote-file-inclusion-rfi)
+[2.1.15. Local File Inclusion (LFI)](#2115-local-file-inclusion-lfi)
+[2.1.16. Directory Travel](#2116-directory-travel)
+[2.1.17. Credential Stuffing](#2117-credential-stuffing)
+[2.1.18. Server-Side Template Injection (SSTI)](#2118-server-side-template-injection-ssti)
+[2.1.19. Business Logic Attack](#2119-business-logic-attack)
+[2.2. Ataki na warstwie prezentacji](#22-ataki-na-warstwie-prezentacji)
+[2.2.1. Man-in-the-browser (MitB)](#221-man-in-the-browser-mitb)
+[2.2.2. Content Spoofing](#222-content-spoofing)
+[2.2.3. MIME Sniffing](#223-mime-sniffing)
+[2.2.4. HTML Injection](#224-html-injection)
+[2.2.5. JavaScript Injection](#225-javascript-injection)
+[2.2.6. Web Scraping](#226-web-scraping)
+[2.2.7. Code Injection](#227-code-injection)
+[2.2.8. Malformed Content Attack](#228-malformed-content-attack)
+[2.2.9. Session Sidejacking](#229-session-sidejacking)
+[2.2.10. CSS Injection](#2210-css-injection)
+[2.2.11. Cookie Manipulation](#2211-cookie-manipulation)
+[2.2.12. Browser Fingerprinting](#2212-browser-fingerprinting)
+[2.3. Ataki na warstwie sesji](#23-ataki-na-warstwie-sesji)
+[2.3.1. Session Hijacking](#231-session-hijacking)
+[2.3.2. Session Fixation](#232-session-fixation)
+[2.2.3. Session Replay](#233-session-replay)
+[2.3.4. Session Prediction](#234-session-prediction)
+[2.3.5. Brute-Force Attacks on Session IDs](#235-brute-force-attacks-on-session-ids)
+[2.3.6. Cross-Site Session Transfer](#236-cross-site-session-transfer)
+[2.3.7. Session Timeout Attacks](#237-session-timeout-attacks)
+[2.3.8. Insufficient Session Expiration](#238-insufficient-session-expiration)
+[2.3.9. Session Data Tampering](#239-session-data-tampering)
+[2.3.10. Session Elevation](#2310-session-elevation)
+[2.3.11. Session Impersonal](#2311-session-impersonal)
+[2.3.12. Session Riding](#2312-session-riding)
+[2.1.13. Session Revocation Bypass](#2313-session-revocation-bypass)
+[2.3.14. Man-in-the-Middle Attacks on Session Communication](#2314-man-in-the-middle-attacks-on-session-communication)
+[2.4. Ataki warstwy transportowej](#24-ataki-warstwy-transportowej)
+[2.4.1. Złamanie szyfrowania](#241-złamanie-szyfrowania)
+[2.4.2. SYN Flood](#242-syn-flood)
+[2.4.3. TCP/IP Hijacking](#243-tcpip-hijacking)
+[2.4.4. UDP Flood](#244-udp-flood)
+[2.4.5. Reflective Amplification](#245-reflective-amplification)
+[2.4.6. TCP Reset Attack](#246-tcp-reset-attack)
+[2.4.7. Port Scanning](#247-port-scanning)
+[2.4.8. Man-in-the-Middle Attacks on Transport Layer](#248-man-in-the-middle-attacks-on-transport-layer)
+[2.4.9. Denial of Service Attacks on Transport Layer](#249-denial-of-service-attacks-on-transport-layer)
+[2.4.10. Blind SQL Injection](#2410-blind-sql-injection)
+[2.4.11. TCP/IP Sequence Number Attack](#2411-tcpip-sequence-number-attack)
+[2.4.12. Teardrop Attack](#2412-teardrop-attack)
+[2.4.13. TCP/IP Fragmentation Attacks](#2413-tcpip-fragmentation-attacks)
+[2.5. Ataki warstwy sieciowej](#25-ataki-warstwy-sieciowej)
+[2.5.1. IP Spoofing](#251-ip-spoofing)
+[2.5.2. ICMP Flood](#252-icmp-flood)
+[2.5.3. Smurf Attack](#253-smurf-attack)
+[2.5.4. Ping of Death](#254-ping-of-death)
+[2.5.5. Fragmentation Attack](#255-fragmentation-attack)
+[2.5.6. Land Attack](#256-land-attack)
+[2.5.7. DNS Spoofing](#257-dns-spoofing)
+[2.5.8. DHCP Attack](#258-dhcp-attack)
+[2.5.9. VLAN Hooping](#259-vlan-hooping)
+[2.5.10. Routing Attack](#2510-routing-attack)
+[2.5.11. BGP Hijacking](#2511-bgp-hijacking)
+[2.5.12. IP Fragmentation Attack](#2512-ip-fragmentation-attack)
+[2.6. Ataki warstwy łączy danych](#26-ataki-warstwy-łączy-danych)
+[2.6.1. MAC Flooding](#261-mac-flooding)
+[2.6.2. Mac Spoofing](#262-mac-spoofing)
+[2.6.3. ARP Spoofing/ARP Poisoning](#263-arp-spoofingarp-poisoning)
+[2.6.4. CAM Table Overflow](#264-cam-table-overflow)
+[2.6.5. Spanning Tree Attack](#265-spanning-tree-attack)
+[2.6.6. CDP/LLDP Spoofing](#266-cdplldp-spoofing)
+[2.6.7. Switch Port Stealing](#267-switch-port-stealing)
+[2.6.8. Ethernet Frame Injection](#268-ethernet-frame-injection)
+[2.6.9. Link Layer Protocol Exploitation](#269-link-layer-protocol-exploitation)
+[2.6.10. MAC Address Table Modification](#2610-mac-address-table-modification)
+[2.6.11. VLAN Manipulation](#2611-vlan-manipulation)
+[2.7. Ataki warstwy fizycznej](#27-ataki-warstwy-fizycznej)
+[2.7.1. Physical Access](#271-physical-access)
+[2.7.2. Hardware Manipulation](#272-hardware-manipulation)
+[2.7.3. Physical Impersonation](#273-physical-impersonation)
+[2.7.4. Electromagnetic Interference](#274-electromagnetic-interference)
+[2.7.5. Physical Destruction](#275-physical-destruction)
+[3. Bezpieczeństwo sieci komputerowych](#3-bezpieczeństwo-sieci-komputerowych)
+[3.1. Mechanizmy AAA](#31-mechanizmy-aaa)
+[3.2. Projektowanie i implementacja zapór sieciowych](#32-projektowanie-i-implementacja-zapór-sieciowych)
+[3.3. Projektowanie i implementacja systemów IPs](#33-projektowanie-i-implementacja-systemów-ips)
+[3.4. Systemy NMS](#34-systemy-nms)
+[4. Bezpieczeństwo systemów komputerowych](#4-bezpieczeństwo-systemów-komputerowych)
+[5. Bezpieczeństwo aplikacji webowych](#5-bezpieczeństwo-aplikacji-webowych)
+[6. Bezpieczeństwo aplikacji mobilnych](#6-bezpieczeństwo-aplikacji-mobilnych)
+[7. Bezpieczeństwo w chmurze](#7-bezpieczeństwo-w-chmurze)
+[8. Bezpieczeństwo systemów IoT](#8-bezpieczeństwo-systemów-iot)
+[9. Testy penetracyjne](#9-testy-penetracyjne)
+[9.1. Rekonesans - zbieranie informacji](#91-rekonesans---zbieranie-informacji)
+[9.2. Skanowanie luk w zabezpieczeniach](#92-skanowanie-luk-w-zabezpieczeniach)
+[9.3. Socjotechnika](#93-socjotechnika)
+[9.4. Symulowany test penetracyjny](#94-symulowany-test-penetracyjny)
+[10. Metodologie cyberbezpieczeństwa](#10-metodologie-cyberbezpieczeństwa)
+[10.1. CIA Triad](#101-cia-triad)
+[10.2. Defense-in-Depth](#102-defense-in-depth)
+[10.3. Zero Trust](#103-zero-trust)
+[10.4. Least Privilege](#104-least-privilege)
+[10.5. Risk Management](#105-risk-management)
+[10.6. Secure Development Lifecycle](#106-secure-development-lifecycle)
+[10.7. Threat Intelligence ](#107-threat-intelligence)
+[10.8. Incident Responce](#108-incident-responce)
+[10.9. Vulnerability Assessment](#109-vulnerability-assessment)
+[10.10. Security Awareness Training](#1010-security-awareness-training)
+[10.11. Security Audits](#1011-security-audits)
+[10.12. Identity and Access Management](#1012-identity-and-access-management)
+[10.13. Data Loss Prevention](#1013-data-loss-prevention)
+[10.14. Patch Management](#1014-patch-management)
+[10.15. Intrussion Detection and Prevention Systems](#1015-intrussion-detection-and-prevention-systems)
+[10.16. Security Information and Event Management](#1016-security-information-and-event-management)
+[11. Narzędzia cyebrbezpieczeństwa](#11-narzędzia-cyebrbezpieczeństwa)
+[11.1. Microsoft 365 Security](#111-microsoft-365-security)
+[11.2. MS Sentinel](#112-ms-sentinel)
+[11.3. Azure Portal](#113-azure-portal)
+
+
 
 
 
@@ -767,7 +895,7 @@ Na przykład osoba atakująca może wykonać następujące żądanie przy użyci
 </p>
 
 
-### Remote File Inclusion (RFI)
+## 2.1.14. Remote File Inclusion (RFI)
 
 Remote File Inclusion – to atak ukierunkowany na luki w aplikacjach internetowych, które dynamicznie odwołują się do zewnętrznych skryptów. Celem sprawcy jest wykorzystanie funkcji odwoływania się w aplikacji do przesyłania złośliwego oprogramowania ze zdalnego adresu URL znajdującego się w innej domenie.
 
@@ -1259,7 +1387,7 @@ Atak utrwalania sesji to rodzaj ataku polegającego na zdalnym wykonaniu kodu, k
 + Aby ułatwić tę wymianę informacji, protokół HTTP obsługuje pliki cookie. Ponieważ pliki cookie są przesyłane tam iz powrotem między przeglądarką a serwerem w każdym cyklu żądania/odpowiedzi, możemy ich również używać do przejmowania sesji klientów ze stronami internetowymi.
 + Pliki cookie mogą być wykorzystywane przez osoby atakujące w celu przeprowadzania ataków polegających na przejęciu sesji, a dokładnie o to chodzi w atakach typu Session Hijacking lub Session Fixation. Techniki utrwalania sesji, takie jak cross-site scripting (XSS), cross-site request forgery (CSRF) i kradzież sesji, to aktywne zagrożenia, które są już znane w środowisku naturalnym.
 
-## 2.2.3. Session Replay
+## 2.3.3. Session Replay
 
 Session Replay – jest to atak, polegający na powtórce sesji przy pomocy narzędzi takich jak Wireshark. Celem hakera jest uzyskanie dostępu do sieci, danych i zasobów w celu naprawienia wszelkich luk, które mogą zostać wykorzystane przez adwersarzy.
 
@@ -1511,7 +1639,7 @@ Gdy użytkownik kliknie przycisk Prześlij, do serwera wysyłane jest żądanie 
 
 Plik cookie SESSIONID=123456789 jest automatycznie dodawany do żądania. Dzięki temu aplikacja jest w stanie rozpoznać użytkownika, potwierdzić, że wcześniej się uwierzytelnił i przeprowadzić transakcję na podstawie danych użytkownika, czyli złożyć ofertę na artykuł o nr. 1122 o wartości 100 EUR w imieniu użytkownika, który wcześniej się zalogował.
 
-## 2.1.13. Session Revocation Bypass 
+## 2.3.13. Session Revocation Bypass 
 
 Ominięcie unieważnienia sesji (session revocation bypass) to technika, w której atakujący próbuje uzyskać dostęp do zasobów lub kontynuować aktywną sesję po unieważnieniu lub wygaśnięciu sesji użytkownika.
 
@@ -1837,7 +1965,7 @@ Teraz, gdy atakujący wie, że możliwe są ślepe iniekcje SQL oparte na czasie
 
 Jeżeli nazwa pierwszej tabeli w strukturze bazy zaczyna się na literę a, to druga część tego zapytania będzie prawdziwa, a aplikacja zareaguje z 10-sekundowym opóźnieniem. Podobnie jak w przypadku ślepych iniekcji SQL opartych na wartościach boolowskich powyżej, osoba atakująca może użyć tej metody wielokrotnie, aby odkryć nazwę pierwszej tabeli w strukturze bazy danych, a następnie spróbować uzyskać więcej danych o strukturze tej tabeli i ostatecznie wyodrębnić dane z tabela.
 
-## 2.4.11. 
+## 2.4.11. TCP/IP Sequence Number Attack
 
 TCP/IP Sequence Number Attack – to technika używana do wykrywania złośliwych działań w sieci. Działa poprzez analizę numerów sekwencyjnych pakietów wysyłanych przez sieć i przewidywanie następnego numeru sekwencyjnego. Pomaga to wykryć wszelkie złośliwe działania, które mogą występować w sieci. Technika ta służy do wykrywania i zapobiegania atakom typu spoofing, hijacking i denial of service.
 
@@ -2336,7 +2464,7 @@ Atak typu "Physical Destruction" odnosi się do celowego działania, w którym a
 Atak typu "Physical Destruction" ma na celu spowodowanie poważnych szkód, utraty danych lub przerwania działania sieci. Może mieć poważne konsekwencje dla organizacji, takie jak przestój w działaniu, straty finansowe, utrata poufności lub niezdolność do przywrócenia normalnego funkcjonowania infrastruktury.
 
 
-## 3. Bezpeczeństwo sieci komputerowych
+## 3. Bezpieczeństwo sieci komputerowych
 
 Bezpieczeństwo sieci to dziedzina cyberbezpieczeństwa skoncentrowana na ochronie sieci komputerowych przed zagrożeniami cybernetycznymi. Bezpieczeństwo sieci ma trzy główne cele: zapobieganie nieautoryzowanemu dostępowi do zasobów sieciowych; wykrywanie i powstrzymywanie trwających cyberataków i naruszeń bezpieczeństwa; oraz zapewnienie autoryzowanym użytkownikom bezpiecznego dostępu do zasobów sieciowych, których potrzebują, kiedy ich potrzebują.
 
@@ -2541,7 +2669,7 @@ Analiza – raportowanie wyników testu penetracyjnego
 + Testy z podwójnie ślepą próbą (double-blind testing) – testowanie, w którym pracownicy ochrony nie mają wcześniejszej wiedzy na tenat symulowanego ataku.
 + Ukierunkowane testy (Target testing) – W tym scenariuszu zarówno tester, jak i personel ochrony współpracują ze sobą i wzajemnie oceniają swoje ruchy.
 
-## 9.2. Rekonesans - zbieranie informacji
+## 9.1. Rekonesans - zbieranie informacji
 
 Rekonesans to proces zbierania informacji o docelowej organizacji, zebranie kluczowych informacji dotyczących celu, aby atakujący mógł następnie wykorzystać te informacje dowykorzystania i przniknięcia do docelowych sieci. 
 
@@ -2550,14 +2678,14 @@ Rekonesans to proces zbierania informacji o docelowej organizacji, zebranie kluc
 + Pasywne rekonesans – atakujący może zbierać dane bez interakcji z aplikacją lub frameworkiem, który staramy się zrozumieć. Osoąga się to poprzez wyszukiwanie w Internecie i pobieranie bezpłatnych raportów. 
 
 <p align="center">
-  Rys.9.2.1. Modele referencyjne wykorzystywane do rozkładania cyberataku na fazy
+  Rys.9.1.1. Modele referencyjne wykorzystywane do rozkładania cyberataku na fazy
 <br>
   <img src="\assets\img\Cyber\76.png" width="650" alt="mrwdrcbf">
   <br>
   Źródło: https://dl.acm.org/cms/attachment/dc918a60-76da-4fc5-869d-f9c5df7e8512/f1.jpg
 </p>
 
-## 9.3. Skanowanie luk w zabezpieczeniach
+## 9.2. Skanowanie luk w zabezpieczeniach
 
 Oto etapy skanowania luk:
 + Skanowanie luk w zabezpieczeniach jest procesem analizowania systemów komputerowych, aplikacji lub sieci w celu identyfikacji potencjalnych podatności, które mogą być wykorzystane przez potencjalnych atakujących. Jest to istotny krok w zapewnieniu bezpieczeństwa informacji i ochrony przed cyberatakami.
@@ -2568,7 +2696,7 @@ Oto etapy skanowania luk:
 + Analiza wyników: Generowanie raportu zawierającego wyniki analizy. Raport zawiera informacje o znalezionych podatnościach, ich stopniu zagrożenia i zalecenia dotyczące naprawy.
 + Naprawa i monitorowanie: Po otrzymaniu raportu z wynikami skanowania należy podjąć odpowiednie działania naprawcze, aby zabezpieczyć system.
 
-## 9.4. Socjotechnika
+## 9.3. Socjotechnika
 
 Socjotechnika – jest to sztuka wykorzystania ludzkich zachowań do złamania zabezpieczeń bez spostrzeżenia przez daną osobę, że została zmanipulowana. Celem hakera jest nakłonienie „ofiary” do wykonania określonej aktywności, np. podania hakerowi danych logowania do konta bankowego czy haseł zabezpieczających kluczowe dane firmy.
 
@@ -2577,7 +2705,7 @@ Socjotechnika – jest to sztuka wykorzystania ludzkich zachowań do złamania z
 + vishing – działania zmierzające do uzyskania informacji umożliwiających identyfikację osoby lub zresetowania hasła
 + phishing – najczęściej przybiera formę fałszywych e-maili czy wiadomości SMS.
 
-## 9.5. Symulowany test penetracyjny
+## 9.4. Symulowany test penetracyjny
 
 Symulowany test penetracyjny, często nazywany jako test ethical hacking lub test red teaming, to proces oceny bezpieczeństwa systemu informatycznego poprzez symulację ataku ze strony potencjalnego intruza. Celem takiego testu jest identyfikacja słabości w infrastrukturze, aplikacjach, sieciach lub systemach, które mogą być wykorzystane przez niepożądane osoby w celu uzyskania nieautoryzowanego dostępu lub wyrządzenia szkód.
 
