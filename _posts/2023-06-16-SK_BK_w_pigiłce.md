@@ -10,6 +10,273 @@ tags: [Sieci, Bezpieczeńswto, Komputery]
 ---
 
 
+# Spis treści
+[1. Architektura sieciowa](#1-architektura-sieciowa) 
+
+[1.1. Model TCP/IP](#11-model-tcpip) 
+
+[1.2. Model ISO/OSI](#12-model-isoosi) 
+
+[2. Technologie sieciowe](#2-technologie-sieciowe) 
+
+[2.1. Technologie Ethernet](#21-technologie-ethernet) 
+
+[2.2. Technologia WI-FI](#22-technologia-wi-fi) 
+
+[2.3. IPS](#23-ips) 
+
+[3. Metody GET i POST](#3-metody-get-i-post) 
+
+[4. Protokoły sieciowe](#4-protokoły-sieciowe) 
+
+[4.1. TCP](#41-tcp) 
+
+[4.2. UDP](#42-udp) 
+
+[4.3. IP](#43-ip) 
+
+[5. Protokoły aplikacyjne](#5-protokoły-aplikacyjne) 
+
+[5.1. HTTP](#51-http) 
+
+[5.2. HTTPS](#52-https) 
+
+[5.3. FTP](#53-ftp) 
+
+[5.4. SFTP](#54-sftp) 
+
+[5.5. SMTP](#55-smtp) 
+
+[5.6. POP3](#56-pop3) 
+
+[5.7. IMAP](#57-imap) 
+
+[5.8. XMPP](#58-xmpp) 
+
+[5.9. LDAP](#59-ldap) 
+
+[6. Protokoły zarządzania siecią](#6-protokoły-zarządzania-siecią) 
+
+[6.1. SNMP](#61-snmp)
+
+[6.2. SSH](#62-ssh)
+
+[6.3. RADIUS](#63-radius) 
+
+[7. Protokoły routingu](#7-protokoły-routingu) 
+
+[7.1. RIP](#71-rip) 
+
+[7.2. OSPF](#72-ospf) 
+
+[7.3. BGP](#73-bgp) 
+
+[7.4. IS-IS](#74-is-is) 
+
+[8. Protokoły bezpieczeństwa](#8-protokoły-bezpieczeństwa) 
+
+[8.1. SSL i SSL Decryption](#81-ssl-i-ssl-decryption) 
+
+[8.2. IPSec](#82-ipsec) 
+
+[8.3. VPN](#83-vpn) 
+
+[8.4. Kerberos](#84-kerberos) 
+
+[8.5. S/MIME](#85-smime) 
+
+[9. Protokoły dostępu do sieci](#9-protokoły-dostępu-do-sieci) 
+
+[9.1. DHCP](#91-dhcp) 
+
+[9.2. DNS](#92-dns) 
+
+[9.3. ARP](#93-arp) 
+
+[10. Konfiguracja i administracja sieci](#10-konfiguracja-i-administracja-sieci) 
+
+[10.1. Zarządzanie IP](#101-zarządzanie-ip) 
+
+[10.1.1. Dzelenie na podsieci](#1011-dzelenie-na-podsieci) 
+
+[10.1.2. Adresacja warstwy drugiej i trzeciej](#1012-adresacja-warstwy-drugiej-i-trzeciej) 
+
+[10.2. VLAN](#102-vlan) 
+
+[10.3. Konfiguracja routerów i przełączników](#103-konfiguracja-routerów-i-przełączników) 
+
+[10.4. Sieci bezpieczne](#104-sieci-bezpieczne) 
+
+[11. Sieci LAN, WAN, MAN](#11-sieci-lan-wan-man) 
+
+[12. Analiza ruchu sieciowego](#12-analiza-ruchu-sieciowego) 
+
+[13. Sieci chmurowe](#13-sieci-chmurowe) 
+
+[14. Wirtualizacja sieci](#14-wirtualizacja-sieci) 
+
+[14.1. Virtual LAN](#141-virtual-lan) 
+
+[14.2. Virtual Router](#142-virtual-router) 
+
+[14.3. Sieci Software-Defined Networking (SDN)](#143-sieci-software-defined-networking-sdn) 
+
+[15. NGFW - Security Functions](#15-ngfw---security-functions) 
+
+[16. Spanning Tree](#16-spanning-tree) 
+
+[17. Network Security](#17-network-security) 
+
+[17.1. Wireless Security (802.11i)](#171-wireless-security-80211i) 
+
+[17.2. Malware](#172-malware) 
+
+[17.3. Password Attack](#173-password-attack) 
+
+[17.3.1. Brute-Force ataki na hasła](#1731-brute-force-ataki-na-hasła) 
+
+[17.4. Ransomware](#174-ransomware) 
+
+[17.5. Firewall](#175-firewall) 
+
+[17.6. Ataki DoS](#176-ataki-dos) 
+
+[17.7. DDoS](#177-ddos) 
+
+[17.8. Phishing](#178-phishing) 
+
+[17.9. Bezpieczeństwo w sieciach IoT](#179-bezpieczeństwo-w-sieciach-iot) 
+
+[18. Standardy bezpieczeństwa](#18-standardy-bezpieczeństwa) 
+
+[18.1. ISO 27001](#181-iso-27001) 
+
+[18.2. PCI DSS](#182-pci-dss) 
+
+[18.3. HIPAA](#183-hipaa) 
+
+[18.4. GDRP](#184-gdrp) 
+
+[18.5. OWASP](#185-owasp) 
+
+[18.6. NIST Cybersecurity Framework](#186-nist-cybersecurity-framework) 
+
+[19. Analiza podatności](#19-analiza-podatności) 
+
+[20. Systemy operacyjne](#20-systemy-operacyjne) 
+
+[20.1. Windows](#201-windows) 
+
+[20.2. Linux](#202-linux) 
+
+[20.3. MacOS](#203-macos) 
+
+[21. Usługi sieciowe](#21-usługi-sieciowe) 
+
+[21.1. Metabase](#211-metabase) 
+
+[21.2. Perl](#212-perl) 
+
+[21.3. Hadoop](#213-hadoop) 
+
+[21.4. Kafka](#214-kafka) 
+
+[21.5. ActiveMQ](#2151-activemq) 
+
+[21.6. Camel](#216-camel) 
+
+[21.7. Apache Kylin](#217-apache-kylin) 
+
+[21.8. OpenVPN](#218-openvpn) 
+
+[21.9. Tomcat](#219-tomcat) 
+
+[21.10. BigBlueButton](#2110-bigbluebutton) 
+
+[21.11. WebRTC](#2111-webrtc) 
+
+[22. Kryptografia](#22-kryptografia) 
+
+[23. Metodologie i frameworki](#23-metodologie-i-frameworki) 
+
+[23.1. Cykl życia rozwoju zabezpieczeń SDL (Security Development Lifecycle SDL)](#231-cykl-życia-rozwoju-zabezpieczeń-sdl-security-development-lifecycle-sdl) 
+
+[23.2. OWASP Top Ten](#232-owasp-top-ten) 
+
+[23.3. Ramy bezpieczeństwa cybernetycznego NIST](#233-ramy-bezpieczeństwa-cybernetycznego-nist) 
+
+[23.4. Kontrole CIS](#234-kontrole-cis) 
+
+[24. Architektura bezpieczeństwa](#24-architektura-bezpieczeństwa) 
+
+[24.1. Obrona w głębi (Defense in Depth)](#241-obrona-w-głębi-defense-in-depth) 
+
+[24.2. Architektura zerowego zaufania (Zero Trust Architecture)](#242-architektura-zerowego-zaufania-zero-trust-architecture) 
+
+[24.3. Architektura bezpieczeństwa w chmurze (Cloud Security Architecture)](#243-architektura-bezpieczeństwa-w-chmurze-cloud-security-architecture) 
+
+[24.4. Zarządzanie tożsamością i dostępem IAM (Identity and Access Management IAM)](#244-zarządzanie-tożsamością-i-dostępem-iam-identity-and-access-management-iam) 
+
+[24.5. Ochrona danych (Data Protection)](#245-ochrona-danych-data-protection) 
+
+[24.6. Planowanie reagowania na incydenty (Incident Responce Planning)](#246-planowanie-reagowania-na-incydenty-incident-responce-planning) 
+
+[25. Narzędzia i technologie bezpieczeństwa](#25-narzędzia-i-technologie-bezpieczeństwa) 
+
+[25.1. SIEM](#251-siem) 
+
+[25.2. IDS/IPS](#252-idsips) 
+
+[25.3. WAF](#253-waf) 
+
+[25.4. Skanery luk w zabezpieczeniach (Vulnerability Scanners)](#254-skanery-luk-w-zabezpieczeniach-vulnerability-scanners) 
+
+[25.5. Narzędzia do testów penetracyjnych](#255-narzędzia-do-testów-penetracyjnych) 
+
+[25.6. Rozwiązania w zakresie bezpieczeństwa punktów końcowych (Endpoint Security Solutions)](#256-rozwiązania-w-zakresie-bezpieczeństwa-punktów-końcowych-endpoint-security-solutions) 
+
+[25.7. Zapobieganie utracie danych DLP (Data Loss Prevention)](#257-zapobieganie-utracie-danych-dlp-data-loss-prevention) 
+
+[26. Operacje związane z cyberbezpieczeństwem](#26-operacje-związane-z-cyberbezpieczeństwem) 
+
+[26.1. Centrum operacyjne bezpieczeństwa SOC (Security Operations Center)](#261-centrum-operacyjne-bezpieczeństwa-soc-security-operations-center) 
+
+[26.2. Informacje o zagrożeniach (Threat Intelligence)](#262-informacje-o-zagrożeniach-threat-intelligence) 
+
+[26.3. Polowanie na zagrożenia (Threat Hunting)](#263-polowanie-na-zagrożenia-threat-hunting) 
+
+[26.4. Cyfrowa kryminalistyka (Digital Forencis)](#264-cyfrowa-kryminalistyka-digital-forencis) 
+
+[26.5. Reagowanie na incydenty (Incident Response)](#265-reagowanie-na-incydenty-incident-response) 
+
+[26.6. Odzyskiwanie po awarii (Disaster Recovery)](#266-odzyskiwanie-po-awarii-disaster-recovery) 
+
+[27. Najlepsze praktyki w zakresie bezpieczeństwa cybernetycznego](#27-najlepsze-praktyki-w-zakresie-bezpieczeństwa-cybernetycznego) 
+
+[27.1. Szkolenie ze świadomości bezpieczeńśtwa (Security Awareness Training)](#271-szkolenie-ze-świadomości-bezpieczeńśtwa-security-awareness-training) 
+
+[27.2. Zarządzanie hasłami (Password Management)](#272-zarządzanie-hasłami-password-management) 
+
+[27.3. Zarządzanie poprawkami (Patch Management)](#273-zarządzanie-poprawkami-patch-management) 
+
+[27.4. Segmentacja sieci (Network Segmentation)](#274-segmentacja-sieci-network-segmentation) 
+
+[27.5. Kopie zapasowe i odzyskiwanie (Backup and Recovery)](#275-kopie-zapasowe-i-odzyskiwanie-backup-and-recovery) 
+
+[28. Nowe technologie w cyberbezpieczeństwie](#28-nowe-technologie-w-cyberbezpieczeństwie) 
+
+[28.1. Sztuczna inteligencja i uczenie maszynowe w cyberbezpieczeństwie](#281-sztuczna-inteligencja-i-uczenie-maszynowe-w-cyberbezpieczeństwie)
+
+[28.2. Blockchain i kryptowaluty](#282-blockchain-i-kryptowaluty) 
+
+[28.3. Bezpieczeństwo Internetu Rzeczy (IoT)](#283-bezpieczeństwo-internetu-rzeczy-iot) 
+
+[28.4. Obliczenia kwantowe i kryptografia](#284-obliczenia-kwantowe-i-kryptografia) 
+
+
+
+
+
 # 1. Architektura sieciowa
 
 Architektura sieciowa to sposób organizacji i połączenia urządzeń sieciowych, który umożliwia wymianę danych i zasobów pomiędzy nimi. Składa się z różnych elementów, które mają określone role i funkcje, a ich współpraca umożliwia poprawne działanie sieci. Oto kilka podstawowych elementów architektury sieciowej:
@@ -1873,7 +2140,7 @@ Rys. 21.4.1. Kafka
 </p>
 
 
-## 21.5.1. ActiveMQ
+## 21.5. ActiveMQ
 
 Apache ActiveMQ to oprogramowanie do przesyłania wiadomości oparte na standardzie JMS (Java Message Service). Jest to oprogramowanie open-source napisane w języku Java, które umożliwia tworzenie i zarządzanie kolejkami wiadomości.
 
