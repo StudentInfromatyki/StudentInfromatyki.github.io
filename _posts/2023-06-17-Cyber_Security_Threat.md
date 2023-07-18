@@ -336,7 +336,7 @@ Prawie wszystko tworzy jakąś wersję logów, np.:
 <br>
   <img src="\assets\img\Cyber\2.png" width="650" alt="logi-1">
   <br>
-  Źródło: https://www.crowdstrike.com/wp-content/uploads/2022/09/logfilesources-768x713.webp
+  Źródło: https://tiny.pl/c72j1
 </p>
 
 #### Rodzaje dzienników:
@@ -378,7 +378,7 @@ Ataki mogą miec miejsce na różnych poziomach modeli sieci z różnymi protoko
 <br>
   <img src="\assets\img\Cyber\3.png" width="650" alt="iso/osi">
   <br>
-  Źródło: https://miro.medium.com/v2/resize:fit:720/format:webp/1*eWE2QWWS6jS9o3EqTibncw.png
+  Źródło: https://tiny.pl/c72jj
 </p>
 
 
@@ -624,7 +624,7 @@ Celem ataku jest kradzież danych osobowych, takich jak dane logowania, dane kon
 <br>
   <img src="\assets\img\Cyber\10.png" width="650" alt="mitm">
   <br>
-  Źródło: https://www.imperva.com/learn/wp-content/uploads/sites/13/2017/09/man-in-the-middle-mitm-attack.png.webp
+  Źródło: https://tiny.pl/c72jl
 </p>
 
 #### Atak składa się z dwóch odrębnych faz:
@@ -665,7 +665,7 @@ W tym scenariuszu osoba atakująca przechwytuje rozmowę, przekazując jej czę�
 <br>
   <img src="\assets\img\Cyber\11.png" width="650" alt="mitm-1">
   <br>
-  Źródło: https://www.veracode.com/sites/default/files/2021-07/veracode-mitm-remake.png
+  Źródło: https://tiny.pl/c72jn
 </p>
 
 
@@ -701,7 +701,7 @@ Poniżej przedstawiam przykłady typowe próby wyłudzenia informacji:
 <br>
   <img src="\assets\img\Cyber\13.png" width="650" alt="phishing">
   <br>
-  Źródło: https://www.imperva.com/learn/wp-content/uploads/sites/13/2019/01/phishing-attack-email-example.png
+  Źródło: https://tiny.pl/c72j2
 </p>
 
 
@@ -720,7 +720,7 @@ Osoba atakująca wysyła tysiące wiadomości, które mogą wykraść znaczące 
 <br>
   <img src="\assets\img\Cyber\14.png" width="650" alt="phishing-1">
   <br>
-  Źródło: https://www.imperva.com/learn/wp-content/uploads/sites/13/2019/01/phishing-scam-techniques-link.png.webp
+  Źródło: https://tiny.pl/c72j8
 </p>
 
 + Wyłudzanie informacji – celem jest konkretna osoba lub firma, a nie losowi użytkownicy. Jest to bardziej dogłębna wersja phishingu, która wymaga specjalnej wiedzy o organizacji, w tym o jej strukturze władzy. 
@@ -769,7 +769,7 @@ Podczas gdy niektórzy atakujący nadal wykonują ataki siłowe ręcznie, obecni
 <br>
   <img src="\assets\img\Cyber\16.png" width="650" alt="hydra">
   <br>
-  Źródło: https://www.imperva.com/learn/wp-content/uploads/sites/13/2018/01/hydra-brute-force-attack.png.webp
+  Źródło: https://tiny.pl/c72js
 </p>
 
 + Aircrack-ng – wykorzystuje słownik powszechnie używanych haseł do włamań do sieci bezprzewodowych.
@@ -1059,7 +1059,7 @@ Local File Inclusion to technika ataku polegająca na nakłanianiu aplikacji int
 <br>
   <img src="\assets\img\Cyber\28.png" width="650" alt="Lfi">
   <br>
-  Źródło: https://miro.medium.com/v2/resize:fit:720/format:webp/1*UPMlwBWgKMSUzSvY5mt5uw.png
+  Źródło: https://tiny.pl/c72jb
 </p>
 
 #### Przykład ataku LFI:
@@ -1204,7 +1204,7 @@ Atak MitB ma miejsce, gdy ofiara samodzielnie wpisze adres URL w przeglądarce, 
 <br>
   <img src="\assets\img\Cyber\34.png" width="650" alt="mitb">
   <br>
-  Źródło: https://cdn.ttgtmedia.com/rms/onlineimages/a_man_in_the_browser_attack-f_mobile.png
+  Źródło: https://tiny.pl/c72jz
 </p>
 
 #### Przykłady ataków Man-in-the-browser:
@@ -1247,7 +1247,7 @@ HTML Injection (ang. wstrzyknięcie HTML) – to technika używana do wykorzysta
 <br>
   <img src="\assets\img\Cyber\36.png" width="650" alt="html">
   <br>
-  Źródło: https://assets.website-files.com/5ff66329429d880392f6cba2/6455e1f13e0fb0b257e9ce71_HTML%20Injection%20Work.jpg
+  Źródło: https://tiny.pl/c72j3
 </p>
 
 ### Przykład HTML Injection
@@ -1354,7 +1354,7 @@ Atakujący identyfikują luki w walidacji danych wprowadzanych przez użytkownik
 <br>
   <img src="\assets\img\Cyber\38.png" width="650" alt="cinjection">
   <br>
-  Źródło: https://images.ctfassets.net/4un77bcsnjzw/5biUz7wg0X90MDjKEwVAbm/42283a77ad24497dee3aea2f5c51632d/CodeInjection_Attack.svg
+  Źródło: https://tiny.pl/c72pq
 </p>
 
 ### Jak działa Code Injection
@@ -1839,7 +1839,7 @@ Aby wywołać atak typu „odmowa usługi”, atakujący wykorzystuje fakt, że 
   Źródło: https://www.cloudflare.com/img/learning/ddos/syn-flood-ddos-attack/syn-flood-attack-ddos-attack-diagram-2.png
 </p>
 
-SYN flood może wystapic na trzy sposoby: 
+### SYN flood może wystapic na trzy sposoby: 
 + Direct attack – jest to tak SYN flood, w którym adres IP nie jest sfałszowany, nazywany jest atakiem bezpośrednim. W tym ataku atakujący w ogóle nie maskuje swojego adresu IP. W wyniku użycia przez osobę atakującą jednego urządzenia źródłowego z prawdziwym adresem IP do przeprowadzenia ataku, osoba atakująca jest bardzo narażona na wykrycie i ograniczenie zagrożeń. Aby stworzyć stan półotwarty na zaatakowanej maszynie, haker uniemożliwia swojej maszynie reagowanie na pakiety SYN-ACK serwera. Osiąga się to często za pomocą reguł zapory, które zatrzymują wychodzące pakiety inne niż pakiety SYN lub filtrując wszelkie przychodzące pakiety SYN-ACK, zanim dotrą one do komputera złośliwego użytkownika.
 + Spoofed attack – złośliwy użytkownik może również sfałszować adres IP w każdym wysyłanym pakiecie SYN, aby powstrzymać działania łagodzące i utrudnić wykrycie swojej tożsamości. Chociaż pakiety mogą być sfałszowane, potencjalnie można je prześledzić aż do ich źródła.
 + Distributed attack (DDoS) – jeśli atak jest tworzony przy użyciu botnetu, prawdopodobieństwo wyśledzenia ataku z powrotem do jego źródła jest niskie. Aby uzyskać dodatkowy poziom zaciemnienia, osoba atakująca może sprawić, że każde rozproszone urządzenie fałszuje również adresy IP, z których wysyła pakiety. Jeśli atakujący korzysta z botnetu, takiego jak botnet Mirai, generalnie nie będzie dbał o maskowanie adresu IP zainfekowanego urządzenia.
@@ -1856,7 +1856,7 @@ TCP/IP Hijacking – jest to atak sieciowy, w którym autoryzowany użytkownik m
   Źródło: https://media.geeksforgeeks.org/wp-content/uploads/20220718090253/Sender22.png
 </p>
 
-Proces TCP/IP Hijacking: 
+### Proces TCP/IP Hijacking: 
 + Pierwszym głównym celem atakującego jest uzyskanie adresów IP dwóch urządzeń komunikujących się za pomocą tej samej sieci lub połączenia. W tym celu atakujący monitoruje transmisję danych w sieci do momentu uzyskania adresu IP urządzenia.
 + Po pomyślnym przechwyceniu adresu IP użytkownika hakerzy mogą łatwo zaatakować połączenie.
 + Aby uzyskać dostęp do połączenia, haker przerywa połączenie innego użytkownika poprzez atak DOS, a połączenie użytkownika czeka na ponowne połączenie.
@@ -1902,10 +1902,10 @@ Ataki amplification generują dużą liczbę pakietów, które są wykorzystywan
 <br>
   <img src="\assets\img\Cyber\55.png" width="650" alt="reflective">
   <br>
-  Źródło: https://www.educative.io/answers/what-are-reflection-and-amplification-attacks
+  Źródło: https://tiny.pl/c72pr
 </p>
 
-Atak wzmacniający również należy do kategorii ataków typu „odmowa usługi” (DoS): 
+### Atak wzmacniający również należy do kategorii ataków typu „odmowa usługi” (DoS): 
 + Współczynnik wzmocnienia jest utrzymywany na jak najwyższym poziomie.
 + Atakujący generuje dużą liczbę pakietów, które zalewają witrynę ofiary bez alarmowania pośrednika.
 + Atakujący wykorzystuje publicznie dostępny protokół UDP i wysyła „pakiet wyzwalający”, którego wynikiem jest obszerna odpowiedź na żądanie.
@@ -1938,7 +1938,7 @@ TCP Reset Attack to rodzaj ataku, w którym atakujący wysyłają do hosta sfał
 <br>
   <img src="\assets\img\Cyber\57.png" width="650" alt="tcpreset">
   <br>
-  Źródło: https://assets.website-files.com/5ff66329429d880392f6cba2/60a4fdf7a4cd57ac6da7fe11_Syn%20Spoofing%20attack.png
+  Źródło: https://tiny.pl/c72pf
 </p>
 
 ## 2.4.7. Port Scanning 
@@ -1964,7 +1964,7 @@ Port Scanning – jest to technika wykorzystywana przez hakerów do wykrywania o
 <br>
   <img src="\assets\img\Cyber\58.png" width="650" alt="portscanning">
   <br>
-  Źródło: https://www.fortinet.com/resources/cyberglossary/what-is-port-scan/_jcr_content/par/c05_container_copy/par/c28_image.img.jpg/1667849404946.jpg
+  Źródło: https://tiny.pl/c72p5
 </p>
 
 ### Rodzaje Port Chcecker albo Scanner:
@@ -1985,7 +1985,7 @@ Ataki MitM sa często do wykrycia, ponieważosoba atakująca zasadniczo “siedz
 <br>
   <img src="\assets\img\Cyber\59.png" width="650" alt="mitm">
   <br>
-  Źródło: https://www.imperva.com/learn/wp-content/uploads/sites/13/2017/09/man-in-the-middle-mitm-attack.png.webp
+  Źródło: https://tiny.pl/c72jl
 </p>
 
 ### Jak atak Man-in-the-Middle działa?
@@ -2100,7 +2100,7 @@ TCP/IP Sequence Number Attack – to technika używana do wykrywania złośliwyc
 <br>
   <img src="\assets\img\Cyber\60.png" width="650" alt="sna">
   <br>
-  Źródło: https://www.tech-faq.com/wp-content/uploads/TCP-Sequence-Prediction-Attack.gif
+  Źródło: https://tiny.pl/c72pl
 </p>
 
 ### Jak TCP Sequence Number działa?
@@ -2116,7 +2116,7 @@ Teardrop attack – to rodzaj ataku typu “odmowa usługi”. Osoba atakująca 
 <br>
   <img src="\assets\img\Cyber\61.png" width="650" alt="sna">
   <br>
-  Źródło: https://www.cloudns.net/blog/wp-content/uploads/2022/12/How-does-Teardrop-attack-work-1024x576.png
+  Źródło: https://tiny.pl/c72pn
 </p>
 
 ### Jak działa? 
@@ -2360,7 +2360,7 @@ Po przekroczeniu limitu przełącznik przechodzi w tryb fail-open i rozpoczyna r
   Źródło: https://media.geeksforgeeks.org/wp-content/uploads/20220729111728/macspoofing1.png
 </p>
 
-Jak działa MAC Flooding? 
+### Jak działa MAC Flooding? 
 
 <p align="center">
   Rys.2.6.1.2. Działanie ataku MAC Flooding
@@ -2486,7 +2486,9 @@ Głównym zagrożeniem związanym z switch port scanning attack jest to, że ata
 2.6.8.	Ethernet Frame Injection
 Ethernet frame injection, znane również jako frame spoofing lub frame forging, to technika polegająca na wstrzykiwaniu fałszywych ramek Ethernet na warstwie łącza danych. Jest to możliwe dzięki temu, że protokół Ethernet nie zapewnia żadnych mechanizmów autoryzacji ani uwierzytelniania dla ramek, co otwiera możliwość manipulacji i wprowadzania fałszywych informacji do sieci.
 
-Podstawowym celem frame injection jest oszukanie urządzeń sieciowych i wprowadzenie fałszywych danych do sieci Ethernet. Może to prowadzić do różnych skutków, w zależności od celów atakującego. Przykłady takich ataków obejmują:
+Podstawowym celem frame injection jest oszukanie urządzeń sieciowych i wprowadzenie fałszywych danych do sieci Ethernet. Może to prowadzić do różnych skutków, w zależności od celów atakującego. 
+
+### Przykłady takich ataków obejmują:
 + ARP Spoofing 
 + MAC flooding
 + DNS spoofing
@@ -2582,7 +2584,9 @@ Skutki ataku typu EMI mogą być różne, w zależności od rodzaju urządzeń i
 
 Atak typu "Physical Destruction" odnosi się do celowego działania, w którym atakujący dokonuje zniszczenia fizycznego infrastruktury, urządzeń lub zasobów sieciowych w celu spowodowania straty danych, przerwania działania sieci lub wywołania innych negatywnych skutków. Jest to forma ataku, która skupia się na fizycznej szkodzie, która może być trudna lub kosztowna do naprawienia.
 
-### Atak typu "Physical Destruction" może mieć różne formy i metody działania, w zależności od celu ataku i dostępnych środków. Oto kilka przykładów:
+Atak typu "Physical Destruction" może mieć różne formy i metody działania, w zależności od celu ataku i dostępnych środków. 
+
+### Oto kilka przykładów:
 + Uszkodzenie sprzętu: Atakujący może celowo uszkodzić sprzęt sieciowy, takie jak serwery, routery, przełączniki czy urządzenia pamięci masowej. Może to obejmować fizyczne uszkodzenie komponentów sprzętowych, np. poprzez rozbicie, podpalenie lub zalanie substancją chemiczną.
 + Przerwanie zasilania: Atakujący może zainicjować przerwanie zasilania w celu spowodowania wyłączenia lub uszkodzenia sprzętu. Może to obejmować odłączenie kabli zasilających, uszkodzenie transformatorów lub wprowadzenie zakłóceń elektrycznych, które prowadzą do awarii sprzętu.
 + Sabotaż fizyczny: Atakujący może umyślnie dokonywać działań sabotażowych, takich jak usunięcie lub uszkodzenie kluczowych kabli sieciowych, odcięcie linii komunikacyjnych lub uszkodzenie fizyczne struktur sieciowych, takich jak anteny, wieże transmisyjne czy maszty.
@@ -2774,19 +2778,19 @@ Testy penetracyjne to systemowy cyberatak na system komputerowy w celu sprawdzen
   Źródło: https://www.imperva.com/learn/wp-content/uploads/sites/13/2019/01/pen-testing.jpg.webp
 </p>
 
-Planowanie i rozpoznawanie
+- Planowanie i rozpoznawanie
 + Zdefiniowanie zakresu i celów testu, systemów oraz metod testowania
 + Gromadzenie danych wywiadowczych w celu lepszego zrozumienia działania celu i jego potencjalnych luk w zabezpieczeniach.
 
-Skanowanie – zrozumienie w jaki sposób docelowa aplikacja zareaguje na różne próby włamania
+- Skanowanie – zrozumienie w jaki sposób docelowa aplikacja zareaguje na różne próby włamania:
 + Analiza statyczna – sprawdzanie kodu aplikacji w celu oszacowania jej zachowania podczas działania,
 + Analiza dynamiczna – sprawdzanie kodu aplikacji w stanie uruchomienia. 
 
-Uzyskanie  dostępu – wykorzystanie ataków aplikacji internetowej, aby odkryć luki w zabezpieczeniach celu. 
+- Uzyskanie  dostępu – wykorzystanie ataków aplikacji internetowej, aby odkryć luki w zabezpieczeniach celu. 
 
-Utrzymanie dostępu – sprawdzenie czy luka może zostać wykorzystana do osiągnięcia trwałej obecności w wykorzystywanym systemie
+- Utrzymanie dostępu – sprawdzenie czy luka może zostać wykorzystana do osiągnięcia trwałej obecności w wykorzystywanym systemie
 
-Analiza – raportowanie wyników testu penetracyjnego
+- Analiza – raportowanie wyników testu penetracyjnego
 
 ### Metody badań penetracyjnych
 + Testy zewnętrzne (external testing) – testowanie aplikacji, strony internetowej oraz serwerów poczty e-mail i nazw domen, które są widoczne dla wszystkich. 
