@@ -2778,19 +2778,19 @@ Testy penetracyjne to systemowy cyberatak na system komputerowy w celu sprawdzen
   Źródło: https://www.imperva.com/learn/wp-content/uploads/sites/13/2019/01/pen-testing.jpg.webp
 </p>
 
-- Planowanie i rozpoznawanie
+Planowanie i rozpoznawanie:
 + Zdefiniowanie zakresu i celów testu, systemów oraz metod testowania
 + Gromadzenie danych wywiadowczych w celu lepszego zrozumienia działania celu i jego potencjalnych luk w zabezpieczeniach.
 
-- Skanowanie – zrozumienie w jaki sposób docelowa aplikacja zareaguje na różne próby włamania:
+Skanowanie – zrozumienie w jaki sposób docelowa aplikacja zareaguje na różne próby włamania:
 + Analiza statyczna – sprawdzanie kodu aplikacji w celu oszacowania jej zachowania podczas działania,
 + Analiza dynamiczna – sprawdzanie kodu aplikacji w stanie uruchomienia. 
 
-- Uzyskanie  dostępu – wykorzystanie ataków aplikacji internetowej, aby odkryć luki w zabezpieczeniach celu. 
+Uzyskanie  dostępu – wykorzystanie ataków aplikacji internetowej, aby odkryć luki w zabezpieczeniach celu. 
 
-- Utrzymanie dostępu – sprawdzenie czy luka może zostać wykorzystana do osiągnięcia trwałej obecności w wykorzystywanym systemie
+Utrzymanie dostępu – sprawdzenie czy luka może zostać wykorzystana do osiągnięcia trwałej obecności w wykorzystywanym systemie
 
-- Analiza – raportowanie wyników testu penetracyjnego
+Analiza – raportowanie wyników testu penetracyjnego
 
 ### Metody badań penetracyjnych
 + Testy zewnętrzne (external testing) – testowanie aplikacji, strony internetowej oraz serwerów poczty e-mail i nazw domen, które są widoczne dla wszystkich. 
@@ -2817,7 +2817,7 @@ Rekonesans to proces zbierania informacji o docelowej organizacji, zebranie kluc
 
 ## 9.2. Skanowanie luk w zabezpieczeniach
 
-Oto etapy skanowania luk:
+### Oto etapy skanowania luk:
 + Skanowanie luk w zabezpieczeniach jest procesem analizowania systemów komputerowych, aplikacji lub sieci w celu identyfikacji potencjalnych podatności, które mogą być wykorzystane przez potencjalnych atakujących. Jest to istotny krok w zapewnieniu bezpieczeństwa informacji i ochrony przed cyberatakami.
 + Proces skanowania luk w zabezpieczeniach obejmuje szereg działań mających na celu identyfikację słabych punktów w systemie. Oto kilka kluczowych etapów tego procesu:
 + Identyfikacja celu: Skanowanie luk w zabezpieczeniach może być przeprowadzane na różnych poziomach, takich jak system operacyjny, aplikacje, sieć czy usługi internetowe. Pierwszym krokiem jest określenie, jakie elementy będą poddane analizie.
@@ -3231,7 +3231,7 @@ SIEM, wymawiane jako „sim”, łączy zarządzanie informacjami zabezpieczeń 
 <br>
   <img src="\assets\img\Cyber\86.png" width="650" alt="siem">
   <br>
-  Źródło: https://miro.medium.com/v2/resize:fit:720/format:webp/1*6wdswKwlmL1IGmCWjuV66w.jpeg
+  Źródło: https://tiny.pl/c72pb
 </p>
 
 ### Jak działają narzędzia SIEM?
@@ -3283,7 +3283,7 @@ Microsoft 365 Security to kompleksowe narzędzie bezpieczeństwa oferowane przez
 <br>
   <img src="\assets\img\Cyber\91.png" width="650" alt="msd">
   <br>
-  Źródło: https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Product-Image-365-Defender-935x518_RWUM5b?resMode=sharp2&op_usm=1.5,0.65,15,0&wid=760&qlt=100&fit=constrain
+  Źródło: https://tiny.pl/c72p3
 </p>
 
 Narzędzie Microsoft 365 Security składa się z kilku składowych, które łącznie zapewniają wszechstronną ochronę środowiska pracy. 
@@ -3325,7 +3325,7 @@ Microsoft Azure Portal to jednolite miejsce, w którym użytkownicy mogą zarzą
 <br>
   <img src="\assets\img\Cyber\90.png" width="650" alt="ap">
   <br>
-  Źródło: https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/azure-portal_valprop5?resMode=sharp2&op_usm=1.5,0.65,15,0&wid=2000&qlt=100
+  Źródło: https://tiny.pl/c72lh
 </p>
 
 ### Główne cechy Microsoft Azure Portal:
