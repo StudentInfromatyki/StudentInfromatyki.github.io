@@ -11,18 +11,12 @@ tags: [Cyberbezpieczeństwo, Bezpieczeńswto, Ataki, Metody]
 
 
 # Spis treści
-[1. Wprowadzenie](#1-wprowadzenie)
-</br>
-
-[1.1. Podstawowe terminy i definicje](#11-podstawowe-terminy-i-definicje)
-</br>
-
-[1.2. Logi systemowe](#12-logi-systemowe)
-
-[2. Ataki modelu ISO/OSI](#2-ataki-modelu-isoosi)
-
-[2.1. Ataki na warstwie aplikacji](#21-Atak-na-warstwie-aplikacji)
-[2.1.1. XSS](#211-xss)
+[1. Wprowadzenie](#1-wprowadzenie) 
+[1.1. Podstawowe terminy i definicje](#11-podstawowe-terminy-i-definicje) 
+[1.2. Logi systemowe](#12-logi-systemowe) 
+[2. Ataki modelu ISO/OSI](#2-ataki-modelu-isoosi) 
+[2.1. Ataki na warstwie aplikacji](#21-Atak-na-warstwie-aplikacji) 
+[2.1.1. XSS](#211-xss) 
 [2.1.2. SQL Injection](#212-sql-injection)
 [2.1.3. CSRF](#213-csrf)
 [2.1.4. MitM](#214-mitm)
