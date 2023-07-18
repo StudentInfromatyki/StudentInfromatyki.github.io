@@ -12,7 +12,7 @@ tags: [Cyberbezpieczeństwo, Bezpieczeńswto, Ataki, Metody]
 
 # Spis treści
 [1. Wprowadzenie](#1-wprowadzenie) 
-</p>
+
 [1.1. Podstawowe terminy i definicje](#11-podstawowe-terminy-i-definicje) 
 
 [1.2. Logi systemowe](#12-logi-systemowe) 
