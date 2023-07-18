@@ -21,10 +21,15 @@ tags: [Cyberbezpieczeństwo, Bezpieczeńswto, Ataki, Metody]
 [2.1.1. XSS](#211-xss)
 &nbsp;&nbsp;&nbsp; 
 [2.1.2. SQL Injection](#212-sql-injection)
+
 [2.1.3. CSRF](#213-csrf)
+
 [2.1.4. MitM](#214-mitm)
+
 [2.1.5. DoS i DDoS ataki na warstwie aplikacji](#215-dos-i-ddos-ataki-na-warstwie-aplikacji)
+
 [2.1.6. Phising](#216-phising)
+
 [2.1.7. Brute Force](#217-brute-force)
 [2.1.8. Fuzzing](#218-fuzzing)
 [2.1.9. Pharming](#218-fuzzing)
