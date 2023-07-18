@@ -9,7 +9,7 @@ share-img: /assets/img/Cyber/Logo-1.jpg
 tags: [Cyberbezpieczeństwo, Bezpieczeńswto, Ataki, Metody]
 ---
 
-
+~~~
 # Spis treści
 [1. Wprowadzenie](#1-wprowadzenie) 
 
@@ -276,7 +276,7 @@ tags: [Cyberbezpieczeństwo, Bezpieczeńswto, Ataki, Metody]
 [11.2. MS Sentinel](#112-ms-sentinel)
 
 [11.3. Azure Portal](#113-azure-portal)
-
+~~~
 
 # 1. Wprowadzenie
 
