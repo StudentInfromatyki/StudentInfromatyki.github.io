@@ -16,6 +16,14 @@
 
 [2.2.1. Czym jest atak USB?](#221-Czym-jest-atak-USB?) 
 
+[2.3. Aspekty techniczne i prawne bezpieczeństwa firmware](#23-Aspekty-techniczne-i-prawne-bezpieczeństwa-firmware) 
+
+[2.3.1. Analiza techniczna firmware](#231-Analiza-techniczna-firmware) 
+
+[2.3.2. Aspekty prawne](#232-Aspekty-prawne) 
+
+[2.3.3. Synergia technicznych i prawnych aspektów](#233-Synergia-technicznych-i-prawnych-aspektów) 
+
 # 1. Wprowadzenie
 
 W dzisiejszych czasach, kiedy ma miejsce cyfrowa rewolucja, w obszarze bezpieczeństwa komputerowego jednym z kluczowych aspektów jest np. ochrona danych osobowych i firmowych. Istnieje wiele różnego rodzaju zagrożeń, które są powszechnie znane, oraz takich nieco ``zaskakujących'' jak urządzenia USB, które w chwili obecnej są używane jako jedne z bardziej popularnych i bezpiecznych nośników wymiany danych, ale jak się okazuje także przyczyniają się do różnych ataków hakerskich, co prowadzi do poważnych skutków w postaci wycieku danych i innych naruszeń bezpieczeństwa. Niniejsza praca dyplomowa ma na celu przedstawienie problematyki bezpieczeństwa komputerowego w kontekście ataków przy użyciu urządzeń USB.
@@ -184,3 +192,43 @@ Dodatkowo, rozwój technologii Internetu Rzeczy (IoT) i wzrost liczby podłącza
 Z powodu rosnących zagrożeń ze strony ataków BadUSB rządy i instytucje prywatne coraz częściej wprowadzają metody obrony i różne protokoły ochrony danych. Znane instytucje takie jak RODO i CCPA wyraźnie podkreślają, że należy działać zgodnie z rekomendacjami ustalonymi z góry przez nie, ponieważ istnieje wielkie ryzyko nie stosując się tych zasad. 
 
 Przegląd ten podkreśla konieczność stosowania zaawansowanych metod ochrony, zarówno na poziomie sprzętu, jak i oprogramowania, aby skutecznie przeciwdziałać tego rodzaju zagrożeniom. Włączenie praktyk takich jak regularne aktualizacje oprogramowania, monitorowanie ruchu sieciowego i stosowanie zasad minimalnych uprawnień może znacznie zwiększyć odporność na ataki tego typu.
+
+# 2.3. Aspekty techniczne i prawne bezpieczeństwa firmware
+
+Firmware, będąc nieodłącznym elementem urządzeń elektronicznych, odgrywa kluczową rolę w zapewnieniu ich poprawnego funkcjonowania. Jednakże, ta sama niezbędność czyni firmware atrakcyjnym celem dla cyberataków. Rozumienie technik analizy firmware jest krytyczne w identyfikowaniu i zapobieganiu takim atakom.
+
+# 2.3.1. Analiza techniczna firmware
+
+W dzisiejszych czasach analiza techniczna firmware jest ważnym czynnikiem procesu audytu bezpieczeństwa. Podczas tego procesu wykorzystywane są różne metody i narzędzia umożliwiające oceniania bezpieczeństwa firmware'u. 
+
+Analiza firmware'u z punktu widzenia technicznego odbywa się na kilka faz. Pierwszą z nich jest odnalezienie samego firmware'u, aby móc przeprowadzić odpowiednie badania na nim. Kolejnym krokiem jest rozpakowanie i dekompilacja, aby mieć dostęp do kodu źródłowego. Ten krok potrzebuje zastosowania odpowiednich narzędzi i technik reverse engineering. Poniżej przedstawione techniki, które pomagają przeprowadzić odpowiednią analizę:  
+- Inżynieria wsteczna: Ta metoda pozwala na analizowanie firmware poprzez rozkładanie skompilowanego kodu na jego pierwotne składniki. Jest to szczególnie przydatne w identyfikowaniu ukrytych funkcji lub potencjalnych luk bezpieczeństwa.
+- Deasemblacja: Polega na konwersji kodu maszynowego na formę bardziej zrozumiałą dla człowieka. Deasemblacja jest niezbędna w zrozumieniu dokładnych działania i potencjalnych słabości firmware.
+- Testowanie penetracyjne: Przeprowadzanie kontrolowanych ataków w celu identyfikacji słabych punktów w firmware, co pozwala na wzmocnienie jego odporności na potencjalne zagrożenia.
+
+Podczas analizy technicznej firmware'u wykorzystywane są zarówno metody analizy statycznej, jak i dynamicznej. Analiza statyczna polega na skanowaniu kodu, który został użyty w procesie firmware. Analiza statyczna obejmuje poszukiwanie wzorców i błędów kodowania, odwołania do nieistniejących funkcji czy przepełnienia bufora. Jest to sposób, który uważa się za nieco trudniejszy z tej racji, że jest manualny. Z kolei analiza dynamiczna polega na uruchomieniu firmware'u w sandboxach lub jak inaczej są nazywane środowiska kontrolowane. Pozwala to na obserwację podatności w czasie rzeczywistym. 
+
+Ważnym elementem analizy jest zrozumienia procesu, technik szyfrowania, maskowania czy kompresji. Również ważnym elementem jest poznanie architektur procesu, narzędzi wykorzystujących do analizy i coraz bardziej zaawansowane techniki zabezpieczeń stosowane przez dostawców. Dlatego też istotne jest ciągłe doskonalenie metod i narzędzi używanych do audytu firmware'u, aby zapewnić skuteczną ochronę przed zagrożeniami związanymi z oprogramowaniem wbudowanym \cite{17}.
+
+# 2.3.2. Aspekty prawne
+
+W dzisiejszych czasach, gdzie świat IT dość szybko się rozwija, potrzebna również jest pewna biegłość w zakresie prawnym, aby uniknąć działań, których później będziemy żałować. Twierdząc z poprzedniego zdania należy zrozumieć kiedy można używać narzędzia lub oprogramowania znalezionego w Internecie, kiedy można modyfikować go, a kiedy nie. W kontekście prawno-technicznym, BadUSB stawia przed nami wiele problemów, zarówno w zakresie identyfikacji, jak i egzekwowania odpowiedzialności za tego typu działania.
+
+Ważnym aspektem w zakresie prawnym BadUSB jest ocena odpowiedzialności podmiotów za tego typu ataki. W sytuacji tradycyjnych prawnych systemów ciężko sklasyfikować prawny aspekt przy użyciu ataków BadUSB. Mimo tego pierwszym krokiem, który jest niezbędny dla oceny, jest sprawdzenie kto jest odpowiedzialny. Czy winę ponosi producent zainfekowanego urządzenia, użytkownik, który podłączył zainfekowany pendrive do swojego komputera, czy może osoba odpowiedzialna za stworzenie złośliwego oprogramowania? 
+
+Kolejnym krokiem jest kwestia dotycząca ochrony danych osobowych i poufności informacji. Podczas ataku tego typu, dane przechowywane na urządzeniach różnego typu, serwerach itp. mogą być narażone na kradzież lub manipulację. W związku z tym konieczne jest dokładne zapoznanie się z przepisami dotyczącymi ochrony danych osobowych (RODO) oraz konsekwencjami prawnymi naruszenia tych regulacji.
+
+Ataki BadUSB przy użyciu urządzeń USB mogą prowadzić do naruszenia przepisów RODO na kilka sposobów. Pierwszym aspektem jest nieuprawniony dostęp do danych osobowych, co powoduje do poważnych naruszeń zasad poufności i integralności danych. Zgodnie z przepisami które zawarte w RODO, jednostki przetwarzające dane osobowe muszą zapewniać odpowiedni poziom bezpieczeństwa tych danych, aby chronić te dane przed różnymi typu wyciekami oraz nieuprawnionym dostęp. Drugim aspektem jest wymóg na przetwarzanie danych osobowych. Zgodnie z przepisami dotyczącymi ochrony danych osobowych, przetwarzanie danych osobowych jest dopuszczalne tylko wtedy, gdy osoba, której dane dotyczą, wyraziła na to zgodę, lub gdy istnieje inna podstawa prawna umożliwiająca tego typu przetwarzanie.
+
+Dodatkowo, ataki BadUSB mogą prowadzić do naruszenia zasady odpowiedzialności określonej w RODO. Zgodnie z tą zasad jednostki przetwarzające dane osobowe są odpowiedzialne za przestrzeganie przepisów RODO i muszą być w stanie wykazać zgodność z nimi poprzez stosowanie odpowiednich środków technicznych i organizacyjnych. W sytuacji ataków BadUSB organizacje muszą podejmować odpowiednie kroki, aby monitorować i zapobiegać tego typu atakom \cite{18}:
+- Przepisy o ochronie danych: Przepisy takie jak GDPR nakładają na organizacje odpowiedzialność za ochronę danych przetwarzanych przez firmware urządzeń. Naruszenia tych przepisów mogą prowadzić do poważnych konsekwencji prawnych i finansowych.
+- Standardy i regulacje branżowe: Istnieją różne standardy, takie jak ISO/IEC 27001, które określają wymagania dotyczące systemów zarządzania bezpieczeństwem informacji, w tym bezpieczeństwa firmware.
+- Wyzwania związane z licencjonowaniem i prawami autorskimi: W kontekście inżynierii wstecznej firmware, istotne jest zrozumienie ograniczeń nałożonych przez prawa autorskie i licencje, aby unikać naruszania praw twórców oprogramowania.
+
+# 2.3.3. Synergia technicznych i prawnych aspektów
+
+Zrozumienie technicznych aspektów bezpieczeństwa firmware jest nierozerwalnie związane z przestrzeganiem przepisów prawa. Skuteczna ochrona firmware wymaga nie tylko zaawansowanej wiedzy technicznej, ale także znajomości i stosowania odpowiednich przepisów prawnych. Taka synergia pozwala na tworzenie kompleksowych strategii ochrony, które są zarówno technicznie wydajne, jak i zgodne z obowiązującymi regulacjami.
+
+Dodatkowo, wzrasta znaczenie analizy zagrożeń związanych z łańcuchem dostaw firmware. Ataki takie jak SolarWinds wykazały, że nieautoryzowane modyfikacje firmware przez złośliwe podmioty mogą mieć dalekosiężne skutki na szeroko rozumiane bezpieczeństwo narodowe i infrastrukturę krytyczną. Analiza ryzyka w łańcuchu dostaw staje się nieodzownym elementem zarządzania bezpieczeństwem firmware, wymagając od organizacji i instytucji szczegółowej oceny potencjalnych zagrożeń i implementacji skutecznych strategii ich minimalizowania.
+
+W tym kontekście, rośnie także rola narzędzi do zarządzania firmware i bezpieczeństwa urządzeń końcowych. Zastosowanie zaawansowanych rozwiązań do zarządzania firmware, takich jak systemy wykrywania i odpowiedzi na incydenty (EDR), pozwala na bieżącą kontrolę stanu firmware i szybką reakcję na potencjalne zagrożenia. Wspiera to strategie proaktywnego zarządzania ryzykiem i wzmacnia ogólne bezpieczeństwo systemów informatycznych.
