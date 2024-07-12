@@ -8,11 +8,11 @@
 
 [2. Krytyka teorii: wyzwania w pracy badawczej](#2-Krytyka-teorii-:-wyzwania-w-pracy-badawczej) 
 
-[2.1. Geneza i ewolucja ataków USB](#21-Geneza-i-ewolucja-ataków-USB) 
+[2.1. Geneza i ewolucja ataków USB](#21-Geneza-i-ewolucja-atakow-USB) 
 
 [2.1.1. Kluczowe pojęcia](#211-Kluczowe-pojecia) 
 
-[2.2. Analiza przypadków i ich wpływ na firmware](#22-Analiza-przypadków-i-ich-wpływ-na-firmware) 
+[2.2. Analiza przypadków i ich wpływ na firmware](#22-Analiza-przypadkow-i-ich-wplyw-na-firmware) 
 
 [2.2.1. Czym jest atak USB?](#221-Czym-jest-atak-USB?) 
 
