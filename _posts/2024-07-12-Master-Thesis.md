@@ -8,6 +8,13 @@
 
 [2. Krytyka teorii: wyzwania w pracy badawczej](#2-Krytyka-teorii-:-wyzwania-w-pracy-badawczej) 
 
+[2.1. Geneza i ewolucja ataków USB](#21-Geneza-i-ewolucja-ataków-USB) 
+
+[2.1.1. Kluczowe pojęcia](#211-Kluczowe-pojecia) 
+
+[2.2. Analiza przypadków i ich wpływ na firmware](#22-Analiza-przypadków-i-ich-wpływ-na-firmware) 
+
+[2.2.1. Czym jest atak USB?](#221-Czym-jest-atak-USB?) 
 
 # 1. Wprowadzenie
 
@@ -87,3 +94,93 @@ W latach 2017-2020 zauważono wzrost zagrożeń związanych z IoT (Internet of T
 W latach 2021-2022 wzrosła liczba ataków typu supply chain i Ransomware-as-a-Service (RaaS). Polegały one na zaatakowaniu celu aby uzyskać dostęp do sieci. Ataki Ransomware-as-a-Service polegają na udostępnianiu oprogramowania ransomware innym cyberprzestępcom w zamian za część uzyskanych zysków. Jeden z najbardziej znanych ataków tego typu jest atak SolarWinds supply chain, który polegał na wykorzystaniu naruszenia aktualizacji oprogramowania SolarWinds do rozpowszechnienia złośliwego oprogramowania wśród swoich klientów. Innym przykładem może być Colonial Pipeline z 2021 roku.
 
 W latach 2022 do chwili obecnej coraz bardziej popularne stają się ataki deep fake oraz oszustwa polegające na syntetycznej tożsamości. Deepfake polega na tworzeniu nagrań wideo lub audio, które mogą być wykorzystywane do ataków socjotechnicznych. Oszustwa polegające na syntetycznej tożsamości oznaczają, że osoby dokonujące przestępstw tworzą fałszywą tożsamość, którą wykorzystują do wyłudzania danych \cite{9}.
+
+# 2.1.1. Kluczowe pojęcia
+
+W świecie cyberbezpieczeństwa istnieje wiele pojęć. Liczba pojęć związanych z dziedziną bezpieczeństwa jest naprawdę duża. Jeśli dobrze się zastanowić, można wskazać około 100 różnych pojęć. Zacznijmy od najważniejszych terminów, takich jak:
+- Firmware -- jest to oprogramowanie wbudowane w urządzeniu elektrycznym, które kontroluje jego podstawowe funkcje i operacje. Zazwyczaj to oprogramowanie uruchamia się po włączeniu urządzenia. Firmware dostosowany jest do routerów, kart sieciowych, dysków twardych, drukarek oraz innych urządzeń peryferyjnych. 
+- Cybersecurity -- to dziedzina zajmująca się ochroną systemów komputerowych, sieci, danych oraz urządzeń przed różnymi zagrożeniami związanymi z cyberprzestrzenią. W ramach cyberbezpieczeństwa wyróżnia się zapewnianie poufności, integralności, dostępności, autentyczności oraz zgodności z przepisami.
+- BadUSB -- to rodzaj zagrożeń związanych z obszarem cyberbezpieczeństwa, polegających na modyfikacji firmware'u urządzeń USB w celu ich złośliwego wykorzystania.
+- Advanced Persistent Threat (APT) -- jest to atak w którym osoba atakująca wykorzystuje najbardziej znane taktyki i technologie. Celem tego ataku jest pozostawianie ‘under the radar’ i przeszukanie sieci 'pozostając w cieniu', aby nikt nie wykrył po dłuższym czasie, że osoba atakująca przebywa w sieci. 
+- Advanced Threat Protection (ATP) -- jest to rozwiązanie, które zabezpiecza przed złośliwym oprogramowaniem lub atakami hakerskimi. Advanced Threat Protection obejmuje zarówno oprogramowanie, jak i zarządzane usługi bezpieczeństwa.
+- Malware -- jest to ogólne pojęcie, które określa rodzaj złośliwego oprogramowania komputerowego. 
+- Exploit -- jest to wykorzystanie luki lub wady w systemach sieciowych aby zaatakować go. 
+- Endpoint Protection -- jest to system, który monitoruje urządzenia końcowe w celu zabezpieczenia ich od złośliwych działań lub oprogramowań.
+- Sandbox(ing) -- jest to odizolowane środowisko w którym można bezpiecznie uruchomić złośliwe oprogramowanie bez ryzyka uszkodzenia urządzenia hosta lub sieci.
+- Threat Hunting -- jest to aktywne działanie w zakresie obrony przed cyberzagrożeniami, w którym odpowiedni specjalista przeszukuje sieć w celu wykrycia i naprawienia zagrożeń. 
+- Virus -- jest to złośliwy program uruchamiany na komputerze w celu zainfekowania urządzenia, po czym ten może przejąc kontrolę nad przeglądarką, wysyłać spam bądź wyłączyć ustawienia zabezpieczeń i inne złośliwe działania.
+- Vulnerability -- to słabe punkty oprogramowania, które mogą zostać wykorzystane przez cyberprzestępców w celu naruszenia bezpieczeństwa.
+- Zero-day Exploit -- odnosi się do rodzaju exploitu, który został stworzony w celu wykorzystania luki w zabezpieczeniach, przed tym jak inna osoba zdąży ją wykryć i naprawić \cite{10}.
+
+# 2.2. Analiza przypadków i ich wpływ na firmware
+
+Sekcja ta skupia się na przeglądzie literatury naukowej oraz analizie konkretnych przypadków ataków na bezpieczeństwo komputera, które wykorzystują urządzenia USB. Celem jest zrozumienie, jak te ataki mogą naruszyć spójność firmware urządzeń, co stanowi poważne zagrożenie dla bezpieczeństwa systemów komputerowych.
+
+Jak wiadomo, świat technologii nie stoi w miejscu, co niesie za sobą pojawienie się nowych zagrożeń przy każdym otwarciu. Każdego dnia pojawiają się nowe ataki, dlatego ważne jest, aby być świadomym takich kwestii jak utrata danych, kradzież poufnych informacji, ataki ransomware, infekcje złośliwym oprogramowaniem, i tak dalej. Jedną z form takiego ataku jest atak z wykorzystaniem złośliwego firmware na urządzeniach USB.
+
+# 2.2.1. Czym jest atak USB?
+
+Każdego dnia pojawiają się nowe ataki, dlatego ważne jest, aby być świadomym takich kwestii jak utrata danych, kradzież poufnych informacji, ataki ransomware, infekcje złośliwym oprogramowaniem, i tak dalej. Jedną z form takiego ataku jest atak z wykorzystaniem złośliwego firmware na urządzeniach USB.
+
+Wśród różnych form można wymienić następujące typy ataku, które zostaną opisane w dalszym kroku: BadUSB, Tailgating i USB drop. Chociaż istnieją różne rodzaje ataków USB, można podzielić ich na kilka grup: 
+- Przeprogramowanie wewnętrznego mikrokontrolera USB -- jest to sytuacja, w której urządzenia USB się być bezpieczne, ale wykonuje złośliwe działania, takie jak wprowadzanie naciśnięcia klawiszy, Rubber Ducky, PHUKD/URFUKED, USBdriveby, Evilduino i inne.
+- Przeprogramowanie oprogramowania sprzętowego USB w celu wykonania złośliwych działań -- odnosi się do działań, w których pobierane są złośliwe oprogramowania, eksfiltracja danych itp. Przykładem mogą być maszyny wirtualne, które zostają złamane, zaliczają się do tego także omijanie ochrony hasłem, itp.  
+- Wykorzystywanie niedociągnięć w sposobie interakcji systemów operacyjnych z USB -- jest to sytuacja, w której oprogramowanie układowe USB nie zostaje zmienione, a zachowanie systemów operacyjnych w odniesieniu do protokołów USB jest wykorzystywane w sprytny sposób. Przykłady to backdoor USB do hostów Air-Gapped, exploity Autorun, ukrywanie danych na urządzeniach pamięci masowej USB i inne.
+- Electrical attacks -- ataki, w których urządzenia USB wysyłają impuls elektryczny po podłączeniu, co prowadzi do uszkodzenia maszyny. Przykładem tego typu ataków może być USB Killer, który niszczy urządzenie końcowe od razu po włożeniu do portu za pomocą wyładowania elektrycznego.
+
+Za pomocą ataków USB można zrobić wiele różnych szkodliwych rzeczy, takich jak zniszczenie poufnych danych, uzyskanie dostępu do systemu lub innego typu groźne konsekwencje. Teraz należy zrozumieć, jak działają tego typu ataki. Jednym ze sposobów jest stworzenie złośliwego oprogramowania i przesłanie go do urządzenia USB. Kod można zarówno napisać samemu, jak i pobrać z sieci. Złożoność oprogramowania może być różna, zarówno prosta, jak i skomplikowana. Po podłączeniu takiego pendrive'a do urządzenia końcowego może on zostać uruchomiony, gdy użytkownik otworzy zainfekowany plik zapisany na dysku.  
+
+Drugą prostszą techniką jest podszywanie się urządzenia USB za inne urządzenia, na przykład aby urządzenie końcowe myślało, że USB jest klawiaturą. Jest to bardzo znana i pewna metoda, dzięki której atakujący może zniszczyć poufne dane. Przykładem tego typu oprogramowania może być urządzenie Rubber Ducky, które uważa się za jedno z najpopularniejszych. Z pomocą tego narzędzia można rozpocząć wykonywanie złośliwego kodu poprzez "naciśnięcie" określonych klawiszy.
+
+Następnie, analiza skupia się na bardziej zaawansowanych przypadkach, takich jak ataki typu BadUSB. Te ataki polegają na modyfikacji firmware urządzeń USB w taki sposób, aby urządzenie mogło emulować różne typy urządzeń wejściowych, takich jak klawiatury czy myszy, i wykonują szkodliwe działania bez wiedzy użytkownika. Przykłady te ilustrują, jak ataki na firmware mogą być wykorzystywane do wykonania zaawansowanych operacji, takich jak kradzież danych czy instalacja backdoorów \cite{11}.
+
+#### Czym jest atak BadUSB?
+Atak BadUSB polega na wykorzystaniu luki w zabezpieczeniach USB. Zazwyczaj jest tak, że odbywa się zamiana urządzenia USB w urządzenie z interfejsem człowieka. Chodzi głównie o to, żeby urządzenie USB naśladowało działania użytkownika na klawiaturze i wykonywało groźne polecenia. Atak BadUSB został stworzony przez Karsten Nohl i Jakob Lell. W dzisiejszych czasach kod BadUSB jest dostępny publicznie na repozytoriach GitHub. 
+
+#### Jak działa BadUSB?
+Atak BadUSB opiera się na zaprojektowaniu urządzenia USB w sposób programowy, który będzie mieścił w sobie złośliwe oprogramowanie. USB może łączyć się z różnymi urządzeniami, na przykład z komputerami, klawiaturami, kamerami internetowymi, modemami i innymi urządzeniami podobnego typu.
+
+Jak wiadomo USB ma wbudowany chip, który zazwyczaj zawiera dedykowane oprogramowanie. Ten chip służy do rozpoznawania USB przez urządzenie, do których zostanie podłączony. Tego typu urządzenia są bardzo podatne na ataki ze względu na oprogramowanie, które jest łatwe do złamania. Atak taki polega na zamianie kodu poprzez metodę inżynierii wstecznej urządzenia. Istnieją różne sposoby ochrony przed tego rodzaju atakami. Jedną z najbardziej zalecanych praktyk jest wybór rozwiązania do bezpieczeństwa danych, które obejmuje szeroki zakres funkcji:
+- Pliki zawierające dane osobowe PII nie mogą być kopiowane na prywatne urządzenia, takie jak urządzenia USB, ze względu na ryzyko wycieku danych.
+- Wykrywanie ryzyka i złamania podejrzanego oprogramowania poprzez generowanie raportów wraz z wysyłaniem powiadomień drogą elektroniczną.
+- W sytuacji wykrycia ataku przeprowadzonego przez osobę trzecią lub nieautoryzowaną, zainfekowane urządzenie końcowe zostaje izolowane od sieci, co podnosi poziom bezpieczeństwa.
+- Wykrywanie anomalii w podłączonych urządzeniach do stacji roboczych w nietypowych godzinach odbywa się poprzez skanowanie wszystkich punktów końcowych. 
+
+#### Czym jest atak typu USB drop?
+Jest to bardzo nietypowa i swoją drogą trudna metoda ataku, ponieważ polega na tym, żeby ofiara sama, bez wiedzy o zagrożeniu, podłączyła zainfekowane urządzenie do swojego komputera. Ofiara może być zmylona, gdyż zainfekowane urządzenie może wyglądać na zwykły pendrive, który wydaje się niewinną ciekawostką do podłączenia. Gdy ktoś podłączy zainfekowane urządzenie do swojego komputera, które jest dodatkowo podłączone do sieci domowej, staje się potencjalną ofiarą ataku. To otwiera drogę do dostępu do urządzenia, ujawnienia poufnych danych, wpływu na sieć domową lub nawet wykonania innych działań, o ile wystarczy zasobów.
+
+#### Jakie są rodzaje ataków USB drop?
+- Social engineering -- W tym rodzaju ataków osoba atakująca podszywa się pod inną osobę w celu przeprowadzenia złośliwych działań. Może to być podszywanie się pod pracownika firmy w celu wejścia do siedziby firmy, aby podłączyć urządzenie USB w celach naszkodzić lub uzyskać dostęp do całej sieci firmowej.
+- Public placement -- W tej formie ataku osoba atakująca jest przekonana, że jeśli zostawi urządzenie USB, to na pewno ktoś z pewnością weźmie go i podłączy do swojego urządzenia. Jest to atak, który często odnosi sukces, ponieważ nie wszyscy zdają sobie sprawę z ryzyka związanego z podłączaniem obcych urządzeń. W tej formie ataku osoba atakująca nie traci czasu na planowanie, a polega na tym, że znajdą się osoby, które będą dociekliwe lub nie świadome ryzyka. 
+
+#### Jakie są cele ataków USB drop?
+- Keylogging -- W tym typie ataku cel jest taki, aby urządzenie USB, które zostanie podłączone do komputera, zliczało naciśnięcia klawisz na klawiaturze ofiary i później przesłało te dane na zdalny serwer do osoby atakującej. W późniejszym czasie osoba atakująca analizuje dane, aby móc wykraść dane poufne.  
+- Malware infection -- W tym typie ataku głównym celem jest uszkodzenie kluczowych informacji ofiary. Informacjami kluczowymi użytkownika mogą być dokumenty robocze, dane poufne, dokumenty zawierające dane osobiste. Osiąga się zazwyczaj tego z pomocą oprogramowania ransomware. 
+- Hardware damage -- Ten typ ataku polega na uszkodzeniu sprzętu poprzez podłączenie urządzeń takich jak USBKill, które po podłączeniu do sprzętu wysyłają impuls elektryczny tym samym fizycznie niszcząc sprzęt, po czym urządzenie docelowe staje się bezużyteczne. Zazwyczaj tego typu atak jest przeprowadzany przez złośliwych insiderów, takich jak niezadowoleni pracownicy firmy lub wrodzy ofiary, które znajdują się najbliżej ofiary. 
+- Human Interface Device (HID) Spoofing -- Jest to typ ataku, który w pewnej mierze jest podobny do ataku Keylogging, lecz różni się tym, że Human Interface Device (HID) Spoofing naśladuje wzorce na klawiaturze i dostaje się do wiersza poleceń, aby uzyskać zdalny dostęp bądź zakłócić obronę komputera.
+
+#### Czym jest atak typu Tailgating?
+Celem tego typu ataków jest uzyskanie dostępu do obszaru chronionego hasłem. Firmy IT lub inne przedsiębiorstwa są bardziej narażone na tego rodzaju ataki z następujących powodów:
+- Ze względu na pracowników wchodzących i wychodzących z pomieszczeń, korzystających z różnych wejść do biura.
+- Ze względu na podwykonawców pracujących dla firmy.
+- Ze względu na nieświadomych pracowników, którzy nie zdają sobie sprawy z ryzyka związanego z bezpieczeństwem.
+
+Aby uchronić się przed tego typu atakami należy korzystać z inteligentnych identyfikatorów i kart, które pozwalają ograniczać dostęp pracownikom do niepozwolonych miejsc. Także dobrym pomysłem będzie wdrożenie skanerów biometrycznych, które nadal uważają się za solidne urządzenia skanujące cechy fizyczne lub inne cechy osoby. Ostatnim sposobem są nadzory wideo lub CCTV oparte na sztucznej inteligencji, które można wykorzystać, aby nie tylko nagrywać, a dodatkowo analizować nagrania wideo w celach porównania z osobami, które mają pozwolenia na wejście \cite{11}.
+
+Przykładami wszystkich powyższych rodzajów ataków mogą być zarówno duże, jak i małe firmy, które codziennie stają się ofiarami różnych ataków. Według badania przeprowadzonego w 2021 roku wśród Specjalistów Bezpieczeństwa IT około trzy na dziesięć firm odnotowało od 11 do 50 złośliwych ataków USB \cite{12}.
+
+Jakiś czas temu znana amerykańska firma Industrial and Commercial Bank of China Ltd’s US padła ofiarą ataku za pomocą narzędzia USB. W rezultacie bank nie mógł rozliczyć kilku transakcji skarbowych w USA \cite{13}.
+
+Ostatnio doszło do ataku na publiczne i prywatne firmy przeprowadzony przez SOGU i SNOWYDRIVE. Są to znane cyberataki, które wykorzystują narzędzia USB i są uważane za jedne z najbardziej agresywnych kampanii cyberszpiegowskich. SNOWYDRIVE jest znane z ataków na organizacje naftowe i gazowe w Azji. Jak twierdzą badacze, Rommel Joven i Ng Choon Kiat: ``Po załadowaniu SNOWYDRIVE tworzy backdoora w systemie hosta, dając atakującym możliwość zdalnego wydawania poleceń systemowych, a także rozprzestrzenia się na inne pamięci flash USB i rozprzestrzenia się w całej sieci'' \cite{14}.
+
+Ważnym aspektem tej analizy jest również zrozumienie, jak te ataki wpływają na integralność i spójność firmware. Naruszenie spójności firmware nie tylko stanowi zagrożenie dla bezpieczeństwa danego urządzenia, ale może także prowadzić do szerszych kompromitacji systemów, na które urządzenie USB zostanie podłączone.
+
+Rozważając dalsze implikacje, istotne jest także zrozumienie, w jaki sposób ataki te mogą wpływać na ciągłość działania organizacji i ich infrastruktury IT. Ataki te mogą prowadzić do przestojów w działaniu systemów, strat finansowych oraz uszkodzenia reputacji.
+
+Według znanej ekspertki w dziedzinie cyberbezpieczeństwa Dr. Emily Thompson: ``ataki BadUSB uosabiają ewoluujący krajobraz zagrożeń, przed którymi stoją współczesne organizacje. Ich podstępny charakter i niezrównana zdolność adaptacji stanowią ogromne wyzwanie dla ustalonych paradygmatów cyberbezpieczeństwa''. Według powyższych słów ekspertki w dziedzinie cyberbezpieczeństwa można stwierdzić, że dziedzina cyberzagrożeń jest dynamicznie zmieniająca, co potrzebuje codziennego poznawania nowych rzeczy i konieczności wprowadzania obronnych strategii w celach zabezpieczenia na najwyższym poziomie \cite{15}. 
+
+Dodatkowo, rozwój technologii Internetu Rzeczy (IoT) i wzrost liczby podłączanych urządzeń USB wymaga szczególnej uwagi w kontekście bezpieczeństwa. Urządzenia IoT często mają ograniczone możliwości ochrony, co sprawia, że są one łatwym celem dla ataków wykorzystujących luki w zabezpieczeniach firmware. Również należy zwrócić uwagę na pojawienie się 5G i szybki rozwój sztucznej inteligencji, które też powodują ryzyko w cyberprzestrzeni, mimo tego, że wprowadzane zostały w celach pomocnych. Ale wiadomo, gdzie rozwój tam również znajdują się luki w bezpieczeństwach.  
+
+Z powodu rosnących zagrożeń ze strony ataków BadUSB rządy i instytucje prywatne coraz częściej wprowadzają metody obrony i różne protokoły ochrony danych. Znane instytucje takie jak RODO i CCPA wyraźnie podkreślają, że należy działać zgodnie z rekomendacjami ustalonymi z góry przez nie, ponieważ istnieje wielkie ryzyko nie stosując się tych zasad. 
+
+Przegląd ten podkreśla konieczność stosowania zaawansowanych metod ochrony, zarówno na poziomie sprzętu, jak i oprogramowania, aby skutecznie przeciwdziałać tego rodzaju zagrożeniom. Włączenie praktyk takich jak regularne aktualizacje oprogramowania, monitorowanie ruchu sieciowego i stosowanie zasad minimalnych uprawnień może znacznie zwiększyć odporność na ataki tego typu.
