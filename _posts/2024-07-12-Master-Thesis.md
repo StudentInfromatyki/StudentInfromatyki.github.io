@@ -83,7 +83,7 @@ Zdaniem autora, praca powinna również przyczynić się do rozwoju skuteczniejs
 W ramach prezentowanej pracy magisterskiej skoncentrowano się na krytycznym przeglądzie obecnych teorii i metodologii stosowanych w badaniach nad atakami USB oraz na analizie wyzwań, które one stawiają. 
 Kwestie, które zostaną omawiane przedstawią, jak bardzo skomplikowanym i zmiennym problemem jest bezpieczeństwo w sieci, zwłaszcza w kontekście ciągłego rozwoju technologii.
 
-W czasach rewolucji informacyjnej oraz nowych zagrożeń, które wynikają w różnych sektorach ludzkiej działalności jak: polityka, gospodarka, biznes, finanse, transport, infrastruktura, poczta, telekomunikacja, medycyna oraz nauka. Rozwój technologii informacyjnych i potrzeba użycia Internetu na co dzień prowadzi do powstania wielu nowych wyzwań i zagrożeń w cyberprzestrzeni. Tradycyjne modele bezpieczeństwa często okazują się niewystarczające wobec szybko ewoluujących taktyk stosowanych przez cyberprzestępców. Brak odpowiednich zabezpieczeń pozwala cyberprzestępcom na wykorzystanie tych luk dla swoich celów. Szczególnie ataki typu BadUSB są trudne do wykrycia przy użyciu tradycyjnych metod. Wymaga to dostosowania zasad bezpieczeństwa do nowych rodzajów zagrożeń. \cite{5}.
+W czasach rewolucji informacyjnej oraz nowych zagrożeń, które wynikają w różnych sektorach ludzkiej działalności jak: polityka, gospodarka, biznes, finanse, transport, infrastruktura, poczta, telekomunikacja, medycyna oraz nauka. Rozwój technologii informacyjnych i potrzeba użycia Internetu na co dzień prowadzi do powstania wielu nowych wyzwań i zagrożeń w cyberprzestrzeni. Tradycyjne modele bezpieczeństwa często okazują się niewystarczające wobec szybko ewoluujących taktyk stosowanych przez cyberprzestępców. Brak odpowiednich zabezpieczeń pozwala cyberprzestępcom na wykorzystanie tych luk dla swoich celów. Szczególnie ataki typu BadUSB są trudne do wykrycia przy użyciu tradycyjnych metod. Wymaga to dostosowania zasad bezpieczeństwa do nowych rodzajów zagrożeń. [5].
 
 Napotkano również na wyzwania metodologiczne. Istniejące metody badawcze okazują się niewystarczające do zrozumienia skomplikowanych i dynamicznych aspektów ataków USB. Te wyzwania podkreślają potrzebę rozwoju nowych metodologii, które mogą skutecznie analizować i przewidywać zagrożenia w tym obszarze.
 
@@ -93,9 +93,9 @@ Wreszcie, badania wykazały, że potrzebne jest łączenie różnych dziedzin w 
 
 # 2.1. Geneza i ewolucja ataków USB
 
-W dzisiejszych czasach coraz częściej wykorzystywane są ataki za pomocą urządzeń USB, które znacząco rozwinęły się na przestrzeni ostatnich dekad Z początkiem masowej popularności urządzeń przenośnych USB, takich jak pendrive'y czy zewnętrzne dyski twarde, pojawiły się także nowe możliwości dla atakujących. Pierwsze przypadki wykorzystania tych urządzeń do celów szkodliwych były stosunkowo proste i opierały się głównie na automatycznym uruchamianiu złośliwego oprogramowania poprzez funkcję autorun systemu Windows \cite{6}.
+W dzisiejszych czasach coraz częściej wykorzystywane są ataki za pomocą urządzeń USB, które znacząco rozwinęły się na przestrzeni ostatnich dekad Z początkiem masowej popularności urządzeń przenośnych USB, takich jak pendrive'y czy zewnętrzne dyski twarde, pojawiły się także nowe możliwości dla atakujących. Pierwsze przypadki wykorzystania tych urządzeń do celów szkodliwych były stosunkowo proste i opierały się głównie na automatycznym uruchamianiu złośliwego oprogramowania poprzez funkcję autorun systemu Windows [6].
 
-Nieco póżniej zaczęły być realizowane nowe bardziej zaawansowane techniki. Świetnym przykładem może być Stuxnet, który w 2010 roku zaatakował irański program nuklearny, choć prace nad nim prawdopodobnie rozpoczęły się już w 2005 roku. Obecnie powszechnie przyjmuje się, że Stuxnet został stworzony przez agencje wywiadowcze Stanów Zjednoczonych i Izraela. Choć żaden z rządów nigdy oficjalnie nie przyznał się do stworzenia Stuxneta, w filmie z 2011 roku pokazano ten atak jako sukces szefa izraelskich sił zbrojnych. W 2010 r. inspektorzy Agencji Energii Atomowej zauważyli awarie wielu irańskich wirówek, co mogło być skutkiem ataku Stuxneta. Cieżko było to wykryć, ponieważ irańskie obiekty nuklearne nie były podłączone do Internetu. Kiedy zespół ds. bezpieczeństwa z Białorusi przybył, aby zbadać nieprawidłowo działające komputery w Iranie, odkrył złośliwe oprogramowanie, które później nazwano Stuxnetem \cite{7}.
+Nieco póżniej zaczęły być realizowane nowe bardziej zaawansowane techniki. Świetnym przykładem może być Stuxnet, który w 2010 roku zaatakował irański program nuklearny, choć prace nad nim prawdopodobnie rozpoczęły się już w 2005 roku. Obecnie powszechnie przyjmuje się, że Stuxnet został stworzony przez agencje wywiadowcze Stanów Zjednoczonych i Izraela. Choć żaden z rządów nigdy oficjalnie nie przyznał się do stworzenia Stuxneta, w filmie z 2011 roku pokazano ten atak jako sukces szefa izraelskich sił zbrojnych. W 2010 r. inspektorzy Agencji Energii Atomowej zauważyli awarie wielu irańskich wirówek, co mogło być skutkiem ataku Stuxneta. Cieżko było to wykryć, ponieważ irańskie obiekty nuklearne nie były podłączone do Internetu. Kiedy zespół ds. bezpieczeństwa z Białorusi przybył, aby zbadać nieprawidłowo działające komputery w Iranie, odkrył złośliwe oprogramowanie, które później nazwano Stuxnetem [7].
 
 Mimo że twórcy Stuxnet zaprogramowali jego wygaśnięcie w czerwcu 2022 roku, atak ten zainspirował powstanie innych ataków uznawanych za podobne do niego lub za jego następców:
 - Duqu, który powstał w 2011 roku, jest oparty na kodzie Stuxneta. Ten atak został zarejestrowany jako próba rejestrowania naciśnięć klawiszy i wyciągania danych z obiektów przemysłowych, aby w późniejszym czasie móc je wykorzystać do ataków. Polegał na ukrywaniu transmisji danych w ruchu HTTP i przesyłaniu złośliwych plików w formacie jpg.
@@ -105,24 +105,24 @@ Mimo że twórcy Stuxnet zaprogramowali jego wygaśnięcie w czerwcu 2022 roku, 
 - Triton, który powstał w 2017 roku i został zauważony podczas ataków na systemy bezpieczeństwa zakładu petrochemicznego na Bliskim Wschodzie.
 - Most recent wirus, który miał cechy Stuxneta zaatakował nieokreśloną infrastrukturę sieciową w Iranie w październiku 2018 r.
 
-Innym świetnym przykładem jest Conficker, który rozprzestrzeniał się przez sieci komputerowe oraz urządzenia USB, wykorzystując lukę w systemie Windows \cite{8}. Conficker pokazał, jak szybko i skutecznie może rozprzestrzeniać się złośliwe oprogramowanie, wykorzystując zarówno sieci, jak i fizyczne nośniki. Zainfekował wiele komputerów rządowych, biznesowych i domowych w ponad 190 krajach. Ten typ ataku pozostaje najbardziej uporczywym robakiem komputerowym, jaki kiedykolwiek powstał. Podobnie jak w przypadku ataku Stuxnet, zrodziło to wiele wersji Confickera. Każda wersja miała całkiem inne cele ataku, począwszy od wstrzykiwania złośliwego kodu do wiadomości phishingowych. Do tej pory zainfekowano około 11 milionów urządzeń. Najbardziej imponującą cechą Confickera było podejście kryptograficzne. Sposób szyfrowania w tym ataku był nietypowy; wykorzystano takie metody kodowania jak: RC4, RSA i MD6.
+Innym świetnym przykładem jest Conficker, który rozprzestrzeniał się przez sieci komputerowe oraz urządzenia USB, wykorzystując lukę w systemie Windows [8]. Conficker pokazał, jak szybko i skutecznie może rozprzestrzeniać się złośliwe oprogramowanie, wykorzystując zarówno sieci, jak i fizyczne nośniki. Zainfekował wiele komputerów rządowych, biznesowych i domowych w ponad 190 krajach. Ten typ ataku pozostaje najbardziej uporczywym robakiem komputerowym, jaki kiedykolwiek powstał. Podobnie jak w przypadku ataku Stuxnet, zrodziło to wiele wersji Confickera. Każda wersja miała całkiem inne cele ataku, począwszy od wstrzykiwania złośliwego kodu do wiadomości phishingowych. Do tej pory zainfekowano około 11 milionów urządzeń. Najbardziej imponującą cechą Confickera było podejście kryptograficzne. Sposób szyfrowania w tym ataku był nietypowy; wykorzystano takie metody kodowania jak: RC4, RSA i MD6.
 
 <p align="center">
   Rys.2.1. Przedstawienie ataku Conficker, źródło: https://tiny.pl/dw19h
 <br>
-  <img src="\assets\img\MasterThesis\18.png" width="650" alt="xss">
+  <img src="\assets\img\MasterThesis\18.png" width="650" alt="Conficker">
   <br>
   Źródło: https://www.cybereason.com/hubfs/image1-15.png
 </p>
 
 W ostatnich dekadach znacznie wzrosły zagrożenia cybernetyczne. Z każdym postępem w dziedzinie cyfrowej pojawiają się nowe zagrożenia, które są wykorzystywane przez cyberprzestępców. Teraz, dzięki odkryciu sztucznej inteligencji, atakujący posługują się bardziej wyrafinowanymi metodami ataku. Wzrost ataków obserwujemy od ataków ransomware po taktyki socjotechniczne. Według The Harvard Business Review w 2020 roku liczba ataków ransomware wzrosła o 150 procent w porównaniu z rokiem poprzednim. Kolejnym znanym zagrożeniem jest phishing, którego celem jest wyłudzenie poufnych informacji.
 
-W latach 2009-2012 wzrosła liczba zaawansowanych zagrożeń ATP (ang. Advanced Persistent Threats). Są to ataki, które polegają na kradzieży danych z konkretnego celu. Atakujący spędzali długi czas, aby wydobyć informacje i poukładać z nich ``stos z klocków'', aby móc wyrządzić szkodę, ukraść pieniądze lub dane. Jednym z dobrze znanych przykładów jest zagrożenie, które miało miejsce w 2010 roku, znane jako ``Operacja Aurora''. Atakujący uzyskiwali dostęp do różnych wrażliwych danych, wykorzystując luki w zabezpieczeniach firmowych \cite{9}.
+W latach 2009-2012 wzrosła liczba zaawansowanych zagrożeń ATP (ang. Advanced Persistent Threats). Są to ataki, które polegają na kradzieży danych z konkretnego celu. Atakujący spędzali długi czas, aby wydobyć informacje i poukładać z nich ``stos z klocków'', aby móc wyrządzić szkodę, ukraść pieniądze lub dane. Jednym z dobrze znanych przykładów jest zagrożenie, które miało miejsce w 2010 roku, znane jako ``Operacja Aurora''. Atakujący uzyskiwali dostęp do różnych wrażliwych danych, wykorzystując luki w zabezpieczeniach firmowych [9].
 
 <p align="center">
   Rys.2.2. Przedstawienie Operacji Aurora źródło: https://tiny.pl/dw1r8
 <br>
-  <img src="\assets\img\MasterThesis\19.png" width="650" alt="xss">
+  <img src="\assets\img\MasterThesis\19.png" width="650" alt="Przedstawienie">
   <br>
   Źródło: https://images.ctfassets.net/5natoedl294r/1bDvDHkf5nmdIEHUnHdkx5/892e0387ef35fdc64d02fe45d1786438/1_1400x1233.png?w=828&q=75&fit=fill&fm=webp
 </p>
@@ -133,7 +133,7 @@ W latach 2017-2020 zauważono wzrost zagrożeń związanych z IoT (Internet of T
 
 W latach 2021-2022 wzrosła liczba ataków typu supply chain i Ransomware-as-a-Service (RaaS). Polegały one na zaatakowaniu celu aby uzyskać dostęp do sieci. Ataki Ransomware-as-a-Service polegają na udostępnianiu oprogramowania ransomware innym cyberprzestępcom w zamian za część uzyskanych zysków. Jeden z najbardziej znanych ataków tego typu jest atak SolarWinds supply chain, który polegał na wykorzystaniu naruszenia aktualizacji oprogramowania SolarWinds do rozpowszechnienia złośliwego oprogramowania wśród swoich klientów. Innym przykładem może być Colonial Pipeline z 2021 roku.
 
-W latach 2022 do chwili obecnej coraz bardziej popularne stają się ataki deep fake oraz oszustwa polegające na syntetycznej tożsamości. Deepfake polega na tworzeniu nagrań wideo lub audio, które mogą być wykorzystywane do ataków socjotechnicznych. Oszustwa polegające na syntetycznej tożsamości oznaczają, że osoby dokonujące przestępstw tworzą fałszywą tożsamość, którą wykorzystują do wyłudzania danych \cite{9}.
+W latach 2022 do chwili obecnej coraz bardziej popularne stają się ataki deep fake oraz oszustwa polegające na syntetycznej tożsamości. Deepfake polega na tworzeniu nagrań wideo lub audio, które mogą być wykorzystywane do ataków socjotechnicznych. Oszustwa polegające na syntetycznej tożsamości oznaczają, że osoby dokonujące przestępstw tworzą fałszywą tożsamość, którą wykorzystują do wyłudzania danych [9].
 
 # 2.1.1. Kluczowe pojęcia
 
@@ -150,7 +150,7 @@ W świecie cyberbezpieczeństwa istnieje wiele pojęć. Liczba pojęć związany
 - Threat Hunting -- jest to aktywne działanie w zakresie obrony przed cyberzagrożeniami, w którym odpowiedni specjalista przeszukuje sieć w celu wykrycia i naprawienia zagrożeń. 
 - Virus -- jest to złośliwy program uruchamiany na komputerze w celu zainfekowania urządzenia, po czym ten może przejąc kontrolę nad przeglądarką, wysyłać spam bądź wyłączyć ustawienia zabezpieczeń i inne złośliwe działania.
 - Vulnerability -- to słabe punkty oprogramowania, które mogą zostać wykorzystane przez cyberprzestępców w celu naruszenia bezpieczeństwa.
-- Zero-day Exploit -- odnosi się do rodzaju exploitu, który został stworzony w celu wykorzystania luki w zabezpieczeniach, przed tym jak inna osoba zdąży ją wykryć i naprawić \cite{10}.
+- Zero-day Exploit -- odnosi się do rodzaju exploitu, który został stworzony w celu wykorzystania luki w zabezpieczeniach, przed tym jak inna osoba zdąży ją wykryć i naprawić [10].
 
 # 2.2. Analiza przypadków i ich wpływ na firmware
 
@@ -172,7 +172,7 @@ Za pomocą ataków USB można zrobić wiele różnych szkodliwych rzeczy, takich
 
 Drugą prostszą techniką jest podszywanie się urządzenia USB za inne urządzenia, na przykład aby urządzenie końcowe myślało, że USB jest klawiaturą. Jest to bardzo znana i pewna metoda, dzięki której atakujący może zniszczyć poufne dane. Przykładem tego typu oprogramowania może być urządzenie Rubber Ducky, które uważa się za jedno z najpopularniejszych. Z pomocą tego narzędzia można rozpocząć wykonywanie złośliwego kodu poprzez "naciśnięcie" określonych klawiszy.
 
-Następnie, analiza skupia się na bardziej zaawansowanych przypadkach, takich jak ataki typu BadUSB. Te ataki polegają na modyfikacji firmware urządzeń USB w taki sposób, aby urządzenie mogło emulować różne typy urządzeń wejściowych, takich jak klawiatury czy myszy, i wykonują szkodliwe działania bez wiedzy użytkownika. Przykłady te ilustrują, jak ataki na firmware mogą być wykorzystywane do wykonania zaawansowanych operacji, takich jak kradzież danych czy instalacja backdoorów \cite{11}.
+Następnie, analiza skupia się na bardziej zaawansowanych przypadkach, takich jak ataki typu BadUSB. Te ataki polegają na modyfikacji firmware urządzeń USB w taki sposób, aby urządzenie mogło emulować różne typy urządzeń wejściowych, takich jak klawiatury czy myszy, i wykonują szkodliwe działania bez wiedzy użytkownika. Przykłady te ilustrują, jak ataki na firmware mogą być wykorzystywane do wykonania zaawansowanych operacji, takich jak kradzież danych czy instalacja backdoorów [11].
 
 #### Czym jest atak BadUSB?
 Atak BadUSB polega na wykorzystaniu luki w zabezpieczeniach USB. Zazwyczaj jest tak, że odbywa się zamiana urządzenia USB w urządzenie z interfejsem człowieka. Chodzi głównie o to, żeby urządzenie USB naśladowało działania użytkownika na klawiaturze i wykonywało groźne polecenia. Atak BadUSB został stworzony przez Karsten Nohl i Jakob Lell. W dzisiejszych czasach kod BadUSB jest dostępny publicznie na repozytoriach GitHub. 
@@ -205,19 +205,19 @@ Celem tego typu ataków jest uzyskanie dostępu do obszaru chronionego hasłem. 
 - Ze względu na podwykonawców pracujących dla firmy.
 - Ze względu na nieświadomych pracowników, którzy nie zdają sobie sprawy z ryzyka związanego z bezpieczeństwem.
 
-Aby uchronić się przed tego typu atakami należy korzystać z inteligentnych identyfikatorów i kart, które pozwalają ograniczać dostęp pracownikom do niepozwolonych miejsc. Także dobrym pomysłem będzie wdrożenie skanerów biometrycznych, które nadal uważają się za solidne urządzenia skanujące cechy fizyczne lub inne cechy osoby. Ostatnim sposobem są nadzory wideo lub CCTV oparte na sztucznej inteligencji, które można wykorzystać, aby nie tylko nagrywać, a dodatkowo analizować nagrania wideo w celach porównania z osobami, które mają pozwolenia na wejście \cite{11}.
+Aby uchronić się przed tego typu atakami należy korzystać z inteligentnych identyfikatorów i kart, które pozwalają ograniczać dostęp pracownikom do niepozwolonych miejsc. Także dobrym pomysłem będzie wdrożenie skanerów biometrycznych, które nadal uważają się za solidne urządzenia skanujące cechy fizyczne lub inne cechy osoby. Ostatnim sposobem są nadzory wideo lub CCTV oparte na sztucznej inteligencji, które można wykorzystać, aby nie tylko nagrywać, a dodatkowo analizować nagrania wideo w celach porównania z osobami, które mają pozwolenia na wejście [11].
 
-Przykładami wszystkich powyższych rodzajów ataków mogą być zarówno duże, jak i małe firmy, które codziennie stają się ofiarami różnych ataków. Według badania przeprowadzonego w 2021 roku wśród Specjalistów Bezpieczeństwa IT około trzy na dziesięć firm odnotowało od 11 do 50 złośliwych ataków USB \cite{12}.
+Przykładami wszystkich powyższych rodzajów ataków mogą być zarówno duże, jak i małe firmy, które codziennie stają się ofiarami różnych ataków. Według badania przeprowadzonego w 2021 roku wśród Specjalistów Bezpieczeństwa IT około trzy na dziesięć firm odnotowało od 11 do 50 złośliwych ataków USB [12].
 
-Jakiś czas temu znana amerykańska firma Industrial and Commercial Bank of China Ltd’s US padła ofiarą ataku za pomocą narzędzia USB. W rezultacie bank nie mógł rozliczyć kilku transakcji skarbowych w USA \cite{13}.
+Jakiś czas temu znana amerykańska firma Industrial and Commercial Bank of China Ltd’s US padła ofiarą ataku za pomocą narzędzia USB. W rezultacie bank nie mógł rozliczyć kilku transakcji skarbowych w USA [13].
 
-Ostatnio doszło do ataku na publiczne i prywatne firmy przeprowadzony przez SOGU i SNOWYDRIVE. Są to znane cyberataki, które wykorzystują narzędzia USB i są uważane za jedne z najbardziej agresywnych kampanii cyberszpiegowskich. SNOWYDRIVE jest znane z ataków na organizacje naftowe i gazowe w Azji. Jak twierdzą badacze, Rommel Joven i Ng Choon Kiat: ``Po załadowaniu SNOWYDRIVE tworzy backdoora w systemie hosta, dając atakującym możliwość zdalnego wydawania poleceń systemowych, a także rozprzestrzenia się na inne pamięci flash USB i rozprzestrzenia się w całej sieci'' \cite{14}.
+Ostatnio doszło do ataku na publiczne i prywatne firmy przeprowadzony przez SOGU i SNOWYDRIVE. Są to znane cyberataki, które wykorzystują narzędzia USB i są uważane za jedne z najbardziej agresywnych kampanii cyberszpiegowskich. SNOWYDRIVE jest znane z ataków na organizacje naftowe i gazowe w Azji. Jak twierdzą badacze, Rommel Joven i Ng Choon Kiat: ``Po załadowaniu SNOWYDRIVE tworzy backdoora w systemie hosta, dając atakującym możliwość zdalnego wydawania poleceń systemowych, a także rozprzestrzenia się na inne pamięci flash USB i rozprzestrzenia się w całej sieci'' [14].
 
 Ważnym aspektem tej analizy jest również zrozumienie, jak te ataki wpływają na integralność i spójność firmware. Naruszenie spójności firmware nie tylko stanowi zagrożenie dla bezpieczeństwa danego urządzenia, ale może także prowadzić do szerszych kompromitacji systemów, na które urządzenie USB zostanie podłączone.
 
 Rozważając dalsze implikacje, istotne jest także zrozumienie, w jaki sposób ataki te mogą wpływać na ciągłość działania organizacji i ich infrastruktury IT. Ataki te mogą prowadzić do przestojów w działaniu systemów, strat finansowych oraz uszkodzenia reputacji.
 
-Według znanej ekspertki w dziedzinie cyberbezpieczeństwa Dr. Emily Thompson: ``ataki BadUSB uosabiają ewoluujący krajobraz zagrożeń, przed którymi stoją współczesne organizacje. Ich podstępny charakter i niezrównana zdolność adaptacji stanowią ogromne wyzwanie dla ustalonych paradygmatów cyberbezpieczeństwa''. Według powyższych słów ekspertki w dziedzinie cyberbezpieczeństwa można stwierdzić, że dziedzina cyberzagrożeń jest dynamicznie zmieniająca, co potrzebuje codziennego poznawania nowych rzeczy i konieczności wprowadzania obronnych strategii w celach zabezpieczenia na najwyższym poziomie \cite{15}. 
+Według znanej ekspertki w dziedzinie cyberbezpieczeństwa Dr. Emily Thompson: ``ataki BadUSB uosabiają ewoluujący krajobraz zagrożeń, przed którymi stoją współczesne organizacje. Ich podstępny charakter i niezrównana zdolność adaptacji stanowią ogromne wyzwanie dla ustalonych paradygmatów cyberbezpieczeństwa''. Według powyższych słów ekspertki w dziedzinie cyberbezpieczeństwa można stwierdzić, że dziedzina cyberzagrożeń jest dynamicznie zmieniająca, co potrzebuje codziennego poznawania nowych rzeczy i konieczności wprowadzania obronnych strategii w celach zabezpieczenia na najwyższym poziomie [15]. 
 
 Dodatkowo, rozwój technologii Internetu Rzeczy (IoT) i wzrost liczby podłączanych urządzeń USB wymaga szczególnej uwagi w kontekście bezpieczeństwa. Urządzenia IoT często mają ograniczone możliwości ochrony, co sprawia, że są one łatwym celem dla ataków wykorzystujących luki w zabezpieczeniach firmware. Również należy zwrócić uwagę na pojawienie się 5G i szybki rozwój sztucznej inteligencji, które też powodują ryzyko w cyberprzestrzeni, mimo tego, że wprowadzane zostały w celach pomocnych. Ale wiadomo, gdzie rozwój tam również znajdują się luki w bezpieczeństwach.  
 
@@ -240,7 +240,7 @@ Analiza firmware'u z punktu widzenia technicznego odbywa się na kilka faz. Pier
 
 Podczas analizy technicznej firmware'u wykorzystywane są zarówno metody analizy statycznej, jak i dynamicznej. Analiza statyczna polega na skanowaniu kodu, który został użyty w procesie firmware. Analiza statyczna obejmuje poszukiwanie wzorców i błędów kodowania, odwołania do nieistniejących funkcji czy przepełnienia bufora. Jest to sposób, który uważa się za nieco trudniejszy z tej racji, że jest manualny. Z kolei analiza dynamiczna polega na uruchomieniu firmware'u w sandboxach lub jak inaczej są nazywane środowiska kontrolowane. Pozwala to na obserwację podatności w czasie rzeczywistym. 
 
-Ważnym elementem analizy jest zrozumienia procesu, technik szyfrowania, maskowania czy kompresji. Również ważnym elementem jest poznanie architektur procesu, narzędzi wykorzystujących do analizy i coraz bardziej zaawansowane techniki zabezpieczeń stosowane przez dostawców. Dlatego też istotne jest ciągłe doskonalenie metod i narzędzi używanych do audytu firmware'u, aby zapewnić skuteczną ochronę przed zagrożeniami związanymi z oprogramowaniem wbudowanym \cite{17}.
+Ważnym elementem analizy jest zrozumienia procesu, technik szyfrowania, maskowania czy kompresji. Również ważnym elementem jest poznanie architektur procesu, narzędzi wykorzystujących do analizy i coraz bardziej zaawansowane techniki zabezpieczeń stosowane przez dostawców. Dlatego też istotne jest ciągłe doskonalenie metod i narzędzi używanych do audytu firmware'u, aby zapewnić skuteczną ochronę przed zagrożeniami związanymi z oprogramowaniem wbudowanym [17].
 
 # 2.3.2. Aspekty prawne
 
@@ -252,7 +252,7 @@ Kolejnym krokiem jest kwestia dotycząca ochrony danych osobowych i poufności i
 
 Ataki BadUSB przy użyciu urządzeń USB mogą prowadzić do naruszenia przepisów RODO na kilka sposobów. Pierwszym aspektem jest nieuprawniony dostęp do danych osobowych, co powoduje do poważnych naruszeń zasad poufności i integralności danych. Zgodnie z przepisami które zawarte w RODO, jednostki przetwarzające dane osobowe muszą zapewniać odpowiedni poziom bezpieczeństwa tych danych, aby chronić te dane przed różnymi typu wyciekami oraz nieuprawnionym dostęp. Drugim aspektem jest wymóg na przetwarzanie danych osobowych. Zgodnie z przepisami dotyczącymi ochrony danych osobowych, przetwarzanie danych osobowych jest dopuszczalne tylko wtedy, gdy osoba, której dane dotyczą, wyraziła na to zgodę, lub gdy istnieje inna podstawa prawna umożliwiająca tego typu przetwarzanie.
 
-Dodatkowo, ataki BadUSB mogą prowadzić do naruszenia zasady odpowiedzialności określonej w RODO. Zgodnie z tą zasad jednostki przetwarzające dane osobowe są odpowiedzialne za przestrzeganie przepisów RODO i muszą być w stanie wykazać zgodność z nimi poprzez stosowanie odpowiednich środków technicznych i organizacyjnych. W sytuacji ataków BadUSB organizacje muszą podejmować odpowiednie kroki, aby monitorować i zapobiegać tego typu atakom \cite{18}:
+Dodatkowo, ataki BadUSB mogą prowadzić do naruszenia zasady odpowiedzialności określonej w RODO. Zgodnie z tą zasad jednostki przetwarzające dane osobowe są odpowiedzialne za przestrzeganie przepisów RODO i muszą być w stanie wykazać zgodność z nimi poprzez stosowanie odpowiednich środków technicznych i organizacyjnych. W sytuacji ataków BadUSB organizacje muszą podejmować odpowiednie kroki, aby monitorować i zapobiegać tego typu atakom [18]:
 - Przepisy o ochronie danych: Przepisy takie jak GDPR nakładają na organizacje odpowiedzialność za ochronę danych przetwarzanych przez firmware urządzeń. Naruszenia tych przepisów mogą prowadzić do poważnych konsekwencji prawnych i finansowych.
 - Standardy i regulacje branżowe: Istnieją różne standardy, takie jak ISO/IEC 27001, które określają wymagania dotyczące systemów zarządzania bezpieczeństwem informacji, w tym bezpieczeństwa firmware.
 - Wyzwania związane z licencjonowaniem i prawami autorskimi: W kontekście inżynierii wstecznej firmware, istotne jest zrozumienie ograniczeń nałożonych przez prawa autorskie i licencje, aby unikać naruszania praw twórców oprogramowania.
@@ -304,7 +304,7 @@ Ten rodzaj ataku stwarza niebezpieczeństwo nie tylko poprzez możliwość infek
     Rys.3.2. Wyłączenie ochrony w Microsoft Defender
 </p>   
 
-W tym celu należało posiadać pendrive, który zostanie skonfigurowany jako złośliwy. Rozmiar plików nie będzie duży, więc powinien działać na każdym pendrive. Po czym trzeba utworzyć jeden folder główny nazwany jako payload directory, w którym będą skrypty i plik Netcat (Rys.~\ref{fig:my_image3}). A drugi folder to jest właśnie skrót folderu utworzony na podstawie folderu głównego. 
+W tym celu należało posiadać pendrive, który zostanie skonfigurowany jako złośliwy. Rozmiar plików nie będzie duży, więc powinien działać na każdym pendrive. Po czym trzeba utworzyć jeden folder główny nazwany jako payload directory, w którym będą skrypty i plik Netcat (Rys.3.3.). A drugi folder to jest właśnie skrót folderu utworzony na podstawie folderu głównego. 
 
 <p align="center">
 <br>
@@ -319,7 +319,7 @@ Po skopiowaniu nc64.exe na pendrive należy dokonać kilku zmian w systemie plik
 
 <p align="center">
 <br>
-  <img src="\assets\img\MasterThesis\4.png" width="650" alt="folderu">
+  <img src="\assets\img\MasterThesis\4.png" width="650" alt="Skrypt">
   <br>
     Rys.3.4. Skrypt wyświetlający odpowiednie polecenie
 </p>  
@@ -328,7 +328,7 @@ Na początku zostanie przetestowane, jak działa skrypt bez wykrywania zagroże�
 
 <p align="center">
 <br>
-  <img src="\assets\img\MasterThesis\5.png" width="650" alt="folderu">
+  <img src="\assets\img\MasterThesis\5.png" width="650" alt="Wyłączenie">
   <br>
   Rys.3.5. Wyłączenie ochrony w Microsoft Defender
 </p>  
@@ -337,27 +337,27 @@ Po uruchomieniu pliku można zauważyć, że operacja zakończyła się powodzen
 
 <p align="center">
 <br>
-  <img src="\assets\img\MasterThesis\6.png" width="650" alt="folderu">
+  <img src="\assets\img\MasterThesis\6.png" width="650" alt="wyników">
   <br>
   Rys.3.6. Prezentacja wyników
 </p>  
 
 # 3.3. Analiza bezpieczeństwa systemów przed atakami badUSB
 
-W ramach analizy bezpieczeństwa systemów przed atakami badUSB zostały przeprowadzone testy wykorzystujące funkcje ochronne oferowane przez program Microsoft Defender. W celu oceny skuteczności działania tego narzędzia wobec potencjalnych zagrożeń związanych z zastosowaniem złośliwego oprogramowania na nośnikach USB uruchomiono specjalnie przygotowany złośliwy skrypt z pendrive'a na testowanym laptopie. Podczas tego eksperymentu monitorowano reakcję Microsoft Defendera (Rys.~\ref{fig:my_image7}) na próbę infekcji oraz ewentualne działania podejmowane w celu wykrycia i zneutralizowania zagrożenia. Wyniki tych testów pozwolą na ocenę efektywności narzędzia w ochronie przed atakami typu badUSB oraz identyfikację ewentualnych obszarów wymagających dalszych usprawnień w zakresie zabezpieczeń systemowych.
+W ramach analizy bezpieczeństwa systemów przed atakami badUSB zostały przeprowadzone testy wykorzystujące funkcje ochronne oferowane przez program Microsoft Defender. W celu oceny skuteczności działania tego narzędzia wobec potencjalnych zagrożeń związanych z zastosowaniem złośliwego oprogramowania na nośnikach USB uruchomiono specjalnie przygotowany złośliwy skrypt z pendrive'a na testowanym laptopie. Podczas tego eksperymentu monitorowano reakcję Microsoft Defendera (Rys.3.7.) na próbę infekcji oraz ewentualne działania podejmowane w celu wykrycia i zneutralizowania zagrożenia. Wyniki tych testów pozwolą na ocenę efektywności narzędzia w ochronie przed atakami typu badUSB oraz identyfikację ewentualnych obszarów wymagających dalszych usprawnień w zakresie zabezpieczeń systemowych.
 
 <p align="center">
 <br>
-  <img src="\assets\img\MasterThesis\7.png" width="650" alt="folderu">
+  <img src="\assets\img\MasterThesis\7.png" width="650" alt="ochrony">
   <br>
   Rys.3.7. Włączenie ochrony w Microsoft Defender
 </p>  
 
-Po przeprowadzeniu testów, z stwierdzono że Microsoft Defender skutecznie poradził sobie z wykryciem zagrożenia i uniemożliwił uruchomienie złośliwego skryptu. Dzięki swoim funkcjom ochronnym Defender szybko zidentyfikował potencjalne zagrożenie, co pozwoliło na natychmiastowe podjęcie odpowiednich działań w celu zneutralizowania ryzyka dla systemu (Rys.~\ref{fig:my_image8}). Reakcja tego narzędzia stanowi potwierdzenie jego skuteczności w wykrywaniu i zwalczaniu ataków związanych z użyciem złośliwego oprogramowania przenoszonego przez nośniki USB.
+Po przeprowadzeniu testów, z stwierdzono że Microsoft Defender skutecznie poradził sobie z wykryciem zagrożenia i uniemożliwił uruchomienie złośliwego skryptu. Dzięki swoim funkcjom ochronnym Defender szybko zidentyfikował potencjalne zagrożenie, co pozwoliło na natychmiastowe podjęcie odpowiednich działań w celu zneutralizowania ryzyka dla systemu (Rys.3.8.). Reakcja tego narzędzia stanowi potwierdzenie jego skuteczności w wykrywaniu i zwalczaniu ataków związanych z użyciem złośliwego oprogramowania przenoszonego przez nośniki USB.
 
 <p align="center">
 <br>
-  <img src="\assets\img\MasterThesis\8.png" width="650" alt="folderu">
+  <img src="\assets\img\MasterThesis\8.png" width="650" alt="eksperymentu">
   <br>
   Rys.3.8. Przedstawienie wyniku eksperymentu
 </p>  
@@ -372,7 +372,7 @@ Dodatkowo, warto zaznaczyć, że badanie reakcji oprogramowania Microsoft Defend
 
 <p align="center">
 <br>
-  <img src="\assets\img\MasterThesis\9.png" width="650" alt="folderu">
+  <img src="\assets\img\MasterThesis\9.png" width="650" alt="testu">
   <br>
   Rys.3.9. Skrypt przedstawiający działanie testu
 </p>  
@@ -381,50 +381,50 @@ Po przeprowadzeniu testów na dedykowanym urządzeniu, szczegółowy raport będ
 
 <p align="center">
 <br>
-  <img src="\assets\img\MasterThesis\10.png" width="650" alt="folderu">
+  <img src="\assets\img\MasterThesis\10.png" width="650" alt="wyniku">
   <br>
   Rys.3.10. Przedstawienie wyniku
 </p> 
 
 Rysunek poniżej przedstawia wyniki polecenia systeminfo, które jest jednym z kluczowych narzędzi diagnostycznych systemu Windows. Dzięki temu poleceniu możliwe jest uzyskanie szerokiego zakresu informacji dotyczących konfiguracji systemu operacyjnego oraz jego środowiska. Wśród prezentowanych danych znajdują się m.in. informacje dotyczące nazwy komputera, systemu operacyjnego, wersji, producenta, modelu procesora, ilości zainstalowanej pamięci RAM oraz wiele innych szczegółów technicznych (Rys.3.11.). Wyświetlane informacje obejmują: 
 
-- Pamięć wirtualna:
-+ Dostępna pamięć wirtualna: 342506 MB
-+ Używana pamięć wirtualna: 32056 MB
+1. Pamięć wirtualna:
+- Dostępna pamięć wirtualna: 342506 MB
+- Używana pamięć wirtualna: 32056 MB
     
-- Plik stronicowania:
+2. Plik stronicowania:
 + Lokalizacja pliku stronicowania: \texttt{C:\textbackslash pagefile.sys}
  
-- Domena:
-+ Nazwa domeny: \texttt{WORKGROUP}
+3. Domena:
+- Nazwa domeny: \texttt{WORKGROUP}
  
-- Serwer logowania:
-+ Nazwa serwera logowania: \texttt{DESKTOP-SISALDA}
+4. Serwer logowania:
+- Nazwa serwera logowania: \texttt{DESKTOP-SISALDA}
 
-- Poprawki:
-+ Informacje o 14 zainstalowanych poprawkach
+5. Poprawki:
+- Informacje o 14 zainstalowanych poprawkach
 
-- Karty sieciowe:
-+ Intel(R) 82579LM Gigabit Network Connection: Połączenie Ethernet, status "Sprzęt nieobecny"
-+ Bluetooth Device (Personal Area Network): Połączenie sieciowe Bluetooth, status "Sprzęt nieobecny"
+6. Karty sieciowe:
+- Intel(R) 82579LM Gigabit Network Connection: Połączenie Ethernet, status "Sprzęt nieobecny"
+- Bluetooth Device (Personal Area Network): Połączenie sieciowe Bluetooth, status "Sprzęt nieobecny"
 
-- Wymagania Hyper-V:
-+ Informacje o funkcjach Hyper-V, w tym o rozszerzeniach VK Monitor Mode Extensions, wirtualizacji w oprogramowaniu układowym i translacji adresów drugiego poziomu
+7. Wymagania Hyper-V:
+- Informacje o funkcjach Hyper-V, w tym o rozszerzeniach VK Monitor Mode Extensions, wirtualizacji w oprogramowaniu układowym i translacji adresów drugiego poziomu
 
-- Ochrona przed atakami:
-+ Informacje o dostępności funkcji Data Execution Prevention (DEP)
+8. Ochrona przed atakami:
+- Informacje o dostępności funkcji Data Execution Prevention (DEP)
 
 <p align="center">
 <br>
-  <img src="\assets\img\MasterThesis\11.png" width="650" alt="folderu">
+  <img src="\assets\img\MasterThesis\11.png" width="650" alt="tekstowym">
   <br>
   Rys.3.11. Przedstawienie wyników w pliku tekstowym
 </p> 
 
 W tym kroku rozszerzono skrypt z poprzedniego kroku o kolejne funkcje. Ten skrypt działa w następujący sposób:
-- Uruchamia plik \texttt{nc64.exe}.
-- Pobiera informacje o systemie i zapisuje je do pliku \texttt{system\_info.txt} w tym samym katalogu co skrypt.
-- Pobiera informacje o plikach i sterownikach, zapisuje je do odpowiednich plików (\texttt{file\_info.txt} i \texttt{driver\_info.txt}) w tym samym katalogu co skrypt.
+- Uruchamia plik nc64.exe.
+- Pobiera informacje o systemie i zapisuje je do pliku system_info.txt w tym samym katalogu co skrypt.
+- Pobiera informacje o plikach i sterownikach, zapisuje je do odpowiednich plików file_info.txt i driver_info.txt w tym samym katalogu co skrypt.
 - Wyświetla komunikat o próbie przejęcia kontroli nad laptopem i zawiesza działanie na 5 sekund.
 - Kopiuje wszystkie pliki (informacje o systemie, plikach i sterownikach) na podłączony pendrive.
 - Wyświetla komunikat o zakończeniu procesu.
@@ -438,7 +438,7 @@ Po uruchomieniu pliku początek procesu prezentuje się tak jak na zdjęciu wyko
 
 <p align="center">
 <br>
-  <img src="\assets\img\MasterThesis\13.png" width="650" alt="folderu">
+  <img src="\assets\img\MasterThesis\13.jpg" width="650" alt="procesu">
   <br>
   Rys.3.12. Uruchomienie procesu
 </p> 
@@ -447,7 +447,7 @@ Dalsza część procesu uruchomienia prezentuje się zgodnie z obrazem poniżej 
 
 <p align="center">
 <br>
-  <img src="\assets\img\MasterThesis\14.png" width="650" alt="folderu">
+  <img src="\assets\img\MasterThesis\14.jpg" width="650" alt="Wyświetlanie">
   <br>
   Rys.3.13. Wyświetlanie wyników procesu
 </p> 
@@ -458,7 +458,7 @@ Wyświetlanie wyników procesu w formie tekstowej jest kluczowym elementem anali
 
 <p align="center">
 <br>
-  <img src="\assets\img\MasterThesis\15.png" width="650" alt="folderu">
+  <img src="\assets\img\MasterThesis\15.png" width="650" alt="formie">
   <br>
   Rys.3.14. Wyświetlanie wyników procesu w formie tekstowej
 </p> 
@@ -473,7 +473,7 @@ W sekcji dodatków "Szczegółowe wyniki badań" przedstawiono tabelę A.3, któ
 
 <p align="center">
 <br>
-  <img src="\assets\img\MasterThesis\16.png" width="650" alt="folderu">
+  <img src="\assets\img\MasterThesis\16.jpg" width="650" alt="laptopa">
   <br>
   Rys.3.15. Wyłączenie laptopa
 </p> 
@@ -493,14 +493,14 @@ Wynik analizy został przedstawiony poniżej (Rys.3.16.), gdzie wyraźnie widocz
 
 <p align="center">
 <br>
-  <img src="\assets\img\MasterThesis\17.png" width="650" alt="folderu">
+  <img src="\assets\img\MasterThesis\17.png" width="650" alt="wynikóww">
   <br>
   Rys.3.16. Przedstawienie wyników
 </p> 
 
 # 3.5. Sprzętowe podatności
 
-Jak wiadomo w dzisiejszym czasie jest sporo podatności zarówno jak sprzętowych jak i podatności firmware, które mogą narazić małe i większe przedsiębiorstwa na ryzyko. Większość z nich wynika dlatego że korzysta się ze starych systemów i nieaktualnego oprogramowania. Nie każda luka jest krytyczna, ale mimo tego należy ją ``załatać'' ponieważ pozwoli hakerowi na wykorzystanie tej luki i wziąć pod kontrolę sieć \cite{16}. 
+Jak wiadomo w dzisiejszym czasie jest sporo podatności zarówno jak sprzętowych jak i podatności firmware, które mogą narazić małe i większe przedsiębiorstwa na ryzyko. Większość z nich wynika dlatego że korzysta się ze starych systemów i nieaktualnego oprogramowania. Nie każda luka jest krytyczna, ale mimo tego należy ją ``załatać'' ponieważ pozwoli hakerowi na wykorzystanie tej luki i wziąć pod kontrolę sieć [16]. 
 
 Poniżej przedstawiono najczęściej wykorzystywane luki w zabezpieczeniach sprzętu i oprogramowania układowego:
 - Rowhammer: Jest to luka, która występuje w urządzeniach DDR DRAM poprzez wielokrotny dostęp do wiersza pamięci skutkuje, że bity w wybranych wierszach zostaną odwrócone. Luka oznaczona jest jako CVE-2021-42114 i została opublikowana 16 listopada 2021 roku.  
@@ -535,7 +535,7 @@ W sieci są zainstalowane dwie karty sieciowe: Intel(R) 82579LM Gigabit Network 
 
 W systemie zainstalowano 14 poprawek (hotfixów), obejmujących różne aktualizacje i łatki bezpieczeństwa. Wymagania dotyczące Hyper-V są spełnione, co oznacza, że wirtualizacja jest obsługiwana na tym systemie, a funkcje takie jak rozszerzenia monitora VM czy drugi poziom translacji adresowej są dostępne i włączone.
 
-Skrypt przedstawiony w [B. Kod źródłowy](#B-Kod-źródłowy) jest narzędziem służącym do eksfiltracji danych z systemu operacyjnego Windows w sposób przenośny i wydajny. Skrypt działa w wierszu poleceń i wykorzystuje różne polecenia i narzędzia do zbierania, pakowania i przesyłania danych na zewnętrzne serwery.
+Skrypt przedstawiony w sekscji "Kod źródłowy" jest narzędziem służącym do eksfiltracji danych z systemu operacyjnego Windows w sposób przenośny i wydajny. Skrypt działa w wierszu poleceń i wykorzystuje różne polecenia i narzędzia do zbierania, pakowania i przesyłania danych na zewnętrzne serwery.
 
 Na początku skrypt tworzy katalog .ssh-exfil, który służy jako tymczasowe miejsce docelowe dla zebranych danych. Następnie korzysta z polecenia rsync, aby skopiować klucze SSH, pliki publiczne kluczy oraz plik known hosts z katalogu domowego użytkowników do nowo utworzonego katalogu .ssh-exfil.
 
@@ -573,13 +573,13 @@ Autor za własny wkład pracy w ramach pracy magisterskiej uważa:
 
 <p align="center">
 <br>
-  <img src="\assets\img\MasterThesis\20.png" width="650" alt="folderu">
+  <img src="\assets\img\MasterThesis\20.png" width="650" alt="folderu1">
   <br>
 </p> 
 
 <p align="center">
 <br>
-  <img src="\assets\img\MasterThesis\21.png" width="650" alt="folderu">
+  <img src="\assets\img\MasterThesis\21.png" width="650" alt="folderu2">
   <br>
 </p> 
 
