@@ -24,6 +24,35 @@
 
 [2.3.3. Synergia technicznych i prawnych aspektów](#233-Synergia-technicznych-i-prawnych-aspektów) 
 
+[3. Zastosowanie i analiza technik badUSB](#3-Zastosowanie-i-analiza-technik-badUSB) 
+
+[3.1. Badanie zaawansowanych technik badUSB](#31-Badanie-zaawansowanych-technik-badUSB) 
+
+[3.2. Technika ataków badUSB](#32-Technika-ataków-badUSB) 
+
+[3.3. Analiza bezpieczeństwa systemów przed atakami badUSB](#33-Analiza-bezpieczeństwa-systemów-przed-atakami-badUSB) 
+
+[3.4. Ataki ukierunkowane na system operacyjny i BIOS](#34-Ataki-ukierunkowane-na-system-operacyjny-i-BIOS) 
+
+[3.4.1. Kontynuacja skryptu](#341-Kontynuacja-skryptu) 
+
+[3.5. Sprzętowe podatności](#35-Sprzętowe-podatności) 
+
+[4. Wyniki](#4-Wyniki) 
+
+[4.1. Analiza danych](#41-Analiza-danych) 
+
+[5. Dyskusja](#5-Dyskusja) 
+
+[5.1. Podsumowanie i wnioski końcowe](#51-Podsumowanie-i-wnioski-końcowe) 
+
+[Streszenie](#Streszenie) 
+
+[A. Szczegółowe wyniki badań](#A-Szczegółowe-wyniki-badań) 
+
+[B. Kod źródłowy](#B-Kod-źródłowy) 
+
+
 # 1. Wprowadzenie
 
 W dzisiejszych czasach, kiedy ma miejsce cyfrowa rewolucja, w obszarze bezpieczeństwa komputerowego jednym z kluczowych aspektów jest np. ochrona danych osobowych i firmowych. Istnieje wiele różnego rodzaju zagrożeń, które są powszechnie znane, oraz takich nieco ``zaskakujących'' jak urządzenia USB, które w chwili obecnej są używane jako jedne z bardziej popularnych i bezpiecznych nośników wymiany danych, ale jak się okazuje także przyczyniają się do różnych ataków hakerskich, co prowadzi do poważnych skutków w postaci wycieku danych i innych naruszeń bezpieczeństwa. Niniejsza praca dyplomowa ma na celu przedstawienie problematyki bezpieczeństwa komputerowego w kontekście ataków przy użyciu urządzeń USB.
@@ -232,3 +261,80 @@ Zrozumienie technicznych aspektów bezpieczeństwa firmware jest nierozerwalnie 
 Dodatkowo, wzrasta znaczenie analizy zagrożeń związanych z łańcuchem dostaw firmware. Ataki takie jak SolarWinds wykazały, że nieautoryzowane modyfikacje firmware przez złośliwe podmioty mogą mieć dalekosiężne skutki na szeroko rozumiane bezpieczeństwo narodowe i infrastrukturę krytyczną. Analiza ryzyka w łańcuchu dostaw staje się nieodzownym elementem zarządzania bezpieczeństwem firmware, wymagając od organizacji i instytucji szczegółowej oceny potencjalnych zagrożeń i implementacji skutecznych strategii ich minimalizowania.
 
 W tym kontekście, rośnie także rola narzędzi do zarządzania firmware i bezpieczeństwa urządzeń końcowych. Zastosowanie zaawansowanych rozwiązań do zarządzania firmware, takich jak systemy wykrywania i odpowiedzi na incydenty (EDR), pozwala na bieżącą kontrolę stanu firmware i szybką reakcję na potencjalne zagrożenia. Wspiera to strategie proaktywnego zarządzania ryzykiem i wzmacnia ogólne bezpieczeństwo systemów informatycznych.
+
+# 3. Zastosowanie i analiza technik badUSB
+
+# 3.1. Badanie zaawansowanych technik badUSB
+
+BadUSB należy do rodzaju ataków, które wykorzystują zaufanie użytkowników do urządzeń USB, z pomocą których atakujący mogą naruszyć bezpieczeństwo systemów. Zazwyczaj osoby atakujące manipulują oprogramowaniem sprzętowym urządzeń USB, aby te urządzenia wdawały się w urządzenia innego typu, co pozwala im na wykonywanie złośliwych działań względem zaufanych urządzeń. Oto omówienie zaawansowanych technik i narzędzi badUSB powszechnie używanych w atakach takiego typu:
+
+- Firmware Manipulation: Ataki typu BadUSB zazwyczaj polegają na zmianie oprogramowania sprzętowego urządzeń USB w celu zmiany ich codziennego zachowania. Przy użyciu specjalistycznych narzędzi atakujący mogą manipulować oprogramowaniem sprzętowym wykorzystując zaufanie użytkowników do urządzeń USB w celu naruszenia bezpieczeństwa systemów. Do tego typu ataków można zaliczyć takie narzędzia jak USBProxy i FaceDancer. Służą one do przechwytywania i modyfikowania ruchu USB, dodatkowo umożliwiając atakującym wstrzykiwanie złośliwych payloads do urządzeń USB.
+- Emulation of HID Devices: Jedna z kolejnych powszechnych technik badUSB, która polega na emulowaniu takich urządzeń jak klawiatury, myszy, głośniki. Przeprogramowuje urządzenia w ten sposób, aby działały jako nośnik złośliwego oprogramowania, czyli aby po kliknięciu klawisza na klawiaturze odbył się atak. Narzędzia takie jak Rubber Ducky i MalDuino przedstawiają ten atak umożliwiając atakującym tworzenie payloads wykonujących polecenia w systemie ofiary po podłączeniu złośliwego urządzenia USB.
+- Data Exfiltration: Ten typ ataku polega na modyfikowaniu urządzeń USB tak, aby działały jako urządzenia pamięci masowej lub karty sieciowe. Po podłaczeniu urządzenia do atakowanego systemu złośliwe oprogramowanie może pobrać poufne dane lub połączyć się z serwerami zewnętrznymi. Takie ataki przedstawiane przez takie narzędzia jak USB Rubber Dumper i USBHarpoon, które ułątwiają proces eksfiltracji danych, automatyzując proces kopiowania danych z systemu ofiary na serwer atakującego.
+- Firmware Implants: W niektórych sytuacjach osoba atakująca może wstrzyknąć złośliwe oprogramowanie bezpośrednio na urządzenia USB podczas ich tworzenia, co może prowadzić do poważnych skutków, takich jak zainfekowania dużej liczby urządzeń, które póżniej mogą być szeroko rozpowszechniane. Podobne oprogramowanie jest trudne do wkrycia i usunięcia, co sprawia, że są one szczególnie niebezpieczne. Narzędzia takie jak USBKill i USBStealer służą do tworzenia takiego oprogramowania sprzętowego na urządzeniach USB.
+- Persistent Payloads: Ataki badUSB mogą zawierać różne formy, zaczynając się od włączenia w to generowanych payloads-ów, które mogą zostać na zainfekowanym urządzeniu nawet po wielokrotnych uruchomieniach systemu. Poprzez przechowywanie złośliwego kodu w oprogramowaniu sprzętowym urządzeń USB osoba atakująca może zapewnić, że payloads wykonany przez niego może pozostać aktywny nawet po początkowej infekcji systemu. Takim przykładem moga być takie narzędzia jak BadUSB Firmware Patch i USB Persistent Payload Generatorm, które służą do tworzenia złośliwych payloads-ów.
+- Cross-Platform Attacks: Tego typu ataki nie ograniczają się do konkretnego systemu operacyjnego lub platformy. Oosoby atakujące mogą tworzyć złośliwe payloads na systemy Windows, macOS, Linux i inne systemy operacyjne. Pozwala to złamać zabezpieczenia systemu za pomocą jednego złośliwego urządzenia USB. Narzędzia takie jak BadUSB Cross-Platform Exploit Framework (BadUSB-CPF) zapewniają wieloplatformowe możliwości tworzenia i wdrażania payloads badUSB.
+
+# 3.2. Technika ataków badUSB
+
+Nie wszystkie złośliwe urządzenia USB muszą być drogimi elementami sprzętu z zaawansowanym programowaniem, aby zaszkodzić komputerowi lub innemu urządzeniu. Takimi przykładami drogich rozwiązań mogą być Flipper Zero, Rubber Ducky, Malduino, Digispark. Za pomocą starego pendrive'a można zbudować własny złośliwy BadUSB, korzystając z plików skrótów złośliwych oprogramowań napisanych w Bash, CMD lub PowerShell
+
+Zgodnie z wpisem na blogu ``Rise of LNK (Shortcut files) Malware'' okazuje się, że w drugim kwartale 2022 roku McAfee Labs zanotowało wzrost infekcji złośliwym oprogramowaniem dostarczanym za pomocą plików LNK. Atakujący wykorzystują łatwość użycia plików LNK do dostarczania złośliwego oprogramowania, takiego jak Emotet, Qakbot, IcedID, Bazarloaders itp.
+
+W tej części pracy zostanie pokazane jak plik LNK może dostarczać złośliwe oprogramowanie na pozornie niewinnie wyglądającym pendrive'ie USB. Poprzez wykorzystanie trudno wykrywalnego oprogramowania złośliwego do plików skrótów systemowych Windows, ukryty odnośnik zmanipuluje użytkownika, aby kliknął na pozornie nieszkodliwy plik i uruchomił oprogramowanie złośliwe. Skrót pliku zapewnia szybki i łatwy dostęp do plików wykonywalnych bez konieczności nawigowania przez pełną ścieżkę programu. W tej sytuacji plik wykonywalny ze złośliwym  oprogramowaniem może znajdujować się w ukrytym katalogu, choć to nie jest konieczne. Użytkownik klika na folder, który zawiera odnośnik do pliku wykonywalnego uruchamiając w ten sposób oprogramowanie złośliwe. Plik, który zostanie wykorzystywany w tym ataku to Netcat lub inaczej tak jak jest nazwany nc64.exe, który został pobrany z repozytorium na GitHub (Rys.~\ref{fig:my_image1}).
+
+<p align="center">
+  Rys.3.1. Repozytorium na GitHub
+<br>
+  <img src="\assets\img\MasterThesis\1.png" width="650" alt="GitHub">
+  <br>
+</p>   
+
+Aby pobrać złośliwe oprogramowanie Netcat należy wyłączyć ochronę w czasie rzeczywistym w Microsoft Defender co potwierdza, że to zabezpieczenie w Windows jednak jest na wysokim poziomie (Rys.~\ref{fig:my_image2}).
+
+Ten rodzaj ataku stwarza niebezpieczeństwo nie tylko poprzez możliwość infekcji jednego urządzenia, ale także przez potencjalne rozprzestrzenianie się złośliwego kodu poprzez zainfekowane urządzenia, które mogą być szeroko rozpowszechniane w sieci. W rezultacie nawet pozornie nieszkodliwe urządzenia USB mogą stanowić istotne zagrożenie dla całego ekosystemu informatycznego.
+
+<p align="center">
+  Rys.3.2. Wyłączenie ochrony w Microsoft Defender
+<br>
+  <img src="\assets\img\MasterThesis\2.png" width="650" alt="Defender">
+  <br>
+</p>   
+
+W tym celu należało posiadać pendrive, który zostanie skonfigurowany jako złośliwy. Rozmiar plików nie będzie duży, więc powinien działać na każdym pendrive. Po czym trzeba utworzyć jeden folder główny nazwany jako payload directory, w którym będą skrypty i plik Netcat (Rys.~\ref{fig:my_image3}). A drugi folder to jest właśnie skrót folderu utworzony na podstawie folderu głównego. 
+
+<p align="center">
+  Rys.3.3. Wygląd zawartości folderu
+<br>
+  <img src="\assets\img\MasterThesis\3.png" width="650" alt="folderu">
+  <br>
+</p>  
+
+Częścią sukcesu tego ataku jest utworzenie skrótu systemowego Windows i odnośnika do złośliwego oprogramowania w ukrytym katalogu. Jest to robione, aby skłonić użytkownika do kliknięcia w złośliwe oprogramowanie nie widząc w co klika. W celu lepszej widoczności badań nie ukryto folderu. 
+
+Po skopiowaniu nc64.exe na pendrive należy dokonać kilku zmian w systemie plików urządzenia, zaczynając od utworzenia pliku głównego tak zwanego skryptu. Po wpisaniu kodu należy zapisać go z odpowiednim rozszerzeniem. Katalog payload powinien zawierać dwa pliki: plik wykonywalny i plik wsadowy. Aby przetestować ogólne działanie został napisany prosty skrypt, który wyświetla "Hello, World!" w wierszu poleceń (Rys.~\ref{fig:my_image4})
+
+<p align="center">
+  Rys.3.4. Skrypt wyświetlający odpowiednie polecenie
+<br>
+  <img src="\assets\img\MasterThesis\4.png" width="650" alt="folderu">
+  <br>
+</p>  
+
+Na początku zostanie przetestowane, jak działa skrypt bez wykrywania zagrożeń w Windows Defender. Badania zostały przeprowadzone na sprzęcie testowym i w tym celu wyłączono wszystkie ochrony w Microsoft Defender (Rys.~\ref{fig:my_image5}).
+
+<p align="center">
+  Rys.3.5. Wyłączenie ochrony w Microsoft Defender
+<br>
+  <img src="\assets\img\MasterThesis\5.png" width="650" alt="folderu">
+  <br>
+</p>  
+
+Po uruchomieniu pliku można zauważyć, że operacja zakończyła się powodzeniem, co potwierdza poprawne wykonanie zadania. Ten wynik jest szczególnie zadowalający, biorąc pod uwagę skomplikowany charakter procesu oraz wymagające warunki, jakie należało spełnić. Wszystkie kroki zostały wykonane z należytą starannością i precyzją, co przyczyniło się do osiągnięcia oczekiwanych rezultatów (Rys.~\ref{fig:my_image6}).
+
+<p align="center">
+  Rys.3.6. Prezentacja wyników
+<br>
+  <img src="\assets\img\MasterThesis\6.png" width="650" alt="folderu">
+  <br>
+</p>  
