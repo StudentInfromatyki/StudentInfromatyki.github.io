@@ -1,4 +1,4 @@
-[Kliknij tutaj, aby zobacyć pracę](https://github.com/Danchivskyi/Master-s-Dissertation/blob/main/Praca_dyplomowa_magisterska.pdf)
+[Kliknij tutaj, aby zobacyć pracę na GitHub](https://github.com/Danchivskyi/Master-s-Dissertation/blob/main/Praca_dyplomowa_magisterska.pdf)
 
 
 # Spis treści
@@ -6,53 +6,54 @@
 
 [1.1. Cel i zakres pracy](#11-cel-i-zakres-pracy) 
 
-[2. Krytyka teorii: wyzwania w pracy badawczej](#2-Krytyka-teorii-:-wyzwania-w-pracy-badawczej) 
+[2. Krytyka teorii: wyzwania w pracy badawczej](#2-krytyka-teorii-wyzwania-w-pracy-badawczej) 
 
-[2.1. Geneza i ewolucja ataków USB](#21-Geneza-i-ewolucja-atakow-USB) 
+[2.1. Geneza i ewolucja ataków USB](#21-geneza-i-ewolucja-atakow-usb) 
 
-[2.1.1. Kluczowe pojęcia](#211-Kluczowe-pojecia) 
+[2.1.1. Kluczowe pojęcia](#211-kluczowe-pojecia) 
 
-[2.2. Analiza przypadków i ich wpływ na firmware](#22-Analiza-przypadkow-i-ich-wplyw-na-firmware) 
+[2.2. Analiza przypadków i ich wpływ na firmware](#22-analiza-przypadkow-i-ich-wplyw-na-firmware) 
 
-[2.2.1. Czym jest atak USB?](#221-Czym-jest-atak-USB?) 
+[2.2.1. Czym jest atak USB?](#221-czym-jest-atak-usb) 
 
-[2.3. Aspekty techniczne i prawne bezpieczeństwa firmware](#23-Aspekty-techniczne-i-prawne-bezpieczeństwa-firmware) 
+[2.3. Aspekty techniczne i prawne bezpieczeństwa firmware](#23-aspekty-techniczne-i-prawne-bezpieczenstwa-firmware) 
 
-[2.3.1. Analiza techniczna firmware](#231-Analiza-techniczna-firmware) 
+[2.3.1. Analiza techniczna firmware](#231-analiza-techniczna-firmware) 
 
-[2.3.2. Aspekty prawne](#232-Aspekty-prawne) 
+[2.3.2. Aspekty prawne](#232-aspekty-prawne) 
 
-[2.3.3. Synergia technicznych i prawnych aspektów](#233-Synergia-technicznych-i-prawnych-aspektów) 
+[2.3.3. Synergia technicznych i prawnych aspektów](#233-synergia-technicznych-i-prawnych-aspektow) 
 
-[3. Zastosowanie i analiza technik badUSB](#3-Zastosowanie-i-analiza-technik-badUSB) 
+[3. Zastosowanie i analiza technik badUSB](#3-zastosowanie-i-analiza-technik-badusb) 
 
-[3.1. Badanie zaawansowanych technik badUSB](#31-Badanie-zaawansowanych-technik-badUSB) 
+[3.1. Badanie zaawansowanych technik badUSB](#31-badanie-zaawansowanych-technik-badusb) 
 
-[3.2. Technika ataków badUSB](#32-Technika-ataków-badUSB) 
+[3.2. Technika ataków badUSB](#32-technika-atakow-badusb) 
 
-[3.3. Analiza bezpieczeństwa systemów przed atakami badUSB](#33-Analiza-bezpieczeństwa-systemów-przed-atakami-badUSB) 
+[3.3. Analiza bezpieczeństwa systemów przed atakami badUSB](#33-analiza-bezpieczenstwa-systemow-przed-atakami-badusb) 
 
-[3.4. Ataki ukierunkowane na system operacyjny i BIOS](#34-Ataki-ukierunkowane-na-system-operacyjny-i-BIOS) 
+[3.4. Ataki ukierunkowane na system operacyjny i BIOS](#34-ataki-ukierunkowane-na-system-operacyjny-i-bios) 
 
-[3.4.1. Kontynuacja skryptu](#341-Kontynuacja-skryptu) 
+[3.4.1. Kontynuacja skryptu](#341-kontynuacja-skryptu) 
 
-[3.5. Sprzętowe podatności](#35-Sprzętowe-podatności) 
+[3.5. Sprzętowe podatności](#35-sprzetowe-podatnosci) 
 
-[4. Wyniki](#4-Wyniki) 
+[4. Wyniki](#4-wyniki) 
 
-[4.1. Analiza danych](#41-Analiza-danych) 
+[4.1. Analiza danych](#41-analiza-danych) 
 
-[5. Dyskusja](#5-Dyskusja) 
+[5. Dyskusja](#5-dyskusja) 
 
-[5.1. Podsumowanie i wnioski końcowe](#51-Podsumowanie-i-wnioski-końcowe) 
+[5.1. Podsumowanie i wnioski końcowe](#51-podsumowanie-i-wnioski-koncowe) 
 
-[Streszenie](#Streszenie) 
+[Streszczenie](#streszczenie) 
 
-[Bibliografia](#Bibliografia) 
+[Bibliografia](#bibliografia) 
 
-[A. Szczegółowe wyniki badań](#A-Szczegółowe-wyniki-badań) 
+[A. Szczegółowe wyniki badań](#a-szczegolowe-wyniki-badan) 
 
-[B. Kod źródłowy](#B-Kod-źródłowy) 
+[B. Kod źródłowy](#b-kod-zrodlowy)
+
 
 
 # 1. Wprowadzenie
@@ -760,8 +761,6 @@ Autor za własny wkład pracy w ramach pracy magisterskiej uważa:
 
 
 # B. Kod źródłowy
-
-## Table
 
 |                                                                                     |
 |-------------------------------------------------------------------------------------|
