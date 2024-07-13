@@ -281,7 +281,7 @@ Nie wszystkie złośliwe urządzenia USB muszą być drogimi elementami sprzętu
 
 Zgodnie z wpisem na blogu ``Rise of LNK (Shortcut files) Malware'' okazuje się, że w drugim kwartale 2022 roku McAfee Labs zanotowało wzrost infekcji złośliwym oprogramowaniem dostarczanym za pomocą plików LNK. Atakujący wykorzystują łatwość użycia plików LNK do dostarczania złośliwego oprogramowania, takiego jak Emotet, Qakbot, IcedID, Bazarloaders itp.
 
-W tej części pracy zostanie pokazane jak plik LNK może dostarczać złośliwe oprogramowanie na pozornie niewinnie wyglądającym pendrive'ie USB. Poprzez wykorzystanie trudno wykrywalnego oprogramowania złośliwego do plików skrótów systemowych Windows, ukryty odnośnik zmanipuluje użytkownika, aby kliknął na pozornie nieszkodliwy plik i uruchomił oprogramowanie złośliwe. Skrót pliku zapewnia szybki i łatwy dostęp do plików wykonywalnych bez konieczności nawigowania przez pełną ścieżkę programu. W tej sytuacji plik wykonywalny ze złośliwym  oprogramowaniem może znajdujować się w ukrytym katalogu, choć to nie jest konieczne. Użytkownik klika na folder, który zawiera odnośnik do pliku wykonywalnego uruchamiając w ten sposób oprogramowanie złośliwe. Plik, który zostanie wykorzystywany w tym ataku to Netcat lub inaczej tak jak jest nazwany nc64.exe, który został pobrany z repozytorium na GitHub (Rys.~\ref{fig:my_image1}).
+W tej części pracy zostanie pokazane jak plik LNK może dostarczać złośliwe oprogramowanie na pozornie niewinnie wyglądającym pendrive'ie USB. Poprzez wykorzystanie trudno wykrywalnego oprogramowania złośliwego do plików skrótów systemowych Windows, ukryty odnośnik zmanipuluje użytkownika, aby kliknął na pozornie nieszkodliwy plik i uruchomił oprogramowanie złośliwe. Skrót pliku zapewnia szybki i łatwy dostęp do plików wykonywalnych bez konieczności nawigowania przez pełną ścieżkę programu. W tej sytuacji plik wykonywalny ze złośliwym  oprogramowaniem może znajdujować się w ukrytym katalogu, choć to nie jest konieczne. Użytkownik klika na folder, który zawiera odnośnik do pliku wykonywalnego uruchamiając w ten sposób oprogramowanie złośliwe. Plik, który zostanie wykorzystywany w tym ataku to Netcat lub inaczej tak jak jest nazwany nc64.exe, który został pobrany z repozytorium na GitHub (Rys.3.1.).
 
 <p align="center">
   Rys.3.1. Repozytorium na GitHub
@@ -290,7 +290,7 @@ W tej części pracy zostanie pokazane jak plik LNK może dostarczać złośliwe
   <br>
 </p>   
 
-Aby pobrać złośliwe oprogramowanie Netcat należy wyłączyć ochronę w czasie rzeczywistym w Microsoft Defender co potwierdza, że to zabezpieczenie w Windows jednak jest na wysokim poziomie (Rys.~\ref{fig:my_image2}).
+Aby pobrać złośliwe oprogramowanie Netcat należy wyłączyć ochronę w czasie rzeczywistym w Microsoft Defender co potwierdza, że to zabezpieczenie w Windows jednak jest na wysokim poziomie (Rys.3.2.).
 
 Ten rodzaj ataku stwarza niebezpieczeństwo nie tylko poprzez możliwość infekcji jednego urządzenia, ale także przez potencjalne rozprzestrzenianie się złośliwego kodu poprzez zainfekowane urządzenia, które mogą być szeroko rozpowszechniane w sieci. W rezultacie nawet pozornie nieszkodliwe urządzenia USB mogą stanowić istotne zagrożenie dla całego ekosystemu informatycznego.
 
@@ -312,7 +312,7 @@ W tym celu należało posiadać pendrive, który zostanie skonfigurowany jako z�
 
 Częścią sukcesu tego ataku jest utworzenie skrótu systemowego Windows i odnośnika do złośliwego oprogramowania w ukrytym katalogu. Jest to robione, aby skłonić użytkownika do kliknięcia w złośliwe oprogramowanie nie widząc w co klika. W celu lepszej widoczności badań nie ukryto folderu. 
 
-Po skopiowaniu nc64.exe na pendrive należy dokonać kilku zmian w systemie plików urządzenia, zaczynając od utworzenia pliku głównego tak zwanego skryptu. Po wpisaniu kodu należy zapisać go z odpowiednim rozszerzeniem. Katalog payload powinien zawierać dwa pliki: plik wykonywalny i plik wsadowy. Aby przetestować ogólne działanie został napisany prosty skrypt, który wyświetla "Hello, World!" w wierszu poleceń (Rys.~\ref{fig:my_image4})
+Po skopiowaniu nc64.exe na pendrive należy dokonać kilku zmian w systemie plików urządzenia, zaczynając od utworzenia pliku głównego tak zwanego skryptu. Po wpisaniu kodu należy zapisać go z odpowiednim rozszerzeniem. Katalog payload powinien zawierać dwa pliki: plik wykonywalny i plik wsadowy. Aby przetestować ogólne działanie został napisany prosty skrypt, który wyświetla "Hello, World!" w wierszu poleceń (Rys.3.4.)
 
 <p align="center">
   Rys.3.4. Skrypt wyświetlający odpowiednie polecenie
@@ -321,7 +321,7 @@ Po skopiowaniu nc64.exe na pendrive należy dokonać kilku zmian w systemie plik
   <br>
 </p>  
 
-Na początku zostanie przetestowane, jak działa skrypt bez wykrywania zagrożeń w Windows Defender. Badania zostały przeprowadzone na sprzęcie testowym i w tym celu wyłączono wszystkie ochrony w Microsoft Defender (Rys.~\ref{fig:my_image5}).
+Na początku zostanie przetestowane, jak działa skrypt bez wykrywania zagrożeń w Windows Defender. Badania zostały przeprowadzone na sprzęcie testowym i w tym celu wyłączono wszystkie ochrony w Microsoft Defender (Rys.3.5.).
 
 <p align="center">
   Rys.3.5. Wyłączenie ochrony w Microsoft Defender
@@ -330,11 +330,11 @@ Na początku zostanie przetestowane, jak działa skrypt bez wykrywania zagroże�
   <br>
 </p>  
 
-Po uruchomieniu pliku można zauważyć, że operacja zakończyła się powodzeniem, co potwierdza poprawne wykonanie zadania. Ten wynik jest szczególnie zadowalający, biorąc pod uwagę skomplikowany charakter procesu oraz wymagające warunki, jakie należało spełnić. Wszystkie kroki zostały wykonane z należytą starannością i precyzją, co przyczyniło się do osiągnięcia oczekiwanych rezultatów (Rys.~\ref{fig:my_image6}).
+Po uruchomieniu pliku można zauważyć, że operacja zakończyła się powodzeniem, co potwierdza poprawne wykonanie zadania. Ten wynik jest szczególnie zadowalający, biorąc pod uwagę skomplikowany charakter procesu oraz wymagające warunki, jakie należało spełnić. Wszystkie kroki zostały wykonane z należytą starannością i precyzją, co przyczyniło się do osiągnięcia oczekiwanych rezultatów (Rys.3.6.).
 
 <p align="center">
-  Rys.3.6. Prezentacja wyników
 <br>
   <img src="\assets\img\MasterThesis\6.png" width="650" alt="folderu">
   <br>
+  Rys.3.6. Prezentacja wyników
 </p>  
