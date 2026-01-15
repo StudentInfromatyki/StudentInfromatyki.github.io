@@ -10,7 +10,7 @@ author: Anonymous
 
 navbar-links:
   O mnie: "aboutme"
-  Strona autora: "https://github.com/StudentInfromatyki"
+  Strona autora: "https://github.com/Danchivskyi"
 
 ################
 # --- Logo --- #
@@ -25,10 +25,10 @@ round-avatar: true
 # --- Footer social media links --- #
 #####################################
 social-network-links:
-  email: "someone@example.com"
+  email: "nosurnamenoname317@gmail.com"
   rss: true  
-  facebook: anonymous
-  github: "StudentInfromatyki"
+  github: "https://github.com/Danchivskyi"
+  linkedin: https://www.linkedin.com/in/danchivskyi/
 
 rss-description: This website is a virtual proof that I'm awesome
 
@@ -43,7 +43,7 @@ share-links-active:
 
 # How to display the link to your website in the footer
 # Remove this if you don't want a link in the footer
-url-pretty: "MyWebsite.com"
+url-pretty: "https://danchivskyi.github.io/Portfolio/"
 
 # Excerpt word length - Truncate the excerpt of each post on the feed page to the specified number of words
 excerpt_length: 50

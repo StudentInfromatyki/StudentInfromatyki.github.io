@@ -4,10 +4,11 @@ title: O mnie
 subtitle: Dlaczego chcesz poznać mnie? 
 ---
 
-Mam na imię Oleh Danchivskyi. Posiadam następujące cechy:
+Mam na imię Olek Danczewski. Posiadam następujące cechy:
 
-- Jestem studentem na Politechnice Rzeszowskiej im. Ignacego Łukasiewicza
+- Pracuję jako IT Security Specialist / SOC L2 Leader
+- Jestem studentem studiów podyplomowych na kierunku Cyberbezpieczeństwo i ochrona zasobów informacyjnych na Politechnice Rzeszowskiej im. Ignacego Łukasiewicza
 - Jestem miłośniekiem cyberbezpieczeństwa
-- Lubię się uczyć nowych rzeczy XD
+- Lubię się uczyć i szybko uczę się nowych rzeczy
 
-Czego jeszcze potrzebujesz?
+Czego potrzebujesz jeszcze jakichś informacji?
